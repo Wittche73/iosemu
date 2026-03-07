@@ -81,16 +81,31 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
 
         if (b64_main) {
             std::cout << "[Box64 Engine Bridge] Setting WINEPREFIX to: " << prefix_path << std::endl;
-            setenv("WINEPREFIX", prefix_path.c_str(), 1);
+            
+            // Eğer prefix_path bir dosya ise (wine.bin gibi), klasör kısmını al
+            std::string actual_prefix = prefix_path;
+            std::string wine_binary = prefix_path;
+            
+            if (prefix_path.find(".bin") != std::string::npos || prefix_path.find("/wine") != std::string::npos) {
+                // Bu bir binary yolu, prefix değil.
+                // drive_c/windows/system32/wine.bin -> 3 seviye yukarı çık
+                size_t pos = prefix_path.find("/drive_c");
+                if (pos != std::string::npos) {
+                    actual_prefix = prefix_path.substr(0, pos);
+                }
+            } else {
+                // Bu bir prefix yolu, wine binary'sini standart yerde ara
+                wine_binary = prefix_path + "/drive_c/windows/system32/wine.bin";
+            }
+
+            std::cout << "[Box64 Engine Bridge] Actual Prefix: " << actual_prefix << std::endl;
+            std::cout << "[Box64 Engine Bridge] Wine Binary: " << wine_binary << std::endl;
+
+            setenv("WINEPREFIX", actual_prefix.c_str(), 1);
+            setenv("HOME", actual_prefix.c_str(), 1);
             setenv("BOX64_LOG", "1", 1);
             setenv("BOX64_DYNAREC", "1", 1);
-            
-            // On iOS, we also need to set HOME to the prefix to avoid sandbox violations
-            setenv("HOME", prefix_path.c_str(), 1);
 
-            std::string wine_binary = prefix_path + "/drive_c/windows/system32/wine";
-            std::cout << "[Box64 Engine Bridge] Executing: box64 " << wine_binary << " " << exe_path << std::endl;
-            
             const char* argv[] = { "box64", wine_binary.c_str(), exe_path.c_str(), nullptr };
             
             printf("[Box64 Engine Bridge] Calling b64_main with 3 args...\n");
