@@ -99,6 +99,7 @@ struct LibraryView: View {
                 SettingsDashboard()
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 
