@@ -27,8 +27,6 @@ LocalCompat_LIBRARIES = stdc++
 
 # Resources & Assets (Crucial for a non-broken IPA)
 LocalCompat_RESOURCE_FILES = $(shell find Resources -type f)
-LocalCompat_RESOURCE_FILES += $(shell find bin -type f)
-LocalCompat_RESOURCE_FILES += $(shell find Frameworks -type f)
 
 LocalCompat_INSTALL_PATH = /Applications
 
