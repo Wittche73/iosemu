@@ -103,12 +103,22 @@ class WineDependencyManager {
         
         print("   -> [DEPLOY] Temel kütüphaneler kontrol ediliyor: \(destSys32)")
         
+        // DEBUG: Bundle içeriğini listele
+        if let bundlePath = Bundle.main.resourcePath {
+            print("      [DEBUG] Bundle Resource Path: \(bundlePath)")
+            let items = (try? fileManager.contentsOfDirectory(atPath: bundlePath)) ?? []
+            print("      [DEBUG] Bundle Items: \(items.joined(separator: ", "))")
+        }
+
         guard let payloadURL = Bundle.main.url(forResource: "wine_payload", withExtension: nil) else {
             print("      ❌ Hata: Uygulama paketinde wine_payload bulunamadı!")
             return
         }
         
+        print("      [DEBUG] Found payloadURL: \(payloadURL.path)")
+        
         let sourceSys32 = payloadURL.appendingPathComponent("drive_c/windows/system32")
+        print("      [DEBUG] Expected sourceSys32: \(sourceSys32.path)")
         
         do {
             let files = try fileManager.contentsOfDirectory(atPath: sourceSys32.path)
