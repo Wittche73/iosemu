@@ -20,7 +20,8 @@ struct GameCardView: View {
                                 endPoint: .bottomTrailing
                             )
                         )
-                        .frame(height: 180)
+                        .frame(maxWidth: .infinity)
+                        .aspectRatio(1.2, contentMode: .fit)
                         .overlay(
                             Image(systemName: "gamecontroller.fill")
                                 .font(.system(size: 40))

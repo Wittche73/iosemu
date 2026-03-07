@@ -70,7 +70,8 @@ struct LibraryView: View {
                                         .font(.headline)
                                         .foregroundColor(.white)
                                 }
-                                .frame(maxWidth: .infinity, minHeight: 240)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .aspectRatio(0.8, contentMode: .fill)
                                 .background(Color.white.opacity(0.05))
                                 .clipShape(RoundedRectangle(cornerRadius: 24))
                                 .overlay(
