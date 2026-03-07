@@ -23,7 +23,8 @@ public struct RealRuntimeBridge: RuntimeBridge {
         enable_metalfx(metalFXMode)
         
         // Load and Run
-        if !load_exe(exePath) {
+        let prefixPath = context.prefixURL.path
+        if !load_exe(exePath, prefixPath) {
             let errorMsg = String(cString: get_last_runtime_error())
             throw NSError(domain: "RuntimeBridge", code: 3, userInfo: [NSLocalizedDescriptionKey: "Failed to load executable: \(errorMsg)"])
         }
