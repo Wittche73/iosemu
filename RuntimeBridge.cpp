@@ -24,7 +24,8 @@ extern "C" bool init_runtime() {
         std::cout << "[Box64 Engine Bridge] Successfully loaded dynamic engine library!" << std::endl;
         return true;
     } else {
-        last_error = dlerror() ? dlerror() : "Unknown dylib load error";
+        const char* err = dlerror();
+        last_error = err ? err : "Unknown dylib load error";
         std::cout << "[Box64 Engine Bridge] WARNING: Could not load libbox64.dylib: " << last_error << std::endl;
         std::cout << "[Box64 Engine Bridge] Falling back to simulation mode." << std::endl;
         return true; // Şimdilik test için çökmemesi adına simülasyona dön
