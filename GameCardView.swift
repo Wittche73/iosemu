@@ -52,6 +52,7 @@ struct GameCardView: View {
                 }
                 .padding(.horizontal, 4)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
             .background(Color(UIColor.secondarySystemBackground).opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 24))
