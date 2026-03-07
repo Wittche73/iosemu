@@ -370,7 +370,7 @@ endif()
 
 set(BOX64_ROOT ${CMAKE_SOURCE_DIR})
 
-add_definitions(-std=gnu11 -funwind-tables -fvisibility=hidden)
+add_definitions(-std=gnu11 -funwind-tables -fvisibility=default)
 
 if(USE_CCACHE)
     find_program(CCACHE_FOUND ccache)

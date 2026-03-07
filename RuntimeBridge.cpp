@@ -62,7 +62,13 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
     if (box64_handle) {
         box64_main_func b64_main = (box64_main_func)dlsym(box64_handle, "box64_main");
         if (!b64_main) {
+            b64_main = (box64_main_func)dlsym(box64_handle, "_box64_main");
+        }
+        if (!b64_main) {
             b64_main = (box64_main_func)dlsym(box64_handle, "main");
+        }
+        if (!b64_main) {
+            b64_main = (box64_main_func)dlsym(box64_handle, "_main");
         }
 
         if (b64_main) {
