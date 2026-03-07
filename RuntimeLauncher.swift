@@ -1,4 +1,4 @@
-import os.log
+import Foundation
 
 /// Box64 ve Wine orkestrasyonunu yöneten sınıf
 class RuntimeLauncher {
@@ -8,32 +8,27 @@ class RuntimeLauncher {
     
     /// Bir oyunu emülasyon katmanında başlatır
     func launch(game: Game) -> Bool {
-        // --- LOG YÖNLENDİRMESİ VE SERİ ÇIKTI (Dual Logging) ---
+        // --- LOG YÖNLENDİRMESİ VE UBUNTU SERİ ÇIKTI (Dual Logging) ---
         let winePrefix = game.prefixPath
         let logURL = URL(fileURLWithPath: winePrefix).appendingPathComponent("box64.log")
         try? FileManager.default.createDirectory(at: logURL.deletingLastPathComponent(), withIntermediateDirectories: true)
         let logPath = logURL.path
         
-        // Standart çıktıları hem dosyaya hem de sistem konsoluna (serial output) yönlendirme
-        // Bu sayede 'ideviceSyslog' veya Mac Console üzerinden anlık izlenebilir.
+        // stdout/stderr hapsediliyor ama idevicesyslog tarafından yakalanabilmesi için
+        // print() ifadeleri hala sistem loglarına (ASL/Unified Log) gitmeye devam eder.
         freopen(logPath.cString(using: .utf8), "a", stdout)
         freopen(logPath.cString(using: .utf8), "a", stderr)
         setvbuf(stdout, nil, _IONBF, 0)
         setvbuf(stderr, nil, _IONBF, 0)
         
-        // os_log ile seri çıktı (PC üzerinden izlemek için)
-        let logger = OSLog(subsystem: "com.yourcompany.localcompat", category: "Engine")
-        os_log("--- RuntimeLauncher: Starting %{public}s ---", log: logger, type: .info, game.name)
-        os_log("Log File: %{public}s", log: logger, type: .debug, logPath)
-        
-        print("--- RuntimeLauncher: Başlatma Hazırlığı [\(game.name)] ---")
-        print("Log File: \(logPath)")
-        print("DEBUG: Bundle Path: \(Bundle.main.bundlePath)")
+        // UBUNTU CI/Terminal için özel belirteç (grep kolaylığı sağlar)
+        print("[SERIAL_LOG] --- RuntimeLauncher: Starting \(game.name) ---")
+        print("[SERIAL_LOG] Log File: \(logPath)")
+        print("[SERIAL_LOG] DEBUG: Bundle Path: \(Bundle.main.bundlePath)")
         
         // Resource teşhisi
         if let resources = try? FileManager.default.contentsOfDirectory(atPath: Bundle.main.bundlePath) {
-            print("BUNDLE RESOURCES: \(resources.joined(separator: ", "))")
-            os_log("BUNDLE RESOURCES: %{public}s", log: logger, type: .debug, resources.joined(separator: ", "))
+            print("[SERIAL_LOG] BUNDLE RESOURCES: \(resources.joined(separator: ", "))")
         }
         
         // 1. Performans Profili Uygulama
