@@ -27,7 +27,7 @@
 ## 4. Gerçek Motor Entegrasyonu (Real Engine Implementation)
 - [x] Ubuntu üzerinde iOS Derleme Ortamı (Theos & SDK) Hazırlığı `[x]`
 - [x] Box64 (x86-on-ARM) Cross-Compilation (libbox64.dylib) Başarıyla Tamamlandı `[x]`
-- [ ] **Box64 Kütüphanesinin (libbox64.dylib) Ana Uygulamaya Bağlanması ve Entegrasyonu**
-- [ ] Wine Bileşenlerinin (DLLs) Fiziksel Sandbox Transferinin Tamamlanması
+- [x] **Box64 Kütüphanesinin (libbox64.dylib) Ana Uygulamaya Bağlanması ve Entegrasyonu** `[x]`
+- [x] Wine Bileşenlerinin (DLLs) Fiziksel Sandbox Transferinin Tamamlanması `[x]`
 - [ ] DXVK & MoltenVK Gerçek Framework Entegrasyonu
 - [ ] İlk Gerçek x86 "Hello World" Binary Çalıştırılması
