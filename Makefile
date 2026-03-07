@@ -33,9 +33,11 @@ LocalCompat_INSTALL_PATH = /Applications
 include $(THEOS_MAKE_PATH)/application.mk
 
 before-all::
-	@echo "==> Creating app layout directories..."
+	@echo "==> Preparing app layout..."
 	@mkdir -p layout/Applications/LocalCompat.app/Frameworks
-	@echo "==> Copying genuine libbox64.dylib into app payload..."
-	@cp Frameworks/libbox64.dylib layout/Applications/LocalCompat.app/Frameworks/libbox64.dylib
-	@echo "==> Copying wine_payload into app payload..."
-	@cp -r Resources/wine_payload layout/Applications/LocalCompat.app/
+	@echo "==> Copying libbox64.dylib..."
+	@cp Frameworks/libbox64.dylib layout/Applications/LocalCompat.app/Frameworks/
+	@echo "==> Copying wine_payload recursively..."
+	@rm -rf layout/Applications/LocalCompat.app/wine_payload
+	@cp -R Resources/wine_payload layout/Applications/LocalCompat.app/
+	@chmod -R 755 layout/Applications/LocalCompat.app/wine_payload

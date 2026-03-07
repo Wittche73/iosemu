@@ -100,14 +100,13 @@ class WineDependencyManager {
     
     private func deployCoreDLLs(to prefixPath: String) {
         let destSys32 = "\(prefixPath)/drive_c/windows/system32"
-        
         print("   -> [DEPLOY] Temel kütüphaneler kontrol ediliyor: \(destSys32)")
         
-        // DEBUG: Bundle içeriğini listele
+        // --- DERİN TEŞHİS: Bundle içinde ne var? ---
         if let bundlePath = Bundle.main.resourcePath {
-            print("      [DEBUG] Bundle Resource Path: \(bundlePath)")
-            let items = (try? fileManager.contentsOfDirectory(atPath: bundlePath)) ?? []
-            print("      [DEBUG] Bundle Items: \(items.joined(separator: ", "))")
+            print("[DEBUG] --- BUNDLE RECURSIVE LIST START ---")
+            listDirectoryRecursively(at: bundlePath)
+            print("[DEBUG] --- BUNDLE RECURSIVE LIST END ---")
         }
 
         guard let payloadURL = Bundle.main.url(forResource: "wine_payload", withExtension: nil) else {
@@ -115,13 +114,21 @@ class WineDependencyManager {
             return
         }
         
-        print("      [DEBUG] Found payloadURL: \(payloadURL.path)")
-        
         let sourceSys32 = payloadURL.appendingPathComponent("drive_c/windows/system32")
-        print("      [DEBUG] Expected sourceSys32: \(sourceSys32.path)")
+        print("      [DEBUG] Payload Found: \(payloadURL.path)")
+        print("      [DEBUG] Source System32: \(sourceSys32.path)")
         
         do {
+            // Klasörün varlığını kontrol et
+            var isDir: ObjCBool = false
+            if !fileManager.fileExists(atPath: sourceSys32.path, isDirectory: &isDir) || !isDir.boolValue {
+                print("      ⚠️ Uyarı: Kaynak system32 klasörü bulunamadı veya klasör değil! İçerik taranıyor...")
+                listDirectoryRecursively(at: payloadURL.path)
+            }
+
             let files = try fileManager.contentsOfDirectory(atPath: sourceSys32.path)
+            print("      [DEBUG] Found \(files.count) files in source system32")
+            
             for file in files {
                 let src = sourceSys32.appendingPathComponent(file)
                 let dst = URL(fileURLWithPath: "\(destSys32)/\(file)")
@@ -135,6 +142,28 @@ class WineDependencyManager {
             }
         } catch {
             print("      ❌ Hata: DLL'ler kopyalanamadı - \(error)")
+            // Alternatif: Root'a bak (flattening olmuş olabilir mi?)
+            print("      [DEBUG] Flattening check: Root'ta DLL var mı?")
+            let items = (try? fileManager.contentsOfDirectory(atPath: Bundle.main.bundlePath)) ?? []
+            for item in items where item.hasSuffix(".dll") {
+                print("      ! Found DLL in root: \(item)")
+            }
+        }
+    }
+
+    private func listDirectoryRecursively(at path: String, indent: String = "      ") {
+        let items = (try? fileManager.contentsOfDirectory(atPath: path)) ?? []
+        for item in items {
+            let fullPath = (path as NSString).appendingPathComponent(item)
+            var isDir: ObjCBool = false
+            fileManager.fileExists(atPath: fullPath, isDirectory: &isDir)
+            
+            if isDir.boolValue {
+                print("\(indent)DIR: \(item)")
+                listDirectoryRecursively(at: fullPath, indent: indent + "  ")
+            } else {
+                print("\(indent)FILE: \(item)")
+            }
         }
     }
 }
