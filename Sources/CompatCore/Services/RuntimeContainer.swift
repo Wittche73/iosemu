@@ -13,7 +13,7 @@ public enum RuntimeContainerFactory {
             logsRoot: rootURL.appending(path: "Logs", directoryHint: .isDirectory)
         )
         let store = GameManifestStore(manifestURL: rootURL.appending(path: "games.json"), fileSystem: fileSystem)
-        let prefixManager = PrefixManager(configuration: configuration, fileSystem: fileSystem)
+        let prefixManager = CorePrefixManager(configuration: configuration, fileSystem: fileSystem)
         let importer = GameImportService(
             configuration: configuration,
             fileSystem: fileSystem,

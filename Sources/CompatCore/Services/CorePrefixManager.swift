@@ -5,7 +5,7 @@ public protocol PrefixManaging: Sendable {
     func prefixURL(for game: GameRecord) -> URL
 }
 
-public actor PrefixManager: PrefixManaging {
+public actor CorePrefixManager: PrefixManaging {
     private let configuration: RuntimeConfiguration
     private let fileSystem: FileSystemProviding
 
