@@ -4,12 +4,14 @@ public enum RendererMode: String, Codable, CaseIterable, Sendable {
     case sdl
     case openGL
     case directXBridge
+    case metal
 
     public var displayName: String {
         switch self {
         case .sdl: return "SDL"
         case .openGL: return "OpenGL"
         case .directXBridge: return "DX Bridge"
+        case .metal: return "Metal"
         }
     }
 }

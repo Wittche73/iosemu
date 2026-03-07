@@ -23,7 +23,7 @@ public actor CorePrefixManager: PrefixManaging {
         return prefixURL
     }
 
-    public func prefixURL(for game: GameRecord) -> URL {
+    nonisolated public func prefixURL(for game: GameRecord) -> URL {
         configuration.prefixesRoot.appending(path: game.prefixRelativePath, directoryHint: .isDirectory)
     }
 }

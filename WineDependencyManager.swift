@@ -43,7 +43,7 @@ class WineDependencyManager {
         let system32 = "\(prefixPath)/drive_c/windows/system32"
         let coreDLLs = ["ntdll.dll", "kernel32.dll", "user32.dll", "gdi32.dll"]
         
-        print("   -> [DEPLOY] Temel Windows kütüphaneleri yerleştiriliyor...")
+        print("   -> [DEPLOY] Temel Windows kütüphaneleri yerleştiriliyor: \(system32)")
         for dll in coreDLLs {
             print("      + \(dll) -> system32/")
         }

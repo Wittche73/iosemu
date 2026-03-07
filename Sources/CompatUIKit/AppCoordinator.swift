@@ -9,6 +9,7 @@ public final class AppCoordinator {
         self.runtimeHost = runtimeHost
     }
 
+    @MainActor
     public func makeRootViewController() -> UIViewController {
         let viewModel = GameLibraryViewModel(runtimeHost: runtimeHost)
         return UINavigationController(rootViewController: GameLibraryViewController(viewModel: viewModel))

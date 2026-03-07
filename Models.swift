@@ -35,7 +35,7 @@ struct Game: Identifiable, Codable {
 }
 
 /// Girdi profili (dokunmatik/gamepad)
-struct InputProfile: Codable {
+struct LegacyInputProfile: Codable {
     let id: UUID
     var name: String
     var mapping: [String: String]

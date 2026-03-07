@@ -53,7 +53,7 @@ struct GameCardView: View {
                 .padding(.horizontal, 4)
             }
             .padding(12)
-            .background(Color(NSColor.windowBackgroundColor).opacity(0.5)) // macOS simülasyonu için, iOS'ta Color(.systemBackground)
+            .background(Color(UIColor.secondarySystemBackground).opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 24))
             .overlay(
                 RoundedRectangle(cornerRadius: 24)

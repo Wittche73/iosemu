@@ -19,21 +19,22 @@ class DisplayManager {
     
     #if os(iOS)
     private func setupNotifications() {
-        NotificationCenter.default.addObserver(forName: UIScreen.didConnectNotification, object: nil, queue: .main) { notification in
-            if let screen = notification.object as? UIScreen {
-                self.setupExternalScreen(screen)
+        NotificationCenter.default.addObserver(forName: UIScene.willConnectNotification, object: nil, queue: .main) { notification in
+            if let scene = notification.object as? UIWindowScene, scene.session.role == .windowExternalDisplayNonInteractive {
+                self.setupExternalScreen(scene)
             }
         }
         
-        NotificationCenter.default.addObserver(forName: UIScreen.didDisconnectNotification, object: nil, queue: .main) { _ in
-            self.tearDownExternalScreen()
+        NotificationCenter.default.addObserver(forName: UIScene.didDisconnectNotification, object: nil, queue: .main) { notification in
+            if let scene = notification.object as? UIWindowScene, scene.session.role == .windowExternalDisplayNonInteractive {
+                self.tearDownExternalScreen()
+            }
         }
     }
     
-    func setupExternalScreen(_ screen: UIScreen) {
-        print("📺 Harici ekran bağlandı: \(screen.bounds)")
-        externalWindow = UIWindow(frame: screen.bounds)
-        externalWindow?.screen = screen
+    func setupExternalScreen(_ scene: UIWindowScene) {
+        print("📺 Harici ekran bağlandı: \(scene.screen.bounds)")
+        externalWindow = UIWindow(windowScene: scene)
         
         let controller = UIViewController()
         controller.view.backgroundColor = .black
@@ -58,7 +59,10 @@ class DisplayManager {
     /// Şu an bir dış ekran bağlı mı?
     func isExternalDisplayConnected() -> Bool {
         #if os(iOS)
-        return UIScreen.screens.count > 1
+        return UIApplication.shared.connectedScenes.contains { scene in
+            guard let windowScene = scene as? UIWindowScene else { return false }
+            return windowScene.session.role == .windowExternalDisplayNonInteractive
+        }
         #else
         return false // Simülatör/Linux için varsayılan
         #endif
