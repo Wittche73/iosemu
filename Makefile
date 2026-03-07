@@ -31,3 +31,11 @@ LocalCompat_RESOURCE_FILES = $(shell find Resources -type f)
 LocalCompat_INSTALL_PATH = /Applications
 
 include $(THEOS_MAKE_PATH)/application.mk
+
+before-all::
+	@echo "==> Creating dummy framework directories..."
+	@mkdir -p layout/Applications/LocalCompat.app/Frameworks
+	@echo "==> Generating dummy libbox64.dylib for dlopen testing..."
+	@echo "void box64_main(int argc, const char** argv) { }" > dummy.c
+	@$(CC) -dynamiclib -o layout/Applications/LocalCompat.app/Frameworks/libbox64.dylib dummy.c
+	@rm dummy.c

@@ -46,9 +46,13 @@ class RuntimeLauncher {
         // 5. Dinamik Performans İzleme (AI Switch)
         DynamicJITManager.shared.startMonitoring()
         
-        // 6. Çevresel Değişkenlerin Hazırlanması (Simüle)
+        // 6. Çevresel Değişkenlerin Hazırlanması (Native Engine)
         let winePrefix = game.prefixPath
         let exePath = game.path
+        
+        setenv("WINEPREFIX", winePrefix, 1)
+        setenv("BOX64_LOG", "1", 1)
+        setenv("BOX64_DYNAREC", "1", 1)
         
         print("Set WINEPREFIX=\(winePrefix)")
         print("Command: box64 wine \(exePath)")
