@@ -8,7 +8,7 @@ static std::string last_error = "None";
 static void* box64_handle = nullptr;
 
 // Olası Box64 main loader fonksiyon prototipi
-typedef int (*box64_main_func)(int argc, const char** argv);
+typedef int (*box64_main_func)(int argc, const char** argv, char** env);
 
 extern "C" bool init_runtime() {
     std::cout << "[Box64 Engine Bridge] Initializing..." << std::endl;
@@ -60,27 +60,30 @@ extern "C" void send_joystick_button(int button, bool is_pressed) {}
 // Arka planda çalışacak olan ana oyun emülasyon döngüsü
 void execute_engine_thread(std::string exe_path, std::string prefix_path) {
     if (box64_handle) {
-        box64_main_func b64_main = (box64_main_func)dlsym(box64_handle, "main");
+        box64_main_func b64_main = (box64_main_func)dlsym(box64_handle, "box64_main");
         if (!b64_main) {
-            b64_main = (box64_main_func)dlsym(box64_handle, "box64_main");
+            b64_main = (box64_main_func)dlsym(box64_handle, "main");
         }
-        
+
         if (b64_main) {
             std::cout << "[Box64 Engine Bridge] Setting WINEPREFIX to: " << prefix_path << std::endl;
             setenv("WINEPREFIX", prefix_path.c_str(), 1);
-            setenv("BOX64_LOG", "1", 1); // Enable basic logging for box64
-
-            // Wine is the actual Linux ELF that Box64 runs. We point Wine to the .exe.
-            std::string wine_binary = prefix_path + "/drive_c/windows/system32/wine";
+            setenv("BOX64_LOG", "1", 1);
+            setenv("BOX64_DYNAREC", "1", 1);
             
-            std::cout << "[Box64 Engine Bridge] Executing natively: box64 " << wine_binary << " " << exe_path << std::endl;
+            // On iOS, we also need to set HOME to the prefix to avoid sandbox violations
+            setenv("HOME", prefix_path.c_str(), 1);
+
+            std::string wine_binary = prefix_path + "/drive_c/windows/system32/wine";
+            std::cout << "[Box64 Engine Bridge] Executing: box64 " << wine_binary << " " << exe_path << std::endl;
+            
             const char* argv[] = { "box64", wine_binary.c_str(), exe_path.c_str(), nullptr };
             
-            // Bu çağrı oyun kapanana kadar bloklar
-            int result = b64_main(3, argv);
+            extern char** environ;
+            int result = b64_main(3, argv, environ);
             std::cout << "[Box64 Engine Bridge] Execution finished with code: " << result << std::endl;
         } else {
-            std::cout << "[Box64 Engine Bridge] CRITICAL: Found library but missing 'main' or 'box64_main' symbol!" << std::endl;
+            std::cerr << "[Box64 Engine Bridge] CRITICAL: Missing 'box64_main' symbol!" << std::endl;
         }
     } else {
         std::cout << "[Simulation] Playing mock game: " << exe_path << " (Waiting 3 seconds) using prefix: " << prefix_path << std::endl;
