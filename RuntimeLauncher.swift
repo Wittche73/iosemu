@@ -61,7 +61,6 @@ class RuntimeLauncher {
         DynamicJITManager.shared.startMonitoring()
         
         // 6. Çevresel Değişkenlerin Hazırlanması (Native Engine)
-        let winePrefix = game.prefixPath
         let exePath = game.path
         
         // C++ motoru için çevresel değişkenlerin enjekte edilmesi
