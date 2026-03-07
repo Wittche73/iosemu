@@ -43,14 +43,29 @@ class WineDependencyManager {
         let options: FileManager.DirectoryEnumerationOptions = [.skipsHiddenFiles]
         guard let enumerator = fileManager.enumerator(at: sourceURL, includingPropertiesForKeys: nil, options: options) else { return }
         
+        let sourcePath = sourceURL.path
         for case let fileURL as URL in enumerator {
-            let relativePath = fileURL.path.replacingOccurrences(of: sourceURL.path, with: "")
+            let fullPath = fileURL.path
+            // Calculate relative path correctly
+            var relativePath = fullPath.replacingOccurrences(of: sourcePath, with: "")
+            if relativePath.hasPrefix("/") {
+                relativePath.removeFirst()
+            }
+            
+            if relativePath.isEmpty { continue }
+            
             let targetURL = destURL.appendingPathComponent(relativePath)
             
             do {
                 if fileURL.hasDirectoryPath {
                     try fileManager.createDirectory(at: targetURL, withIntermediateDirectories: true)
                 } else {
+                    // Create parent directory if it's a file but parent doesn't exist
+                    let parentDir = targetURL.deletingLastPathComponent()
+                    if !fileManager.fileExists(atPath: parentDir.path) {
+                        try fileManager.createDirectory(at: parentDir, withIntermediateDirectories: true)
+                    }
+                    
                     if !fileManager.fileExists(atPath: targetURL.path) {
                         try fileManager.copyItem(at: fileURL, to: targetURL)
                     }

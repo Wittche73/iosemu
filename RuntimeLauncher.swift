@@ -8,7 +8,21 @@ class RuntimeLauncher {
     
     /// Bir oyunu emülasyon katmanında başlatır
     func launch(game: Game) -> Bool {
-        print("--- RuntimeLauncher: Başlatma Hazırlığı ---")
+        // --- LOG YÖNLENDİRMESİ (En Başta) ---
+        let winePrefix = game.prefixPath
+        let logURL = URL(fileURLWithPath: winePrefix).appendingPathComponent("box64.log")
+        
+        // Ana dizini oluştur
+        try? FileManager.default.createDirectory(at: logURL.deletingLastPathComponent(), withIntermediateDirectories: true)
+        
+        let logPath = logURL.path
+        freopen(logPath.cString(using: .utf8), "w", stderr)
+        freopen(logPath.cString(using: .utf8), "w", stdout)
+        setvbuf(stdout, nil, _IONBF, 0)
+        setvbuf(stderr, nil, _IONBF, 0)
+        
+        print("--- RuntimeLauncher: Başlatma Hazırlığı [\(game.name)] ---")
+        print("Log File: \(logPath)")
         
         // 1. Performans Profili Uygulama
         PerformanceManager.shared.applyProfile(game.config.performanceProfile)
@@ -64,18 +78,11 @@ class RuntimeLauncher {
         print("Set HOME=\(winePrefix)")
         print("Command: box64 wine \(exePath)")
         
-        // KRİTİK FİX: Uygulama çöktüğünde C++ çıktısını yakalamak için stdout/stderr hapsediliyor
-        let logURL = URL(fileURLWithPath: winePrefix).appendingPathComponent("box64.log")
-        let logPath = logURL.path
+        // 10. Bulut Senkronizasyonu (PULL)
+        CloudSyncManager.shared.pullSaves(for: game)
         
-        // Klasörün varlığından emin ol (freopen başarısız olmasın diye)
-        try? FileManager.default.createDirectory(at: logURL.deletingLastPathComponent(), withIntermediateDirectories: true)
-        
-        freopen(logPath.cString(using: .utf8), "w", stderr)
-        freopen(logPath.cString(using: .utf8), "w", stdout)
-        setvbuf(stdout, nil, _IONBF, 0)
-        setvbuf(stderr, nil, _IONBF, 0)
-        print("--- NATIVE LOGGING REDIRECTED TO \(logPath) ---")
+        // 11. CPU Döngüsünü Başlat (Simüle)
+        print("✅ Emülasyon döngüsü başladı.")
 
         
         // 7. C++ Bridge Çağrıları
