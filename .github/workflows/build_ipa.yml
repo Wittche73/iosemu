@@ -1,0 +1,47 @@
+name: Build LocalCompat IPA
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Theos
+        uses: theos/setup-theos@master
+
+      - name: Build Package
+        run: |
+          make package FINALPACKAGE=1
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Create IPA
+        run: |
+          mkdir -p Payload
+          # Theos stages the app in .theos/obj/debug/ if not FINALPACKAGE, 
+          # or .theos/obj/ if it is. Let's find the .app
+          APP_PATH=$(find .theos/obj -name "*.app" | head -n 1)
+          if [ -z "$APP_PATH" ]; then
+            echo "Error: .app not found"
+            exit 1
+          fi
+          echo "Found app at: $APP_PATH"
+          cp -r "$APP_PATH" Payload/
+          zip -vr LocalCompat.ipa Payload/
+          mkdir -p packages
+          mv LocalCompat.ipa packages/LocalCompat.ipa
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LocalCompat-IPA
+          path: packages/LocalCompat.ipa

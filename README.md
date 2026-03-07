@@ -1,31 +1,28 @@
-# LocalCompat MVP
+# LocalCompat
 
-`LocalCompat`, iOS cihazlarda yerel calisan bir Windows oyun uyumluluk katmani icin MVP iskeletidir.
+iOS cihazlarda x86/x64 tabanlı Windows oyunlarını yerel (native) olarak çalıştırmak için bir uyumluluk katmanı.
 
-## Kapsam
+## 🚀 Özellikler
+- **CPU Emülasyonu:** Box64 / FEX entegrasyonu.
+- **Grafik:** MoltenVK & DXVK (DirectX -> Metal) desteği.
+- **Performans:** Apple MetalFX Upscaling entegrasyonu.
+- **Ses:** Düşük gecikmeli AVAudioSession altyapısı.
+- **Girdi:** Sanal Gamepad ve harici kol (MFi, PS, Xbox) desteği.
 
-- oyun ice aktarma ve kutuphane yonetimi
-- oyun basina izole prefix yasam dongusu
-- JIT kontrolu ve runtime baslatma kapisi
-- log toplama ve hata goruntuleme
-- dokunmatik/gamepad profili depolama
-- UIKit tabanli ekran iskeleti
+## 🛠 Teknik Mimari
+- **Frontend:** Swift / SwiftUI
+- **Backend:** C++ / Wine / Box64
+- **Build System:** Theos
 
-## Moduller
+## 📦 Kurulum (IPA)
+Bu repo üzerinde her commit sonrası otomatik olarak IPA dosyası derlenmektedir.
+1. [Actions](../../actions) sekmesine gidin.
+2. En son başarılı workflow çalışmasına tıklayın.
+3. **Artifacts** bölümünden `LocalCompat-IPA` dosyasını indirin.
+4. Sideloadly, AltStore veya SideStore ile cihazınıza yükleyin.
 
-- `CompatCore`: domain modelleri, depolama, import, prefix, runtime orkestrasyonu
-- `CompatUIKit`: kutuphane, detay, log ve import akislari icin UIKit bilesenleri
-- `CompatCoreTests`: depolama ve orkestrasyon davranis testleri
-
-## Temel API
-
-- `importGame(from:suggestedName:)`
-- `createPrefix(for:)`
-- `launchGame(id:)`
-- `stopGame(id:)`
-- `fetchLogs(for:)`
-- `updateInputProfile(for:profile:)`
-
-## Not
-
-Bu repo, Box64/Wine dusuk seviye bilesenlerini dogrudan getirmez. `RuntimeBridge`, gercek native entegrasyon icin dar bir sinir sunar.
+## 🛠 Geliştirme
+Projeyi yerel ortamda derlemek için Theos gereklidir.
+```bash
+make package
+```
