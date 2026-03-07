@@ -80,8 +80,8 @@ class RuntimeLauncher {
             return false
         }
         
-        // Wine üzerinden exe yükleme (Simüle)
-        if !load_exe(exePath) {
+        // Wine üzerinden exe yükleme
+        if !load_exe(exePath, winePrefix) {
             let error = String(cString: get_last_runtime_error())
             print("❌ C++ Runtime Hata: \(error)")
             DynamicJITManager.shared.stopMonitoring()

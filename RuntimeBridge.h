@@ -32,7 +32,7 @@ void send_joystick_axis(int axis, float value);
 void send_joystick_button(int button, bool is_pressed);
 
 /// Belirtilen yoldaki .exe dosyasını yükler
-bool load_exe(const char* path);
+bool load_exe(const char* path, const char* prefix_path);
 
 /// Bir CPU çevrimi koşturur (Simüle)
 void run_cpu_cycle(void);

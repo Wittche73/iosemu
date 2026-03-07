@@ -58,7 +58,7 @@ extern "C" void send_joystick_axis(int axis, float value) {}
 extern "C" void send_joystick_button(int button, bool is_pressed) {}
 
 // Arka planda çalışacak olan ana oyun emülasyon döngüsü
-void execute_engine_thread(std::string exe_path) {
+void execute_engine_thread(std::string exe_path, std::string prefix_path) {
     if (box64_handle) {
         box64_main_func b64_main = (box64_main_func)dlsym(box64_handle, "main");
         if (!b64_main) {
@@ -66,33 +66,41 @@ void execute_engine_thread(std::string exe_path) {
         }
         
         if (b64_main) {
-            std::cout << "[Box64 Engine Bridge] Executing binary natively: " << exe_path << std::endl;
-            const char* argv[] = { "box64", exe_path.c_str(), nullptr };
+            std::cout << "[Box64 Engine Bridge] Setting WINEPREFIX to: " << prefix_path << std::endl;
+            setenv("WINEPREFIX", prefix_path.c_str(), 1);
+            setenv("BOX64_LOG", "1", 1); // Enable basic logging for box64
+
+            // Wine is the actual Linux ELF that Box64 runs. We point Wine to the .exe.
+            std::string wine_binary = prefix_path + "/drive_c/windows/system32/wine";
+            
+            std::cout << "[Box64 Engine Bridge] Executing natively: box64 " << wine_binary << " " << exe_path << std::endl;
+            const char* argv[] = { "box64", wine_binary.c_str(), exe_path.c_str(), nullptr };
             
             // Bu çağrı oyun kapanana kadar bloklar
-            int result = b64_main(2, argv);
+            int result = b64_main(3, argv);
             std::cout << "[Box64 Engine Bridge] Execution finished with code: " << result << std::endl;
         } else {
             std::cout << "[Box64 Engine Bridge] CRITICAL: Found library but missing 'main' or 'box64_main' symbol!" << std::endl;
         }
     } else {
-        std::cout << "[Simulation] Playing mock game: " << exe_path << " (Waiting 3 seconds)" << std::endl;
+        std::cout << "[Simulation] Playing mock game: " << exe_path << " (Waiting 3 seconds) using prefix: " << prefix_path << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(3));
         std::cout << "[Simulation] Mock game exited cleanly." << std::endl;
     }
 }
 
-extern "C" bool load_exe(const char* path) {
-    if (path == nullptr) {
-        last_error = "Path is null";
+extern "C" bool load_exe(const char* path, const char* prefix_path) {
+    if (path == nullptr || prefix_path == nullptr) {
+        last_error = "Path or Prefix is null";
         return false;
     }
     
     std::string exe_path(path);
-    std::cout << "[C++] Dispatching execute command for: " << exe_path << std::endl;
+    std::string prefix(prefix_path);
+    std::cout << "[C++] Dispatching execute command for: " << exe_path << " with prefix: " << prefix << std::endl;
     
     // UI thread'inin kilitlenmesini engellemek için ana motora kontrolü ayrı bir thread'de veriyoruz
-    std::thread engine_thread(execute_engine_thread, exe_path);
+    std::thread engine_thread(execute_engine_thread, exe_path, prefix);
     engine_thread.detach();
     
     return true;
