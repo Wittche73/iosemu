@@ -36,7 +36,7 @@ struct LibraryView: View {
                         }
                         .padding(.horizontal)
                         
-                        LazyVGrid(columns: columns, spacing: 20) {
+                        LazyVGrid(columns: columns, alignment: .center, spacing: 20) {
                             ForEach(core.games) { game in
                                 VStack(spacing: 8) {
                                     GameCardView(game: game) {
@@ -56,8 +56,12 @@ struct LibraryView: View {
                                                 .foregroundColor(.blue)
                                                 .clipShape(Capsule())
                                         }
+                                    } else {
+                                        // Yer Tutucu (Button olmadığında hizalamanın bozulmaması için)
+                                        Spacer().frame(height: 28)
                                     }
                                 }
+                                .frame(maxHeight: .infinity, alignment: .top)
                             }
                             
                             // Yeni Oyun Ekle Butonu
@@ -80,6 +84,7 @@ struct LibraryView: View {
                                         .foregroundColor(.white.opacity(0.2))
                                 )
                             }
+                            .frame(maxHeight: .infinity, alignment: .top)
                         }
                         .padding(.horizontal)
                     }
