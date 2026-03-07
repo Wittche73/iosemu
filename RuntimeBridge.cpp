@@ -65,6 +65,7 @@ extern "C" void run_cpu_cycle() {
     // Simüle edilmiş CPU döngüsü
     static int cycle_count = 0;
     cycle_count++;
+    (void)cycle_count;
 }
 
 extern "C" const char* get_last_runtime_error() {
