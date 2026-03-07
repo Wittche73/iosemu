@@ -8,7 +8,10 @@ class WineDependencyManager {
     private let fileManager = FileManager.default
     
     /// Ana şablon prefix dizini (Tüm oyunlar buradan kopyalanır)
-    private let masterPrefixPath = "/home/f-rat/Documents/master_prefix"
+    private lazy var masterPrefixPath: String = {
+        let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return docs.appendingPathComponent("master_prefix").path
+    }()
     
     private init() {
         setupMasterPrefix()
