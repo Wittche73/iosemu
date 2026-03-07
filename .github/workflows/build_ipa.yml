@@ -20,7 +20,7 @@ jobs:
 
       - name: Build Package
         run: |
-          make package FINALPACKAGE=1 PACKAGE_FORMAT=ipa
+          make package FINALPACKAGE=1 DEBUG=0 FOR_RELEASE=1 PACKAGE_FORMAT=ipa
 
       - name: Locate and Move IPA
         run: |
