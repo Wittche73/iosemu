@@ -19,7 +19,9 @@ class WineDependencyManager {
     
     /// İlk kurulumda temiz bir Wine dizin yapısı oluşturur
     private func setupMasterPrefix() {
-        // Create basic structure
+        print("[DEBUG] Setting up Master Prefix at: \(masterPrefixPath)")
+        
+        // Temel yapıyı oluştur
         let dirs = [
             "\(masterPrefixPath)/drive_c/windows/system32",
             "\(masterPrefixPath)/drive_c/windows/syswow64",
@@ -27,143 +29,89 @@ class WineDependencyManager {
         ]
         
         for dir in dirs {
-            try? fileManager.createDirectory(atPath: dir, withIntermediateDirectories: true)
+            if !fileManager.fileExists(atPath: dir) {
+                try? fileManager.createDirectory(atPath: dir, withIntermediateDirectories: true)
+            }
         }
         
-        // Robustly copy wine_payload from app bundle
-        if let payloadURL = Bundle.main.url(forResource: "wine_payload", withExtension: nil) {
-            copyDirectoryContents(from: payloadURL, to: URL(fileURLWithPath: masterPrefixPath))
-            print("✅ WineDependencyManager: Master Prefix initialized with bundle payload.")
-        }
-        
+        // Paketten wine_payload'ı kopyala
+        syncPayload(to: masterPrefixPath)
         print("✅ WineDependencyManager: Master Prefix structure completed.")
     }
     
-    private func copyDirectoryContents(from sourceURL: URL, to destURL: URL) {
-        let options: FileManager.DirectoryEnumerationOptions = [.skipsHiddenFiles]
-        guard let enumerator = fileManager.enumerator(at: sourceURL, includingPropertiesForKeys: nil, options: options) else { return }
+    private func syncPayload(to targetPath: String) {
+        let bundlePath = Bundle.main.bundlePath
+        let payloadSourcePath = (bundlePath as NSString).appendingPathComponent("wine_payload")
         
-        let sourcePath = sourceURL.path
-        for case let fileURL as URL in enumerator {
-            let fullPath = fileURL.path
-            // Calculate relative path correctly
-            var relativePath = fullPath.replacingOccurrences(of: sourcePath, with: "")
-            if relativePath.hasPrefix("/") {
-                relativePath.removeFirst()
-            }
+        print("      [DEBUG] Payload Source: \(payloadSourcePath)")
+        
+        var isDir: ObjCBool = false
+        guard fileManager.fileExists(atPath: payloadSourcePath, isDirectory: &isDir), isDir.boolValue else {
+            print("      ❌ Hata: wine_payload bundle içinde bulunamadı!")
+            return
+        }
+        
+        recursiveSync(from: payloadSourcePath, to: targetPath)
+    }
+    
+    private func recursiveSync(from source: String, to target: String) {
+        let items = (try? fileManager.contentsOfDirectory(atPath: source)) ?? []
+        
+        for item in items {
+            let srcPath = (source as NSString).appendingPathComponent(item)
+            let dstPath = (target as NSString).appendingPathComponent(item)
             
-            if relativePath.isEmpty { continue }
-            
-            let targetURL = destURL.appendingPathComponent(relativePath)
-            
-            do {
-                if fileURL.hasDirectoryPath {
-                    try fileManager.createDirectory(at: targetURL, withIntermediateDirectories: true)
-                } else {
-                    // Create parent directory if it's a file but parent doesn't exist
-                    let parentDir = targetURL.deletingLastPathComponent()
-                    if !fileManager.fileExists(atPath: parentDir.path) {
-                        try fileManager.createDirectory(at: parentDir, withIntermediateDirectories: true)
+            var isDir: ObjCBool = false
+            if fileManager.fileExists(atPath: srcPath, isDirectory: &isDir) {
+                if isDir.boolValue {
+                    // Klasörse içeri gir
+                    if !fileManager.fileExists(atPath: dstPath) {
+                        try? fileManager.createDirectory(atPath: dstPath, withIntermediateDirectories: true)
                     }
-                    
-                    if !fileManager.fileExists(atPath: targetURL.path) {
-                        try fileManager.copyItem(at: fileURL, to: targetURL)
+                    recursiveSync(from: srcPath, to: dstPath)
+                } else {
+                    // Dosyaysa kopyala (Gerekirse overwrite yap)
+                    do {
+                        let isDLL = item.lowercased().hasSuffix(".dll") || item.lowercased() == "wine"
+                        
+                        if fileManager.fileExists(atPath: dstPath) {
+                            if isDLL {
+                                // DLL ise veya wine binary'si ise hep üstüne yaz (Güvenlik için)
+                                try? fileManager.removeItem(atPath: dstPath)
+                                try fileManager.copyItem(atPath: srcPath, toPath: dstPath)
+                                print("      * Updated: \(item)")
+                            }
+                        } else {
+                            try fileManager.copyItem(atPath: srcPath, toPath: dstPath)
+                            print("      + Deployed: \(item)")
+                        }
+                    } catch {
+                        print("      ❌ Failed to copy \(item): \(error)")
                     }
                 }
-            } catch {
-                print("      ⚠️ Failed to copy \(relativePath): \(error)")
             }
         }
     }
     
     /// Yeni bir oyun için master prefix'ten klonlama yapar
     func initializePrefix(for game: Game) {
-        print("--- WineDependencyManager: Prefix Klonlanıyor [\(game.name)] ---")
+        print("--- WineDependencyManager: Prefix Hazırlanıyor [\(game.name)] ---")
         
-        let destURL = URL(fileURLWithPath: game.prefixPath)
-        let sourceURL = URL(fileURLWithPath: masterPrefixPath)
-        
-        do {
-            if !fileManager.fileExists(atPath: destURL.path) {
-                try fileManager.copyItem(at: sourceURL, to: destURL)
-                print("   -> [CLONE SUCCESS] \(masterPrefixPath) to \(game.prefixPath)")
-            } else {
-                print("   -> [CLONE SKIP] Prefix already exists for \(game.name)")
+        if !fileManager.fileExists(atPath: game.prefixPath) {
+            do {
+                try fileManager.copyItem(atPath: masterPrefixPath, toPath: game.prefixPath)
+                print("   -> [CLONE SUCCESS] Master prefix copied to \(game.prefixPath)")
+            } catch {
+                print("   -> [CLONE ERROR] \(error)")
+                // Manuel oluşturmayı dene
+                try? fileManager.createDirectory(atPath: game.prefixPath, withIntermediateDirectories: true)
             }
-        } catch {
-            print("   -> [CLONE ERROR] Failed to clone prefix: \(error)")
+        } else {
+            print("   -> [CLONE SKIP] Prefix already exists.")
         }
         
-        // Temel DLL'leri yerleştir
-        deployCoreDLLs(to: game.prefixPath)
-    }
-    
-    private func deployCoreDLLs(to prefixPath: String) {
-        let destSys32 = "\(prefixPath)/drive_c/windows/system32"
-        print("   -> [DEPLOY] Temel kütüphaneler kontrol ediliyor: \(destSys32)")
-        
-        // --- DERİN TEŞHİS: Bundle içinde ne var? ---
-        if let bundlePath = Bundle.main.resourcePath {
-            print("[DEBUG] --- BUNDLE RECURSIVE LIST START ---")
-            listDirectoryRecursively(at: bundlePath)
-            print("[DEBUG] --- BUNDLE RECURSIVE LIST END ---")
-        }
-
-        guard let payloadURL = Bundle.main.url(forResource: "wine_payload", withExtension: nil) else {
-            print("      ❌ Hata: Uygulama paketinde wine_payload bulunamadı!")
-            return
-        }
-        
-        let sourceSys32 = payloadURL.appendingPathComponent("drive_c/windows/system32")
-        print("      [DEBUG] Payload Found: \(payloadURL.path)")
-        print("      [DEBUG] Source System32: \(sourceSys32.path)")
-        
-        do {
-            // Klasörün varlığını kontrol et
-            var isDir: ObjCBool = false
-            if !fileManager.fileExists(atPath: sourceSys32.path, isDirectory: &isDir) || !isDir.boolValue {
-                print("      ⚠️ Uyarı: Kaynak system32 klasörü bulunamadı veya klasör değil! İçerik taranıyor...")
-                listDirectoryRecursively(at: payloadURL.path)
-            }
-
-            let files = try fileManager.contentsOfDirectory(atPath: sourceSys32.path)
-            print("      [DEBUG] Found \(files.count) files in source system32")
-            
-            for file in files {
-                let src = sourceSys32.appendingPathComponent(file)
-                let dst = URL(fileURLWithPath: "\(destSys32)/\(file)")
-                
-                if !fileManager.fileExists(atPath: dst.path) {
-                    try fileManager.copyItem(at: src, to: dst)
-                    print("      + \(file) -> Deployed")
-                } else {
-                    print("      . \(file) -> Already present")
-                }
-            }
-        } catch {
-            print("      ❌ Hata: DLL'ler kopyalanamadı - \(error)")
-            // Alternatif: Root'a bak (flattening olmuş olabilir mi?)
-            print("      [DEBUG] Flattening check: Root'ta DLL var mı?")
-            let items = (try? fileManager.contentsOfDirectory(atPath: Bundle.main.bundlePath)) ?? []
-            for item in items where item.hasSuffix(".dll") {
-                print("      ! Found DLL in root: \(item)")
-            }
-        }
-    }
-
-    private func listDirectoryRecursively(at path: String, indent: String = "      ") {
-        let items = (try? fileManager.contentsOfDirectory(atPath: path)) ?? []
-        for item in items {
-            let fullPath = (path as NSString).appendingPathComponent(item)
-            var isDir: ObjCBool = false
-            fileManager.fileExists(atPath: fullPath, isDirectory: &isDir)
-            
-            if isDir.boolValue {
-                print("\(indent)DIR: \(item)")
-                listDirectoryRecursively(at: fullPath, indent: indent + "  ")
-            } else {
-                print("\(indent)FILE: \(item)")
-            }
-        }
+        // Her ihtimale karşı prefix içindeki dosyaları bundle'dan güncelle
+        // (Eksik DLL varsa tamamlar)
+        syncPayload(to: game.prefixPath)
     }
 }
