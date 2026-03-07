@@ -19,6 +19,7 @@ class WineDependencyManager {
     
     /// İlk kurulumda temiz bir Wine dizin yapısı oluşturur
     private func setupMasterPrefix() {
+        // Create basic structure
         let dirs = [
             "\(masterPrefixPath)/drive_c/windows/system32",
             "\(masterPrefixPath)/drive_c/windows/syswow64",
@@ -29,32 +30,35 @@ class WineDependencyManager {
             try? fileManager.createDirectory(atPath: dir, withIntermediateDirectories: true)
         }
         
-        // Copy wine payload from app bundle if it exists
+        // Robustly copy wine_payload from app bundle
         if let payloadURL = Bundle.main.url(forResource: "wine_payload", withExtension: nil) {
-            let winDir = "\(masterPrefixPath)/drive_c/windows"
-            
-            // For system32 specifically
-            let sourceSys32 = payloadURL.appendingPathComponent("drive_c/windows/system32")
-            let destSys32 = URL(fileURLWithPath: "\(winDir)/system32")
-            
-            if fileManager.fileExists(atPath: sourceSys32.path) {
-                do {
-                    let files = try fileManager.contentsOfDirectory(atPath: sourceSys32.path)
-                    for file in files {
-                        let src = sourceSys32.appendingPathComponent(file)
-                        let dst = destSys32.appendingPathComponent(file)
-                        if !fileManager.fileExists(atPath: dst.path) {
-                            try fileManager.copyItem(at: src, to: dst)
-                        }
-                    }
-                    print("✅ WineDependencyManager: Core payload copied to Master Prefix.")
-                } catch {
-                    print("❌ WineDependencyManager: Failed to copy payload - \(error)")
-                }
-            }
+            copyDirectoryContents(from: payloadURL, to: URL(fileURLWithPath: masterPrefixPath))
+            print("✅ WineDependencyManager: Master Prefix initialized with bundle payload.")
         }
         
-        print("✅ WineDependencyManager: Master Prefix iskeleti hazırlandı.")
+        print("✅ WineDependencyManager: Master Prefix structure completed.")
+    }
+    
+    private func copyDirectoryContents(from sourceURL: URL, to destURL: URL) {
+        let options: FileManager.DirectoryEnumerationOptions = [.skipsHiddenFiles]
+        guard let enumerator = fileManager.enumerator(at: sourceURL, includingPropertiesForKeys: nil, options: options) else { return }
+        
+        for case let fileURL as URL in enumerator {
+            let relativePath = fileURL.path.replacingOccurrences(of: sourceURL.path, with: "")
+            let targetURL = destURL.appendingPathComponent(relativePath)
+            
+            do {
+                if fileURL.hasDirectoryPath {
+                    try fileManager.createDirectory(at: targetURL, withIntermediateDirectories: true)
+                } else {
+                    if !fileManager.fileExists(atPath: targetURL.path) {
+                        try fileManager.copyItem(at: fileURL, to: targetURL)
+                    }
+                }
+            } catch {
+                print("      ⚠️ Failed to copy \(relativePath): \(error)")
+            }
+        }
     }
     
     /// Yeni bir oyun için master prefix'ten klonlama yapar
@@ -80,16 +84,32 @@ class WineDependencyManager {
     }
     
     private func deployCoreDLLs(to prefixPath: String) {
-        let system32 = "\(prefixPath)/drive_c/windows/system32"
-        let coreDLLs = ["ntdll.dll", "kernel32.dll", "user32.dll", "gdi32.dll"]
+        let destSys32 = "\(prefixPath)/drive_c/windows/system32"
         
-        print("   -> [DEPLOY] Temel Windows kütüphaneleri yerleştiriliyor/kontrol ediliyor: \(system32)")
-        for dll in coreDLLs {
-            if fileManager.fileExists(atPath: "\(system32)/\(dll)") {
-                print("      + \(dll) -> Present")
-            } else {
-                print("      - \(dll) -> Missing!")
+        print("   -> [DEPLOY] Temel kütüphaneler kontrol ediliyor: \(destSys32)")
+        
+        guard let payloadURL = Bundle.main.url(forResource: "wine_payload", withExtension: nil) else {
+            print("      ❌ Hata: Uygulama paketinde wine_payload bulunamadı!")
+            return
+        }
+        
+        let sourceSys32 = payloadURL.appendingPathComponent("drive_c/windows/system32")
+        
+        do {
+            let files = try fileManager.contentsOfDirectory(atPath: sourceSys32.path)
+            for file in files {
+                let src = sourceSys32.appendingPathComponent(file)
+                let dst = URL(fileURLWithPath: "\(destSys32)/\(file)")
+                
+                if !fileManager.fileExists(atPath: dst.path) {
+                    try fileManager.copyItem(at: src, to: dst)
+                    print("      + \(file) -> Deployed")
+                } else {
+                    print("      . \(file) -> Already present")
+                }
             }
+        } catch {
+            print("      ❌ Hata: DLL'ler kopyalanamadı - \(error)")
         }
     }
 }
