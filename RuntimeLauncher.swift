@@ -65,7 +65,12 @@ class RuntimeLauncher {
         print("Command: box64 wine \(exePath)")
         
         // KRİTİK FİX: Uygulama çöktüğünde C++ çıktısını yakalamak için stdout/stderr hapsediliyor
-        let logPath = URL(fileURLWithPath: winePrefix).appendingPathComponent("box64.log").path
+        let logURL = URL(fileURLWithPath: winePrefix).appendingPathComponent("box64.log")
+        let logPath = logURL.path
+        
+        // Klasörün varlığından emin ol (freopen başarısız olmasın diye)
+        try? FileManager.default.createDirectory(at: logURL.deletingLastPathComponent(), withIntermediateDirectories: true)
+        
         freopen(logPath.cString(using: .utf8), "w", stderr)
         freopen(logPath.cString(using: .utf8), "w", stdout)
         setvbuf(stdout, nil, _IONBF, 0)

@@ -4,6 +4,14 @@
 #include <dlfcn.h>
 #include <thread>
 
+#ifdef __APPLE__
+#include <crt_externs.h>
+#define GET_ENVIRON() (*_NSGetEnviron())
+#else
+extern char** environ;
+#define GET_ENVIRON() environ
+#endif
+
 static std::string last_error = "None";
 static void* box64_handle = nullptr;
 
@@ -85,9 +93,10 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
             
             const char* argv[] = { "box64", wine_binary.c_str(), exe_path.c_str(), nullptr };
             
-            extern char** environ;
-            int result = b64_main(3, argv, environ);
-            std::cout << "[Box64 Engine Bridge] Execution finished with code: " << result << std::endl;
+            printf("[Box64 Engine Bridge] Calling b64_main with 3 args...\n");
+            int result = b64_main(3, argv, GET_ENVIRON());
+            printf("[Box64 Engine Bridge] Execution finished with code: %d\n", result);
+
         } else {
             std::cerr << "[Box64 Engine Bridge] CRITICAL: Missing 'box64_main' symbol!" << std::endl;
         }
