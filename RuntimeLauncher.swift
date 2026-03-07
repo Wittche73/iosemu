@@ -50,12 +50,20 @@ class RuntimeLauncher {
         let winePrefix = game.prefixPath
         let exePath = game.path
         
+        // C++ motoru için çevresel değişkenlerin enjekte edilmesi
         setenv("WINEPREFIX", winePrefix, 1)
         setenv("BOX64_LOG", "1", 1)
         setenv("BOX64_DYNAREC", "1", 1)
         
+        // KRİTİK FİX: Box64 veya Wine, iOS Sandbox dışında `/home` klasörü
+        // oluşturmaya çalışıp kilitleniyordu (sandbox violation deny file-write-create /home).
+        // Bu yüzden HOME yetkisini uygulamanın kendi Documents sandbox'ına hapsediyoruz.
+        setenv("HOME", winePrefix, 1)
+        
         print("Set WINEPREFIX=\(winePrefix)")
+        print("Set HOME=\(winePrefix)")
         print("Command: box64 wine \(exePath)")
+
         
         // 7. C++ Bridge Çağrıları
         if !init_runtime() {
