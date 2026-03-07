@@ -18,6 +18,19 @@ jobs:
       - name: Setup Theos
         uses: Randomblock1/theos-action@v1
 
+      - name: Build Box64 Engine
+        run: |
+          mkdir -p bin/box64/build_ios
+          cd bin/box64/build_ios
+          cmake ../source \
+            -DCMAKE_TOOLCHAIN_FILE=../ios.toolchain.cmake \
+            -DARM64=ON \
+            -DIOS=ON \
+            -DBUILD_SHARED_LIBS=ON \
+            -DCMAKE_BUILD_TYPE=Release
+          make -j$(sysctl -n hw.ncpu)
+          cp libbox64.dylib ../../../Frameworks/libbox64.dylib
+
       - name: Build Package
         run: |
           make package FINALPACKAGE=1 DEBUG=0 FOR_RELEASE=1 PACKAGE_FORMAT=ipa
