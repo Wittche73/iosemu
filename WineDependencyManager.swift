@@ -72,18 +72,25 @@ class WineDependencyManager {
                 } else {
                     // Dosyaysa kopyala (Gerekirse overwrite yap)
                     do {
-                        let isDLL = item.lowercased().hasSuffix(".dll") || item.lowercased() == "wine"
+                        let isDLL = item.lowercased().hasSuffix(".dll")
+                        let isWine = item.lowercased() == "wine"
                         
-                        if fileManager.fileExists(atPath: dstPath) {
-                            if isDLL {
+                        var finalDstPath = dstPath
+                        if isWine {
+                            // Çakışma olmaması için wine binary'sini wine.bin olarak kopyalayabiliriz
+                            finalDstPath = (target as NSString).appendingPathComponent("wine.bin")
+                        }
+                        
+                        if fileManager.fileExists(atPath: finalDstPath) {
+                            if isDLL || isWine {
                                 // DLL ise veya wine binary'si ise hep üstüne yaz (Güvenlik için)
-                                try? fileManager.removeItem(atPath: dstPath)
-                                try fileManager.copyItem(atPath: srcPath, toPath: dstPath)
-                                print("      * Updated: \(item)")
+                                try? fileManager.removeItem(atPath: finalDstPath)
+                                try fileManager.copyItem(atPath: srcPath, toPath: finalDstPath)
+                                print("      * Updated: \(item) -> \(isWine ? "wine.bin" : item)")
                             }
                         } else {
-                            try fileManager.copyItem(atPath: srcPath, toPath: dstPath)
-                            print("      + Deployed: \(item)")
+                            try fileManager.copyItem(atPath: srcPath, toPath: finalDstPath)
+                            print("      + Deployed: \(item) -> \(isWine ? "wine.bin" : item)")
                         }
                     } catch {
                         print("      ❌ Failed to copy \(item): \(error)")

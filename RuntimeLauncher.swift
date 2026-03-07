@@ -74,6 +74,10 @@ class RuntimeLauncher {
         setenv("WINEPREFIX", winePrefix, 1)
         setenv("BOX64_LOG", "1", 1)
         setenv("BOX64_DYNAREC", "1", 1)
+        setenv("WINEDEBUG", "+all", 1) // Hataları görmek için debug açıyoruz
+        
+        let wineBinPath = "\(winePrefix)/drive_c/windows/system32/wine.bin"
+        setenv("WINEPATH", "\(winePrefix)/drive_c/windows/system32", 1)
         
         // KRİTİK FİX: Box64 veya Wine, iOS Sandbox dışında `/home` klasörü
         // oluşturmaya çalışıp kilitleniyordu (sandbox violation deny file-write-create /home).
@@ -82,7 +86,8 @@ class RuntimeLauncher {
         
         print("Set WINEPREFIX=\(winePrefix)")
         print("Set HOME=\(winePrefix)")
-        print("Command: box64 wine \(exePath)")
+        print("Set WINEDEBUG=+all")
+        print("Command: box64 \(wineBinPath) \(exePath)")
         
         // 10. Bulut Senkronizasyonu (PULL)
         CloudSyncManager.shared.pullSaves(for: game)
@@ -99,7 +104,7 @@ class RuntimeLauncher {
         }
         
         // Wine üzerinden exe yükleme
-        if !load_exe(exePath, winePrefix) {
+        if !load_exe(exePath, wineBinPath) {
             let error = String(cString: get_last_runtime_error())
             print("❌ C++ Runtime Hata: \(error)")
             DynamicJITManager.shared.stopMonitoring()
