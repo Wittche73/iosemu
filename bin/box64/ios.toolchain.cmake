@@ -1,0 +1,25 @@
+set(CMAKE_SYSTEM_NAME iOS)
+set(CMAKE_SYSTEM_PROCESSOR arm64)
+
+# SDK Path (Theos or local SDK)
+if(NOT DEFINED IOS_SDK_PATH)
+    set(IOS_SDK_PATH "/home/f-rat/theos/sdks/iPhoneOS.sdk")
+endif()
+
+set(CMAKE_OSX_SYSROOT ${IOS_SDK_PATH})
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
+
+# Compilation flags for iOS arm64
+set(TARGET_TRIPLE arm64-apple-ios16.0)
+set(CMAKE_C_FLAGS "-target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH}")
+set(CMAKE_CXX_FLAGS "-target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH}")
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
+# Fix for "install TARGETS given no BUNDLE DESTINATION"
+set(CMAKE_MACOSX_BUNDLE OFF)
+set(CMAKE_INSTALL_BUNDLEDIR "bin")

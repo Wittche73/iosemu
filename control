@@ -1,0 +1,9 @@
+Package: com.yourcompany.localcompat
+Name: LocalCompat
+Depends: firmware (>= 16.0)
+Architecture: iphoneos-arm
+Description: High-performance x86/x64 game emulator for iOS.
+Maintainer: Antigravity AI
+Author: Antigravity AI
+Section: Games
+Version: 1.0.0
