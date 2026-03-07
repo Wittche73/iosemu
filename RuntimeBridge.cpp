@@ -80,6 +80,10 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
         }
 
         if (b64_main) {
+            // Log dosyasına anında yazılması için tamponlamayı kapat
+            setvbuf(stdout, NULL, _IONBF, 0);
+            setvbuf(stderr, NULL, _IONBF, 0);
+
             std::cout << "[Box64 Engine Bridge] Setting WINEPREFIX to: " << prefix_path << std::endl;
             
             // Eğer prefix_path bir dosya ise (wine.bin gibi), klasör kısmını al
@@ -87,30 +91,32 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
             std::string wine_binary = prefix_path;
             
             if (prefix_path.find(".bin") != std::string::npos || prefix_path.find("/wine") != std::string::npos) {
-                // Bu bir binary yolu, prefix değil.
-                // drive_c/windows/system32/wine.bin -> 3 seviye yukarı çık
                 size_t pos = prefix_path.find("/drive_c");
                 if (pos != std::string::npos) {
                     actual_prefix = prefix_path.substr(0, pos);
                 }
-            } else {
-                // Bu bir prefix yolu, wine binary'sini standart yerde ara
-                wine_binary = prefix_path + "/drive_c/windows/system32/wine.bin";
             }
 
             std::cout << "[Box64 Engine Bridge] Actual Prefix: " << actual_prefix << std::endl;
-            std::cout << "[Box64 Engine Bridge] Wine Binary: " << wine_binary << std::endl;
-
+            
             setenv("WINEPREFIX", actual_prefix.c_str(), 1);
             setenv("HOME", actual_prefix.c_str(), 1);
-            setenv("BOX64_LOG", "1", 1);
+            setenv("BOX64_LOG", "3", 1); // Daha detaylı log
             setenv("BOX64_DYNAREC", "1", 1);
+            setenv("BOX64_SHOW_JOYSTICK", "1", 1);
+
+            // X86_64 kütüphanelerinin aranacağı yer (Wine DLL'lerinin olduğu yer)
+            std::string wine_lib_path = actual_prefix + "/drive_c/windows/system32";
+            setenv("BOX64_LD_LIBRARY_PATH", wine_lib_path.c_str(), 1);
 
             const char* argv[] = { "box64", wine_binary.c_str(), exe_path.c_str(), nullptr };
             
-            printf("[Box64 Engine Bridge] Calling b64_main with 3 args...\n");
+            printf("[Box64 Engine Bridge] Calling b64_main(argc=3, bin=%s, exe=%s)...\n", wine_binary.c_str(), exe_path.c_str());
+            fflush(stdout);
+
             int result = b64_main(3, argv, GET_ENVIRON());
             printf("[Box64 Engine Bridge] Execution finished with code: %d\n", result);
+            fflush(stdout);
 
         } else {
             std::cerr << "[Box64 Engine Bridge] CRITICAL: Missing 'box64_main' symbol!" << std::endl;
