@@ -21,7 +21,7 @@ ADLINK:BOOL=OFF
 ANDROID:BOOL=OFF
 
 //Set to ON if targeting a generic ARM64 based device
-ARM64:BOOL=1
+ARM64:BOOL=ON
 
 //Set to ON to use ARM Dynamic Recompilation
 ARM_DYNAREC:BOOL=ON
@@ -40,7 +40,7 @@ BOX32:BOOL=OFF
 BOX32_BINFMT:BOOL=OFF
 
 //No help, variable specified on the command line.
-BUILD_SHARED_LIBS:UNINITIALIZED=OFF
+BUILD_SHARED_LIBS:UNINITIALIZED=ON
 
 //Set to ON if running in CI
 CI:BOOL=OFF
@@ -249,8 +249,8 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/ios.toolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=../ios.toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -283,7 +283,7 @@ GDBJIT:BOOL=OFF
 HAVE_TRACE:BOOL=OFF
 
 //No help, variable specified on the command line.
-IOS:UNINITIALIZED=1
+IOS:UNINITIALIZED=ON
 
 //Set to ON if targeting an Loongarch64 based device
 LARCH64:BOOL=OFF
@@ -311,7 +311,7 @@ NOALIGN:BOOL=OFF
 NOGIT:BOOL=OFF
 
 //Set to ON to avoid fixing the load address of Box64
-NOLOADADDR:BOOL=OFF
+NOLOADADDR:BOOL=ON
 
 //Set ON to not install config files
 NO_CONF_INSTALL:BOOL=OFF
@@ -605,6 +605,8 @@ _Python3_EXECUTABLE:INTERNAL=/usr/bin/python3
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;7;64;<none>;cpython-313-x86_64-linux-gnu.so;abi3;/usr/lib/python3.13;/usr/lib/python3.13;/usr/local/lib/python3.13/dist-packages;/usr/local/lib/python3.13/dist-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=4c8bfa8951e99fa32e4000a94f8c04a2
+//Interpreter reason failure
+_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

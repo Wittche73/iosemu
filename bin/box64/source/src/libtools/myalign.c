@@ -3,10 +3,14 @@
 #include <string.h>
 #include <stdint.h>
 #include <wchar.h>
+#ifndef __APPLE__
 #include <sys/epoll.h>
+#endif
 #include <fts.h>
 #include <sys/stat.h>
+#ifndef __APPLE__
 #include <sys/sem.h>
+#endif
 #include <pthread.h>
 
 #include "x64emu.h"
@@ -557,9 +561,15 @@ void UnalignStat64(const void* source, void* dest)
     x64st->st_size     = st->st_size;
     x64st->st_blksize  = st->st_blksize;
     x64st->st_blocks   = st->st_blocks;
+#ifdef __APPLE__
+    x64st->st_atim     = st->st_atimespec;
+    x64st->st_mtim     = st->st_mtimespec;
+    x64st->st_ctim     = st->st_ctimespec;
+#else
     x64st->st_atim     = st->st_atim;
     x64st->st_mtim     = st->st_mtim;
     x64st->st_ctim     = st->st_ctim;
+#endif
 }
 
 void AlignStat64(const void* source, void* dest)
@@ -577,9 +587,15 @@ void AlignStat64(const void* source, void* dest)
     st->st_size     = x64st->st_size;
     st->st_blksize  = x64st->st_blksize;
     st->st_blocks   = x64st->st_blocks;
+#ifdef __APPLE__
+    st->st_atimespec = x64st->st_atim;
+    st->st_mtimespec = x64st->st_mtim;
+    st->st_ctimespec = x64st->st_ctim;
+#else
     st->st_atim     = x64st->st_atim;
     st->st_mtim     = x64st->st_mtim;
     st->st_ctim     = x64st->st_ctim;
+#endif
 }
 
 struct __attribute__((packed)) x64_epoll_event {
@@ -587,6 +603,7 @@ struct __attribute__((packed)) x64_epoll_event {
     uint64_t            data;
 };
 // Arm -> x64
+#ifndef __APPLE__
 void UnalignEpollEvent(void* dest, void* source, int nbr)
 {
     struct x64_epoll_event *x64_struct = (struct x64_epoll_event*)dest;
@@ -599,8 +616,10 @@ void UnalignEpollEvent(void* dest, void* source, int nbr)
         --nbr;
     }
 }
+#endif
 
 // x64 -> Arm
+#ifndef __APPLE__
 void AlignEpollEvent(void* dest, void* source, int nbr)
 {
     struct x64_epoll_event *x64_struct = (struct x64_epoll_event*)source;
@@ -613,7 +632,9 @@ void AlignEpollEvent(void* dest, void* source, int nbr)
         --nbr;
     }
 }
+#endif
 
+#ifndef __APPLE__
 struct __attribute__((packed)) x64_semid_ds {
     struct ipc_perm sem_perm;
     time_t sem_otime;
@@ -624,7 +645,9 @@ struct __attribute__((packed)) x64_semid_ds {
     unsigned long _reserved3;
     unsigned long _reserved4;
 };
+#endif
 
+#ifndef __APPLE__
 void UnalignSemidDs(void *dest, const void* source)
 {
     struct x64_semid_ds *x64_struct = (struct x64_semid_ds*)dest;
@@ -646,6 +669,7 @@ void AlignSemidDs(void *dest, const void* source)
     arm_struct->sem_ctime = x64_struct->sem_ctime;
     arm_struct->sem_nsems = x64_struct->sem_nsems;
 }
+#endif
 
 uintptr_t getVArgs(x64emu_t* emu, int pos, uintptr_t* b, int N)
 {

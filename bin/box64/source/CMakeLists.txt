@@ -505,13 +505,13 @@ else()
         "${BOX64_ROOT}/src/emu/x86syscall.c"
     )
 endif()
-if(NOT ANDROID)
+if(NOT ANDROID AND NOT APPLE)
     list(APPEND ELFLOADER_SRC
         "${BOX64_ROOT}/src/libtools/obstack.c"
     )
 endif()
 
-if(NOT STATICBUILD AND NOT ANDROID)
+if(NOT STATICBUILD AND NOT ANDROID AND NOT APPLE)
     list(APPEND ELFLOADER_SRC
         "${BOX64_ROOT}/src/libtools/libdl.c"
         "${BOX64_ROOT}/src/libtools/vulkanoverlay.c"
@@ -1285,7 +1285,11 @@ add_library(interpreter OBJECT ${INTERPRETER})
 add_library(mainobj OBJECT ${OS_LINUX_SRC} ${ELFLOADER_SRC} ${WRAPPEDS} ${WRAPPEDS32})
 add_dependencies(mainobj generate_git_head_target)
 
-add_executable(${BOX64})
+if(BUILD_SHARED_LIBS)
+    add_library(${BOX64} SHARED)
+else()
+    add_executable(${BOX64})
+endif()
 target_link_libraries(${BOX64} mainobj)
 set_target_properties(${BOX64} PROPERTIES ENABLE_EXPORTS ON)
 add_dependencies(${BOX64} WRAPPERS)
@@ -1304,6 +1308,8 @@ else()
         else()
         target_link_libraries(${BOX64} c m dl)
         endif()
+    elseif(IOS OR APPLE)
+        target_link_libraries(${BOX64} c m dl pthread resolv util c)
     else()
 	    set_property(TARGET ${BOX64} APPEND_STRING PROPERTY LINK_FLAGS "-Wl,--no-as-needed -lc -lm -ldl -lrt -lpthread -lresolv -lutil -Wl,--as-needed -pthread ")
 		target_link_libraries(${BOX64} c m dl pthread resolv util c)

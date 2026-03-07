@@ -4,6 +4,13 @@
 #include <string.h>
 
 #include "debug.h"
+
+#ifdef __APPLE__
+#include <mach/mach.h>
+#define REG_PSTATE(m) (m->__ss.__cpsr)
+#else
+#define REG_PSTATE(m) (m.pstate)
+#endif
 #include "dynablock.h"
 #include "x64emu.h"
 #include "emu/x64emu_private.h"
@@ -307,22 +314,25 @@ void adjust_arch(dynablock_t* db, x64emu_t* emu, ucontext_t* p, uintptr_t x64pc)
             //return;
         }
         if(flags->nf) {
-            CONDITIONAL_SET_FLAG(p->uc_mcontext.pstate&(1<<NZCV_N), F_SF);
+            CONDITIONAL_SET_FLAG(REG_PSTATE(p->uc_mcontext)&(1<<NZCV_N), F_SF);
         }
         if(flags->vf) {
-            CONDITIONAL_SET_FLAG(p->uc_mcontext.pstate&(1<<NZCV_V), F_OF);
+            CONDITIONAL_SET_FLAG(REG_PSTATE(p->uc_mcontext)&(1<<NZCV_V), F_OF);
         }
         if(flags->eq) {
-            CONDITIONAL_SET_FLAG(p->uc_mcontext.pstate&(1<<NZCV_Z), F_ZF);
+            CONDITIONAL_SET_FLAG(REG_PSTATE(p->uc_mcontext)&(1<<NZCV_Z), F_ZF);
         }
         if(flags->cf) {
             if(flags->inv_cf) {
-                CONDITIONAL_SET_FLAG((p->uc_mcontext.pstate&(1<<NZCV_C))==0, F_CF);
+                CONDITIONAL_SET_FLAG((REG_PSTATE(p->uc_mcontext)&(1<<NZCV_C))==0, F_CF);
             } else {
-                CONDITIONAL_SET_FLAG(p->uc_mcontext.pstate&(1<<NZCV_C), F_CF);
+                CONDITIONAL_SET_FLAG(REG_PSTATE(p->uc_mcontext)&(1<<NZCV_C), F_CF);
             }
         }
     }
+#ifdef __APPLE__
+    _STRUCT_ARM_NEON_STATE64 *fpsimd = &p->uc_mcontext->__ns;
+#else
     struct fpsimd_context *fpsimd = NULL;
     // find fpsimd struct
     {
@@ -334,6 +344,7 @@ void adjust_arch(dynablock_t* db, x64emu_t* emu, ucontext_t* p, uintptr_t x64pc)
                 ff = (struct _aarch64_ctx*)((uintptr_t)ff + ff->size);
         }
     }
+#endif
     if(sse) {
         dynarec_log_prefix(0, LOG_INFO, " sse[%x (fpsimd=%p)] ", sse->sse, fpsimd);
         for(int i=0; i<16; ++i)
@@ -344,7 +355,11 @@ void adjust_arch(dynablock_t* db, x64emu_t* emu, ucontext_t* p, uintptr_t x64pc)
                 } else {
                     idx = XMM0 + i;
                 }
+#ifdef __APPLE__
+                emu->xmm[i].u128 = fpsimd->__v[idx];
+#else
                 emu->xmm[i].u128 = fpsimd->vregs[idx];
+#endif
             }
     }
     if(ymm) {
@@ -357,7 +372,11 @@ void adjust_arch(dynablock_t* db, x64emu_t* emu, ucontext_t* p, uintptr_t x64pc)
                 } else {
                     idx = EMM0 + i;
                 }
+#ifdef __APPLE__
+                emu->ymm[i].u128 = fpsimd->__v[idx];
+#else
                 emu->ymm[i].u128 = fpsimd->vregs[idx];
+#endif
             }
             if(ymm->ymm0&(1<<i))
                 emu->ymm[i].u128 = 0;
@@ -368,7 +387,11 @@ void adjust_arch(dynablock_t* db, x64emu_t* emu, ucontext_t* p, uintptr_t x64pc)
         for(int i=0; i<8; ++i)
             if(fpsimd && (mmx->mmx>>i)&1) {
                 int idx = EMM0 + i;
+#ifdef __APPLE__
+                emu->mmx[i].q = fpsimd->__v[idx]&0xffffffffffffffffLL;
+#else
                 emu->mmx[i].q = fpsimd->vregs[idx]&0xffffffffffffffffLL;
+#endif
             }
     }
     if(x87) {
@@ -380,13 +403,25 @@ void adjust_arch(dynablock_t* db, x64emu_t* emu, ucontext_t* p, uintptr_t x64pc)
                 int t = (x87->x87_type>>(i*2))&0x3;
                 switch (t) {
                     case X87_ST_F:
+#ifdef __APPLE__
+                        emu->x87[(emu->top+i)&7].d = *(float*)&fpsimd->__v[idx];
+#else
                         emu->x87[(emu->top+i)&7].d = *(float*)&fpsimd->vregs[idx];
+#endif
                         break;
                     case X87_ST_I64:
+#ifdef __APPLE__
+                        emu->x87[(emu->top+i)&7].d = *(int64_t*)&fpsimd->__v[idx];
+#else
                         emu->x87[(emu->top+i)&7].d = *(int64_t*)&fpsimd->vregs[idx];
+#endif
                         break;
                     case X87_ST_D:
+#ifdef __APPLE__
+                        emu->x87[(emu->top+i)&7].d = *(double*)&fpsimd->__v[idx];
+#else
                         emu->x87[(emu->top+i)&7].d = *(double*)&fpsimd->vregs[idx];
+#endif
                         break;
                 }
             }

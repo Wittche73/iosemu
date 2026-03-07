@@ -337,12 +337,12 @@ CMakeFiles/test_interpreter.dir/clean:
 # Target rules for target CMakeFiles/dynarec.dir
 
 # All Build rule for target.
-CMakeFiles/dynarec.dir/all: CMakeFiles/native_pass1.dir/all
+CMakeFiles/dynarec.dir/all: CMakeFiles/native_pass2.dir/all
+CMakeFiles/dynarec.dir/all: CMakeFiles/native_pass3.dir/all
 CMakeFiles/dynarec.dir/all: CMakeFiles/dynarec_native.dir/all
 CMakeFiles/dynarec.dir/all: CMakeFiles/native_pass0.dir/all
-CMakeFiles/dynarec.dir/all: CMakeFiles/native_pass3.dir/all
 CMakeFiles/dynarec.dir/all: CMakeFiles/test_interpreter.dir/all
-CMakeFiles/dynarec.dir/all: CMakeFiles/native_pass2.dir/all
+CMakeFiles/dynarec.dir/all: CMakeFiles/native_pass1.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynarec.dir/build.make CMakeFiles/dynarec.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynarec.dir/build.make CMakeFiles/dynarec.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num= "Built target dynarec"

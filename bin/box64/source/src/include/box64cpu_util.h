@@ -2,7 +2,7 @@
 #define __BOX64CPU_UTIL_H_
 
 #include <stdint.h>
-#include "emu/x64emu_private.h"
+#include "../emu/x64emu_private.h"
 #include "box64context.h"
 #include "regs.h"
 

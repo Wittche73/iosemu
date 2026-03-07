@@ -4,7 +4,9 @@
 #include <string.h>
 #include <dlfcn.h>
 #include <elf.h>
+#ifndef __APPLE__
 #include <link.h>
+#endif
 
 #include "wrappedlibs.h"
 

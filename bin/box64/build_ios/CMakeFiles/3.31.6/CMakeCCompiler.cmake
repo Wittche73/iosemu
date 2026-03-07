@@ -75,7 +75,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/f-rat/.local/share/swiftly/toolchains/6.2.3/usr/lib/clang/17/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/f-rat/.local/share/swiftly/toolchains/6.2.3/usr/lib/clang/17/include;/home/f-rat/theos/sdks/iPhoneOS.sdk/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

@@ -16,6 +16,14 @@
 #ifndef DT_GNU_HASH
 #define DT_GNU_HASH 0x6ffffef5
 #endif
+#ifdef __APPLE__
+#ifndef ELFMAG
+#define ELFMAG "\177ELF"
+#endif
+#ifndef SELFMAG
+#define SELFMAG 4
+#endif
+#endif
 
 static int LoadSH(FILE *f, Elf64_Shdr *s, void** SH, const char* name, uint32_t type)
 {

@@ -9,7 +9,7 @@ typedef struct complexl_s { long double r; long double i;} complexl_t;
 #endif //__COMPLEX_T__H_
 
 #ifdef COMPLEX_IMPL
-#include "emu/x87emu_private.h"
+#include "../emu/x87emu_private.h"
 #include "x64emu.h"
 #ifndef __COMPLEX_T_IMPL_H_
 #define __COMPLEX_T_IMPL_H_

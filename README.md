@@ -11,8 +11,8 @@ iOS cihazlarda x86/x64 tabanlı Windows oyunlarını yerel (native) olarak çal�
 
 ## 🛠 Teknik Mimari
 - **Frontend:** Swift / SwiftUI
-- **Backend:** C++ / Wine / Box64
-- **Build System:** Theos
+- **Backend:** C++ / Wine / Box64 (iOS ARM64 için özel olarak çapraz derlenmiş `libbox64.dylib`)
+- **Build System:** Theos & CMake
 
 ## 📦 Kurulum (IPA)
 Bu repo üzerinde her commit sonrası otomatik olarak IPA dosyası derlenmektedir.

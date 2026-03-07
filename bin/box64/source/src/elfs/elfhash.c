@@ -5,9 +5,13 @@
 #include <elf.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#ifndef __APPLE__
 #include <sys/sysmacros.h>
+#endif
 #include <sys/types.h>
+#ifndef __APPLE__
 #include <link.h>
+#endif
 #include <unistd.h>
 #include <errno.h>
 

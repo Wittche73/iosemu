@@ -5,7 +5,9 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
+#ifndef __APPLE__
 #include <syscall.h>
+#endif
 #include <stddef.h>
 #include <stdarg.h>
 #include <ucontext.h>
@@ -74,7 +76,11 @@ static __thread JUMPBUFF signal_jmpbuf;
 #ifdef ANDROID
 #define SIG_JMPBUF signal_jmpbuf
 #else
+#ifdef __APPLE__
+#define SIG_JMPBUF signal_jmpbuf
+#else
 #define SIG_JMPBUF &signal_jmpbuf
+#endif
 #endif
 static __thread int signal_jmpbuf_active = 0;
 
@@ -523,7 +529,7 @@ int my_sigactionhandler_oldcode_64(x64emu_t* emu, int32_t sig, int simple, sigin
             #ifdef ANDROID
             siglongjmp(*emu->jmpbuf, skip);
             #else
-            siglongjmp(emu->jmpbuf, skip);
+            SigLongJmp(emu->jmpbuf, skip);
             #endif
         }
         printf_log(LOG_INFO, "Warning, context has been changed in Sigactionhanlder%s\n", (sigcontext->uc_mcontext.gregs[X64_RIP]!=sigcontext_copy.uc_mcontext.gregs[X64_RIP])?" (EIP changed)":"");
@@ -683,7 +689,11 @@ extern int fillblock_active;
 #ifdef USE_CUSTOM_MUTEX
 static uint32_t mutex_dynarec_prot = 0;
 #else
+#ifdef __APPLE__
+static pthread_mutex_t mutex_dynarec_prot = PTHREAD_ERRORCHECK_MUTEX_INITIALIZER;
+#else
 static pthread_mutex_t mutex_dynarec_prot = PTHREAD_ERRORCHECK_MUTEX_INITIALIZER_NP;
+#endif
 #endif
 #define lock_signal()     mutex_lock(&mutex_dynarec_prot)
 #define unlock_signal()   mutex_unlock(&mutex_dynarec_prot)
@@ -710,6 +720,11 @@ void my_box64signalhandler(int32_t sig, siginfo_t* info, void * ucntx)
     x64emu_t* emu = thread_get_emu();
     int tid = GetTID();
 #ifdef __aarch64__
+#ifdef __APPLE__
+    void * pc = (void*)CONTEXT_PC(p);
+    void* fpsimd = NULL;
+    // On Darwin ARM64, floating point state is in __ns.__v
+#else
     void * pc = (void*)p->uc_mcontext.pc;
     struct fpsimd_context *fpsimd = NULL;
     // find fpsimd struct
@@ -722,6 +737,7 @@ void my_box64signalhandler(int32_t sig, siginfo_t* info, void * ucntx)
                 ff = (struct _aarch64_ctx*)((uintptr_t)ff + ff->size);
         }
     }
+#endif
 #elif defined __x86_64__
     void * pc = (void*)p->uc_mcontext.gregs[X64_RIP];
     void* fpsimd = NULL;
@@ -844,7 +860,7 @@ void my_box64signalhandler(int32_t sig, siginfo_t* info, void * ucntx)
                         #ifdef ANDROID
                         siglongjmp(*(JUMPBUFF*)emu->jmpbuf, 3);
                         #else
-                        siglongjmp(emu->jmpbuf, 3);
+                        SigLongJmp(emu->jmpbuf, 3);
                         #endif
                     }
                     dynarec_log(LOG_INFO, "Warning, Dirty %s (%p for db %p/%p) detected, but jmpbuffer not ready!\n", type_callret?"self-loop":"ret from callret", (void*)addr, db, (void*)db->x64_addr);
@@ -918,7 +934,7 @@ void my_box64signalhandler(int32_t sig, siginfo_t* info, void * ucntx)
                 #ifdef ANDROID
                 siglongjmp(*(JUMPBUFF*)emu->jmpbuf, 2);
                 #else
-                siglongjmp(emu->jmpbuf, 2);
+                SigLongJmp(emu->jmpbuf, 2);
                 #endif
             }
             dynarec_log(LOG_INFO, "Warning, Auto-SMC (%p for db %p/%p) detected, but jmpbuffer not ready!\n", (void*)addr, db, (void*)db->x64_addr);
@@ -1309,8 +1325,17 @@ EXPORT sighandler_t my_signal(x64emu_t* emu, int signum, sighandler_t handler)
     } else
         return signal(signal_from_x64(signum), handler);
 }
+#ifdef __APPLE__
+EXPORT sighandler_t my___sysv_signal(x64emu_t* emu, int signum, sighandler_t handler) {
+    return my_signal(emu, signum, handler);
+}
+EXPORT sighandler_t my_sysv_signal(x64emu_t* emu, int signum, sighandler_t handler) {
+    return my_signal(emu, signum, handler);
+}
+#else
 EXPORT sighandler_t my___sysv_signal(x64emu_t* emu, int signum, sighandler_t handler) __attribute__((alias("my_signal")));
 EXPORT sighandler_t my_sysv_signal(x64emu_t* emu, int signum, sighandler_t handler) __attribute__((alias("my_signal")));    // not completely exact
+#endif
 
 int EXPORT my_sigaction(x64emu_t* emu, int signum, const x64_sigaction_t *act, x64_sigaction_t *oldact)
 {
@@ -1366,8 +1391,14 @@ int EXPORT my_sigaction(x64emu_t* emu, int signum, const x64_sigaction_t *act, x
     }
     return ret;
 }
+#ifdef __APPLE__
+int EXPORT my___sigaction(x64emu_t* emu, int signum, const x64_sigaction_t *act, x64_sigaction_t *oldact) {
+    return my_sigaction(emu, signum, act, oldact);
+}
+#else
 int EXPORT my___sigaction(x64emu_t* emu, int signum, const x64_sigaction_t *act, x64_sigaction_t *oldact)
 __attribute__((alias("my_sigaction")));
+#endif
 
 int EXPORT my_syscall_rt_sigaction(x64emu_t* emu, int signum, const x64_sigaction_restorer_t *act, x64_sigaction_restorer_t *oldact, int sigsetsize)
 {
@@ -1675,7 +1706,11 @@ static void atfork_child_dynarec_prot(void)
     #ifdef USE_CUSTOM_MUTEX
     native_lock_store(&mutex_dynarec_prot, 0);
     #else
+#ifdef __APPLE__
+    pthread_mutex_t tmp = PTHREAD_ERRORCHECK_MUTEX_INITIALIZER;
+#else
     pthread_mutex_t tmp = PTHREAD_ERRORCHECK_MUTEX_INITIALIZER_NP;
+#endif
     memcpy(&mutex_dynarec_prot, &tmp, sizeof(mutex_dynarec_prot));
     #endif
 }

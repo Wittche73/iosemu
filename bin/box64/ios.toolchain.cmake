@@ -12,8 +12,12 @@ set(CMAKE_CXX_COMPILER clang++)
 
 # Compilation flags for iOS arm64
 set(TARGET_TRIPLE arm64-apple-ios16.0)
-set(CMAKE_C_FLAGS "-target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH}")
-set(CMAKE_CXX_FLAGS "-target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH}")
+set(CMAKE_C_FLAGS "-target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH} -D_XOPEN_SOURCE=600 -D_DARWIN_C_SOURCE -Wno-macro-redefined")
+set(CMAKE_CXX_FLAGS "-target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH} -D_XOPEN_SOURCE=600 -D_DARWIN_C_SOURCE -Wno-macro-redefined")
+set(CMAKE_ASM_FLAGS "-target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH}")
+
+set(CMAKE_EXE_LINKER_FLAGS "-Wl,-platform_version,ios,16.0.0,16.0.0 -Wl,-arch,arm64 -target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH} -fuse-ld=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/custom_bin/ld64.lld")
+set(CMAKE_SHARED_LINKER_FLAGS "-Wl,-platform_version,ios,16.0.0,16.0.0 -Wl,-arch,arm64 -target ${TARGET_TRIPLE} -arch arm64 -isysroot ${IOS_SDK_PATH} -fuse-ld=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/custom_bin/ld64.lld")
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)

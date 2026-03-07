@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "box64"
-  "box64.pdb"
+  "libbox64.dylib"
+  "libbox64.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

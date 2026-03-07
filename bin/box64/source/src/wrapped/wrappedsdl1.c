@@ -26,14 +26,46 @@ const char* sdl1Name = "libSDL-1.2.so.0";
 
 int sdl_Yes() { return 1; }
 int sdl_No() { return 0; }
+#ifndef __APPLE__
 int EXPORT my_SDL_Has3DNow() __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my_SDL_Has3DNow\n_my_SDL_Has3DNow: b _sdl_No");
+#endif
+#ifndef __APPLE__
 int EXPORT my_SDL_Has3DNowExt() __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my_SDL_Has3DNowExt\n_my_SDL_Has3DNowExt: b _sdl_No");
+#endif
+#ifndef __APPLE__
 int EXPORT my_SDL_HasAltiVec() __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my_SDL_HasAltiVec\n_my_SDL_HasAltiVec: b _sdl_No");
+#endif
+#ifndef __APPLE__
 int EXPORT my_SDL_HasMMX() __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my_SDL_HasMMX\n_my_SDL_HasMMX: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my_SDL_HasMMXExt() __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my_SDL_HasMMXExt\n_my_SDL_HasMMXExt: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my_SDL_HasRDTSC() __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my_SDL_HasRDTSC\n_my_SDL_HasRDTSC: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my_SDL_HasSSE() __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my_SDL_HasSSE\n_my_SDL_HasSSE: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my_SDL_HasSSE2() __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my_SDL_HasSSE2\n_my_SDL_HasSSE2: b _sdl_Yes");
+#endif
 
 typedef struct {
   int32_t freq;

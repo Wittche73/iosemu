@@ -11,13 +11,17 @@
 #include <sys/select.h>
 #include <sys/types.h>
 #include <sys/ioctl.h>
+#ifndef __APPLE__
 #include <asm/stat.h>
+#endif
 #include <errno.h>
 #include <sched.h>
 #include <sys/wait.h>
 #include <sys/utsname.h>
 #ifndef __NR_socketcall
+#ifndef __APPLE__
 #include <linux/net.h>
+#endif
 #include <sys/socket.h>
 #endif
 #include <sys/resource.h>

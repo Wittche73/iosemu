@@ -6,7 +6,9 @@
 #include <sys/param.h>
 #include <sys/mman.h>
 #include <dlfcn.h>
+#ifndef __APPLE__
 #include <malloc.h>
+#endif
 
 #include "box64context.h"
 #include "debug.h"

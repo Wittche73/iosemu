@@ -54,7 +54,11 @@ EXPORT int32_t my_pthread_atfork(x64emu_t *emu, void* prepare, void* parent, voi
     
     return 0;
 }
+#ifndef __APPLE__
 EXPORT int32_t my___pthread_atfork(x64emu_t *emu, void* prepare, void* parent, void* child) __attribute__((alias("my_pthread_atfork")));
+#else
+__asm__(".globl _my___pthread_atfork\n_my___pthread_atfork: b _my_pthread_atfork");
+#endif
 
 EXPORT void my___pthread_initialize()
 {

@@ -2,7 +2,9 @@
 #include <stddef.h>
 #include <string.h>
 #include <signal.h>
+#ifndef __APPLE__
 #include <ucontext.h>
+#endif
 
 #include "sigtools.h"
 #include "box64context.h"
@@ -105,11 +107,17 @@ if(BOX64ENV(showsegv)) printf_log(LOG_INFO, "Marked db %p as dirty, and address 
 }
 #endif //DYNAREC
 
-#ifdef DYNAREC
 #ifdef ARM64
+#ifdef DYNAREC
 #include "dynarec/arm64/arm64_printer.h"
-#elif RV64
+#else
+#define arm64_print(a, b) "???"
+#endif
+#elif defined(RV64)
+#ifdef DYNAREC
 #include "dynarec/rv64/rv64_printer.h"
+#else
+#define rv64_print(a, b) "???"
 #endif
 #endif
 int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, dynablock_t* db, uintptr_t x64pc, int is32bits)
@@ -121,9 +129,15 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         /*return*/ mark_db_unaligned(db, x64pc);    // don't force an exit for now
 #endif
 #ifdef ARM64
+#ifdef __APPLE__
+    ucontext_t *p = (ucontext_t *)ucntx;
+    uint32_t opcode = *(uint32_t*)pc;
+    struct __darwin_arm_neon_state64 *fpsimd = &p->uc_mcontext->__ns;
+#else
     ucontext_t *p = (ucontext_t *)ucntx;
     uint32_t opcode = *(uint32_t*)pc;
     struct fpsimd_context *fpsimd = (struct fpsimd_context *)_fpsimd;
+#endif
     //printf_log(LOG_INFO, "Checking SIGBUS special cases with pc=%p, opcode=%x, fpsimd=%p\n", pc, opcode, fpsimd);
     if((opcode&0b10111111110000000000000000000000)==0b10111001000000000000000000000000) {
         // this is STR
@@ -132,16 +146,16 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int dest = (opcode>>5)&31;
         uint64_t offset = (opcode>>10)&0b111111111111;
         offset<<=scale;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
-        uint64_t value = p->uc_mcontext.regs[val];
+        uint64_t value = CONTEXT_REG(p, val);
         if(scale==3 && (((uintptr_t)addr)&3)==0) {
             for(int i=0; i<2; ++i)
                 ((volatile uint32_t*)addr)[i] = (value>>(i*32))&0xffffffff;
         } else
             for(int i=0; i<(1<<scale); ++i)
                 addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b10111111111000000000110000000000) == 0b10111000000000000000000000000000) {
@@ -152,16 +166,16 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int64_t offset = (opcode>>12)&0b111111111;
         if((offset>>(9-1))&1)
             offset |= (0xffffffffffffffffll<<9);
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
-        uint64_t value = p->uc_mcontext.regs[val];
+        uint64_t value = CONTEXT_REG(p, val);
         if(size==8 && (((uintptr_t)addr)&3)==0) {
             for(int i=0; i<2; ++i)
                 ((volatile uint32_t*)addr)[i] = (value>>(i*32))&0xffffffff;
         } else
             for(int i=0; i<size; ++i)
                 addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b00111111010000000000000000000000)==0b00111101000000000000000000000000) {
@@ -177,16 +191,20 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         offset<<=scale;
         int val = opcode&31;
         int dest = (opcode>>5)&31;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
+#ifdef __APPLE__
+        __uint128_t value = fpsimd->__v[val];
+#else
         __uint128_t value = fpsimd->vregs[val];
+#endif
         if(scale>2 && (((uintptr_t)addr)&3)==0) {
             for(int i=0; i<(1<<(scale-2)); ++i)
                 ((volatile uint32_t*)addr)[i] = (value>>(i*32))&0xffffffff;
         } else
             for(int i=0; i<(1<<scale); ++i)
                 addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b00111111011000000000110000000000)==0b00111100000000000000000000000000) {
@@ -203,16 +221,20 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
             offset |= (0xffffffffffffffffll<<9);
         int val = opcode&31;
         int dest = (opcode>>5)&31;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
+#ifdef __APPLE__
+        __uint128_t value = fpsimd->__v[val];
+#else
         __uint128_t value = fpsimd->vregs[val];
+#endif
         if(scale>2 && (((uintptr_t)addr)&3)==0) {
             for(int i=0; i<(1<<(scale-2)); ++i)
                 ((volatile uint32_t*)addr)[i] = (value>>(i*32))&0xffffffff;
         } else
             for(int i=0; i<(1<<scale); ++i)
                 addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b00111111010000000000000000000000)==0b00111101010000000000000000000000) {
@@ -228,7 +250,7 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         offset<<=scale;
         int val = opcode&31;
         int dest = (opcode>>5)&31;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
         __uint128_t value = 0;
         if(scale>2 && (((uintptr_t)addr)&3)==0) {
@@ -237,8 +259,12 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         } else
             for(int i=0; i<(1<<scale); ++i)
                 value |= ((__uint128_t)addr[i])<<(i*8);
+#ifdef __APPLE__
+        fpsimd->__v[val] = value;
+#else
         fpsimd->vregs[val] = value;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+#endif
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b00111111011000000000110000000000)==0b00111100010000000000000000000000) {
@@ -255,7 +281,7 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
             offset |= (0xffffffffffffffffll<<9);
         int val = opcode&31;
         int dest = (opcode>>5)&31;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
         __uint128_t value = 0;
         if(scale>2 && (((uintptr_t)addr)&3)==0) {
@@ -264,8 +290,12 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         } else
             for(int i=0; i<(1<<scale); ++i)
                 value |= ((__uint128_t)addr[i])<<(i*8);
+#ifdef __APPLE__
+        fpsimd->__v[val] = value;
+#else
         fpsimd->vregs[val] = value;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+#endif
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b10111111110000000000000000000000)==0b10111001010000000000000000000000) {
@@ -275,7 +305,7 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int dest = (opcode>>5)&31;
         uint64_t offset = (opcode>>10)&0b111111111111;
         offset<<=scale;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
         uint64_t value = 0;
         if(scale==3 && (((uintptr_t)addr)&3)==0) {
@@ -284,8 +314,8 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         } else
             for(int i=0; i<(1<<scale); ++i)
                 value |= ((uint64_t)addr[i]) << (i*8);
-        p->uc_mcontext.regs[val] = value;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_REG(p, val) = value;
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b10111111111000000000110000000000) == 0b10111000010000000000000000000000) {
@@ -296,7 +326,7 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int64_t offset = (opcode>>12)&0b111111111;
         if((offset>>(9-1))&1)
             offset |= (0xffffffffffffffffll<<9);
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
         uint64_t value = 0;
         if(size==8 && (((uintptr_t)addr)&3)==0) {
@@ -305,8 +335,8 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         } else
             for(int i=0; i<size; ++i)
                 value |= ((uint64_t)addr[i]) << (i*8);
-        p->uc_mcontext.regs[val] = value;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_REG(p, val) = value;
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b11111111110000000000000000000000)==0b01111001000000000000000000000000) {
@@ -316,12 +346,12 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int dest = (opcode>>5)&31;
         uint64_t offset = (opcode>>10)&0b111111111111;
         offset<<=scale;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
-        uint64_t value = p->uc_mcontext.regs[val];
+        uint64_t value = CONTEXT_REG(p, val);
         for(int i=0; i<(1<<scale); ++i)
             addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b11111111111000000000110000000000)==0b01111000000000000000000000000000) {
@@ -331,12 +361,12 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int64_t offset = (opcode>>12)&0b111111111;
         if((offset>>(9-1))&1)
             offset |= (0xffffffffffffffffll<<9);
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
-        uint64_t value = p->uc_mcontext.regs[val];
+        uint64_t value = CONTEXT_REG(p, val);
         for(int i=0; i<2; ++i)
             addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b11111111111000000000110000000000)==0b01111000001000000000100000000000) {
@@ -349,13 +379,13 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int S = (opcode>>12)&1;
         if(option!=0b011)
             return 0;   // only LSL is supported
-        uint64_t offset = p->uc_mcontext.regs[dest2]<<S;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest] + offset);
+        uint64_t offset = CONTEXT_REG(p, dest2)<<S;
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest) + offset);
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
-        uint64_t value = p->uc_mcontext.regs[val];
+        uint64_t value = CONTEXT_REG(p, val);
         for(int i=0; i<(1<<scale); ++i)
             addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b11111111110000000000000000000000)==0b10101001000000000000000000000000) {
@@ -368,17 +398,17 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         if((offset>>(7-1))&1)
             offset |= (0xffffffffffffffffll<<7);
         offset <<= scale;
-        uintptr_t addr= p->uc_mcontext.regs[dest] + offset;
+        uintptr_t addr= CONTEXT_REG(p, dest) + offset;
         if(is32bits) addr = addr&0xffffffff;
         if((((uintptr_t)addr)&3)==0) {
-            ((volatile uint32_t*)addr)[0] = p->uc_mcontext.regs[val1];
-            ((volatile uint32_t*)addr)[1] = p->uc_mcontext.regs[val2];
+            ((volatile uint32_t*)addr)[0] = CONTEXT_REG(p, val1);
+            ((volatile uint32_t*)addr)[1] = CONTEXT_REG(p, val2);
         } else {
-            __uint128_t value = ((__uint128_t)p->uc_mcontext.regs[val2])<<64 | p->uc_mcontext.regs[val1];
+            __uint128_t value = ((__uint128_t)CONTEXT_REG(p, val2))<<64 | CONTEXT_REG(p, val1);
             for(int i=0; i<(1<<scale); ++i)
                 ((volatile uint8_t*)addr)[i] = (value>>(i*8))&0xff;
         }
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b11111111110000000000000000000000)==0b10101101000000000000000000000000) {
@@ -391,20 +421,36 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         if((offset>>(7-1))&1)
             offset |= (0xffffffffffffffffll<<7);
         offset <<= scale;
-        uintptr_t addr= p->uc_mcontext.regs[dest] + offset;
+        uintptr_t addr= CONTEXT_REG(p, dest) + offset;
         if(is32bits) addr = addr&0xffffffff;
         if((((uintptr_t)addr)&3)==0) {
             for(int i=0; i<4; ++i)
+#ifdef __APPLE__
+                ((volatile uint32_t*)addr)[0+i] = (fpsimd->__v[val1]>>(i*32))&0xffffffff;
+#else
                 ((volatile uint32_t*)addr)[0+i] = (fpsimd->vregs[val1]>>(i*32))&0xffffffff;
+#endif
             for(int i=0; i<4; ++i)
+#ifdef __APPLE__
+                ((volatile uint32_t*)addr)[4+i] = (fpsimd->__v[val2]>>(i*32))&0xffffffff;
+#else
                 ((volatile uint32_t*)addr)[4+i] = (fpsimd->vregs[val2]>>(i*32))&0xffffffff;
+#endif
         } else {
             for(int i=0; i<16; ++i)
+#ifdef __APPLE__
+                ((volatile uint8_t*)addr)[i] = (fpsimd->__v[val1]>>(i*8))&0xff;
+#else
                 ((volatile uint8_t*)addr)[i] = (fpsimd->vregs[val1]>>(i*8))&0xff;
+#endif
             for(int i=0; i<16; ++i)
+#ifdef __APPLE__
+                ((volatile uint8_t*)addr)[16+i] = (fpsimd->__v[val2]>>(i*8))&0xff;
+#else
                 ((volatile uint8_t*)addr)[16+i] = (fpsimd->vregs[val2]>>(i*8))&0xff;
+#endif
         }
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b10111111111111111111110000000000)==0b00001101000000001000010000000000) {
@@ -412,16 +458,20 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int idx = (opcode>>30)&1;
         int val = opcode&31;
         int dest = (opcode>>5)&31;
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest]);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest));
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
+#ifdef __APPLE__
+        uint64_t value = fpsimd->__v[val]>>(idx*64);
+#else
         uint64_t value = fpsimd->vregs[val]>>(idx*64);
+#endif
         if((((uintptr_t)addr)&3)==0) {
             for(int i=0; i<2; ++i)
                 ((volatile uint32_t*)addr)[i] = (value>>(i*32))&0xffffffff;
         } else
             for(int i=0; i<8; ++i)
                 addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b10111111111000000000110000000000) == 0b10111000010000000000010000000000) {
@@ -432,7 +482,7 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int64_t offset = (opcode>>12)&0b111111111;
         if((offset>>(9-1))&1)
             offset |= (0xffffffffffffffffll<<9);
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[dest]);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, dest));
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
         uint64_t value = 0;
         if(size==8 && (((uintptr_t)addr)&3)==0) {
@@ -441,9 +491,9 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         } else
             for(int i=0; i<size; ++i)
                 value |= ((uint64_t)addr[i]) << (i*8);
-        p->uc_mcontext.regs[val] = value;
-        p->uc_mcontext.regs[dest] += offset;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_REG(p, val) = value;
+        CONTEXT_REG(p, dest) += offset;
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     }
     if((opcode&0b10111111111000000000110000000000) == 0b10111000000000000000010000000000) {
@@ -454,17 +504,17 @@ int sigbus_specialcases(siginfo_t* info, void * ucntx, void* pc, void* _fpsimd, 
         int64_t offset = (opcode>>12)&0b111111111;
         if((offset>>(9-1))&1)
             offset |= (0xffffffffffffffffll<<9);
-        volatile uint8_t* addr = (void*)(p->uc_mcontext.regs[src]);
+        volatile uint8_t* addr = (void*)(CONTEXT_REG(p, src));
         if(is32bits) addr = (uint8_t*)(((uintptr_t)addr)&0xffffffff);
-        uint64_t value = p->uc_mcontext.regs[val];
+        uint64_t value = CONTEXT_REG(p, val);
         if(size==8 && (((uintptr_t)addr)&3)==0) {
             for(int i=0; i<2; ++i)
                 ((volatile uint32_t*)addr)[i] = (value>>(i*32))&0xffffffff;
         } else
             for(int i=0; i<size; ++i)
                 addr[i] = (value>>(i*8))&0xff;
-        p->uc_mcontext.regs[src] += offset;
-        p->uc_mcontext.pc+=4;   // go to next opcode
+        CONTEXT_REG(p, src) += offset;
+        CONTEXT_PC(p)+=4;   // go to next opcode
         return 1;
     } else {
         printf_log(LOG_INFO, "Unsupported SIGBUS special cases with pc=%p, opcode=%x (%s)\n", pc, opcode, arm64_print(opcode, (uintptr_t)pc));

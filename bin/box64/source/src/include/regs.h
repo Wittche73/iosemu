@@ -1,6 +1,8 @@
 #ifndef __REGS_H_
 #define __REGS_H_
 
+#include <stdint.h>
+
 enum {
 	_RAX, _RCX, _RDX, _RBX,
 	_RSP, _RBP, _RSI, _RDI,
@@ -21,6 +23,9 @@ enum {
 };
 
 
+#ifdef __APPLE__
+#define reg64_t box64_reg64_t
+#endif
 typedef union {
 	int64_t  sq[1];
 	uint64_t q[1];

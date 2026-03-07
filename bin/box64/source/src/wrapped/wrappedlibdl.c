@@ -4,7 +4,9 @@
 #include <string.h>
 #include <dlfcn.h>
 #include <elf.h>
+#ifndef __APPLE__
 #include <link.h>
+#endif
 
 #include "wrappedlibs.h"
 
@@ -502,7 +504,7 @@ int my_dlclose(x64emu_t* emu, void *handle)
     refreshTLSData(emu);
     return 0;
 }
-#ifdef ANDROID
+#if defined(ANDROID) || defined(__APPLE__)
 #ifndef RTLD_DL_SYMENT
 #define RTLD_DL_SYMENT 1
 #endif
@@ -572,6 +574,14 @@ int my_dlinfo(x64emu_t* emu, void* handle, int request, void* info)
     return -1;
 }
 
+#ifdef __APPLE__
+struct link_map {
+    void* l_addr;
+    char* l_name;
+    void* l_ld;
+    struct link_map *l_next, *l_prev;
+};
+#endif
 typedef struct my_dl_find_object_s {
     uint64_t    dlfo_flags;
     void*       dlfo_map_start;
@@ -584,7 +594,8 @@ typedef struct my_dl_find_object_s {
 EXPORT int my__dl_find_object(x64emu_t* emu, void* addr, my_dl_find_object_t* result)
 {
     //printf_log(LOG_INFO, "Unimplemented _dl_find_object called\n");
-    uintptr_t start=0, sz=0;
+    uintptr_t start=0;
+    uint64_t sz=0;
     elfheader_t* h = FindElfAddress(my_context, (uintptr_t)addr);
     if(h) {
         // find an actual elf

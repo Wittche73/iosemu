@@ -39,7 +39,9 @@ void stSetup(box64context_t* context)
 }
 
 #ifdef STATICBUILD
+#ifndef __APPLE__
 #include <link.h>
+#endif
 extern void* __libc_enable_secure;
 #ifndef PPC64LE
 extern void* __stack_chk_guard;

@@ -1,7 +1,16 @@
 #ifndef __DEBUG_H_
 #define __DEBUG_H_
 #include <stdint.h>
-#include <env.h>
+#ifdef __APPLE__
+#include <math.h>
+#ifndef isnanf
+#define isnanf isnan
+#endif
+#ifndef isinff
+#define isinff isinf
+#endif
+#endif
+#include "env.h"
 
 #include "os.h"
 #include "hostext.h"
@@ -97,6 +106,20 @@ void init_malloc_hook(void);
 #define box_memalign    memalign
 #define box_strdup      strdup
 #define box_realpath    realpath
+#elif defined(__APPLE__)
+#include <stdlib.h>
+#define box_malloc      malloc
+#define box_realloc     realloc
+#define box_calloc      calloc
+#define box_free        free
+static inline void* apple_memalign(size_t align, size_t size) {
+    void* p = NULL;
+    posix_memalign(&p, align, size);
+    return p;
+}
+#define box_memalign    apple_memalign
+#define box_strdup      strdup
+#define box_realpath    realpath
 #else
 extern size_t (*box_malloc_usable_size)(void*);
 extern void* __libc_malloc(size_t);
@@ -143,7 +166,11 @@ char* box32_strdup(const char* s);
 #define actual_realloc(A, B)            box_realloc(A, B)
 #define actual_free(A)                  box_free(A)
 #define actual_memalign(A, B)           box_memalign(A, B)
+#ifdef __APPLE__
+#define actual_malloc_usable_size(A)    malloc_size(A)
+#else
 #define actual_malloc_usable_size(A)    box_malloc_usable_size(A)
+#endif
 #endif
 
 #endif //__DEBUG_H_

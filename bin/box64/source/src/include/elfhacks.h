@@ -30,11 +30,29 @@
 */
 #pragma once
 #include <elf.h>
+#ifndef __APPLE__
 #include <link.h>
+#endif
+#ifdef __APPLE__
+struct dl_phdr_info {
+    uintptr_t  dlpi_addr;
+    const char *dlpi_name;
+    const void *dlpi_phdr;
+    uint16_t   dlpi_phnum;
+};
+#endif
 #include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
+#endif
+
+#ifndef ElfW
+# if UINTPTR_MAX == 0xffffffffffffffff
+#  define ElfW(type) Elf64_##type
+# else
+#  define ElfW(type) Elf32_##type
+# endif
 #endif
 
 //#define __PUBLIC __attribute__ ((visibility ("default")))

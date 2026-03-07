@@ -5,9 +5,17 @@
 #include <elf.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#ifndef __APPLE__
 #include <sys/sysmacros.h>
+#endif
 #include <sys/types.h>
+#ifndef __APPLE__
 #include <link.h>
+#endif
+#ifdef __APPLE__
+// Missing ELF flags on Darwin
+#define DF_BIND_NOW 0x00000008
+#endif
 #include <unistd.h>
 #include <errno.h>
 #include <fnmatch.h>
@@ -1639,7 +1647,7 @@ typedef struct my_dl_phdr_info_s {
     Elf64_Half      dlpi_phnum;
 } my_dl_phdr_info_t;
 
-static int dl_iterate_phdr_callback(x64emu_t *emu, void* F, my_dl_phdr_info_t *info, size_t size, void* data)
+static int dl_iterate_phdr_callback(x64emu_t *emu, void* F, struct dl_phdr_info *info, size_t size, void* data)
 {
     int ret = RunFunctionWithEmu(emu, 0, (uintptr_t)F, 3, info, size, data);
     return ret;
@@ -1696,8 +1704,8 @@ EXPORT int my_dl_iterate_phdr(x64emu_t *emu, void* F, void *data) {
     int ret = 0;
     for (int idx=0; idx<context->elfsize; ++idx) {
         if(context->elfs[idx]) {
-            my_dl_phdr_info_t info;
-            info.dlpi_addr = GetElfDelta(context->elfs[idx]);
+            struct dl_phdr_info info;
+            info.dlpi_addr = (uintptr_t)GetElfDelta(context->elfs[idx]);
             info.dlpi_name = idx?context->elfs[idx]->name:empty;    //1st elf is program, and this one doesn't get a name
             info.dlpi_phdr = context->elfs[idx]->PHEntries._64;
             info.dlpi_phnum = context->elfs[idx]->numPHEntries;
@@ -1707,7 +1715,9 @@ EXPORT int my_dl_iterate_phdr(x64emu_t *emu, void* F, void *data) {
         }
     }
     // and now, go on native version
+#ifndef __APPLE__
     ret = dl_iterate_phdr(find_dl_iterate_phdr_Fct(F), data);
+#endif
     return ret;
 }
 

@@ -11,7 +11,9 @@
 #include <sys/syscall.h>
 #include <sys/mman.h>
 #include <pthread.h>
+#ifndef __APPLE__
 #include <sys/prctl.h>
+#endif
 #include <sys/stat.h>
 #include <stdarg.h>
 #include <ctype.h>
@@ -24,32 +26,38 @@
 #include <fcntl.h>
 #endif
 
-#include "os.h"
+#include "include/os.h"
+#include "include/box64context.h"
+#include "include/debug.h"
+#include "include/env.h"
+#include "include/pathcoll.h"
+#include "include/sysinfo.h"
+#include "include/freq.h"
 #include "build_info.h"
-#include "debug.h"
-#include "fileutils.h"
-#include "box64context.h"
-#include "box64cpu.h"
-#include "box64cpu_util.h"
-#include "wine_tools.h"
-#include "elfloader.h"
-#include "custommem.h"
-#include "box64stack.h"
-#include "auxval.h"
-#include "threads.h"
-#include "x64trace.h"
-#include "librarian.h"
-#include "symbols.h"
+#include "include/debug.h"
+#include "include/fileutils.h"
+#include "include/box64context.h"
+#include "include/box64cpu.h"
+#include "include/box64cpu_util.h"
+#include "include/wine_tools.h"
+#include "include/elfloader.h"
+#include "include/custommem.h"
+#include "include/box64stack.h"
+#include "include/auxval.h"
+#include "include/threads.h"
+#include "include/x64trace.h"
+#include "include/librarian.h"
+#include "include/symbols.h"
 #include "emu/x64run_private.h"
 #include "elfs/elfloader_private.h"
-#include "x64emu.h"
-#include "library.h"
-#include "core.h"
-#include "env.h"
-#include "cleanup.h"
-#include "freq.h"
-#include "hostext.h"
-#include "sysinfo.h"
+#include "include/x64emu.h"
+#include "include/library.h"
+#include "include/core.h"
+#include "include/env.h"
+#include "include/cleanup.h"
+#include "include/freq.h"
+#include "include/hostext.h"
+#include "include/sysinfo.h"
 
 box64context_t *my_context = NULL;
 extern box64env_t box64env;
@@ -346,6 +354,7 @@ void PrintHelp() {
 
 void KillAllInstances()
 {
+#ifndef __APPLE__
 
     struct dirent* entry;
     ssize_t len;
@@ -399,6 +408,7 @@ void KillAllInstances()
         }
     }
     closedir(proc_dir);
+#endif
 }
 
 static void addLibPaths(box64context_t* context)
@@ -1390,10 +1400,12 @@ int initialize(int argc, const char **argv, char** env, x64emu_t** emulator, elf
             ++p;
         else
             p = my_context->fullpath;
+#ifndef __APPLE__
         if(prctl(PR_SET_NAME, p)==-1)
             printf_log(LOG_NONE, "Error setting process name (%s)\n", strerror(errno));
         else
             printf_log(LOG_INFO, "Rename process to \"%s\"\n", p);
+#endif
         if (strcmp(box64_guest_name, p)) {
             ApplyEnvFileEntry(p);
         }

@@ -264,7 +264,7 @@ x64emu_t* thread_get_emu()
 		int stacksize = 256*1024;
 		void* stack = NULL;
 		if(box64_is32bits)
-			stack = mmap64(NULL, stacksize, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_32BIT, -1, 0);
+			stack = mmap(NULL, stacksize, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_32BIT, -1, 0);
 		else
             stack = InternalMmap(NULL, stacksize, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_GROWSDOWN, -1, 0);
 		if(stack!=MAP_FAILED)
@@ -470,7 +470,11 @@ EXPORT int my_pthread_attr_setaffinity_np(x64emu_t* emu, pthread_attr_t* attr, s
 {
 	(void)emu;
 	PTHREAD_ATTR_ALIGN(attr);
+	#ifndef __APPLE__
 	int ret = pthread_attr_setaffinity_np(PTHREAD_ATTR(attr), cpusize, cpuset);
+	#else
+	int ret = -ENOSYS;
+	#endif
 	PTHREAD_ATTR_UNALIGN(attr);
 	return ret;
 }
@@ -541,7 +545,7 @@ EXPORT int my_pthread_attr_setstackaddr(x64emu_t* emu, pthread_attr_t* attr, voi
 	return 0;
 	//return pthread_attr_setstackaddr(getAlignedAttr(attr), addr);
 }
-#ifndef ANDROID
+#if !defined(ANDROID) && !defined(__APPLE__)
 EXPORT int my_pthread_getattr_np(x64emu_t* emu, pthread_t thread_id, pthread_attr_t* attr)
 {
 	(void)emu;
@@ -558,7 +562,9 @@ EXPORT int my_pthread_getattr_np(x64emu_t* emu, pthread_t thread_id, pthread_att
 		if (!sz) {
 			// get default stack size
 			pthread_attr_t attr;
+			#ifndef __APPLE__
 			pthread_getattr_default_np(&attr);
+			#endif
 			pthread_attr_getstacksize(&attr, &sz);
 			pthread_attr_destroy(&attr);
 			// should stack be adjusted?
@@ -571,7 +577,11 @@ EXPORT int my_pthread_getattr_default_np(x64emu_t* emu, pthread_attr_t* attr)
 {
 	(void)emu;
 	PTHREAD_ATTR_ALIGN(attr);
+	#ifndef __APPLE__
 	int ret = pthread_getattr_default_np(PTHREAD_ATTR(attr));
+	#else
+	int ret = -ENOSYS;
+	#endif
 	PTHREAD_ATTR_UNALIGN(attr);
 	return ret;
 }
@@ -579,11 +589,15 @@ EXPORT int my_pthread_setattr_default_np(x64emu_t* emu, pthread_attr_t* attr)
 {
 	(void)emu;
 	PTHREAD_ATTR_ALIGN(attr);
+	#ifndef __APPLE__
 	int ret = pthread_setattr_default_np(PTHREAD_ATTR(attr));
+	#else
+	int ret = -ENOSYS;
+	#endif
 	PTHREAD_ATTR_UNALIGN(attr);
 	return ret;
 }
-#endif	//!ANDROID
+#endif	//!ANDROID && !__APPLE__
 #endif
 
 EXPORT int my_pthread_create(x64emu_t *emu, void* t, void* attr, void* start_routine, void* arg)
@@ -807,7 +821,13 @@ int EXPORT my_pthread_once(x64emu_t* emu, int* once, void* cb)
 	}
 	return 0;
 }
+#ifdef __APPLE__
+EXPORT int my___pthread_once(x64emu_t* emu, void* once, void* cb) {
+	return my_pthread_once(emu, (int*)once, cb);
+}
+#else
 EXPORT int my___pthread_once(x64emu_t* emu, void* once, void* cb) __attribute__((alias("my_pthread_once")));
+#endif
 
 EXPORT int my_pthread_key_create(x64emu_t* emu, pthread_key_t* key, void* dtor)
 {
@@ -815,7 +835,13 @@ EXPORT int my_pthread_key_create(x64emu_t* emu, pthread_key_t* key, void* dtor)
 	int ret = pthread_key_create(key, findkey_dtorFct(dtor));
 	return ret;
 }
+#ifdef __APPLE__
+EXPORT int my___pthread_key_create(x64emu_t* emu, pthread_key_t* key, void* dtor) {
+	return my_pthread_key_create(emu, key, dtor);
+}
+#else
 EXPORT int my___pthread_key_create(x64emu_t* emu, pthread_key_t* key, void* dtor) __attribute__((alias("my_pthread_key_create")));
+#endif
 
 EXPORT int my_pthread_key_delete(x64emu_t* emu, pthread_key_t key)
 {
@@ -867,27 +893,36 @@ EXPORT int my_pthread_cond_clockwait(x64emu_t *emu, pthread_cond_t* cond, void* 
 EXPORT void my__pthread_cleanup_push_defer(x64emu_t* emu, void* buffer, void* routine, void* arg)
 {
     (void)emu;
+#ifndef __APPLE__
 	real_pthread_cleanup_push_defer(buffer, findcleanup_routineFct(routine), arg);
+#endif
 }
 
 EXPORT void my__pthread_cleanup_push(x64emu_t* emu, void* buffer, void* routine, void* arg)
 {
     (void)emu;
+#ifndef __APPLE__
 	_pthread_cleanup_push(buffer, findcleanup_routineFct(routine), arg);
+#endif
 }
 
 EXPORT void my__pthread_cleanup_pop_restore(x64emu_t* emu, void* buffer, int exec)
 {
     (void)emu;
+#ifndef __APPLE__
 	real_pthread_cleanup_pop_restore(buffer, exec);
+#endif
 }
 
 EXPORT void my__pthread_cleanup_pop(x64emu_t* emu, void* buffer, int exec)
 {
     (void)emu;
+#ifndef __APPLE__
 	_pthread_cleanup_pop(buffer, exec);
+#endif
 }
 
+#if !defined(ANDROID) && !defined(__APPLE__)
 EXPORT int my_pthread_getaffinity_np(x64emu_t* emu, pthread_t thread, size_t cpusetsize, void* cpuset)
 {
 	(void)emu;
@@ -918,6 +953,7 @@ EXPORT int my_pthread_setaffinity_np_old(x64emu_t* emu, pthread_t thread, void* 
 {
 	return my_pthread_setaffinity_np(emu, thread, 128, cpuset);
 }
+#endif
 #endif
 
 //EXPORT int my_pthread_attr_setaffinity_np(x64emu_t* emu, void* attr, uint32_t cpusetsize, void* cpuset)
@@ -951,12 +987,12 @@ EXPORT int my_pthread_kill_old(x64emu_t* emu, void* thread, int sig)
 	sig = signal_from_x64(sig);
     // check for old "is everything ok?"
     if((thread==NULL) && (sig==0))
-        return real_phtread_kill_old(pthread_self(), 0);
+        return real_phtread_kill_old((unsigned long)(uintptr_t)pthread_self(), 0);
 	#ifdef BAD_PKILL
 	if(sig==0 && thread!=(void*)pthread_self())
 		return get_thread(thread)?0:ESRCH;
 	#endif
-    return real_phtread_kill_old((pthread_t)thread, sig);
+    return real_phtread_kill_old((unsigned long)(uintptr_t)thread, sig);
 }
 
 //EXPORT void my_pthread_exit(x64emu_t* emu, void* retval)
@@ -979,7 +1015,13 @@ EXPORT int my_pthread_mutexattr_destroy(x64emu_t* emu, my_mutexattr_t *attr)
 	attr->x86 = mattr.x86;
 	return ret;
 }
+#ifdef __APPLE__
+EXPORT int my___pthread_mutexattr_destroy(x64emu_t* emu, my_mutexattr_t *attr) {
+	return my_pthread_mutexattr_destroy(emu, attr);
+}
+#else
 EXPORT int my___pthread_mutexattr_destroy(x64emu_t* emu, my_mutexattr_t *attr) __attribute__((alias("my_pthread_mutexattr_destroy")));
+#endif
 EXPORT int my_pthread_mutexattr_getkind_np(x64emu_t* emu, my_mutexattr_t *attr, void* p)
 {
 	my_mutexattr_t mattr = {0};
@@ -1011,7 +1053,7 @@ EXPORT int my_pthread_mutexattr_gettype(x64emu_t* emu, my_mutexattr_t *attr, voi
 	attr->x86 = mattr.x86;
 	return ret;
 }
-#ifndef ANDROID
+#if !defined(ANDROID) && !defined(__APPLE__)
 EXPORT int my_pthread_mutexattr_getrobust(x64emu_t* emu, my_mutexattr_t *attr, void* p)
 {
 	my_mutexattr_t mattr = {0};
@@ -1029,7 +1071,13 @@ EXPORT int my_pthread_mutexattr_init(x64emu_t* emu, my_mutexattr_t *attr)
 	attr->x86 = mattr.x86;
 	return ret;
 }
+#ifdef __APPLE__
+EXPORT int my___pthread_mutexattr_init(x64emu_t* emu, my_mutexattr_t *attr) {
+	return my_pthread_mutexattr_init(emu, attr);
+}
+#else
 EXPORT int my___pthread_mutexattr_init(x64emu_t* emu, my_mutexattr_t *attr) __attribute__((alias("my_pthread_mutexattr_init")));
+#endif
 EXPORT int my_pthread_mutexattr_setkind_np(x64emu_t* emu, my_mutexattr_t *attr, int k)
 {
 	my_mutexattr_t mattr = {0};
@@ -1083,8 +1131,14 @@ EXPORT int my_pthread_mutexattr_settype(x64emu_t* emu, my_mutexattr_t *attr, int
 	attr->x86 = mattr.x86;
 	return ret;
 }
+#ifdef __APPLE__
+EXPORT int my___pthread_mutexattr_settype(x64emu_t* emu, my_mutexattr_t *attr, int t) {
+	return my_pthread_mutexattr_settype(emu, attr, t);
+}
+#else
 EXPORT int my___pthread_mutexattr_settype(x64emu_t* emu, my_mutexattr_t *attr, int t) __attribute__((alias("my_pthread_mutexattr_settype")));
-#ifndef ANDROID
+#endif
+#if !defined(ANDROID) && !defined(__APPLE__)
 EXPORT int my_pthread_mutexattr_setrobust(x64emu_t* emu, my_mutexattr_t *attr, int t)
 {
 	my_mutexattr_t mattr = {0};
@@ -1121,7 +1175,13 @@ EXPORT int my_pthread_mutex_init(pthread_mutex_t *m, my_mutexattr_t *att)
 	#endif
 	return ret;
 }
+#ifdef __APPLE__
+EXPORT int my___pthread_mutex_init(pthread_mutex_t *m, my_mutexattr_t *att) {
+	return my_pthread_mutex_init(m, att);
+}
+#else
 EXPORT int my___pthread_mutex_init(pthread_mutex_t *m, my_mutexattr_t *att) __attribute__((alias("my_pthread_mutex_init")));
+#endif
 
 typedef union my_condattr_s {
 	int					x86;
@@ -1136,6 +1196,7 @@ EXPORT int my_pthread_condattr_destroy(x64emu_t* emu, my_condattr_t* c)
 	c->x86 = cond.x86;
 	return ret;
 }
+#if !defined(__APPLE__)
 EXPORT int my_pthread_condattr_getclock(x64emu_t* emu, my_condattr_t* c, void* cl)
 {
 	my_condattr_t cond = {0};
@@ -1144,6 +1205,7 @@ EXPORT int my_pthread_condattr_getclock(x64emu_t* emu, my_condattr_t* c, void* c
 	c->x86 = cond.x86;
 	return ret;
 }
+#endif
 EXPORT int my_pthread_condattr_getpshared(x64emu_t* emu, my_condattr_t* c, void* p)
 {
 	my_condattr_t cond = {0};
@@ -1160,6 +1222,7 @@ EXPORT int my_pthread_condattr_init(x64emu_t* emu, my_condattr_t* c)
 	c->x86 = cond.x86;
 	return ret;
 }
+#if !defined(__APPLE__)
 EXPORT int my_pthread_condattr_setclock(x64emu_t* emu, my_condattr_t* c, int cl)
 {
 	my_condattr_t cond = {0};
@@ -1168,6 +1231,7 @@ EXPORT int my_pthread_condattr_setclock(x64emu_t* emu, my_condattr_t* c, int cl)
 	c->x86 = cond.x86;
 	return ret;
 }
+#endif
 EXPORT int my_pthread_condattr_setpshared(x64emu_t* emu, my_condattr_t* c, int p)
 {
 	my_condattr_t cond = {0};
@@ -1275,38 +1339,55 @@ typedef union my_barrierattr_s {
 // barrierattr
 EXPORT int my_pthread_barrierattr_destroy(x64emu_t* emu, my_barrierattr_t* b)
 {
+	#ifndef __APPLE__
 	my_barrierattr_t battr = {0};
 	battr.x86 = b->x86;
 	int ret = pthread_barrierattr_destroy(&battr.nat);
 	b->x86 = battr.x86;
 	return ret;
+	#else
+	return -ENOSYS;
+	#endif
 }
 EXPORT int my_pthread_barrierattr_getpshared(x64emu_t* emu, my_barrierattr_t* b, void* p)
 {
+	#ifndef __APPLE__
 	my_barrierattr_t battr = {0};
 	battr.x86 = b->x86;
 	int ret = pthread_barrierattr_getpshared(&battr.nat, p);
 	b->x86 = battr.x86;
 	return ret;
+	#else
+	return -ENOSYS;
+	#endif
 }
 EXPORT int my_pthread_barrierattr_init(x64emu_t* emu, my_barrierattr_t* b)
 {
+	#ifndef __APPLE__
 	my_barrierattr_t battr = {0};
 	battr.x86 = b->x86;
 	int ret = pthread_barrierattr_init(&battr.nat);
 	b->x86 = battr.x86;
 	return ret;
+	#else
+	return -ENOSYS;
+	#endif
 }
 EXPORT int my_pthread_barrierattr_setpshared(x64emu_t* emu, my_barrierattr_t* b, int p)
 {
+	#ifndef __APPLE__
 	my_barrierattr_t battr = {0};
 	battr.x86 = b->x86;
 	int ret = pthread_barrierattr_setpshared(&battr.nat, p);
 	b->x86 = battr.x86;
 	return ret;
+	#else
+	return -ENOSYS;
+	#endif
 }
 EXPORT int my_pthread_barrier_init(x64emu_t* emu, pthread_barrier_t* bar, my_barrierattr_t* b, uint32_t count)
 {
+	#ifndef __APPLE__
 	my_barrierattr_t battr = {0};
 	if(b)
 		battr.x86 = b->x86;
@@ -1314,6 +1395,9 @@ EXPORT int my_pthread_barrier_init(x64emu_t* emu, pthread_barrier_t* bar, my_bar
 	if(b)
 		b->x86 = battr.x86;
 	return ret;
+	#else
+	return -ENOSYS;
+	#endif
 }
 
 #endif
@@ -1331,6 +1415,7 @@ void init_pthread_helper()
 	// search for older symbol for pthread_kill
 	{
 		char buff[50];
+#ifndef __APPLE__
 		for(int i=0; i<34 && !real_phtread_kill_old; ++i) {
 			snprintf(buff, 50, "GLIBC_2.%d", i);
 			real_phtread_kill_old = (iFli_t)dlvsym(NULL, "pthread_kill", buff);
@@ -1338,6 +1423,9 @@ void init_pthread_helper()
 	}
 	if(!real_phtread_kill_old)
 		real_phtread_kill_old = (iFli_t)dlvsym(NULL, "pthread_kill", "GLIBC_2.2.5");
+#else
+	}
+#endif
 	if(!real_phtread_kill_old) {
 		printf_log(LOG_INFO, "Warning, older then 2.34 pthread_kill not found, using current one\n");
 		real_phtread_kill_old = (iFli_t)pthread_kill;

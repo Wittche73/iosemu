@@ -32,17 +32,61 @@ void* my_dlsym(x64emu_t* emu, void *handle, void *symbol);
 
 static int sdl_Yes() { return 1;}
 static int sdl_No() { return 0;}
+#ifndef __APPLE__
 int EXPORT my2_SDL_Has3DNow(void) __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my2_SDL_Has3DNow\n_my2_SDL_Has3DNow: b _sdl_No");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_Has3DNowExt(void) __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my2_SDL_Has3DNowExt\n_my2_SDL_Has3DNowExt: b _sdl_No");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasAltiVec(void) __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my2_SDL_HasAltiVec\n_my2_SDL_HasAltiVec: b _sdl_No");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasMMX(void) __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my2_SDL_HasMMX\n_my2_SDL_HasMMX: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasMMXExt(void) __attribute__((alias("sdl_Yes")));
-int EXPORT my2_SDL_HasNEON(void) __attribute__((alias("sdl_No")));   // No neon in x86_64 ;)
+#else
+__asm__(".globl _my2_SDL_HasMMXExt\n_my2_SDL_HasMMXExt: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
+int EXPORT my2_SDL_HasNEON(void) __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my2_SDL_HasNEON\n_my2_SDL_HasNEON: b _sdl_No");
+#endif   // No neon in x86_64 ;)
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasRDTSC(void) __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my2_SDL_HasRDTSC\n_my2_SDL_HasRDTSC: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasSSE(void) __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my2_SDL_HasSSE\n_my2_SDL_HasSSE: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasSSE2(void) __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my2_SDL_HasSSE2\n_my2_SDL_HasSSE2: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasSSE3(void) __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my2_SDL_HasSSE3\n_my2_SDL_HasSSE3: b _sdl_Yes");
+#endif
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasSSE41(void) __attribute__((alias("sdl_Yes")));
+#else
+__asm__(".globl _my2_SDL_HasSSE41\n_my2_SDL_HasSSE41: b _sdl_Yes");
+#endif
 int EXPORT my2_SDL_HasSSE42(void) {
     return BOX64ENV(sse42)?1:0;
 }
@@ -52,7 +96,11 @@ int EXPORT my2_SDL_HasAVX(void) {
 int EXPORT my2_SDL_HasAVX2(void) {
     return BOX64ENV(avx2)?1:0;
 }
+#ifndef __APPLE__
 int EXPORT my2_SDL_HasAVX512F(void) __attribute__((alias("sdl_No")));
+#else
+__asm__(".globl _my2_SDL_HasAVX512F\n_my2_SDL_HasAVX512F: b _sdl_No");
+#endif
 
 typedef struct {
   int32_t freq;

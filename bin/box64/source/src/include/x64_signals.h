@@ -54,7 +54,7 @@
 #if !defined(NEED_SIG_CONV) && X64_SIGABRT != SIGABRT
  #define NEED_SIG_CONV
 #endif
-#if !defined(NEED_SIG_CONV) && X64_SIGIOT != SIGIOT
+#if !defined(NEED_SIG_CONV) && defined(SIGIOT) && X64_SIGIOT != SIGIOT
  #define NEED_SIG_CONV
 #endif
 #if !defined(NEED_SIG_CONV) && X64_SIGBUS != SIGBUS
@@ -84,7 +84,7 @@
 #if !defined(NEED_SIG_CONV) && X64_SIGTERM != SIGTERM
  #define NEED_SIG_CONV
 #endif
-#if !defined(NEED_SIG_CONV) && X64_SIGSTKFLT != SIGSTKFLT
+#if !defined(NEED_SIG_CONV) && defined(SIGSTKFLT) && X64_SIGSTKFLT != SIGSTKFLT
  #define NEED_SIG_CONV
 #endif
 #if !defined(NEED_SIG_CONV) && X64_SIGCHLD != SIGCHLD
@@ -126,7 +126,7 @@
 #if !defined(NEED_SIG_CONV) && X64_SIGIO != SIGIO
  #define NEED_SIG_CONV
 #endif
-#if !defined(NEED_SIG_CONV) && X64_SIGPWR != SIGPWR
+#if !defined(NEED_SIG_CONV) && defined(SIGPWR) && X64_SIGPWR != SIGPWR
  #define NEED_SIG_CONV
 #endif
 #if !defined(NEED_SIG_CONV) && X64_SIGSYS != SIGSYS
@@ -136,6 +136,25 @@
 #ifdef NEED_SIG_CONV
 int signal_to_x64(int sig);
 int signal_from_x64(int sig);
+
+#if defined(SIGIOT) && SIGIOT != SIGABRT
+#define GO_SIGIOT_ GO(SIGIOT)
+#else
+#define GO_SIGIOT_
+#endif
+
+#ifdef SIGSTKFLT
+#define GO_SIGSTKFLT_ GO(SIGSTKFLT)
+#else
+#define GO_SIGSTKFLT_
+#endif
+
+#ifdef SIGPWR
+#define GO_SIGPWR_ GO(SIGPWR)
+#else
+#define GO_SIGPWR_
+#endif
+
 #define SUPER_SIGNAL    \
 GO(SIGHUP)      \
 GO(SIGINT)      \
@@ -143,7 +162,7 @@ GO(SIGQUIT)     \
 GO(SIGILL)      \
 GO(SIGTRAP)     \
 GO(SIGABRT)     \
-GO(SIGIOT)      \
+GO_SIGIOT_      \
 GO(SIGBUS)      \
 GO(SIGFPE)      \
 GO(SIGKILL)     \
@@ -153,7 +172,7 @@ GO(SIGUSR2)     \
 GO(SIGPIPE)     \
 GO(SIGALRM)     \
 GO(SIGTERM)     \
-GO(SIGSTKFLT)   \
+GO_SIGSTKFLT_   \
 GO(SIGCHLD)     \
 GO(SIGCONT)     \
 GO(SIGSTOP)     \
@@ -167,7 +186,7 @@ GO(SIGVTALRM)   \
 GO(SIGPROF)     \
 GO(SIGWINCH)    \
 GO(SIGIO)       \
-GO(SIGPWR)      \
+GO_SIGPWR_      \
 GO(SIGSYS)
 #else
 #define signal_to_x64(A)    A

@@ -1,6 +1,12 @@
 #ifndef __OS_H_
 #define __OS_H_
 
+#ifdef __APPLE__
+#ifndef _DARWIN_C_SOURCE
+#define _DARWIN_C_SOURCE
+#endif
+#endif
+
 #include <stdint.h>
 #include <sys/types.h>
 
@@ -65,7 +71,13 @@ const char* GetBridgeName(void* p);
 #ifndef _WIN32
 #include <setjmp.h>
 #define LongJmp longjmp
+#ifdef __APPLE__
+#define SigSetJmp(a, b) sigsetjmp((void*)(a), b)
+#define SigLongJmp(a, b) siglongjmp(*(a), b)
+#else
 #define SigSetJmp sigsetjmp
+#define SigLongJmp siglongjmp
+#endif
 #else
 #define LongJmp(a, b)
 #define SigSetJmp(a, b) 0
@@ -75,7 +87,7 @@ const char* GetBridgeName(void* p);
 #include <setjmp.h>
 #define NEW_JUMPBUFF(name) \
     static __thread JUMPBUFF name
-#ifdef ANDROID
+#if defined(ANDROID) || defined(__APPLE__)
 #define JUMPBUFF sigjmp_buf
 #define GET_JUMPBUFF(name) name
 #else
@@ -93,11 +105,40 @@ const char* GetBridgeName(void* p);
 #define PROT_EXEC  0x4
 
 #if defined(__clang__) && !defined(_WIN32)
+#if !defined(__APPLE__) && !defined(isinff)
 extern int isinff(float);
+#endif
+#if !defined(__APPLE__) && !defined(isnanf)
 extern int isnanf(float);
+#endif
 #elif defined(_WIN32)
 #define isnanf isnan
 #define isinff isinf
+#endif
+
+#ifdef __APPLE__
+#include <math.h>
+#include <strings.h>
+#include "linux_syscalls.h"
+#define sincos(x, s, c) __sincos(x, s, c)
+#define sincosf(x, s, c) __sincosf(x, s, c)
+#define fseeko64 fseeko
+#define ftello64 ftello
+#ifndef MAP_GROWSDOWN
+#define MAP_GROWSDOWN 0
+#endif
+#ifndef CLOCK_MONOTONIC_COARSE
+#define CLOCK_MONOTONIC_COARSE CLOCK_MONOTONIC
+#endif
+#ifndef CLOCK_REALTIME_COARSE
+#define CLOCK_REALTIME_COARSE CLOCK_REALTIME
+#endif
+typedef int pthread_barrier_t;
+typedef int pthread_barrierattr_t;
+#ifdef __APPLE__
+size_t malloc_size(const void *ptr);
+#endif
+#define malloc_trim(a) 
 #endif
 
 void PrintfFtrace(int prefix, const char* fmt, ...);

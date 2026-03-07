@@ -188,7 +188,7 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                     perr = 1;
                 } else if (!strcmp(s, "readlink")) {
                     tmp = (char*)(R_RDI);
-                    snprintf(buff, 256, "%04d|%p: Calling %s(\"%s\", %p, %zd)", tid, *(void**)(R_RSP), s, (tmp)?tmp:"(nil)", (void*)(R_RSI), (size_t)R_RDX);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(\"%s\", %p, %llu)", tid, *(void**)(R_RSP), s, (tmp)?tmp:"(nil)", (void*)(R_RSI), (unsigned long long)R_RDX);
                     perr = 1;
                 } else if (!strcmp(s, "execv") || !strcmp(s, "my_execv")) {
                     tmp = (char*)(R_RDI);
@@ -208,15 +208,15 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                     snprintf(buff, 256, "%04d|%p: Calling %s(\"%s\")", tid, *(void**)(R_RSP), s, (tmp)?tmp:"(nil)", (tmp2)?tmp2:"nil");
                     perr = 5;
                 } else if (!strcmp(s, "read") || !strcmp(s, "my_read")) {
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p, %zu)", tid, *(void**)(R_RSP), s, R_EDI, (void*)R_RSI, R_RDX);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p, %llu)", tid, *(void**)(R_RSP), s, (int)R_EDI, (void*)R_RSI, (unsigned long long)R_RDX);
                     pu8 = (uint8_t*)R_RSI;
                     post = 8;
                     perr = 1;
                 } else if (!strcmp(s, "write") || !strcmp(s, "my_write")) {
                     if(R_EDI==2 || R_EDI==3)
-                        snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p\"%.*s\", %zu)", tid, *(void**)(R_RSP), s, R_EDI, (void*)R_RSI, R_EDX, (char*)R_RSI, R_RDX);
+                        snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p\"%.*s\", %llu)", tid, *(void**)(R_RSP), s, (int)R_EDI, (void*)R_RSI, (int)R_EDX, (char*)R_RSI, (unsigned long long)R_RDX);
                     else
-                        snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p, %zu)", tid, *(void**)(R_RSP), s, R_EDI, (void*)R_RSI, R_RDX);
+                        snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p, %llu)", tid, *(void**)(R_RSP), s, (int)R_EDI, (void*)R_RSI, (unsigned long long)R_RDX);
                     perr = 1;
                 } else if (strstr(s, "access")==s) {
                     tmp = (char*)(R_RDI);
@@ -230,20 +230,19 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                 } else if (!strcmp(s, "ioctl")) {
                     snprintf(buff, 256, "%04d|%p: Calling %s(%d, 0x%x, %p)", tid, *(void**)(R_RSP), s, S_EDI, R_ESI, (void*)R_RDX);
                     perr = 1;
-                } else if (!strcmp(s, "lseek64")) {
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, %ld, %d)", tid, *(void**)(R_RSP), s, S_EDI, (int64_t)R_RSI, S_EDX);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, %lld, %d)", tid, *(void**)(R_RSP), s, S_EDI, (long long)R_RSI, S_EDX);
                     perr = 1;
                 } else if (!strcmp(s, "lseek")) {
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, %ld, %d)", tid, *(void**)(R_RSP), s, S_EDI, (int64_t)R_RSI, S_EDX);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, %lld, %d)", tid, *(void**)(R_RSP), s, S_EDI, (long long)R_RSI, S_EDX);
                     perr = 1;
                 } else if (!strcmp(s, "recvmsg")) {
                     snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p, 0x%x)", tid, *(void**)(R_RSP), s, R_EDI, (void*)R_RSI, R_EDX);
                     perr = 1;
                 } else if (!strcmp(s, "getxattr")) {
-                    snprintf(buff, 256, "%04d|%p: Calling %s(\"%s\", \"%s\", %p, 0x%zx)", tid, *(void**)(R_RSP), s, (char*)R_RDI, (char*)R_RSI, (void*)R_RDX, R_RCX);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(\"%s\", \"%s\", %p, 0x%llx)", tid, *(void**)(R_RSP), s, (char*)R_RDI, (char*)R_RSI, (void*)R_RDX, (unsigned long long)R_RCX);
                     perr = 1;
                 } else if (!strcmp(s, "fgetxattr")) {
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, \"%s\", %p, 0x%zx)", tid, *(void**)(R_RSP), s, R_EDI, (char*)R_RSI, (void*)R_RDX, R_RCX);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%d, \"%s\", %p, 0x%llx)", tid, *(void**)(R_RSP), s, (int)R_EDI, (char*)R_RSI, (void*)R_RDX, (unsigned long long)R_RCX);
                     perr = 1;
                 } else if (!strcmp(s, "connect")) {
                     snprintf(buff, 256, "%04d|%p: Calling %s(%d, %p, %d)", tid, *(void**)(R_RSP), s, R_EDI, (void*)R_RSI, R_EDX);
@@ -280,12 +279,12 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                     tmp = (char*)(R_R8);
                     pu64 = (uint64_t*)R_RDI;
                     post = 3;
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %zu, %d, %zu, \"%s\" (,%p))", tid, *(void**)(R_RSP), s, (void*)R_RDI, R_RSI, R_EDX, R_RCX, (tmp)?tmp:"(nil)", (void*)(R_R9));
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %llu, %d, %llu, \"%s\" (,%p))", tid, *(void**)(R_RSP), s, (void*)R_RDI, (unsigned long long)R_RSI, (int)R_EDX, (unsigned long long)R_RCX, (tmp)?tmp:"(nil)", (void*)(R_R9));
                 } else if (!strcmp(s, "__vsnprintf_chk") || !strcmp(s, "my___vsnprintf_chk")) {
                     tmp = (char*)(R_R8);
                     pu64 = (uint64_t*)R_RDI;
                     post = 3;
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %zu, %d, %zu, \"%s\" (,%p))", tid, *(void**)(R_RSP), s, (void*)R_RDI, R_RSI, R_EDX, R_RCX, (tmp)?tmp:"(nil)", (void*)(R_R9));
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %llu, %d, %llu, \"%s\" (,%p))", tid, *(void**)(R_RSP), s, (void*)R_RDI, (unsigned long long)R_RSI, (int)R_EDX, (unsigned long long)R_RCX, (tmp)?tmp:"(nil)", (void*)(R_R9));
                 } else if (!strcmp(s, "__vfprintf_chk") || !strcmp(s, "my___vfprintf_chk")) {
                     tmp = (char*)(R_RDX);
                     pu64 = (uint64_t*)R_RDI;
@@ -294,7 +293,7 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                     tmp = (char*)(R_RDX);
                     pu64 = (uint64_t*)R_RDI;
                     post = 3;
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %zu, \"%s\" (,%p))", tid, *(void**)(R_RSP), s, (void*)R_RDI, R_RSI, (tmp)?tmp:"(nil)", (void*)(R_RCX));
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %llu, \"%s\" (,%p))", tid, *(void**)(R_RSP), s, (void*)R_RDI, (unsigned long long)R_RSI, (tmp)?tmp:"(nil)", (void*)(R_RCX));
                 } else if (!strcmp(s, "sprintf") || !strcmp(s, "my_sprintf")) {
                     tmp = (char*)(R_RSI);
                     pu64 = (uint64_t*)R_RDI;
@@ -307,7 +306,7 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                     snprintf(buff, 256, "%04d|%p: Calling %s(%p, \"%s\")", tid, *(void**)(R_RSP), s, (void*)R_RDI, (char*)R_RSI);
                 } else if (!strcmp(s, "getcwd")) {
                     post = 2;
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %zu)", tid, *(void**)(R_RSP), s, (void*)R_RDI, R_RSI);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, %llu)", tid, *(void**)(R_RSP), s, (void*)R_RDI, (unsigned long long)R_RSI);
                 } else if (!strcmp(s, "ftok")) {
                     tmp = (char*)(R_RDI);
                     perr = 1;
@@ -349,8 +348,8 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                 } else if (!strcmp(s, "ov_read")) {
                     snprintf(buff, 256, "%04d|%p: Calling %s(%p, %p, %d, %d, %d, %d, %p)", tid, *(void**)(R_RSP), s, (void*)R_RDI, (void*)R_RSI, R_EDX, R_ECX, R_R8d, R_R9d, *(void**)(R_RSP+8));
                 } else if (!strcmp(s, "mmap64") || !strcmp(s, "mmap")) {
-                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, 0x%lx, 0x%x, 0x%x, %d, %ld)", tid, *(void**)(R_RSP), s,
-                        (void*)R_RDI, R_RSI, (int)(R_RDX), (int)(S_RCX), (int)(S_R8), R_R9);
+                    snprintf(buff, 256, "%04d|%p: Calling %s(%p, 0x%llx, 0x%x, 0x%x, %d, %lld)", tid, *(void**)(R_RSP), s,
+                        (void*)R_RDI, (unsigned long long)R_RSI, (int)(R_RDX), (int)(S_RCX), (int)(S_R8), (long long)R_R9);
                     perr = 3;
                 } else if (!strcmp(s, "sscanf")) {
                     tmp = (char*)(R_RSI);
@@ -449,10 +448,10 @@ void x64Int3(x64emu_t* emu, uintptr_t* addr)
                     snprintf(buff3, 64, " (errno=%d:\"%s\")", e, strerror(e));
 
                 if(BOX64ENV(rolling_log))
-                    snprintf(buffret, 127, "0x%lX%s%s", R_RAX, buff2, buff3);
+                    snprintf(buffret, 127, "0x%llX%s%s", (unsigned long long)R_RAX, buff2, buff3);
                 else {
                     mutex_lock(&emu->context->mutex_trace);
-                    printf_log_prefix(0, LOG_NONE, " return 0x%lX%s%s\n", R_RAX, buff2, buff3);
+                    printf_log_prefix(0, LOG_NONE, " return 0x%llX%s%s\n", (unsigned long long)R_RAX, buff2, buff3);
                     mutex_unlock(&emu->context->mutex_trace);
                 }
                 errno = e;

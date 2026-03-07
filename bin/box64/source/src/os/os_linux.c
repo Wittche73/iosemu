@@ -3,7 +3,9 @@
 #include <sched.h>
 #include <unistd.h>
 #include <stdint.h>
+#ifndef __APPLE__
 #include <sys/personality.h>
+#endif
 #include <sys/stat.h>
 #include <dlfcn.h>
 #include <string.h>
@@ -11,7 +13,9 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <sys/resource.h>
+#ifndef __APPLE__
 #include <malloc.h>
+#endif
 
 #include "os.h"
 #include "signals.h"
@@ -26,7 +30,13 @@
 
 int GetTID(void)
 {
+#ifdef __APPLE__
+    uint64_t tid;
+    pthread_threadid_np(NULL, &tid);
+    return (int)tid;
+#else
     return syscall(SYS_gettid);
+#endif
 }
 
 int SchedYield(void)
@@ -140,7 +150,9 @@ const char* GetNativeName(void* p, int lib)
 
 void PersonalityAddrLimit32Bit(void)
 {
+#ifndef __APPLE__
     personality(ADDR_LIMIT_32BIT);
+#endif
     #ifndef ANDROID
     /*struct rlimit l;
     if(getrlimit(RLIMIT_DATA, &l)<0) return;  // failed
@@ -148,10 +160,12 @@ void PersonalityAddrLimit32Bit(void)
         l.rlim_cur = 3*1024*1024*1024LL;
         setrlimit(RLIMIT_DATA, &l);
     }*/
+#ifndef __APPLE__
     // setting 32bits malloc options
     mallopt(M_ARENA_TEST, 2);
     mallopt(M_ARENA_MAX, 2);
     mallopt(M_MMAP_THRESHOLD, 128*1024);
+#endif
     #endif
 }
 
@@ -163,7 +177,11 @@ int IsAddrElfOrFileMapped(uintptr_t addr)
 void* InternalMmap(void* addr, unsigned long length, int prot, int flags, int fd, ssize_t offset)
 {
 #if 1 // def STATICBUILD
+#ifdef __APPLE__
+    void* ret = mmap(addr, length, prot, flags, fd, offset);
+#else
     void* ret = (void*)syscall(__NR_mmap, addr, length, prot, flags, fd, offset);
+#endif
 #else
     static int grab = 1;
     typedef void* (*pFpLiiiL_t)(void*, unsigned long, int, int, int, size_t);
@@ -179,7 +197,11 @@ void* InternalMmap(void* addr, unsigned long length, int prot, int flags, int fd
 int InternalMunmap(void* addr, unsigned long length)
 {
 #if 1 // def STATICBUILD
+#ifdef __APPLE__
+    int ret = munmap(addr, length);
+#else
     int ret = syscall(__NR_munmap, addr, length);
+#endif
 #else
     static int grab = 1;
     typedef int (*iFpL_t)(void*, unsigned long);

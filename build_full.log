@@ -1,0 +1,283 @@
+--- Box64 iOS Cross-Compilation Başlatılıyor ---
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios
+--- Derleme Başlıyor (make) ---
+[  0%] Built target WRAPPERS
+[  0%] Built target functions_list
+[  0%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynablock.c.o
+[  1%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynarec_native_functions.c.o
+[  1%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynarec_native.c.o
+[  1%] Building C object CMakeFiles/dynarec_native.dir/src/emu/x64test.c.o
+[  1%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynacache_reloc.c.o
+[  1%] Generating /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h
+[  1%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run.c.o
+[  1%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run.c.o
+[  1%] Built target generate_git_head_target
+[  1%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[  1%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[  2%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[  3%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[  3%] Building C object CMakeFiles/mainobj.dir/src/os/backtrace.c.o
+[  3%] Building C object CMakeFiles/mainobj.dir/src/os/emit_signals_linux.c.o
+[  3%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[  4%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run0f.c.o
+[  4%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[  4%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[  4%] Building C object CMakeFiles/mainobj.dir/src/os/hostext_common.c.o
+[  4%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/dynarec_arm64_functions.c.o
+[  4%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/dynarec_arm64_arch.c.o
+[  5%] Building C object CMakeFiles/mainobj.dir/src/os/hostext_linux.c.o
+[  5%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run0f.c.o
+[  6%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[  6%] Building C object CMakeFiles/mainobj.dir/src/os/freq_linux.c.o
+[  6%] Building C object CMakeFiles/mainobj.dir/src/os/os_linux.c.o
+[  6%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[  6%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[  6%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66.c.o
+[  6%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[  6%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[  6%] Building C object CMakeFiles/mainobj.dir/src/os/perfmap.c.o
+/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/os/perfmap.c:24:86: warning: format specifies type 'unsigned long long' but the argument has type 'uintptr_t' (aka 'unsigned long') [-Wformat]
+   24 |         snprintf(pbuf, sizeof(pbuf), "0x%" PRIx64 " %" PRId64 " 0x%" PRIx64 ":%s\n", code_addr, code_size, func_addr, inst_name);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/f-rat/theos/sdks/iPhoneOS.sdk/usr/include/secure/_stdio.h:57:62: note: expanded from macro 'snprintf'
+   57 |   __builtin___snprintf_chk (str, len, 0, __darwin_obsz(str), __VA_ARGS__)
+      |                                                              ^~~~~~~~~~~
+/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/os/perfmap.c:24:97: warning: format specifies type 'long long' but the argument has type 'size_t' (aka 'unsigned long') [-Wformat]
+   24 |         snprintf(pbuf, sizeof(pbuf), "0x%" PRIx64 " %" PRId64 " 0x%" PRIx64 ":%s\n", code_addr, code_size, func_addr, inst_name);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/f-rat/theos/sdks/iPhoneOS.sdk/usr/include/secure/_stdio.h:57:62: note: expanded from macro 'snprintf'
+   57 |   __builtin___snprintf_chk (str, len, 0, __darwin_obsz(str), __VA_ARGS__)
+      |                                                              ^~~~~~~~~~~
+/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/os/perfmap.c:24:108: warning: format specifies type 'unsigned long long' but the argument has type 'uintptr_t' (aka 'unsigned long') [-Wformat]
+   24 |         snprintf(pbuf, sizeof(pbuf), "0x%" PRIx64 " %" PRId64 " 0x%" PRIx64 ":%s\n", code_addr, code_size, func_addr, inst_name);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/f-rat/theos/sdks/iPhoneOS.sdk/usr/include/secure/_stdio.h:57:62: note: expanded from macro 'snprintf'
+   57 |   __builtin___snprintf_chk (str, len, 0, __darwin_obsz(str), __VA_ARGS__)
+      |                                                              ^~~~~~~~~~~
+[  7%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/arm64_printer.c.o
+/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/os/perfmap.c:26:75: warning: format specifies type 'unsigned long long' but the argument has type 'uintptr_t' (aka 'unsigned long') [-Wformat]
+   26 |         snprintf(pbuf, sizeof(pbuf), "0x%" PRIx64 " %" PRId64 " %s:%s\n", code_addr, code_size, symbname, inst_name);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/f-rat/theos/sdks/iPhoneOS.sdk/usr/include/secure/_stdio.h:57:62: note: expanded from macro 'snprintf'
+   57 |   __builtin___snprintf_chk (str, len, 0, __darwin_obsz(str), __VA_ARGS__)
+      |                                                              ^~~~~~~~~~~
+/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/os/perfmap.c:26:86: warning: format specifies type 'long long' but the argument has type 'size_t' (aka 'unsigned long') [-Wformat]
+   26 |         snprintf(pbuf, sizeof(pbuf), "0x%" PRIx64 " %" PRId64 " %s:%s\n", code_addr, code_size, symbname, inst_name);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/f-rat/theos/sdks/iPhoneOS.sdk/usr/include/secure/_stdio.h:57:62: note: expanded from macro 'snprintf'
+   57 |   __builtin___snprintf_chk (str, len, 0, __darwin_obsz(str), __VA_ARGS__)
+      |                                                              ^~~~~~~~~~~
+5 warnings generated.
+[  7%] Building C object CMakeFiles/mainobj.dir/src/os/symbolfuncs_linux.c.o
+[  8%] Building C object CMakeFiles/mainobj.dir/src/os/my_cpuid.c.o
+[  8%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[  8%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66.c.o
+[  8%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[  8%] Building C object CMakeFiles/mainobj.dir/src/os/sysinfo.c.o
+[  8%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[  8%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run660f.c.o
+/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/os/sysinfo.c:8:10: fatal error: '../include/build_info.h' file not found
+    8 | #include "../include/build_info.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[2]: *** [CMakeFiles/mainobj.dir/build.make:219: CMakeFiles/mainobj.dir/src/os/sysinfo.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:475: CMakeFiles/mainobj.dir/all] Error 2
+make[1]: *** Bitmemiş işler için bekliyor....
+[  8%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/dynarec_arm64_consts.c.o
+[  8%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[  9%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[  9%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[ 10%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run660f.c.o
+[  9%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66f20f.c.o
+[ 10%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66f20f.c.o
+[ 10%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66f30f.c.o
+[ 10%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[ 10%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+[ 10%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66d9.c.o
+[ 10%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[ 10%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[ 10%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+[ 10%] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/updateflags_arm64.c.o
+[ 11%] Built target dynarec_native
+[ 11%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66f30f.c.o
+[ 12%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+[ 12%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+[ 12%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[ 12%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[ 13%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66dd.c.o
+[ 14%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[ 14%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66d9.c.o
+[ 14%] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66f0.c.o
+[ 14%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66dd.c.o
+[ 14%] Building C object CMakeFiles/interpreter.dir/src/emu/x64rund8.c.o
+[ 14%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[ 15%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[ 15%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66f0.c.o
+[ 15%] Building C object CMakeFiles/interpreter.dir/src/emu/x64rund9.c.o
+[ 15%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runda.c.o
+[ 16%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rund8.c.o
+[ 16%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rund9.c.o
+[ 16%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[ 17%] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundb.c.o
+[ 17%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runda.c.o
+[ 17%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[ 17%] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundc.c.o
+[ 17%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundb.c.o
+[ 17%] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundd.c.o
+[ 17%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundc.c.o
+[ 17%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[ 17%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runde.c.o
+[ 17%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundd.c.o
+[ 17%] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundf.c.o
+[ 17%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[ 18%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runde.c.o
+[ 19%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[ 19%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundf.c.o
+[ 19%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runf0.c.o
+[ 19%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[ 19%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[ 19%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[ 19%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runf0.c.o
+[ 19%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[ 19%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[ 20%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runf20f.c.o
+[ 20%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[ 20%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[ 20%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runf20f.c.o
+[ 20%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[ 20%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[ 20%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runf30f.c.o
+[ 20%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[ 20%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[ 20%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx.c.o
+[ 20%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runf30f.c.o
+[ 20%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[ 20%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx0f.c.o
+[ 21%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[ 22%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[ 22%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[ 23%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx.c.o
+[ 23%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx0f.c.o
+[ 23%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[ 23%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx0f38.c.o
+[ 24%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[ 24%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx0f38.c.o
+[ 24%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[ 24%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx660f.c.o
+[ 24%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[ 24%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx660f.c.o
+[ 24%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[ 24%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[ 24%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf20f.c.o
+[ 24%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[ 24%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf30f.c.o
+[ 25%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf20f.c.o
+[ 25%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[ 25%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[ 25%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[ 25%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[ 25%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[ 26%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx660f38.c.o
+[ 26%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf30f.c.o
+[ 26%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[ 26%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[ 26%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[ 27%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[ 27%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx660f38.c.o
+[ 28%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[ 28%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[ 29%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[ 29%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[ 29%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[ 29%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[ 29%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[ 29%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[ 29%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx660f3a.c.o
+[ 29%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[ 29%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[ 29%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx660f3a.c.o
+[ 29%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf20f38.c.o
+[ 29%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[ 29%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[ 30%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf30f38.c.o
+[ 30%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf20f38.c.o
+[ 30%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[ 30%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[ 30%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[ 30%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf20f3a.c.o
+[ 31%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[ 31%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf30f38.c.o
+[ 31%] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf30f3a.c.o
+[ 31%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[ 31%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[ 31%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf20f3a.c.o
+[ 31%] Built target interpreter
+[ 32%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[ 32%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[ 33%] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf30f3a.c.o
+[ 33%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[ 34%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[ 34%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[ 34%] Built target test_interpreter
+[ 34%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[ 34%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[ 34%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[ 34%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[ 34%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[ 34%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[ 34%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[ 35%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[ 35%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[ 35%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[ 35%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[ 36%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[ 36%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[ 36%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[ 36%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[ 36%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[ 36%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[ 37%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[ 37%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[ 37%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[ 37%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[ 37%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[ 37%] Building C object CMakeFiles/native_pass1.dir/src/dynarec/dynarec_native_pass.c.o
+[ 38%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[ 39%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[ 39%] Built target native_pass1
+[ 39%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[ 39%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[ 39%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[ 39%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[ 39%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[ 39%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[ 39%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[ 39%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[ 39%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[ 39%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[ 39%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[ 39%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[ 40%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[ 41%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[ 41%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[ 41%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[ 41%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[ 41%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[ 42%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[ 42%] Building C object CMakeFiles/native_pass0.dir/src/dynarec/dynarec_native_pass.c.o
+[ 42%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[ 42%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[ 42%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[ 42%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[ 42%] Built target native_pass0
+[ 42%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[ 42%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[ 43%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[ 43%] Building C object CMakeFiles/native_pass3.dir/src/dynarec/dynarec_native_pass.c.o
+[ 43%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[ 43%] Building C object CMakeFiles/native_pass2.dir/src/dynarec/dynarec_native_pass.c.o
+[ 43%] Built target native_pass2
+[ 43%] Built target native_pass3
+make: *** [Makefile:166: all] Error 2

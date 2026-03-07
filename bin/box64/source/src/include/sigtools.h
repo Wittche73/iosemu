@@ -4,27 +4,33 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#ifdef DYNAREC
-#if defined(ARM64)
+#if defined(ARM64) || defined(__aarch64__)
+#if !defined(ARM64)
+#define ARM64
+#endif
 #include "dynarec/arm64/arm64_mapping.h"
+#ifdef __APPLE__
+#define CONTEXT_REG(P, X)   (P)->uc_mcontext->__ss.__x[X]
+#define CONTEXT_PC(P)       (P)->uc_mcontext->__ss.__pc
+#else
 #define CONTEXT_REG(P, X)   (P)->uc_mcontext.regs[X]
 #define CONTEXT_PC(P)       (P)->uc_mcontext.pc
-#elif defined(LA64)
+#endif
+#elif defined(LA64) || defined(__loongarch64)
 #include "dynarec/la64/la64_mapping.h"
 #define CONTEXT_REG(P, X)   (P)->uc_mcontext.__gregs[X]
 #define CONTEXT_PC(P)       (P)->uc_mcontext.__pc
-#elif defined(RV64)
+#elif defined(RV64) || defined(__riscv)
 #include "dynarec/rv64/rv64_mapping.h"
 #define CONTEXT_REG(P, X)   (P)->uc_mcontext.__gregs[X]
 #define CONTEXT_PC(P)       (P)->uc_mcontext.__gregs[REG_PC]
-#elif defined(PPC64LE)
+#elif defined(PPC64LE) || defined(__ppc64__)
 #include "dynarec/ppc64le/ppc64le_mapping.h"
 #define CONTEXT_REG(P, X)   (P)->uc_mcontext.gp_regs[X]
 #define CONTEXT_PC(P)       (P)->uc_mcontext.gp_regs[PT_NIP]
 #else
 #error Unsupported Architecture
 #endif //arch
-#endif //dynarec
 
 typedef struct dynablock_s dynablock_t;
 typedef struct x64emu_s x64emu_t;

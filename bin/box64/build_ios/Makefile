@@ -3513,30 +3513,6 @@ src/libtools/decopcode.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/decopcode.c.s
 .PHONY : src/libtools/decopcode.c.s
 
-src/libtools/libdl.o: src/libtools/libdl.c.o
-.PHONY : src/libtools/libdl.o
-
-# target to build an object file
-src/libtools/libdl.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/libdl.c.o
-.PHONY : src/libtools/libdl.c.o
-
-src/libtools/libdl.i: src/libtools/libdl.c.i
-.PHONY : src/libtools/libdl.i
-
-# target to preprocess a source file
-src/libtools/libdl.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/libdl.c.i
-.PHONY : src/libtools/libdl.c.i
-
-src/libtools/libdl.s: src/libtools/libdl.c.s
-.PHONY : src/libtools/libdl.s
-
-# target to generate assembly for a file
-src/libtools/libdl.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/libdl.c.s
-.PHONY : src/libtools/libdl.c.s
-
 src/libtools/myalign.o: src/libtools/myalign.c.o
 .PHONY : src/libtools/myalign.o
 
@@ -3560,30 +3536,6 @@ src/libtools/myalign.s: src/libtools/myalign.c.s
 src/libtools/myalign.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/myalign.c.s
 .PHONY : src/libtools/myalign.c.s
-
-src/libtools/obstack.o: src/libtools/obstack.c.o
-.PHONY : src/libtools/obstack.o
-
-# target to build an object file
-src/libtools/obstack.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/obstack.c.o
-.PHONY : src/libtools/obstack.c.o
-
-src/libtools/obstack.i: src/libtools/obstack.c.i
-.PHONY : src/libtools/obstack.i
-
-# target to preprocess a source file
-src/libtools/obstack.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/obstack.c.i
-.PHONY : src/libtools/obstack.c.i
-
-src/libtools/obstack.s: src/libtools/obstack.c.s
-.PHONY : src/libtools/obstack.s
-
-# target to generate assembly for a file
-src/libtools/obstack.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/obstack.c.s
-.PHONY : src/libtools/obstack.c.s
 
 src/libtools/sdl1rwops.o: src/libtools/sdl1rwops.c.o
 .PHONY : src/libtools/sdl1rwops.o
@@ -3704,30 +3656,6 @@ src/libtools/threads.s: src/libtools/threads.c.s
 src/libtools/threads.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/threads.c.s
 .PHONY : src/libtools/threads.c.s
-
-src/libtools/vulkanoverlay.o: src/libtools/vulkanoverlay.c.o
-.PHONY : src/libtools/vulkanoverlay.o
-
-# target to build an object file
-src/libtools/vulkanoverlay.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o
-.PHONY : src/libtools/vulkanoverlay.c.o
-
-src/libtools/vulkanoverlay.i: src/libtools/vulkanoverlay.c.i
-.PHONY : src/libtools/vulkanoverlay.i
-
-# target to preprocess a source file
-src/libtools/vulkanoverlay.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.i
-.PHONY : src/libtools/vulkanoverlay.c.i
-
-src/libtools/vulkanoverlay.s: src/libtools/vulkanoverlay.c.s
-.PHONY : src/libtools/vulkanoverlay.s
-
-# target to generate assembly for a file
-src/libtools/vulkanoverlay.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainobj.dir/build.make CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.s
-.PHONY : src/libtools/vulkanoverlay.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -11202,15 +11130,9 @@ help:
 	@echo "... src/libtools/decopcode.o"
 	@echo "... src/libtools/decopcode.i"
 	@echo "... src/libtools/decopcode.s"
-	@echo "... src/libtools/libdl.o"
-	@echo "... src/libtools/libdl.i"
-	@echo "... src/libtools/libdl.s"
 	@echo "... src/libtools/myalign.o"
 	@echo "... src/libtools/myalign.i"
 	@echo "... src/libtools/myalign.s"
-	@echo "... src/libtools/obstack.o"
-	@echo "... src/libtools/obstack.i"
-	@echo "... src/libtools/obstack.s"
 	@echo "... src/libtools/sdl1rwops.o"
 	@echo "... src/libtools/sdl1rwops.i"
 	@echo "... src/libtools/sdl1rwops.s"
@@ -11226,9 +11148,6 @@ help:
 	@echo "... src/libtools/threads.o"
 	@echo "... src/libtools/threads.i"
 	@echo "... src/libtools/threads.s"
-	@echo "... src/libtools/vulkanoverlay.o"
-	@echo "... src/libtools/vulkanoverlay.i"
-	@echo "... src/libtools/vulkanoverlay.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

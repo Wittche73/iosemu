@@ -1,12 +1,17 @@
 #include <string.h>
 
-#include "auxval.h"
-#include "debug.h"
+#include "../include/auxval.h"
+#include "../include/debug.h"
 
 
 #ifdef ARM64
-#include <linux/auxvec.h>
+#ifndef __APPLE__
 #include <asm/hwcap.h>
+#else
+#include <elf.h>
+#endif
+#else
+#include <elf.h>
 #endif
 
 #ifdef PPC64LE
@@ -140,12 +145,24 @@ void rv64Detect(void)
 #endif
 
 #ifdef DYNAREC
+#ifdef __APPLE__
+#define HWCAP_ASIMD (1 << 1)
+#define HWCAP_CRC32 (1 << 7)
+#define HWCAP_PMULL (1 << 4)
+#define HWCAP_AES   (1 << 3)
+#define HWCAP_ATOMICS (1 << 8)
+#endif
+
 int DetectHostCpuFeatures(void)
 {
     memset(&cpuext, 0, sizeof(cpu_ext_t));
     char* p = BOX64ENV(dynarec_nohostext);
 #ifdef ARM64 
+#ifdef __APPLE__
+    unsigned long hwcap = HWCAP_ASIMD | HWCAP_CRC32 | HWCAP_PMULL | HWCAP_AES;
+#else
     unsigned long hwcap = real_getauxval(AT_HWCAP);
+#endif
     if(!hwcap)
         hwcap = HWCAP_ASIMD;
     // first, check all needed extensions, lif half, edsp and fastmult
@@ -175,7 +192,11 @@ int DetectHostCpuFeatures(void)
         if(hwcap&HWCAP_FLAGM)
             cpuext.flagm = 1;
         #endif
+#ifdef __APPLE__
+        unsigned long hwcap2 = 0;
+#else
         unsigned long hwcap2 = real_getauxval(AT_HWCAP2);
+#endif
         #ifdef HWCAP2_FLAGM2
         if(hwcap2&HWCAP2_FLAGM2)
             cpuext.flagm2 = 1;

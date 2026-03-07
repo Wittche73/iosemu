@@ -8,10 +8,14 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
+#ifndef __APPLE__
 #include <syscall.h>
+#endif
 #include <stddef.h>
 #include <stdarg.h>
+#ifndef __APPLE__
 #include <fts.h>
+#endif
 
 #include "box64context.h"
 #include "debug.h"

@@ -4,10 +4,13 @@
 #include <string.h>
 #include <dlfcn.h>
 #include <signal.h>
-#ifndef ANDROID
+#if !defined(ANDROID) && !defined(__APPLE__)
 #include <aio.h>
 #else
 #include <errno.h>
+#ifdef __APPLE__
+typedef void* timer_t;
+#endif
 #endif
 
 #include "wrappedlibs.h"
@@ -21,7 +24,6 @@
 #include "callback.h"
 #include "librarian.h"
 #include "box64context.h"
-#include "emu/x64emu_private.h"
 
 #undef aio_suspend
 #undef aio_return
@@ -71,6 +73,7 @@ static void* findsigev_notifyFct(void* fct)
 
 EXPORT int my_timer_create(x64emu_t* emu, uint32_t clockid, void* sevp, timer_t* timerid)
 {
+#ifndef __APPLE__
     (void)emu;
     struct sigevent sevent;
     memcpy(&sevent, sevp, sizeof(sevent));
@@ -80,8 +83,12 @@ EXPORT int my_timer_create(x64emu_t* emu, uint32_t clockid, void* sevp, timer_t*
     }
 
     return timer_create(clockid, &sevent, timerid);
+#else
+    errno = ENOSYS;
+    return -1;
+#endif
 }
-#ifndef ANDROID
+#if !defined(ANDROID) && !defined(__APPLE__)
 EXPORT int my_aio_cancel(x64emu_t emu, int fd, struct aiocb* aiocbp)
 {
     if(aiocbp && aiocbp->aio_sigevent.sigev_notify == SIGEV_THREAD)

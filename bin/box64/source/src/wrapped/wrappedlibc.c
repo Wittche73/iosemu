@@ -40,7 +40,9 @@ extern int _nl_msg_cat_cntr __attribute__((weak));
 #include <search.h>
 #include <sys/types.h>
 #include <poll.h>
+#ifndef __APPLE__
 #include <sys/epoll.h>
+#endif
 #include <arpa/inet.h>
 #include <ftw.h>
 #include <sys/syscall.h>
@@ -51,18 +53,81 @@ extern int _nl_msg_cat_cntr __attribute__((weak));
 #include <sys/ipc.h>
 #include <sys/sem.h>
 #include <setjmp.h>
+#ifndef __APPLE__
 #include <sys/vfs.h>
+#else
+#include <sys/mount.h>
+#include <sys/param.h>
+#endif
 #include <spawn.h>
 #include <fts.h>
 #include <syslog.h>
+#ifndef __APPLE__
 #include <malloc.h>
+#endif
 #include <getopt.h>
 #include <sys/resource.h>
+#ifndef __APPLE__
 #include <sys/prctl.h>
 #include <sys/ptrace.h>
+#endif
+#ifndef __APPLE__
 #include <error.h>
+#endif
 #undef LOG_INFO
 #undef LOG_DEBUG
+
+#ifdef __APPLE__
+#define dirent64 dirent
+#ifndef O_RSYNC
+#define O_RSYNC 0
+#endif
+#ifndef O_DIRECT
+#define O_DIRECT 0
+#endif
+#ifndef O_LARGEFILE
+#define O_LARGEFILE 0
+#endif
+#ifndef O_NOATIME
+#define O_NOATIME 0
+#endif
+#ifndef O_PATH
+#define O_PATH 0
+#endif
+#define open64(...) open(__VA_ARGS__)
+#define fopen64(...) fopen(__VA_ARGS__)
+#define fseeko64(...) fseeko(__VA_ARGS__)
+#define ftello64(...) ftello(__VA_ARGS__)
+#define tdestroy(...) (void)0
+#define off64_t off_t
+#define stat64_t struct stat
+#define glob64(...) glob(__VA_ARGS__)
+#define scandir64(...) scandir(__VA_ARGS__)
+#define ftw64(...) ftw(__VA_ARGS__)
+#define nftw64(...) nftw(__VA_ARGS__)
+#define scandirat(...) (errno=ENOSYS, -1)
+#define scandirat64(...) (errno=ENOSYS, -1)
+#define execvpe(...) (errno=ENOSYS, -1)
+#include <crt_externs.h>
+#define environ (*_NSGetEnviron())
+typedef int (*__compar_d_fn_t)(const void*, const void*, void*);
+#define mremap(...) (errno=ENOSYS, MAP_FAILED)
+#define fopencookie(...) (errno=ENOSYS, NULL)
+struct mallinfo { int dummy; };
+typedef struct {
+    ssize_t (*read)(void *, char *, size_t);
+    ssize_t (*write)(void *, const char *, size_t);
+    int (*seek)(void *, off64_t *, int);
+    int (*close)(void *);
+} my_cookie_io_functions_t;
+#ifndef __APPLE__
+union semun {
+    int val;
+    struct semid_ds *buf;
+    unsigned short *array;
+};
+#endif
+#endif
 
 #include "wrappedlibs.h"
 
@@ -154,7 +219,26 @@ static void my_wrap_error_print_progname(void)
         *p = my_wrap_error_print_progname;                                            \
     }
 
+#ifdef __APPLE__
+#define stat64 stat
+#define fstat64 fstat
+#define lstat64 lstat
+#define fstatat64 fstatat
+#endif
+
+#ifdef __APPLE__
+#undef stat64
+#undef fstat64
+#undef lstat64
+#undef fstatat64
+#endif
 #include "wrappercallback.h"
+#ifdef __APPLE__
+#define stat64 stat
+#define fstat64 fstat
+#define lstat64 lstat
+#define fstatat64 fstatat
+#endif
 
 static int regs_abi[] = {_DI, _SI, _DX, _CX, _R8, _R9};
 void* getVargN(x64emu_t *emu, int n)
@@ -688,7 +772,11 @@ pid_t EXPORT my_fork(x64emu_t* emu)
     return v;
     #endif
 }
+#ifndef __APPLE__
 pid_t EXPORT my___fork(x64emu_t* emu) __attribute__((alias("my_fork")));
+#else
+__asm__(".globl _my___fork\n_my___fork: b _my_fork");
+#endif
 pid_t EXPORT my_vfork(x64emu_t* emu)
 {
     #if 1
@@ -818,13 +906,24 @@ EXPORT void my__ITM_memcpyRtWn(void * a, const void * b, size_t c) { (void)a; (v
 EXPORT void my__ITM_memcpyRnWt(void * a, const void * b, size_t c) { (void)a; (void)b; (void)c; printf("warning _ITM_memcpyRnWt called\n"); }
 
 EXPORT void my_longjmp(x64emu_t* emu, /*struct __jmp_buf_tag __env[1]*/void *p, int32_t __val);
+#ifndef __APPLE__
 EXPORT void my__longjmp(x64emu_t* emu, /*struct __jmp_buf_tag __env[1]*/void *p, int32_t __val) __attribute__((alias("my_longjmp")));
+#else
+__asm__(".globl _my__longjmp\n_my__longjmp: b _my_longjmp");
+#endif
+#ifndef __APPLE__
 EXPORT void my_siglongjmp(x64emu_t* emu, /*struct __jmp_buf_tag __env[1]*/void *p, int32_t __val) __attribute__((alias("my_longjmp")));
+#else
+__asm__(".globl _my_siglongjmp\n_my_siglongjmp: b _my_longjmp");
+#endif
+#ifndef __APPLE__
 EXPORT void my___longjmp_chk(x64emu_t* emu, /*struct __jmp_buf_tag __env[1]*/void *p, int32_t __val) __attribute__((alias("my_longjmp")));
+#else
+__asm__(".globl _my___longjmp_chk\n_my___longjmp_chk: b _my_longjmp");
+#endif
 
 //EXPORT int32_t my_setjmp(x64emu_t* emu, /*struct __jmp_buf_tag __env[1]*/void *p);
-//EXPORT int32_t my__setjmp(x64emu_t* emu, /*struct __jmp_buf_tag __env[1]*/void *p) __attribute__((alias("my_setjmp")));
-//EXPORT int32_t my___sigsetjmp(x64emu_t* emu, /*struct __jmp_buf_tag __env[1]*/void *p) __attribute__((alias("my_setjmp")));
+// Redundant aliases removed (implemented later in file)
 
 EXPORT int my_printf(x64emu_t *emu, void* fmt, void* b) {
     myStackAlign(emu, (const char*)fmt, b, emu->scratch, R_EAX, 1);
@@ -868,7 +967,11 @@ EXPORT int my_vprintf(x64emu_t *emu, void* fmt, x64_va_list_t b) {
     #endif
     return vprintf(fmt, VARARGS);
 }
+#ifndef __APPLE__
 EXPORT int my___vprintf_chk(x64emu_t *emu, void* fmt, x64_va_list_t b) __attribute__((alias("my_vprintf")));
+#else
+__asm__(".globl _my___vprintf_chk\n_my___vprintf_chk: b _my_vprintf");
+#endif
 
 EXPORT int my_vfprintf(x64emu_t *emu, void* F, void* fmt, x64_va_list_t b) {
     #ifdef CONVERT_VALIST
@@ -879,8 +982,16 @@ EXPORT int my_vfprintf(x64emu_t *emu, void* F, void* fmt, x64_va_list_t b) {
     #endif
     return vfprintf(F, fmt, VARARGS);
 }
+#ifndef __APPLE__
 EXPORT int my___vfprintf_chk(x64emu_t *emu, void* F, void* fmt, x64_va_list_t b) __attribute__((alias("my_vfprintf")));
+#else
+__asm__(".globl _my___vfprintf_chk\n_my___vfprintf_chk: b _my_vfprintf");
+#endif
+#ifndef __APPLE__
 EXPORT int my__IO_vfprintf(x64emu_t *emu, void* F, void* fmt, x64_va_list_t b) __attribute__((alias("my_vfprintf")));
+#else
+__asm__(".globl _my__IO_vfprintf\n_my__IO_vfprintf: b _my_vfprintf");
+#endif
 
 EXPORT int my_fprintf(x64emu_t *emu, void* F, void* fmt, void* b)  {
     myStackAlign(emu, (const char*)fmt, b, emu->scratch, R_EAX, 2);
@@ -989,7 +1100,11 @@ EXPORT int my_snprintf(x64emu_t* emu, void* buff, size_t s, void * fmt, uint64_t
     int r = vsnprintf(buff, s, fmt, VARARGS);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my___snprintf(x64emu_t* emu, void* buff, size_t s, void * fmt, uint64_t * b) __attribute__((alias("my_snprintf")));
+#else
+__asm__(".globl _my___snprintf\n_my___snprintf: b _my_snprintf");
+#endif
 EXPORT int my___snprintf_chk(x64emu_t* emu, void* buff, size_t s, int flags, size_t maxlen, void * fmt, uint64_t * b)
 {
     (void)flags; (void)maxlen;
@@ -1028,7 +1143,11 @@ EXPORT int my_asprintf(x64emu_t* emu, void** buff, void * fmt, uint64_t * b) {
     PREPARE_VALIST;
     return vasprintf((char**)buff, (char*)fmt, VARARGS);
 }
+#ifndef __APPLE__
 EXPORT int my___asprintf(x64emu_t* emu, void** buff, void * fmt, uint64_t * b) __attribute__((alias("my_asprintf")));
+#else
+__asm__(".globl _my___asprintf\n_my___asprintf: b _my_asprintf");
+#endif
 
 EXPORT int my_vasprintf(x64emu_t* emu, char** buff, void* fmt, x64_va_list_t b) {
     (void)emu;
@@ -1051,7 +1170,11 @@ EXPORT int my_vsprintf(x64emu_t* emu, void* buff,  void * fmt, x64_va_list_t b) 
     #endif
     return vsprintf(buff, fmt, VARARGS);
 }
+#ifndef __APPLE__
 EXPORT int my___vsprintf_chk(x64emu_t* emu, void* buff, void * fmt, x64_va_list_t b) __attribute__((alias("my_vsprintf")));
+#else
+__asm__(".globl _my___vsprintf_chk\n_my___vsprintf_chk: b _my_vsprintf");
+#endif
 
 EXPORT int my_scanf(x64emu_t* emu, void* fmt, uint64_t* b)
 {
@@ -1085,7 +1208,11 @@ EXPORT int my_vsscanf(x64emu_t* emu, void* stream, void* fmt, x64_va_list_t b)
     return vsscanf(stream, fmt, VARARGS);
 }
 
+#ifndef __APPLE__
 EXPORT int my___vsscanf(x64emu_t* emu, void* stream, void* fmt, void* b) __attribute__((alias("my_vsscanf")));
+#else
+__asm__(".globl _my___vsscanf\n_my___vsscanf: b _my_vsscanf");
+#endif
 
 EXPORT int my_vfwscanf(x64emu_t* emu, void* F, void* fmt, x64_va_list_t b)
 {
@@ -1150,11 +1277,31 @@ EXPORT int my_vscanf(x64emu_t* emu, void* fmt, x64_va_list_t b)
     return vscanf(fmt, VARARGS);
 }
 
+#ifndef __APPLE__
 EXPORT int my__IO_vfscanf(x64emu_t* emu, void* stream, void* fmt, void* b) __attribute__((alias("my_vfscanf")));
+#else
+__asm__(".globl _my__IO_vfscanf\n_my__IO_vfscanf: b _my_vfscanf");
+#endif
+#ifndef __APPLE__
 EXPORT int my___isoc99_vsscanf(x64emu_t* emu, void* stream, void* fmt, void* b) __attribute__((alias("my_vsscanf")));
+#else
+__asm__(".globl _my___isoc99_vsscanf\n_my___isoc99_vsscanf: b _my_vsscanf");
+#endif
+#ifndef __APPLE__
 EXPORT int my___isoc99_vscanf(x64emu_t* emu, void* fmt, void* b) __attribute__((alias("my_vscanf")));
+#else
+__asm__(".globl _my___isoc99_vscanf\n_my___isoc99_vscanf: b _my_vscanf");
+#endif
+#ifndef __APPLE__
 EXPORT int my___isoc99_vswscanf(x64emu_t* emu, void* stream, void* fmt, void* b) __attribute__((alias("my_vswscanf")));
+#else
+__asm__(".globl _my___isoc99_vswscanf\n_my___isoc99_vswscanf: b _my_vswscanf");
+#endif
+#ifndef __APPLE__
 EXPORT int my___isoc99_vfscanf(x64emu_t* emu, void* stream, void* fmt, void* b) __attribute__((alias("my_vfscanf")));
+#else
+__asm__(".globl _my___isoc99_vfscanf\n_my___isoc99_vfscanf: b _my_vfscanf");
+#endif
 
 EXPORT int my___isoc99_fscanf(x64emu_t* emu, void* stream, void* fmt, uint64_t* b)
 {
@@ -1163,7 +1310,11 @@ EXPORT int my___isoc99_fscanf(x64emu_t* emu, void* stream, void* fmt, uint64_t* 
 
   return vfscanf(stream, fmt, VARARGS);
 }
+#ifndef __APPLE__
 EXPORT int my_fscanf(x64emu_t* emu, void* stream, void* fmt, uint64_t* b) __attribute__((alias("my___isoc99_fscanf")));
+#else
+__asm__(".globl _my_fscanf\n_my_fscanf: b _my___isoc99_fscanf");
+#endif
 
 EXPORT int my___isoc99_scanf(x64emu_t* emu, void* fmt, uint64_t* b)
 {
@@ -1208,7 +1359,11 @@ EXPORT int my_vsnprintf(x64emu_t* emu, void* buff, size_t s, void * fmt, x64_va_
     int r = vsnprintf(buff, s, fmt, VARARGS);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my___vsnprintf(x64emu_t* emu, void* buff, size_t s, void * fmt, x64_va_list_t b) __attribute__((alias("my_vsnprintf")));
+#else
+__asm__(".globl _my___vsnprintf\n_my___vsnprintf: b _my_vsnprintf");
+#endif
 EXPORT int my___vsnprintf_chk(x64emu_t* emu, void* buff, size_t s, int flags, size_t slen, void * fmt, x64_va_list_t b) {
     (void)emu;
     #ifdef CONVERT_VALIST
@@ -1266,8 +1421,16 @@ EXPORT int my_vswprintf(x64emu_t* emu, void* buff, size_t s, void * fmt, x64_va_
     int r = vswprintf(buff, s, fmt, VARARGS);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my___vswprintf(x64emu_t* emu, void* buff, size_t s, void * fmt, x64_va_list_t b) __attribute__((alias("my_vswprintf")));
+#else
+__asm__(".globl _my___vswprintf\n_my___vswprintf: b _my_vswprintf");
+#endif
+#ifndef __APPLE__
 EXPORT int my___vswprintf_chk(x64emu_t* emu, void* buff, size_t s, void * fmt, x64_va_list_t b) __attribute__((alias("my_vswprintf")));
+#else
+__asm__(".globl _my___vswprintf_chk\n_my___vswprintf_chk: b _my_vswprintf");
+#endif
 
 EXPORT int my_swscanf(x64emu_t* emu, void* stream, void* fmt, uint64_t* b)
 {
@@ -1296,14 +1459,24 @@ EXPORT void my_error(x64emu_t *emu, int status, int errnum, void* fmt, void* b) 
     PREPARE_VALIST;
     char buf[512];
     vsnprintf(buf, 512, (const char*)fmt, VARARGS);
+#ifndef __APPLE__
     error(status, errnum, "%s", buf);
+#else
+    if(status) errx(status, "%s: %s", buf, strerror(errnum));
+    else warnx("%s: %s", buf, strerror(errnum));
+#endif
 }
 EXPORT void my_error_at_line(x64emu_t *emu, int status, int errnum, void* filename, uint32_t linenum, void* fmt, void* b) {
     myStackAlign(emu, (const char*)fmt, b, emu->scratch, R_EAX, 5);
     PREPARE_VALIST;
     char buf[512];
     vsnprintf(buf, 512, (const char*)fmt, VARARGS);
+#ifndef __APPLE__
     error_at_line(status, errnum, filename, linenum, "%s", buf);
+#else
+    if(status) errx(status, "%s:%u: %s: %s", (char*)filename, linenum, buf, strerror(errnum));
+    else warnx("%s:%u: %s: %s", (char*)filename, linenum, buf, strerror(errnum));
+#endif
 }
 
 EXPORT void my_verr(x64emu_t* emu, int eval, void* fmt, x64_va_list_t b) {
@@ -1466,7 +1639,11 @@ EXPORT int my___fxstat(x64emu_t *emu, int vers, int fd, void* buf)
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my___fxstat64(x64emu_t *emu, int vers, int fd, void* buf) __attribute__((alias("my___fxstat")));
+#else
+__asm__(".globl _my___fxstat64\n_my___fxstat64: b _my___fxstat");
+#endif
 
 EXPORT int my_statx(x64emu_t* emu, int dirfd, void* path, int flags, uint32_t mask, void* buf)
 {
@@ -1508,7 +1685,11 @@ EXPORT int my___xstat(x64emu_t* emu, int v, void* path, void* buf)
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my___xstat64(x64emu_t* emu, int v, void* path, void* buf) __attribute__((alias("my___xstat")));
+#else
+__asm__(".globl _my___xstat64\n_my___xstat64: b _my___xstat");
+#endif
 
 EXPORT int my___lxstat(x64emu_t* emu, int v, void* name, void* buf)
 {
@@ -1519,7 +1700,11 @@ EXPORT int my___lxstat(x64emu_t* emu, int v, void* name, void* buf)
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my___lxstat64(x64emu_t* emu, int v, void* name, void* buf) __attribute__((alias("my___lxstat")));
+#else
+__asm__(".globl _my___lxstat64\n_my___lxstat64: b _my___lxstat");
+#endif
 
 EXPORT int my___fxstatat(x64emu_t* emu, int v, int d, void* path, void* buf, int flags)
 {
@@ -1530,7 +1715,11 @@ EXPORT int my___fxstatat(x64emu_t* emu, int v, int d, void* path, void* buf, int
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my___fxstatat64(x64emu_t* emu, int v, int d, void* path, void* buf, int flags) __attribute__((alias("my___fxstatat")));
+#else
+__asm__(".globl _my___fxstatat64\n_my___fxstatat64: b _my___fxstatat");
+#endif
 
 EXPORT int my_stat(x64emu_t *emu, void* filename, void* buf)
 {
@@ -1541,7 +1730,11 @@ EXPORT int my_stat(x64emu_t *emu, void* filename, void* buf)
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my_stat64(x64emu_t *emu, void* filename, void* buf) __attribute__((alias("my_stat")));
+#else
+__asm__(".globl _my_stat64\n_my_stat64: b _my_stat");
+#endif
 
 EXPORT int my_lstat(x64emu_t *emu, void* filename, void* buf)
 {
@@ -1552,7 +1745,11 @@ EXPORT int my_lstat(x64emu_t *emu, void* filename, void* buf)
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my_lstat64(x64emu_t *emu, void* filename, void* buf) __attribute__((alias("my_lstat")));
+#else
+__asm__(".globl _my_lstat64\n_my_lstat64: b _my_lstat");
+#endif
 
 EXPORT int my_fstat(x64emu_t *emu, int fd, void* buf)
 {
@@ -1563,7 +1760,11 @@ EXPORT int my_fstat(x64emu_t *emu, int fd, void* buf)
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my_fstat64(x64emu_t* emu, int fd, void* buf) __attribute__((alias("my_fstat")));
+#else
+__asm__(".globl _my_fstat64\n_my_fstat64: b _my_fstat");
+#endif
 
 EXPORT int my_fstatat(x64emu_t *emu, int fd, const char* path, void* buf, int flags)
 {
@@ -1574,7 +1775,11 @@ EXPORT int my_fstatat(x64emu_t *emu, int fd, const char* path, void* buf, int fl
         UnalignStat64(&st, buf);
     return r;
 }
+#ifndef __APPLE__
 EXPORT int my_fstatat64(x64emu_t *emu, int fd, const char* path, void* buf, int flags) __attribute__((alias("my_fstatat")));
+#else
+__asm__(".globl _my_fstatat64\n_my_fstatat64: b _my_fstatat");
+#endif
 
 EXPORT int my__IO_file_stat(x64emu_t* emu, void* f, void* buf)
 {
@@ -1602,7 +1807,7 @@ EXPORT int my_statfs64(const char* path, void* buf)
 }
 #endif
 
-#ifdef ANDROID
+#if defined(ANDROID) || defined(__APPLE__)
 typedef int (*__compar_d_fn_t)(const void*, const void*, void*);
 
 static size_t qsort_r_partition(void* base, size_t size, __compar_d_fn_t compar, void* arg, size_t lo, size_t hi)
@@ -1640,7 +1845,7 @@ static void qsort_r_helper(void* base, size_t size, __compar_d_fn_t compar, void
     }
 }
 
-static void qsort_r(void* base, size_t nmemb, size_t size, __compar_d_fn_t compar, void* arg)
+static void box64_qsort_r(void* base, size_t nmemb, size_t size, __compar_d_fn_t compar, void* arg)
 {
     return qsort_r_helper(base, size, compar, arg, 0, nmemb - 1);
 }
@@ -1661,13 +1866,13 @@ EXPORT void my_qsort(x64emu_t* emu, void* base, size_t nmemb, size_t size, void*
 {
     compare_r_t args;
     args.emu = emu; args.f = (uintptr_t)fnc; args.r = 0; args.data = NULL;
-    qsort_r(base, nmemb, size, (__compar_d_fn_t)my_compare_r_cb, &args);
+    box64_qsort_r(base, nmemb, size, (__compar_d_fn_t)my_compare_r_cb, &args);
 }
 EXPORT void my_qsort_r(x64emu_t* emu, void* base, size_t nmemb, size_t size, void* fnc, void* data)
 {
     compare_r_t args;
     args.emu = emu; args.f = (uintptr_t)fnc; args.r = 1; args.data = data;
-    qsort_r(base, nmemb, size, (__compar_d_fn_t)my_compare_r_cb, &args);
+    box64_qsort_r(base, nmemb, size, (__compar_d_fn_t)my_compare_r_cb, &args);
 }
 EXPORT void* my_bsearch(x64emu_t* emu, void* key, void* base, size_t nmemb, size_t size, void* fnc)
 {
@@ -2047,7 +2252,7 @@ void CreateCpuCacheSize(int fd, int cpu, int index)
     (void)dummy;
 }
 
-#ifdef ANDROID
+#if defined(ANDROID)
 static int shm_open(const char *name, int oflag, mode_t mode) {
     return -1;
 }
@@ -2176,7 +2381,11 @@ EXPORT int32_t my_open(x64emu_t* emu, void* pathname, int32_t flags, uint32_t mo
     int ret = open(pathname, flags, mode);
     return ret;
 }
+#ifndef __APPLE__
 EXPORT int32_t my___open(x64emu_t* emu, void* pathname, int32_t flags, uint32_t mode) __attribute__((alias("my_open")));
+#else
+__asm__(".globl _my___open\n_my___open: b _my_open");
+#endif
 
 //#ifdef DYNAREC
 //static int hasDBFromAddress(uintptr_t addr)
@@ -2388,7 +2597,11 @@ EXPORT FILE* my_fopen64(x64emu_t* emu, const char* path, const char* mode)
     }
     return fopen64(path, mode);
 }
+#ifndef __APPLE__
 EXPORT FILE* my_fopen(x64emu_t* emu, const char* path, const char* mode) __attribute__((alias("my_fopen64")));
+#else
+__asm__(".globl _my_fopen\n_my_fopen: b _my_fopen64");
+#endif
 
 #if 0
 EXPORT int32_t my_ftw(x64emu_t* emu, void* pathname, void* B, int32_t nopenfd)
@@ -2405,6 +2618,7 @@ EXPORT int32_t my_ftw(x64emu_t* emu, void* pathname, void* B, int32_t nopenfd)
 
 #endif
 
+#ifndef __APPLE__
 #ifndef NOALIGN
 EXPORT int32_t my_epoll_ctl(x64emu_t* emu, int32_t epfd, int32_t op, int32_t fd, void* event)
 {
@@ -2413,6 +2627,13 @@ EXPORT int32_t my_epoll_ctl(x64emu_t* emu, int32_t epfd, int32_t op, int32_t fd,
         AlignEpollEvent(_event, event, 1);
     return epoll_ctl(epfd, op, fd, event?_event:NULL);
 }
+#else
+EXPORT int32_t my_epoll_ctl(x64emu_t* emu, int32_t epfd, int32_t op, int32_t fd, void* event) { errno = ENOSYS; return -1; }
+#endif
+#else
+EXPORT int32_t my_epoll_ctl(x64emu_t* emu, int32_t epfd, int32_t op, int32_t fd, void* event) { errno = ENOSYS; return -1; }
+#endif
+#ifndef __APPLE__
 EXPORT int32_t my_epoll_wait(x64emu_t* emu, int32_t epfd, void* events, int32_t maxevents, int32_t timeout)
 {
     struct epoll_event _events[maxevents];
@@ -2451,6 +2672,10 @@ EXPORT int32_t my_epoll_pwait2(x64emu_t* emu, int epfd, void* events, int maxeve
         UnalignEpollEvent(events, _events, ret);
     return ret;
 }
+#else
+EXPORT int32_t my_epoll_wait(x64emu_t* emu, int32_t epfd, void* events, int32_t maxevents, int32_t timeout) { errno = ENOSYS; return -1; }
+EXPORT int32_t my_epoll_pwait(x64emu_t* emu, int32_t epfd, void* events, int32_t maxevents, int32_t timeout, const sigset_t *sigmask) { errno = ENOSYS; return -1; }
+EXPORT int32_t my_epoll_pwait2(x64emu_t* emu, int epfd, void* events, int maxevents, struct timespec *timeout, sigset_t * sigmask) { errno = ENOSYS; return -1; }
 #endif
 
 #ifndef ANDROID
@@ -2459,7 +2684,10 @@ EXPORT int32_t my_glob64(x64emu_t *emu, void* pat, int32_t flags, void* errfnc, 
     (void)emu;
     return glob64(pat, flags, findgloberrFct(errfnc), pglob);
 }
+#ifndef __APPLE__
 EXPORT int32_t my_glob(x64emu_t *emu, void* pat, int32_t flags, void* errfnc, void* pglob) __attribute__((alias("my_glob64")));
+#else
+__asm__(".globl _my_glob\n_my_glob: b _my_glob64");
 #endif
 
 EXPORT int my_scandir64(x64emu_t *emu, void* dir, void* namelist, void* sel, void* comp)
@@ -2467,7 +2695,11 @@ EXPORT int my_scandir64(x64emu_t *emu, void* dir, void* namelist, void* sel, voi
     (void)emu;
     return scandir64(dir, namelist, findfilter64Fct(sel), findcompare64Fct(comp));
 }
+#ifndef __APPLE__
 EXPORT int my_scandir(x64emu_t *emu, void* dir, void* namelist, void* sel, void* comp) __attribute__((alias("my_scandir64")));
+#else
+__asm__(".globl _my_scandir\n_my_scandir: b _my_scandir64");
+#endif
 
 EXPORT int my_scandirat(x64emu_t *emu, int dirfd, void* dirp, void* namelist, void* sel, void* comp)
 {
@@ -2486,14 +2718,22 @@ EXPORT int my_ftw64(x64emu_t* emu, void* filename, void* func, int descriptors)
     (void)emu;
     return ftw64(filename, findftw64Fct(func), descriptors);
 }
+#ifndef __APPLE__
 EXPORT int my_ftw(x64emu_t* emu, void* filename, void* func, int descriptors) __attribute__((alias("my_ftw64")));
+#else
+__asm__(".globl _my_ftw\n_my_ftw: b _my_ftw64");
+#endif
 
 EXPORT int32_t my_nftw64(x64emu_t* emu, void* pathname, void* B, int32_t nopenfd, int32_t flags)
 {
     (void)emu;
     return nftw64(pathname, findnftw64Fct(B), nopenfd, flags);
 }
+#ifndef __APPLE__
 EXPORT int my_nftw(x64emu_t* emu, void* pathname, void* B, int32_t nopenfd, int32_t flags) __attribute__((alias("my_nftw64")));
+#else
+__asm__(".globl _my_nftw\n_my_nftw: b _my_nftw64");
+#endif
 
 EXPORT char** my_environ = NULL;
 EXPORT char** my__environ = NULL;
@@ -3005,7 +3245,11 @@ EXPORT int32_t my_fcntl(x64emu_t* emu, int32_t a, int32_t b, void* c)
 
     return ret;
 }
+#ifndef __APPLE__
 EXPORT int32_t my___fcntl(x64emu_t* emu, int32_t a, int32_t b, void* c) __attribute__((alias("my_fcntl")));
+#else
+__asm__(".globl _my___fcntl\n_my___fcntl: b _my_fcntl");
+#endif
 
 #if 0
 EXPORT int32_t my_preadv64(x64emu_t* emu, int32_t fd, void* v, int32_t c, int64_t o)
@@ -3087,7 +3331,7 @@ void InitCpuModel()
 }
 #endif
 
-#ifdef ANDROID
+#if defined(ANDROID) || defined(__APPLE__)
 void ctSetup()
 {
 }
@@ -3293,7 +3537,11 @@ EXPORT void* my_mmap64(x64emu_t* emu, void *addr, size_t length, int prot, int f
     errno = e;  // preserve errno
     return ret;
 }
+#ifndef __APPLE__
 EXPORT void* my_mmap(x64emu_t* emu, void *addr, size_t length, int prot, int flags, int fd, ssize_t offset) __attribute__((alias("my_mmap64")));
+#else
+__asm__(".globl _my_mmap\n_my_mmap: b _my_mmap64");
+#endif
 
 EXPORT void* my_mremap(x64emu_t* emu, void* old_addr, size_t old_size, size_t new_size, int flags, void* new_addr)
 {
@@ -3477,13 +3725,14 @@ EXPORT int my_getopt_long_only(int argc, char* const argv[], const char* optstri
     return ret;
 }
 
-#ifndef ANDROID
+#if !defined(ANDROID) && !defined(__APPLE__)
 typedef struct {
    void  *read;
    void *write;
    void  *seek;
    void *close;
 } my_cookie_io_functions_t;
+#endif
 
 typedef struct my_cookie_s {
     uintptr_t r, w, s, c;
@@ -3516,7 +3765,7 @@ static int my_cookie_close(void *p)
 }
 EXPORT void* my_fopencookie(x64emu_t* emu, void* cookie, void* mode, my_cookie_io_functions_t *s)
 {
-    cookie_io_functions_t io_funcs = {s->read?my_cookie_read:NULL, s->write?my_cookie_write:NULL, s->seek?my_cookie_seek:NULL, my_cookie_close};
+    my_cookie_io_functions_t io_funcs = {s->read?my_cookie_read:NULL, s->write?my_cookie_write:NULL, s->seek?my_cookie_seek:NULL, my_cookie_close};
     my_cookie_t *cb = (my_cookie_t*)box_calloc(1, sizeof(my_cookie_t));
     cb->r = (uintptr_t)s->read;
     cb->w = (uintptr_t)s->write;
@@ -3525,6 +3774,8 @@ EXPORT void* my_fopencookie(x64emu_t* emu, void* cookie, void* mode, my_cookie_i
     cb->cookie = cookie;
     return fopencookie(cb, mode, io_funcs);
 }
+#else
+EXPORT void* my_fopencookie(x64emu_t* emu, void* cookie, void* mode, void* s) { errno = ENOSYS; return NULL; }
 #endif
 
 #if 0
@@ -3589,7 +3840,7 @@ EXPORT void* my___libc_dlsym(x64emu_t* emu, void* handle, void* name)
     return my_dlsym(emu, handle, name);
 }
 
-#ifdef ANDROID
+#if defined(ANDROID) || defined(__APPLE__)
 void obstackSetup() {
 }
 #else
@@ -3692,6 +3943,7 @@ EXPORT void my_mcount(void* frompc, void* selfpc)
 #endif
 
 #ifndef ANDROID
+#ifndef __APPLE__
 union semun {
   int              val;    /* Value for SETVAL */
   struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
@@ -3700,10 +3952,12 @@ union semun {
                               (Linux-specific) */
 };
 #endif
+#endif
 #ifndef SEM_STAT_ANY
 #define SEM_STAT_ANY 20
 #endif
 
+#ifndef __APPLE__
 EXPORT int my_semctl(int semid, int semnum, int cmd, union semun b)
 {
     struct semid_ds semidds;
@@ -3724,10 +3978,14 @@ EXPORT int my_semctl(int semid, int semnum, int cmd, union semun b)
     }
     return ret;
 }
+#else
+EXPORT int my_semctl(int semid, int semnum, int cmd, union semun b) { errno = ENOSYS; return -1; }
+#endif
 
 EXPORT int64_t userdata_sign = 0x1234598765ABCEF0;
 EXPORT uint32_t userdata[1024];
 
+#ifndef __APPLE__
 EXPORT long my_ptrace(x64emu_t* emu, int request, pid_t pid, void* addr, uint32_t* data)
 {
     if(request == PTRACE_POKEUSER) {
@@ -3777,6 +4035,9 @@ EXPORT long my_ptrace(x64emu_t* emu, int request, pid_t pid, void* addr, uint32_
     long ret = ptrace(request, pid, addr, data);
     return ret;
 }
+#else
+EXPORT long my_ptrace(x64emu_t* emu, int request, pid_t pid, void* addr, uint32_t* data) { errno = ENOSYS; return -1; }
+#endif
 
 // Backtrace stuff
 
@@ -3938,7 +4199,7 @@ EXPORT int my_stime(x64emu_t* emu, const time_t *t)
 }
 
 int GetTID();
-#ifdef ANDROID
+#if defined(ANDROID) || defined(__APPLE__)
 void updateGlibcTidCache() {}
 #else
 struct glibc_pthread {
@@ -3978,6 +4239,7 @@ typedef struct clone_arg_s {
  void* tls;
 } clone_arg_t;
 void init_mutexes(box64context_t* context);
+#ifndef __APPLE__
 static int clone_fn(void* p)
 {
     clone_arg_t* arg = (clone_arg_t*)p;
@@ -4001,9 +4263,10 @@ static int clone_fn(void* p)
         exit(ret);*/
     return ret;
 }
+#endif
 
-EXPORT int my_clone(x64emu_t* emu, void* fn, void* stack, int flags, void* args, void* parent, void* tls, void* child)
-{
+#ifndef __APPLE__
+EXPORT int my_clone(x64emu_t* emu, void* fn, void* stack, int flags, void* args, void* parent, void* tls, void* child) {
     printf_log(LOG_DEBUG, "my_clone(fn:%p(%s), stack:%p, 0x%x, args:%p, %p, %p, %p)", fn, getAddrFunctionName((uintptr_t)fn), stack, flags, args, parent, tls, child);
     void* mystack = NULL;
     clone_arg_t* arg = (clone_arg_t*)box_calloc(1, sizeof(clone_arg_t));
@@ -4032,6 +4295,9 @@ EXPORT int my_clone(x64emu_t* emu, void* fn, void* stack, int flags, void* args,
     int64_t ret = clone(clone_fn, (void*)((uintptr_t)mystack+1024*1024), flags, arg, parent, NULL, child);
     return (uintptr_t)ret;
 }
+#else
+EXPORT int my_clone(x64emu_t* emu, void* fn, void* stack, int flags, void* args, void* parent, void* tls, void* child) { errno = ENOSYS; return -1; }
+#endif
 
 EXPORT void my___cxa_pure_virtual(x64emu_t* emu)
 {
@@ -4124,6 +4390,7 @@ EXPORT void my__exit(x64emu_t* emu, int code)
     _exit(code);
 }
 
+#ifndef __APPLE__
 EXPORT int my_prctl(x64emu_t* emu, int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5)
 {
     if(option==PR_SET_NAME) {
@@ -4141,6 +4408,9 @@ EXPORT int my_prctl(x64emu_t* emu, int option, unsigned long arg2, unsigned long
     }
     return prctl(option, arg2, arg3, arg4, arg5);
 }
+#else
+EXPORT int my_prctl(x64emu_t* emu, int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5) { errno = ENOSYS; return -1; }
+#endif
 
 EXPORT int my_pidfd_open(x64emu_t* emu, int pid, unsigned int flags)
 {
@@ -4296,8 +4566,8 @@ EXPORT int my_mount_setattr(x64emu_t* emu, int dfd, const char* path, unsigned i
 #endif
 }
 
-size_t __attribute__((weak)) strlcpy(char* dest, const char* src, size_t len)
-{
+#ifndef __APPLE__
+size_t __attribute__((weak)) strlcpy(char* dest, const char* src, size_t len) {
     size_t l = strlen(src);
     if(len) {
         strncpy(dest, src, len-1);
@@ -4310,6 +4580,7 @@ size_t __attribute__((weak)) __strlcpy_chk(char* dest, const char* src, size_t l
     // in case it's not defined... create a weak version with no actual chk
     return strlcpy(dest, src, len);
 }
+#endif
 
 __attribute__((weak)) uint32_t arc4random(void)
 {
@@ -4355,7 +4626,11 @@ EXPORT long my_sysconf(x64emu_t* emu, int what) {
     }
     return sysconf(what);
 }
+#ifndef __APPLE__
 EXPORT long my___sysconf(x64emu_t* emu, int what) __attribute__((alias("my_sysconf")));
+#else
+__asm__(".globl _my___sysconf\n_my___sysconf: b _my_sysconf");
+#endif
 
 EXPORT char* my___progname = NULL;
 EXPORT char* my___progname_full = NULL;

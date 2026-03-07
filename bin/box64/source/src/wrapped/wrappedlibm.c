@@ -87,7 +87,11 @@ F2D(fmod)
 #ifdef HAVE_LD80BITS
 FINITE(powl, DFDD_t, long double, (long double a, long double b), a, b)
 #else
+#ifndef __APPLE__
 EXPORT double my___powl_finite(double a, double b) __attribute__((alias("my___pow_finite")));
+#else
+__asm__(".globl _my___powl_finite\n_my___powl_finite: b _my___pow_finite");
+#endif
 #endif
 
 #undef F2D
@@ -254,7 +258,7 @@ EXPORT float my_nexttowardf(x64emu_t* emu, float val, double to)
 }
 #endif
 
-#ifdef ANDROID
+#if defined(ANDROID) || defined(__APPLE__)
 double my_pow10(double a) { return pow(10.0, a);}
 float my_pow10f(float a) { return powf(10.0f, a);}
 long double my_pow10l(long double a) { return powl(10.0, a);}

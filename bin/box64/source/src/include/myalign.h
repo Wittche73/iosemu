@@ -66,6 +66,7 @@ typedef struct  va_list {
     int vr_offs; // offset from  vr_top to next FP/SIMD register arg
 } va_list;
 */
+#ifndef __APPLE__
 #define CREATE_SYSV_VALIST(A) \
   va_list sysv_varargs; \
   sysv_varargs.__gr_offs=(8*8); \
@@ -79,7 +80,24 @@ typedef struct  va_list {
   sysv_varargs.__stack=(A)->overflow_arg_area;                    \
   sysv_varargs.__gr_top=(A)->reg_save_area + X64_VA_MAX_REG;      \
   sysv_varargs.__vr_top=(A)->reg_save_area + X64_VA_MAX_XMM;
+#else
+#define CREATE_SYSV_VALIST(A) \
+  va_list sysv_varargs; \
+  sysv_varargs = (va_list)(A);
 
+#define CREATE_VALIST_FROM_VALIST(VA, SCRATCH) \
+  va_list sysv_varargs; \
+  { \
+    uintptr_t *p = (uintptr_t*)(SCRATCH); \
+    int n = (X64_VA_MAX_REG - (VA)->gp_offset)/8; \
+    if(n) memcpy(&p[0], (VA)->reg_save_area+(VA)->gp_offset, n*8); \
+    memcpy(&p[n], (VA)->overflow_arg_area, 20*8); \
+    sysv_varargs = (va_list)p; \
+  }
+// CONVERT_VALIST undefined on purpose for Apple, to use fallbacks instead
+#endif
+
+#ifndef __APPLE__
 #define CREATE_VALIST_FROM_VAARG(STACK, SCRATCH, N)                     \
   va_list sysv_varargs;                                                 \
   sysv_varargs.__gr_offs=-(6*8)+(8*(((N)<6)?(N):6));                    \
@@ -93,6 +111,18 @@ typedef struct  va_list {
     p[3]=R_RCX; p[4]=R_R8; p[5]=R_R9;                                   \
     memcpy(&p[6], emu->xmm, 8*16);                                      \
   }
+#else
+#define CREATE_VALIST_FROM_VAARG(STACK, SCRATCH, N) \
+  va_list sysv_varargs; \
+  { \
+    uintptr_t *p = (uintptr_t*)(SCRATCH); \
+    p[0]=R_RDI; p[1]=R_RSI; p[2]=R_RDX; \
+    p[3]=R_RCX; p[4]=R_R8; p[5]=R_R9; \
+    memcpy(&p[6], emu->xmm, 8*16); \
+    memcpy(&p[6+20], STACK, 20*8); \
+    sysv_varargs = (va_list)&p[N]; \
+  }
+#endif
 
 #define PREFER_CONVERT_VAARG
 
@@ -247,7 +277,11 @@ typedef struct __jmp_buf_tag_s {
       sigset64_t         __saved_mask64;
     };
     #else
+    #ifdef __APPLE__
+    sigset_t         __saved_mask;
+    #else
     __sigset_t       __saved_mask;
+    #endif
     #endif
 } __jmp_buf_tag_t;
 

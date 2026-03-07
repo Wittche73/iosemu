@@ -6,7 +6,7 @@ C_DEFINES = -DARM64 -DDYNAREC
 
 C_INCLUDES = -I/src/dynarec/arm64 -I/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/include -I/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src -I/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/generated
 
-C_FLAGS = -target arm64-apple-ios16.0 -arch arm64 -isysroot /home/f-rat/theos/sdks/iPhoneOS.sdk -O3 -DNDEBUG -isysroot /home/f-rat/theos/sdks/iPhoneOS.sdk   -std=gnu11 -funwind-tables -fvisibility=hidden
+C_FLAGS = -target arm64-apple-ios16.0 -arch arm64 -isysroot /home/f-rat/theos/sdks/iPhoneOS.sdk -D_XOPEN_SOURCE=600 -D_DARWIN_C_SOURCE -Wno-macro-redefined -O3 -DNDEBUG -isysroot /home/f-rat/theos/sdks/iPhoneOS.sdk   -std=gnu11 -funwind-tables -fvisibility=hidden
 
 # Custom options: CMakeFiles/interpreter.dir/src/emu/x64run.c.o_OPTIONS = 
 

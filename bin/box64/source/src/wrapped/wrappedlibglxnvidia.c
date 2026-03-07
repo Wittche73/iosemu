@@ -35,7 +35,11 @@ EXPORT void* mynv_glXGetProcAddress(x64emu_t* emu, void* name)
     const char* rname = (const char*)name;
     return getGLProcAddress(emu, "mynv_", (void*)fnc, rname);
 }
+#ifndef __APPLE__
 EXPORT void* mynv_glXGetProcAddressARB(x64emu_t* emu, void* name) __attribute__((alias("mynv_glXGetProcAddress")));
+#else
+__asm__(".globl _mynv_glXGetProcAddressARB\n_mynv_glXGetProcAddressARB: b _mynv_glXGetProcAddress");
+#endif
 
 typedef int  (*iFi_t)(int);
 typedef void (*vFpp_t)(void*, void*);

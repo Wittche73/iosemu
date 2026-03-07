@@ -9,7 +9,16 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <errno.h>
+#ifndef __APPLE__
 #include <link.h>
+#else
+struct link_map {
+    uintptr_t l_addr;
+    char *l_name;
+    void *l_ld;
+    struct link_map *l_next, *l_prev;
+};
+#endif
 #include <stdarg.h>
 
 #include "debug.h"
@@ -292,13 +301,13 @@ static void initWrappedLib(library_t *lib, box64context_t* context) {
                 break;
             }
             struct link_map *real_lm = NULL;
-            #ifndef ANDROID
+            #if !defined(ANDROID) && !defined(__APPLE__)
             if(dlinfo(lib->w.lib, RTLD_DI_LINKMAP, &real_lm)) {
                 printf_dlsym_dump(LOG_DEBUG, "Failed to dlinfo lib %s\n", lib->name);
             }
             #endif
             if(real_lm) {
-                lm->l_addr = real_lm->l_addr;
+                lm->l_addr = (uintptr_t)real_lm->l_addr;
                 lm->l_name = real_lm->l_name;
                 lm->l_ld = real_lm->l_ld;
             } else {

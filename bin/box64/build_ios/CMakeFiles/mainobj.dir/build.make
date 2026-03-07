@@ -1024,53 +1024,11 @@ CMakeFiles/mainobj.dir/src/emu/x86syscall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/mainobj.dir/src/emu/x86syscall.c.s"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/emu/x86syscall.c -o CMakeFiles/mainobj.dir/src/emu/x86syscall.c.s
 
-CMakeFiles/mainobj.dir/src/libtools/obstack.c.o: CMakeFiles/mainobj.dir/flags.make
-CMakeFiles/mainobj.dir/src/libtools/obstack.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/obstack.c
-CMakeFiles/mainobj.dir/src/libtools/obstack.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/mainobj.dir/src/libtools/obstack.c.o"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/libtools/obstack.c.o -MF CMakeFiles/mainobj.dir/src/libtools/obstack.c.o.d -o CMakeFiles/mainobj.dir/src/libtools/obstack.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/obstack.c
-
-CMakeFiles/mainobj.dir/src/libtools/obstack.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/mainobj.dir/src/libtools/obstack.c.i"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/obstack.c > CMakeFiles/mainobj.dir/src/libtools/obstack.c.i
-
-CMakeFiles/mainobj.dir/src/libtools/obstack.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/mainobj.dir/src/libtools/obstack.c.s"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/obstack.c -o CMakeFiles/mainobj.dir/src/libtools/obstack.c.s
-
-CMakeFiles/mainobj.dir/src/libtools/libdl.c.o: CMakeFiles/mainobj.dir/flags.make
-CMakeFiles/mainobj.dir/src/libtools/libdl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/libdl.c
-CMakeFiles/mainobj.dir/src/libtools/libdl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/mainobj.dir/src/libtools/libdl.c.o"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/libtools/libdl.c.o -MF CMakeFiles/mainobj.dir/src/libtools/libdl.c.o.d -o CMakeFiles/mainobj.dir/src/libtools/libdl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/libdl.c
-
-CMakeFiles/mainobj.dir/src/libtools/libdl.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/mainobj.dir/src/libtools/libdl.c.i"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/libdl.c > CMakeFiles/mainobj.dir/src/libtools/libdl.c.i
-
-CMakeFiles/mainobj.dir/src/libtools/libdl.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/mainobj.dir/src/libtools/libdl.c.s"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/libdl.c -o CMakeFiles/mainobj.dir/src/libtools/libdl.c.s
-
-CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o: CMakeFiles/mainobj.dir/flags.make
-CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/vulkanoverlay.c
-CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o -MF CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o.d -o CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/vulkanoverlay.c
-
-CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.i"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/vulkanoverlay.c > CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.i
-
-CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.s"
-	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/vulkanoverlay.c -o CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.s
-
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o: CMakeFiles/mainobj.dir/flags.make
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedalure.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedalure_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedalure.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.i: cmake_force
@@ -1085,7 +1043,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedalut.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedalut_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedalut.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.i: cmake_force
@@ -1100,7 +1058,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatk.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatk_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatk.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.i: cmake_force
@@ -1115,7 +1073,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatkbridge.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatkbridge_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatkbridge.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.i: cmake_force
@@ -1130,7 +1088,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatomic.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatomic_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatomic.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.i: cmake_force
@@ -1145,7 +1103,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatspi.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatspi_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedatspi.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.i: cmake_force
@@ -1160,7 +1118,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o: CMakeFiles/m
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaappindicator3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaappindicator3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaappindicator3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.i: cmake_force
@@ -1175,7 +1133,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o: CMakeFiles/main
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaindicator3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaindicator3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaindicator3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.i: cmake_force
@@ -1190,7 +1148,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaido3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaido3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedayatanaido3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.i: cmake_force
@@ -1205,7 +1163,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedavahiclient.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedavahiclient_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedavahiclient.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.i: cmake_force
@@ -1220,7 +1178,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedavahicommon.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedavahicommon_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedavahicommon.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.i: cmake_force
@@ -1235,7 +1193,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedbz2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedbz2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedbz2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.i: cmake_force
@@ -1250,7 +1208,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcap.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcap_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcap.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.i: cmake_force
@@ -1265,7 +1223,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcuda.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcuda_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcuda.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.i: cmake_force
@@ -1280,7 +1238,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcairo.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcairo_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcairo.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.i: cmake_force
@@ -1295,7 +1253,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcairogobject.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcairogobject_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcairogobject.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.i: cmake_force
@@ -1310,7 +1268,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrashhandler.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrashhandler_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrashhandler.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.i: cmake_force
@@ -1325,7 +1283,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrypto.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrypto_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrypto.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.i: cmake_force
@@ -1340,7 +1298,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrypto3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrypto3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcrypto3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.i: cmake_force
@@ -1355,7 +1313,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcurl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcurl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedcurl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.i: cmake_force
@@ -1370,7 +1328,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbus.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbus_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbus.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.i: cmake_force
@@ -1385,7 +1343,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbusglib1.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbusglib1_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbusglib1.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.i: cmake_force
@@ -1400,7 +1358,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbusmenuglib.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbusmenuglib_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddbusmenuglib.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.i: cmake_force
@@ -1415,7 +1373,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddecor0.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddecor0_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappeddecor0.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.i: cmake_force
@@ -1430,7 +1388,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedevent21.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedevent21_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedevent21.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.i: cmake_force
@@ -1445,7 +1403,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedexpat.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedexpat_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedexpat.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.i: cmake_force
@@ -1460,7 +1418,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfaudio.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfaudio_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfaudio.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.i: cmake_force
@@ -1475,7 +1433,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedflac.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedflac_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedflac.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.i: cmake_force
@@ -1490,7 +1448,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfontconfig.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfontconfig_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfontconfig.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.i: cmake_force
@@ -1505,7 +1463,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfreebl3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfreebl3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfreebl3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.i: cmake_force
@@ -1520,7 +1478,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfreetype.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfreetype_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedfreetype.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.i: cmake_force
@@ -1535,7 +1493,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgbm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgbm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgbm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.i: cmake_force
@@ -1550,7 +1508,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgconf2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgconf2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgconf2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.i: cmake_force
@@ -1565,7 +1523,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgcrypt.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgcrypt_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgcrypt.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.i: cmake_force
@@ -1580,7 +1538,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdk3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdk3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdk3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.i: cmake_force
@@ -1595,7 +1553,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdkpixbuf2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdkpixbuf2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdkpixbuf2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.i: cmake_force
@@ -1610,7 +1568,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdkx112.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdkx112_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgdkx112.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.i: cmake_force
@@ -1625,7 +1583,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgio2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgio2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgio2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.i: cmake_force
@@ -1640,7 +1598,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedglesv2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedglesv2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedglesv2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.i: cmake_force
@@ -1655,7 +1613,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedglib2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedglib2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedglib2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.i: cmake_force
@@ -1670,7 +1628,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgmodule2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgmodule2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgmodule2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.i: cmake_force
@@ -1685,7 +1643,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgmp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgmp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgmp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.i: cmake_force
@@ -1700,7 +1658,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgnutls.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgnutls_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgnutls.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.i: cmake_force
@@ -1715,7 +1673,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgobject2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgobject2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgobject2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.i: cmake_force
@@ -1730,7 +1688,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgomp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgomp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgomp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.i: cmake_force
@@ -1745,7 +1703,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgssapi.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgssapi_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgssapi.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.i: cmake_force
@@ -1760,7 +1718,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgssapikrb5.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgssapikrb5_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgssapikrb5.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.i: cmake_force
@@ -1775,7 +1733,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstallocators.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstallocators_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstallocators.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.i: cmake_force
@@ -1790,7 +1748,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstapp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstapp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstapp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.i: cmake_force
@@ -1805,7 +1763,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstaudio.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstaudio_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstaudio.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.i: cmake_force
@@ -1820,7 +1778,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstbase.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstbase_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstbase.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.i: cmake_force
@@ -1835,7 +1793,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstcheck.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstcheck_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstcheck.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.i: cmake_force
@@ -1850,7 +1808,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstcontroller.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstcontroller_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstcontroller.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.i: cmake_force
@@ -1865,7 +1823,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstfft.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstfft_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstfft.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.i: cmake_force
@@ -1880,7 +1838,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstgl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstgl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstgl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.i: cmake_force
@@ -1895,7 +1853,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstnet.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstnet_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstnet.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.i: cmake_force
@@ -1910,7 +1868,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstpbutils.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstpbutils_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstpbutils.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.i: cmake_force
@@ -1925,7 +1883,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstreamer.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstreamer_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstreamer.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.i: cmake_force
@@ -1940,7 +1898,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstriff.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstriff_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstriff.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.i: cmake_force
@@ -1955,7 +1913,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstrtp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstrtp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstrtp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.i: cmake_force
@@ -1970,7 +1928,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstrtsp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstrtsp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstrtsp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.i: cmake_force
@@ -1985,7 +1943,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstsdp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstsdp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstsdp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.i: cmake_force
@@ -2000,7 +1958,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgsttag.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgsttag_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgsttag.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.i: cmake_force
@@ -2015,7 +1973,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstvideo.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstvideo_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgstvideo.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.i: cmake_force
@@ -2030,7 +1988,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgthread2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgthread2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgthread2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.i: cmake_force
@@ -2045,7 +2003,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgtk3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgtk3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgtk3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.i: cmake_force
@@ -2060,7 +2018,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgtkx112.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgtkx112_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedgtkx112.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.i: cmake_force
@@ -2075,7 +2033,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o: CMakeFiles/mainobj
 CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedharfbuzzsubset.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedharfbuzzsubset_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedharfbuzzsubset.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.i: cmake_force
@@ -2090,7 +2048,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedkrb5.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedkrb5_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedkrb5.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.i: cmake_force
@@ -2105,7 +2063,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlcms2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlcms2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlcms2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.i: cmake_force
@@ -2120,7 +2078,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedldlinux.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedldlinux_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedldlinux.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.i: cmake_force
@@ -2135,7 +2093,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibasound.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibasound_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibasound.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.i: cmake_force
@@ -2150,7 +2108,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavcodec58.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavcodec58_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavcodec58.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.i: cmake_force
@@ -2165,7 +2123,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavformat58.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavformat58_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavformat58.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.i: cmake_force
@@ -2180,7 +2138,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavutil56.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavutil56_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibavutil56.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.i: cmake_force
@@ -2195,7 +2153,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibblas.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibblas_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibblas.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.i: cmake_force
@@ -2210,7 +2168,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibbsd.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibbsd_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibbsd.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.i: cmake_force
@@ -2225,7 +2183,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibc.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibc_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibc.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.i: cmake_force
@@ -2240,7 +2198,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcmusl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcmusl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcmusl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.i: cmake_force
@@ -2255,7 +2213,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcrypt.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcrypt_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcrypt.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.i: cmake_force
@@ -2270,7 +2228,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcups.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcups_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcups.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.i: cmake_force
@@ -2285,7 +2243,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcupsimage.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcupsimage_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibcupsimage.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.i: cmake_force
@@ -2300,7 +2258,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.i: cmake_force
@@ -2315,7 +2273,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdrm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdrm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdrm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.i: cmake_force
@@ -2330,7 +2288,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdrmamdgpu.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdrmamdgpu_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibdrmamdgpu.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.i: cmake_force
@@ -2345,7 +2303,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibegl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibegl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibegl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.i: cmake_force
@@ -2360,7 +2318,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibform.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibform_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibform.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.i: cmake_force
@@ -2375,7 +2333,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibformw.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibformw_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibformw.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.i: cmake_force
@@ -2390,7 +2348,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibformw6.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibformw6_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibformw6.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.i: cmake_force
@@ -2405,7 +2363,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibfuse.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibfuse_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibfuse.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.i: cmake_force
@@ -2420,7 +2378,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibgl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibgl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibgl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.i: cmake_force
@@ -2435,7 +2393,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglu.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglu_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglu.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.i: cmake_force
@@ -2450,7 +2408,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglx.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglx_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglx.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.i: cmake_force
@@ -2465,7 +2423,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglxnvidia.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglxnvidia_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibglxnvidia.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.i: cmake_force
@@ -2480,7 +2438,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibgpgme.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibgpgme_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibgpgme.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.i: cmake_force
@@ -2495,7 +2453,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibharfbuzz.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibharfbuzz_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibharfbuzz.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.i: cmake_force
@@ -2510,7 +2468,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibibus.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibibus_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibibus.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.i: cmake_force
@@ -2525,7 +2483,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibice.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibice_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibice.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.i: cmake_force
@@ -2540,7 +2498,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedliblapack.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedliblapack_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedliblapack.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.i: cmake_force
@@ -2555,7 +2513,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.i: cmake_force
@@ -2570,7 +2528,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncurses.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncurses_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncurses.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.i: cmake_force
@@ -2585,7 +2543,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncurses6.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncurses6_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncurses6.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.i: cmake_force
@@ -2600,7 +2558,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncursesw.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncursesw_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncursesw.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.i: cmake_force
@@ -2615,7 +2573,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncursesw6.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncursesw6_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_175) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibncursesw6.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.i: cmake_force
@@ -2630,7 +2588,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibnuma.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibnuma_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_176) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibnuma.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.i: cmake_force
@@ -2645,7 +2603,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibogg.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibogg_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_177) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibogg.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.i: cmake_force
@@ -2660,7 +2618,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibomp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibomp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_175) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibomp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.i: cmake_force
@@ -2675,7 +2633,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpanel.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpanel_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_176) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpanel.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.i: cmake_force
@@ -2690,7 +2648,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpci.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpci_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_177) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpci.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.i: cmake_force
@@ -2705,7 +2663,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpcre.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpcre_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpcre.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.i: cmake_force
@@ -2720,7 +2678,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpcre216.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpcre216_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_182) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpcre216.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.i: cmake_force
@@ -2735,7 +2693,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpthread.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpthread_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_183) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibpthread.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.i: cmake_force
@@ -2750,7 +2708,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibresolv.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibresolv_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_184) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibresolv.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.i: cmake_force
@@ -2765,7 +2723,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibrt.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibrt_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_182) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibrt.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.i: cmake_force
@@ -2780,7 +2738,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_186) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_183) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.i: cmake_force
@@ -2795,7 +2753,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsndfile.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsndfile_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_187) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_184) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsndfile.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.i: cmake_force
@@ -2810,7 +2768,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_188) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.i: cmake_force
@@ -2825,7 +2783,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssl3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssl3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_189) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_186) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssl3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.i: cmake_force
@@ -2840,7 +2798,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtinfo.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtinfo_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_190) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_187) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtinfo.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.i: cmake_force
@@ -2855,7 +2813,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtinfo6.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtinfo6_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_191) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_188) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtinfo6.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.i: cmake_force
@@ -2870,7 +2828,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibusb1.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibusb1_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_192) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_189) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibusb1.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.i: cmake_force
@@ -2885,7 +2843,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibuuid.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibuuid_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_193) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_190) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibuuid.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.i: cmake_force
@@ -2900,7 +2858,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibva.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibva_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_194) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_191) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibva.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.i: cmake_force
@@ -2915,7 +2873,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvadrm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvadrm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_195) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_192) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvadrm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.i: cmake_force
@@ -2930,7 +2888,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvawayland.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvawayland_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_196) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_193) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvawayland.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.i: cmake_force
@@ -2945,7 +2903,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvax11.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvax11_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_197) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_194) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvax11.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.i: cmake_force
@@ -2960,7 +2918,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvdpau.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvdpau_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_198) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_195) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvdpau.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.i: cmake_force
@@ -2975,7 +2933,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvpx.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvpx_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_199) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_196) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvpx.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.i: cmake_force
@@ -2990,7 +2948,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvorbis.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvorbis_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_200) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_197) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibvorbis.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.i: cmake_force
@@ -3005,7 +2963,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibx11.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibx11_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_201) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_198) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibx11.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.i: cmake_force
@@ -3020,7 +2978,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibx11xcb.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibx11xcb_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_202) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_199) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibx11xcb.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.i: cmake_force
@@ -3035,7 +2993,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxau.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxau_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_203) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_200) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxau.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.i: cmake_force
@@ -3050,7 +3008,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxaw.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxaw_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_204) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_201) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxaw.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.i: cmake_force
@@ -3065,7 +3023,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcb.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcb_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_202) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcb.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.i: cmake_force
@@ -3080,7 +3038,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbcursor.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbcursor_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_203) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbcursor.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.i: cmake_force
@@ -3095,7 +3053,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbdri2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbdri2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_204) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbdri2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.i: cmake_force
@@ -3110,7 +3068,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbdri3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbdri3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbdri3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.i: cmake_force
@@ -3125,7 +3083,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbglx.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbglx_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbglx.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.i: cmake_force
@@ -3140,7 +3098,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbkeysyms.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbkeysyms_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbkeysyms.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.i: cmake_force
@@ -3155,7 +3113,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbicccm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbicccm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbicccm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.i: cmake_force
@@ -3170,7 +3128,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbimage.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbimage_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbimage.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.i: cmake_force
@@ -3185,7 +3143,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbpresent.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbpresent_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbpresent.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.i: cmake_force
@@ -3200,7 +3158,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrandr.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrandr_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrandr.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.i: cmake_force
@@ -3215,7 +3173,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrender.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrender_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrender.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.i: cmake_force
@@ -3230,7 +3188,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o: CMakeFiles/maino
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrenderutil.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrenderutil_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbrenderutil.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.i: cmake_force
@@ -3245,7 +3203,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbres.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbres_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbres.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.i: cmake_force
@@ -3260,7 +3218,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbshape.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbshape_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbshape.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.i: cmake_force
@@ -3275,7 +3233,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbshm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbshm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbshm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.i: cmake_force
@@ -3290,7 +3248,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbsync.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbsync_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbsync.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.i: cmake_force
@@ -3305,7 +3263,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbutil.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbutil_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_221) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbutil.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.i: cmake_force
@@ -3320,7 +3278,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o: CMakeFiles/mainobj
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxinerama.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxinerama_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_222) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxinerama.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.i: cmake_force
@@ -3335,7 +3293,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxinput.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxinput_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_223) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxinput.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.i: cmake_force
@@ -3350,7 +3308,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxfixes.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxfixes_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_224) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_221) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxfixes.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.i: cmake_force
@@ -3365,7 +3323,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxkb.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxkb_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_225) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_222) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxkb.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.i: cmake_force
@@ -3380,7 +3338,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxtest.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxtest_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_226) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_223) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcbxtest.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.i: cmake_force
@@ -3395,7 +3353,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcomposite.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcomposite_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_227) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_224) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcomposite.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.i: cmake_force
@@ -3410,7 +3368,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcursor.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcursor_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_228) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_225) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxcursor.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.i: cmake_force
@@ -3425,7 +3383,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxdamage.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxdamage_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_229) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_226) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxdamage.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.i: cmake_force
@@ -3440,7 +3398,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxdmcp.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxdmcp_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_230) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_227) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxdmcp.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.i: cmake_force
@@ -3455,7 +3413,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxext.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxext_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_231) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_228) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxext.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.i: cmake_force
@@ -3470,7 +3428,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxfixes.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxfixes_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_232) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_229) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxfixes.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.i: cmake_force
@@ -3485,7 +3443,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxft.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxft_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_233) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_230) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxft.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.i: cmake_force
@@ -3500,7 +3458,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxi.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxi_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_234) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_231) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxi.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.i: cmake_force
@@ -3515,7 +3473,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxmu.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxmu_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_235) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_232) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxmu.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.i: cmake_force
@@ -3530,7 +3488,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxpm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxpm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_236) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_233) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxpm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.i: cmake_force
@@ -3545,7 +3503,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxpresent.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxpresent_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_237) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_234) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxpresent.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.i: cmake_force
@@ -3560,7 +3518,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxrandr.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxrandr_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_238) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_235) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxrandr.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.i: cmake_force
@@ -3575,7 +3533,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxrender.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxrender_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_239) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_236) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxrender.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.i: cmake_force
@@ -3590,7 +3548,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxss.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxss_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_240) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_237) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxss.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.i: cmake_force
@@ -3605,7 +3563,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxt.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxt_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_241) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_238) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxt.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.i: cmake_force
@@ -3620,7 +3578,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxtst.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxtst_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_242) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_239) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxtst.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.i: cmake_force
@@ -3635,7 +3593,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxxf86vm.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxxf86vm_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_243) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_240) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibxxf86vm.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.i: cmake_force
@@ -3650,7 +3608,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibz.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibz_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_244) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_241) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibz.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.i: cmake_force
@@ -3665,7 +3623,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlzma.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlzma_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_245) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_242) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlzma.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.i: cmake_force
@@ -3680,7 +3638,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedmpg123.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedmpg123_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_246) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_243) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedmpg123.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.i: cmake_force
@@ -3695,7 +3653,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednotify.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednotify_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_247) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_244) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednotify.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.i: cmake_force
@@ -3710,7 +3668,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednsl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednsl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_248) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_245) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednsl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.i: cmake_force
@@ -3725,7 +3683,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednspr4.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednspr4_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_249) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_246) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednspr4.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.i: cmake_force
@@ -3740,7 +3698,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednss3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednss3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_250) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_247) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednss3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.i: cmake_force
@@ -3755,7 +3713,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednssutil3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednssutil3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_251) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_248) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednssutil3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.i: cmake_force
@@ -3770,7 +3728,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednvml.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednvml_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_252) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_249) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappednvml.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.i: cmake_force
@@ -3785,7 +3743,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedopenal.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedopenal_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_253) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_250) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedopenal.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.i: cmake_force
@@ -3800,7 +3758,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedopencl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedopencl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_254) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_251) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedopencl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.i: cmake_force
@@ -3815,7 +3773,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpango.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpango_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_255) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_252) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpango.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.i: cmake_force
@@ -3830,7 +3788,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpangocairo.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpangocairo_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_256) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_253) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpangocairo.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.i: cmake_force
@@ -3845,7 +3803,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpangoft2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpangoft2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_257) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_254) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpangoft2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.i: cmake_force
@@ -3860,7 +3818,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpam.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpam_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_258) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_255) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpam.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.i: cmake_force
@@ -3875,7 +3833,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpcap.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpcap_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_259) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_256) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpcap.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.i: cmake_force
@@ -3890,7 +3848,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedplc4.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedplc4_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_260) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_257) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedplc4.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.i: cmake_force
@@ -3905,7 +3863,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedplds4.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedplds4_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_261) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_258) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedplds4.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.i: cmake_force
@@ -3920,7 +3878,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpng16.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpng16_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_262) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_259) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpng16.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.i: cmake_force
@@ -3935,7 +3893,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulse.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulse_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_263) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_260) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulse.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.i: cmake_force
@@ -3950,7 +3908,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o: CMakeFiles/main
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulsemainloopglib.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulsemainloopglib_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_264) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_261) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulsemainloopglib.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.i: cmake_force
@@ -3965,7 +3923,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulsesimple.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulsesimple_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_265) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_262) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpulsesimple.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.i: cmake_force
@@ -3980,7 +3938,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_266) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_263) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.i: cmake_force
@@ -3995,7 +3953,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1image.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1image_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_267) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_264) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1image.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.i: cmake_force
@@ -4010,7 +3968,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1mixer.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1mixer_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_265) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1mixer.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.i: cmake_force
@@ -4025,7 +3983,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1net.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1net_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_269) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_266) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1net.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.i: cmake_force
@@ -4040,7 +3998,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1sound.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1sound_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_270) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_267) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1sound.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.i: cmake_force
@@ -4055,7 +4013,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1ttf.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1ttf_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_271) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl1ttf.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.i: cmake_force
@@ -4070,7 +4028,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsecret1.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsecret1_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_272) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_269) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsecret1.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.i: cmake_force
@@ -4085,7 +4043,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsoftokn3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsoftokn3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_273) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_270) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsoftokn3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.i: cmake_force
@@ -4100,7 +4058,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmpeg.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmpeg_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_274) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_271) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmpeg.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.i: cmake_force
@@ -4115,7 +4073,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_275) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_272) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.i: cmake_force
@@ -4130,7 +4088,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2image.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2image_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_276) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_273) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2image.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.i: cmake_force
@@ -4145,7 +4103,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2mixer.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2mixer_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_277) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_274) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2mixer.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.i: cmake_force
@@ -4160,7 +4118,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2net.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2net_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_278) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_275) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2net.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.i: cmake_force
@@ -4175,7 +4133,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2ttf.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2ttf_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_279) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_276) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl2ttf.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.i: cmake_force
@@ -4190,7 +4148,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_280) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_277) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.i: cmake_force
@@ -4205,7 +4163,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl3ttf.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl3ttf_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_281) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_278) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsdl3ttf.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.i: cmake_force
@@ -4220,7 +4178,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedselinux.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedselinux_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_282) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_279) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedselinux.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.i: cmake_force
@@ -4235,7 +4193,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmime3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmime3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_283) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_280) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmime3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.i: cmake_force
@@ -4250,7 +4208,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmpeg2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmpeg2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_284) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_281) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedsmpeg2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.i: cmake_force
@@ -4265,7 +4223,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedssl3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedssl3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_285) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_282) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedssl3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.i: cmake_force
@@ -4280,7 +4238,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbbind.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbbind_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_286) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_283) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbbind.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.i: cmake_force
@@ -4295,7 +4253,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbmalloc.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbmalloc_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_287) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_284) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbmalloc.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.i: cmake_force
@@ -4310,7 +4268,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o: CMakeFiles/mainobj
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbmallocproxy.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbmallocproxy_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_288) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_285) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtbbmallocproxy.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.i: cmake_force
@@ -4325,7 +4283,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o: CMakeFiles/mainob
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtcmallocminimal.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtcmallocminimal_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_289) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_286) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedtcmallocminimal.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.i: cmake_force
@@ -4340,7 +4298,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedudev0.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedudev0_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_290) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_287) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedudev0.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.i: cmake_force
@@ -4355,7 +4313,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedudev1.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedudev1_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_291) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_288) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedudev1.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.i: cmake_force
@@ -4370,7 +4328,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedunwind.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedunwind_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_292) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_289) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedunwind.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.i: cmake_force
@@ -4385,7 +4343,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedutil.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedutil_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_293) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_290) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedutil.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.i: cmake_force
@@ -4400,7 +4358,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedvorbisfile.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedvorbisfile_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_294) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_291) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedvorbisfile.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.i: cmake_force
@@ -4415,7 +4373,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandclient.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandclient_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_295) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_292) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandclient.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.i: cmake_force
@@ -4430,7 +4388,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandcursor.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandcursor_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_296) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_293) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandcursor.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.i: cmake_force
@@ -4445,7 +4403,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandegl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandegl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_297) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_294) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedwaylandegl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.i: cmake_force
@@ -4460,7 +4418,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxinerama.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxinerama_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_298) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_295) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxinerama.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.i: cmake_force
@@ -4475,7 +4433,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbcommon.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbcommon_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_299) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_296) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbcommon.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.i: cmake_force
@@ -4490,7 +4448,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o: CMakeFiles/mainobj.d
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbcommonx11.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbcommonx11_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_300) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_297) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbcommonx11.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.i: cmake_force
@@ -4505,7 +4463,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbregistry.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbregistry_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_301) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_298) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxkbregistry.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.i: cmake_force
@@ -4520,7 +4478,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxml2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxml2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_302) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_299) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxml2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.i: cmake_force
@@ -4535,7 +4493,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxslt.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxslt_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_303) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_300) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxslt.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.i: cmake_force
@@ -4550,7 +4508,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o: CMakeFiles/mainobj.dir/flag
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedldapr.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedldapr_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_304) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_301) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedldapr.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.i: cmake_force
@@ -4565,7 +4523,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlber.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlber_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_305) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_302) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlber.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.i: cmake_force
@@ -4580,7 +4538,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedvulkan.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedvulkan_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_306) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_303) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedvulkan.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.i: cmake_force
@@ -4595,7 +4553,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxshmfence.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxshmfence_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_307) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_304) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedxshmfence.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.i: cmake_force
@@ -4610,7 +4568,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedd3dadapter9.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedd3dadapter9_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_308) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_305) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedd3dadapter9.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.i: cmake_force
@@ -4625,7 +4583,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc64.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc64_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_309) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_306) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc64.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.i: cmake_force
@@ -4640,7 +4598,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n64.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n64_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_310) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_307) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n64.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.i: cmake_force
@@ -4655,7 +4613,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc66.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc66_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_311) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_308) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc66.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.i: cmake_force
@@ -4670,7 +4628,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n66.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n66_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_312) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_309) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n66.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.i: cmake_force
@@ -4685,7 +4643,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc67.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc67_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_313) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_310) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc67.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.i: cmake_force
@@ -4700,7 +4658,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n67.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n67_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_314) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_311) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n67.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.i: cmake_force
@@ -4715,7 +4673,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc72.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc72_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_315) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_312) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc72.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.i: cmake_force
@@ -4730,7 +4688,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n72.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n72_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_316) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_313) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n72.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.i: cmake_force
@@ -4745,7 +4703,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc73.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc73_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_317) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_314) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc73.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.i: cmake_force
@@ -4760,7 +4718,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n73.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n73_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_318) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_315) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n73.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.i: cmake_force
@@ -4775,7 +4733,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc74.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc74_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_319) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_316) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc74.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.i: cmake_force
@@ -4790,7 +4748,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n74.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n74_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_320) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_317) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n74.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.i: cmake_force
@@ -4805,7 +4763,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc75.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc75_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_321) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_318) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc75.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.i: cmake_force
@@ -4820,7 +4778,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n75.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n75_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_322) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_319) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n75.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.i: cmake_force
@@ -4835,7 +4793,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc76.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc76_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_323) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_320) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicuuc76.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.i: cmake_force
@@ -4850,7 +4808,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n76.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n76_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_324) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_321) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedicui18n76.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.i: cmake_force
@@ -4865,7 +4823,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedidn2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedidn2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_325) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_322) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedidn2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.i: cmake_force
@@ -4880,7 +4838,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o: CMakeFiles/mainobj.dir/flags.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedanl.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedanl_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_326) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_323) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedanl.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.i: cmake_force
@@ -4895,7 +4853,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpsl5.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpsl5_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_327) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_324) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedpsl5.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.i: cmake_force
@@ -4910,7 +4868,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o: CMakeFiles/mainobj.dir/fl
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssh2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssh2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_328) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_325) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibssh2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.i: cmake_force
@@ -4925,7 +4883,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o: CMakeFiles/mainobj.dir/fla
 CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedp11kit.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedp11kit_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_329) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_326) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedp11kit.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.i: cmake_force
@@ -4940,7 +4898,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtasn1.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtasn1_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_330) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_327) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtasn1.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.i: cmake_force
@@ -4955,7 +4913,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibnettle8.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibnettle8_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_331) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_328) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibnettle8.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.i: cmake_force
@@ -4970,7 +4928,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o: CMakeFiles/mainobj.
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibunistring2.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibunistring2_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_332) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_329) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibunistring2.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.i: cmake_force
@@ -4985,7 +4943,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o: CMakeFiles/mainobj.di
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibhogweed6.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibhogweed6_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_333) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_330) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibhogweed6.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.i: cmake_force
@@ -5000,7 +4958,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o: CMakeFiles/mainobj.dir
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsqlite3.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsqlite3_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_334) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_331) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibsqlite3.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.i: cmake_force
@@ -5015,7 +4973,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o: CMakeFiles/mainobj.dir/f
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtiff5.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtiff5_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_335) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_332) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedlibtiff5.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.i: cmake_force
@@ -5030,7 +4988,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o: CMakeFiles/mainobj.dir/
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedbrotlidec.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedbrotlidec_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_336) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_333) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedbrotlidec.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.i: cmake_force
@@ -5045,7 +5003,7 @@ CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o: CMakeFiles/mainobj.dir/flags
 CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedzstd.c
 CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedzstd_private.h
 CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o: CMakeFiles/mainobj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_337) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/f-rat/Masaüstü/projemm/projemm/bin/box64/build_ios/CMakeFiles --progress-num=$(CMAKE_PROGRESS_334) "Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o"
 	/home/f-rat/.local/share/swiftly/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o -MF CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o.d -o CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o -c /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/wrapped/wrappedzstd.c
 
 CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.i: cmake_force
@@ -5124,9 +5082,6 @@ mainobj: CMakeFiles/mainobj.dir/src/libtools/sdl2rwops.c.o
 mainobj: CMakeFiles/mainobj.dir/src/tools/gtkclass.c.o
 mainobj: CMakeFiles/mainobj.dir/src/librarian/globalsymbols.c.o
 mainobj: CMakeFiles/mainobj.dir/src/emu/x86syscall.c.o
-mainobj: CMakeFiles/mainobj.dir/src/libtools/obstack.c.o
-mainobj: CMakeFiles/mainobj.dir/src/libtools/libdl.c.o
-mainobj: CMakeFiles/mainobj.dir/src/libtools/vulkanoverlay.c.o
 mainobj: CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o
 mainobj: CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o
 mainobj: CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o

@@ -6,7 +6,7 @@
 #include <time.h>
 #include <math.h>
 
-#include "freq.h"
+#include "../include/freq.h"
 #include "debug.h"
 
 #if defined(RV64)
@@ -105,7 +105,11 @@ uint64_t ReadTSC(x64emu_t* emu)
     // fall back to gettime...
 #if !defined(NOGETCLOCK)
     struct timespec ts;
+#ifdef __APPLE__
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+#else
     clock_gettime(CLOCK_MONOTONIC_COARSE, &ts);
+#endif
     return (uint64_t)(ts.tv_sec) * 1000000000LL + ts.tv_nsec;
 #else
     struct timeval tv;

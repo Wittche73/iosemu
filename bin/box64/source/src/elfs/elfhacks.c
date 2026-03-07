@@ -15,13 +15,30 @@
 #include <string.h>
 #include <errno.h>
 #include <elf.h>
+#ifndef __APPLE__
 #include <link.h>
+#endif
 #include <fnmatch.h>
-#include "elfhacks.h"
+#include "../include/elfhacks.h"
+
+#ifdef __APPLE__
+static int dl_iterate_phdr(int (*callback)(struct dl_phdr_info *, size_t, void *), void *data) {
+    return 0;
+}
+#endif
 
 #ifndef __ELF_NATIVE_CLASS
+#ifndef __APPLE__
 #include "sys/reg.h"
+#endif
+#ifdef __APPLE__
+#define __ELF_NATIVE_CLASS 64
+#ifndef STN_UNDEF
+#define STN_UNDEF 0
+#endif
+#else
 #define __ELF_NATIVE_CLASS __WORDSIZE
+#endif
 #endif
 
 /**

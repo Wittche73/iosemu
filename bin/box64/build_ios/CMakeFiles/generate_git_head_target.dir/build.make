@@ -178,9 +178,6 @@ CMakeFiles/generate_git_head_target: /home/f-rat/Masaüstü/projemm/projemm/bin/
 /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/tools/gtkclass.c
 /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/librarian/globalsymbols.c
 /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/emu/x86syscall.c
-/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/obstack.c
-/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/libdl.c
-/home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/libtools/vulkanoverlay.c
 /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/emu/x64run.c
 /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/emu/x64run0f.c
 /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/git_head.h: /home/f-rat/Masaüstü/projemm/projemm/bin/box64/source/src/emu/x64run66.c
