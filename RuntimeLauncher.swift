@@ -1,4 +1,4 @@
-import Foundation
+import os.log
 
 /// Box64 ve Wine orkestrasyonunu yöneten sınıf
 class RuntimeLauncher {
@@ -8,21 +8,33 @@ class RuntimeLauncher {
     
     /// Bir oyunu emülasyon katmanında başlatır
     func launch(game: Game) -> Bool {
-        // --- LOG YÖNLENDİRMESİ (En Başta) ---
+        // --- LOG YÖNLENDİRMESİ VE SERİ ÇIKTI (Dual Logging) ---
         let winePrefix = game.prefixPath
         let logURL = URL(fileURLWithPath: winePrefix).appendingPathComponent("box64.log")
-        
-        // Ana dizini oluştur
         try? FileManager.default.createDirectory(at: logURL.deletingLastPathComponent(), withIntermediateDirectories: true)
-        
         let logPath = logURL.path
-        freopen(logPath.cString(using: .utf8), "w", stderr)
-        freopen(logPath.cString(using: .utf8), "w", stdout)
+        
+        // Standart çıktıları hem dosyaya hem de sistem konsoluna (serial output) yönlendirme
+        // Bu sayede 'ideviceSyslog' veya Mac Console üzerinden anlık izlenebilir.
+        freopen(logPath.cString(using: .utf8), "a", stdout)
+        freopen(logPath.cString(using: .utf8), "a", stderr)
         setvbuf(stdout, nil, _IONBF, 0)
         setvbuf(stderr, nil, _IONBF, 0)
         
+        // os_log ile seri çıktı (PC üzerinden izlemek için)
+        let logger = OSLog(subsystem: "com.yourcompany.localcompat", category: "Engine")
+        os_log("--- RuntimeLauncher: Starting %{public}s ---", log: logger, type: .info, game.name)
+        os_log("Log File: %{public}s", log: logger, type: .debug, logPath)
+        
         print("--- RuntimeLauncher: Başlatma Hazırlığı [\(game.name)] ---")
         print("Log File: \(logPath)")
+        print("DEBUG: Bundle Path: \(Bundle.main.bundlePath)")
+        
+        // Resource teşhisi
+        if let resources = try? FileManager.default.contentsOfDirectory(atPath: Bundle.main.bundlePath) {
+            print("BUNDLE RESOURCES: \(resources.joined(separator: ", "))")
+            os_log("BUNDLE RESOURCES: %{public}s", log: logger, type: .debug, resources.joined(separator: ", "))
+        }
         
         // 1. Performans Profili Uygulama
         PerformanceManager.shared.applyProfile(game.config.performanceProfile)
