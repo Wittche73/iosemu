@@ -25,8 +25,8 @@ LocalCompat_CFLAGS = -Ibin/box64/source/include -DREAL_ENGINE
 LocalCompat_FRAMEWORKS = UIKit Foundation GameController AVFoundation Metal MetalFX SwiftUI
 LocalCompat_LIBRARIES = stdc++
 
-# Resources & Assets (Crucial for a non-broken IPA)
-LocalCompat_RESOURCE_FILES = $(shell find Resources -type f)
+# Resources & Assets (Preventing flattening of directory structures)
+LocalCompat_RESOURCE_FILES = Resources/Info.plist Resources/AppIcon60x60@2x.png
 
 LocalCompat_INSTALL_PATH = /Applications
 
