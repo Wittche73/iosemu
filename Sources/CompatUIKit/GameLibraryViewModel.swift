@@ -1,5 +1,5 @@
 #if canImport(UIKit)
-import CompatCore
+
 import Foundation
 
 @MainActor
