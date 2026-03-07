@@ -63,6 +63,14 @@ class RuntimeLauncher {
         print("Set WINEPREFIX=\(winePrefix)")
         print("Set HOME=\(winePrefix)")
         print("Command: box64 wine \(exePath)")
+        
+        // KRİTİK FİX: Uygulama çöktüğünde C++ çıktısını yakalamak için stdout/stderr hapsediliyor
+        let logPath = URL(fileURLWithPath: winePrefix).appendingPathComponent("box64.log").path
+        freopen(logPath.cString(using: .utf8), "w", stderr)
+        freopen(logPath.cString(using: .utf8), "w", stdout)
+        setvbuf(stdout, nil, _IONBF, 0)
+        setvbuf(stderr, nil, _IONBF, 0)
+        print("--- NATIVE LOGGING REDIRECTED TO \(logPath) ---")
 
         
         // 7. C++ Bridge Çağrıları
