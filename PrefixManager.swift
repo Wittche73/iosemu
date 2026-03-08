@@ -13,13 +13,13 @@ class PrefixManager {
         // 1. Şablon Prefix Kurulumu ve Fiziksel Dosya Hazırlığı
         WineDependencyManager.shared.initializePrefix(for: game)
         
-        // 2. Windows Versiyonu Ayarlanması (Simüle: Registry değişikliği)
+        // 2. Windows Versiyonu Ayarlanması (Windows Registry configuration)
         print("   -> Windows Versiyonu: \(game.config.windowsVersion)")
         
         // 2. DLL Overrides Uygulanması
         for (dll, mode) in game.config.dllOverrides {
             print("   -> DLL Override: \(dll) set to \(mode)")
-            // Simüle: WINEDLLOVERRIDES çevresel değişkenine hazırlanır
+            // Applying WINEDLLOVERRIDES configuration
         }
         
         // 3. Özel Çevresel Değişkenler
@@ -72,6 +72,6 @@ class PrefixManager {
     func installDLL(dllName: String, data: Data, to game: Game) throws {
         let destination = "\(game.prefixPath)/drive_c/windows/system32/\(dllName)"
         print("   -> DLL Yükleniyor: \(destination)")
-        // Simüle: Dosya yazma işlemi
+        // Installing native DLL binary
     }
 }

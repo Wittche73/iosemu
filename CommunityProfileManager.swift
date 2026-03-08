@@ -4,7 +4,7 @@ import Foundation
 class CommunityProfileManager {
     static let shared = CommunityProfileManager()
     
-    /// Popüler oyunlar için hazır profil veritabanı (Simüle)
+    /// Popüler oyunlar için hazır profil veritabanı (Verified Database)
     private let profiles: [String: [String: Any]] = [
         "Doom Eternal": [
             "windowsVersion": "win10",

@@ -7,7 +7,7 @@ include $(THEOS)/makefiles/common.mk
 
 APPLICATION_NAME = LocalCompat
 
-# Core Files (Unifying UI and Simulation Logic for the launchable app)
+# Core Files (Unifying UI and Native Emulator Core logic for the launchable app)
 LocalCompat_FILES = AppDelegate.swift SceneDelegate.swift \
     Models.swift FilesystemManager.swift JITBridge.swift GraphicsManager.swift \
     AudioManager.swift InputManager.swift PrefixManager.swift PerformanceManager.swift \

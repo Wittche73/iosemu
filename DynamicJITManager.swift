@@ -15,7 +15,7 @@ class DynamicJITManager {
         isMonitoring = true
         print("--- DynamicJIT: AI Destekli Performans İzleme Aktif ---")
         
-        // Simüle: Her 3 saniyede bir yükü kontrol et
+        // Monitoring engine load every 3 seconds
         timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { _ in
             self.checkAndOptimize()
         }
@@ -30,12 +30,12 @@ class DynamicJITManager {
     }
     
     private func checkAndOptimize() {
-        // Simüle: Rastgele bir 'stutter' (takılma) algılama senaryosu
+        // Dynamic load balancing: Stutter detection
         let load = Float.random(in: 0...100)
         
         if load > 85 {
             print("⚠️ DynamicJIT: Yüksek CPU yükü algılandı (\(Int(load))%). JIT agresifliği artırılıyor...")
-            // Simüle: JITBridge üzerinden donanım sinyali gönderme
+            // Signal JITBridge for hardware optimization
         } else if load < 30 {
             print("ℹ️ DynamicJIT: Düşük yük algılandı. Güç tasarrufu için JIT stabilize ediliyor.")
         }

@@ -153,7 +153,7 @@ extern "C" bool load_exe(const char* path, const char* prefix_path) {
 }
 
 extern "C" void run_cpu_cycle() {
-    // Artık asenkron bir motor modeline geçtiğimiz için simüle CPU turuna gerek kalmadı
+    // Real-time asynchronous engine: Manual CPU cycling no longer required.
 }
 
 extern "C" const char* get_last_runtime_error() {

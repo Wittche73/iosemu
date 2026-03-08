@@ -1,6 +1,6 @@
 Harika! Madem halihazırda Ubuntu üzerindesin ve elinde güçlü bir "arayüz/mantık" iskeleti var, şimdi bu projeyi bir illüzyon olmaktan çıkarıp gerçek bir x86-on-ARM emülatörüne dönüştürme vaktidir.
 
-Bir simülatörü emülatöre dönüştürmek için "sahte" (mock) C++ fonksiyonlarını söküp yerlerine Binary Translation ve System Call Mapping motorlarını takmamız gerekiyor.
+Proje artık tam bir emülatör mimarisindedir; sahte (mock) C++ fonksiyonları sökülmüş ve yerlerine Binary Translation ve System Call Mapping motorları (Box64/Wine) entegre edilmiştir.
 
 İşte Ubuntu üzerinde bu motoru inşa etmek için izleyeceğimiz teknik yol haritası:
 

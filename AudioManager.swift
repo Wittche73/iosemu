@@ -26,7 +26,7 @@ class AudioManager {
             return false
         }
         #else
-        print("ℹ️ AudioManager: Linux/Simulator ortamı, AVAudioSession atlandı.")
+        print("ℹ️ AudioManager: Native Bridge environment, AVAudioSession bypass.")
         return true
         #endif
     }

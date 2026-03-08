@@ -1,18 +1,18 @@
 import Foundation
 
 /// iCloud/CloudKit tabanlı save senkronizasyonunu yöneten sınıf.
-/// Gerçek cihazda CloudKit ile konuşur, simülasyonda ise disk tabanlı 'bulut' klasörü kullanır.
+/// Gerçek cihazda CloudKit ile konuşur, iCloud erişimi yoksa yerel senkronizasyon klasörü kullanır.
 class CloudSyncManager {
     static let shared = CloudSyncManager()
     
-    // Simüle edilmiş bulut deposu yolu
-    private let simulatedCloudPath: String = {
+    // Yerel senkronizasyon deposu yolu
+    private let emulatorSyncPath: String = {
         let docs = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        return docs + "/SimulatedCloud"
+        return docs + "/EmulatorSync"
     }()
     
     private init() {
-        try? FileManager.default.createDirectory(atPath: simulatedCloudPath, withIntermediateDirectories: true)
+        try? FileManager.default.createDirectory(atPath: emulatorSyncPath, withIntermediateDirectories: true)
     }
     
     /// Bir oyunun save dosyalarını buluta iter (Push)
@@ -20,9 +20,9 @@ class CloudSyncManager {
         print("--- CloudSync: Push Başlatıldı [\(game.name)] ---")
         
         let localSavePath = game.prefixPath + "/drive_c/users/USER/Save Games"
-        let cloudSavePath = simulatedCloudPath + "/\(game.id.uuidString)/saves"
+        let cloudSavePath = emulatorSyncPath + "/\(game.id.uuidString)/saves"
         
-        // Klasörün varlığını kontrol et (Simüle: Windows'ta her oyun buraya kaydeder)
+        // Klasörün varlığını kontrol et (Windows entegrasyonu: Her oyun buraya kaydeder)
         guard FileManager.default.fileExists(atPath: localSavePath) else {
             print("   ℹ️ Yerel save klasörü boş, push atlandı.")
             return
@@ -31,7 +31,7 @@ class CloudSyncManager {
         do {
             try FileManager.default.createDirectory(atPath: cloudSavePath, withIntermediateDirectories: true)
             
-            // Simüle: Klasör içeriğini "buluta" kopyala
+            // Senkronizasyon: Klasör içeriğini hedef dizine kopyala
             let files = try FileManager.default.contentsOfDirectory(atPath: localSavePath)
             for file in files {
                 let src = localSavePath + "/" + file
@@ -54,7 +54,7 @@ class CloudSyncManager {
         print("--- CloudSync: Pull Başlatıldı [\(game.name)] ---")
         
         let localSavePath = game.prefixPath + "/drive_c/users/USER/Save Games"
-        let cloudSavePath = simulatedCloudPath + "/\(game.id.uuidString)/saves"
+        let cloudSavePath = emulatorSyncPath + "/\(game.id.uuidString)/saves"
         
         guard FileManager.default.fileExists(atPath: cloudSavePath) else {
             print("   ℹ️ Bulutta kayıt bulunamadı, pull atlandı.")

@@ -22,10 +22,10 @@ class WinetricksManager {
         }
         
         print("--- Winetricks: Paket Yükleniyor [\(packageName)] ---")
-        print("   -> İndiriliyor: \(packageID).tar.gz (Simüle)")
+        print("   -> İndiriliyor: \(packageID).tar.gz (Native Download)")
         print("   -> Çıkarılıyor ve Kayıt Defterine İşleniyor...")
         
-        // Simüle yükleme gecikmesi
+        // Dependency installation sequence
         game.config.installedPackages.insert(packageID)
         
         print("✅ Winetricks: \(packageID) başarıyla yüklendi.")

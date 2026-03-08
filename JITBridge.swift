@@ -8,7 +8,7 @@ class JITManager {
     /// iOS üzerinde JIT'in (Just-In-Time) kullanılabilir olup olmadığını kontrol eder.
     /// Gerçek bir iOS cihazında bu, CS_DEBUGGED kontrolü veya bellek sayfası eşleme (mprotect) ile yapılır.
     func isJITAvailable() -> Bool {
-        // Simülasyon: Linux ortamında veya emülatörde olduğumuz için şimdilik true dönebiliriz.
+        // Emulator Core: Motorun JIT gereksinimlerini kontrol et.
         // Gerçek cihazda AltStore/Jitterbug olmadan burası false dönecektir.
         
         #if targetEnvironment(simulator)

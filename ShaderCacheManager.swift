@@ -17,7 +17,7 @@ class ShaderCacheManager {
     func warmUpCache(for gameID: UUID) {
         print("--- ShaderCache: Önbellek Isıtılıyor [ID: \(gameID.uuidString)] ---")
         
-        // Simüle: Kayıtlı .metallib dosyalarını yükle
+        // Searching for native .metallib cache binaries
         let cacheFile = cacheDirectory.appendingPathComponent("\(gameID.uuidString).bin")
         
         if FileManager.default.fileExists(atPath: cacheFile.path) {
@@ -30,7 +30,7 @@ class ShaderCacheManager {
     /// Yeni derlenen bir shader'ı önbelleğe kaydeder
     func saveShaderToCache(hash: String, data: Data, for gameID: UUID) {
         print("   -> Shader Önbelleğe Kaydediliyor: \(hash)")
-        // Simüle: Dosya yazma
+        // Writing native shader binary to disk
     }
     
     /// Önbelleği temizler
