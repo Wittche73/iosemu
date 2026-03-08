@@ -49,6 +49,14 @@ Bu dosya, geliştirme sürecinde karşılaşılan teknik engelleri ve bunların 
     2. `init_auxval` Bellek Hatası: Box64, kütüphane olarak çağrıldığında ortam değişkenlerinin (envp) arkasında `auxval` vektörü olduğunu varsayıyor. Bu durum iOS'ta rastgele bellek okunmasına ve sonsuz döngüye yol açabildiği için `b64_main`'e özel, temiz ve çift NULL sonlandırmalı bir env dizisi geçildi.
     3. Donanım Taraması: `BOX64_SYSINFO_CACHED` ile `/proc` ve `/sys` taramaları tamamen baypas edildi.
 
-### 7. Linker Optimizasyon Hataları
-- **Hata:** Linux'a özgü `-Ttext-segment` ve `--image-base` bayraklarının macOS linker'ını bozması.
-- **Çözüm:** Apple platformları için bu bayrakların otomatik temizlenmesi sağlandı.
+### 9. Swift ve SDK Uyumluluk Sorunları
+- **Hata:** `DynamicJITManager` derlenirken `HOST_CPU_LOAD_INFO_COUNT` makrosunun bulunamaması.
+- **Çözüm:** Bu değer (4) Swift katmanında manuel sabit (constant) olarak tanımlanarak SDK kısıtlaması aşıldı.
+- **Hata:** Makefile içinde yeni eklenen Swift dosyalarının (`RegistryManager`, `MemoryPressureManager`) derlenmemesi.
+- **Çözüm:** Makefile revize edilerek tüm kaynak dosyalar `LocalCompat_FILES` listesine eklendi.
+
+### 10. Gelişmiş Çalışma Zamanı (Runtime) İyileştirmeleri
+- **Hata:** Audio Session Code -50 (ParamErr) hatası.
+- **Çözüm:** `.gameChat` modu yerine daha kararlı olan `.playback` ve `.default` kombinasyonuna geçildi.
+- **Hata:** Yeni oluşturulan prefixlerde `system.reg` bulunamadığı için Registry ayarlarının atlanması.
+- **Çözüm:** `RegistryManager` geliştirilerek dosya yoksa otomatik olarak temiz bir Wine Registry başlığıyla ilklendirme yapması sağlandı.

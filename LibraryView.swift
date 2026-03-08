@@ -159,6 +159,9 @@ class CompatCoreDelegate: ObservableObject {
                 games[index] = game
                 print("✨ \(game.name) için topluluk ayarları uygulandı.")
             }
+        }
+    }
+    
     func stopAllGames() {
         for i in 0..<games.count {
             if games[i].status == .running {

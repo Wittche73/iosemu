@@ -30,7 +30,7 @@ class DynamicJITManager {
     }
     
     private func checkAndOptimize() {
-        var hostPort = mach_host_self()
+        let hostPort = mach_host_self()
         var hostInfo = host_cpu_load_info()
         // HOST_CPU_LOAD_INFO_COUNT is (sizeof(host_cpu_load_info_data_t) / sizeof(integer_t)) = (16 / 4) = 4
         let HOST_CPU_LOAD_INFO_COUNT_MANUAL = mach_msg_type_number_t(4)
