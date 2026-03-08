@@ -24,13 +24,14 @@ class PerformanceManager {
         default:
             break
         }
+    }
     
     /// Belirtilen performans profilini sisteme uygular
     func applyProfile(_ profile: PerformanceProfile) {
         print("--- PerformanceManager: Uygulanan Profil -> \(profile) ---")
         
         switch profile {
-        case .powerSaving:
+        case .powerSave:
             setJITLevel(0)
             setenv("BOX64_DYNAREC_WAIT", "1", 1)
         case .balanced:
