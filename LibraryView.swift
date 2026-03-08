@@ -88,7 +88,31 @@ struct LibraryView: View {
                         }
                         .padding(.horizontal)
                     }
-                    .padding(.vertical)
+                }
+                
+                // --- OYUN SIRASINDA GÖRÜNECEK KATMANLAR ---
+                if core.games.contains(where: { $0.status == .running }) {
+                    // 1. Sanal Kontrolcü Overlay
+                    VirtualControllerView()
+                        .transition(.opacity)
+                    
+                    // 2. Performans Göstergesi (HUD)
+                    PerformanceHUDView()
+                        .transition(.move(edge: .top))
+                    
+                    // 3. Çıkış Butonu (Demo için)
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button(action: { core.stopAllGames() }) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.title)
+                                    .foregroundColor(.white.opacity(0.5))
+                            }
+                            .padding()
+                        }
+                        Spacer()
+                    }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -135,6 +159,12 @@ class CompatCoreDelegate: ObservableObject {
                 games[index] = game
                 print("✨ \(game.name) için topluluk ayarları uygulandı.")
             }
+    func stopAllGames() {
+        for i in 0..<games.count {
+            if games[i].status == .running {
+                games[i].status = .idle
+            }
         }
+        DynamicJITManager.shared.stopMonitoring()
     }
 }

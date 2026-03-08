@@ -21,6 +21,17 @@ class WineDependencyManager {
     private func setupMasterPrefix() {
         print("[DEBUG] Setting up Master Prefix at: \(masterPrefixPath)")
         
+        let currentPayloadVersion = "1.0.1" // Bu sürüm her güncellemede artırılmalıdır.
+        let versionFilePath = "\(masterPrefixPath)/payload_version.txt"
+        
+        if fileManager.fileExists(atPath: versionFilePath) {
+            if let existingVersion = try? String(contentsOfFile: versionFilePath, encoding: .utf8), 
+               existingVersion == currentPayloadVersion {
+                print("ℹ️ WineDependencyManager: Payload is already up to date (Version \(currentPayloadVersion)). Skipping sync.")
+                return
+            }
+        }
+
         // Temel yapıyı oluştur
         let dirs = [
             "\(masterPrefixPath)/drive_c/windows/system32",
@@ -36,7 +47,11 @@ class WineDependencyManager {
         
         // Paketten wine_payload'ı kopyala
         syncPayload(to: masterPrefixPath)
-        print("✅ WineDependencyManager: Master Prefix structure completed.")
+        
+        // Sürüm bilgisini kaydet
+        try? currentPayloadVersion.write(toFile: versionFilePath, atomically: true, encoding: .utf8)
+        
+        print("✅ WineDependencyManager: Master Prefix structure completed and versioned.")
     }
     
     private func syncPayload(to targetPath: String) {

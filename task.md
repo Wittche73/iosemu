@@ -17,14 +17,14 @@ Technical Roadmap & Task List
 - [x] Wait/Sync Mechanism: Box64 ve Wine arasındaki senkronizasyonu sağlayan wineserver yönetimi. `[x]`
 
 4. Girdi ve Kontrol Sistemleri (Input Layer)
-- [ ] Virtual Controller Overlay: Ekran üzerine özelleştirilebilir sanal gamepad ekle.
+- [x] Virtual Controller Overlay: Ekran üzerine özelleştirilebilir sanal gamepad ekle. `[x]`
 - [ ] Mouse/Keyboard Emulation: Relative Mouse Move moduna çeviren algoritmayı geliştir.
 - [ ] MFi/GameController Support: PS5/Xbox kollarını Win32 XInput cihazı gibi tanıtacak köprüyü kur.
 
 5. Kullanıcı Deneyimi (Frontend Layer)
 - [ ] Game Discovery: .exe dosyalarını tarayıp kapak resimlerini çeken sistemi yaz.
 - [ ] Per-Game Settings: JIT agresifliği, çözünürlük ve Wine versiyonu seçilebilen "Settings Dashboard"u oluştur.
-- [ ] Performance HUD: Oyun sırasında FPS, CPU ve RAM kullanımını gösteren "Diagnostics" katmanını ekle.
+- [x] Performance HUD: Oyun sırasında FPS, CPU ve RAM kullanımını gösteren "Diagnostics" katmanını ekle. `[x]`
 
 6. Gelişmiş Sistem Yönetimi (Advanced)
 - [x] MemoryPressureManager: iOS hafıza uyarısı verdiğinde Wine heap'ini ve JIT cache'ini temizleyen mekanizma. `[x]`
