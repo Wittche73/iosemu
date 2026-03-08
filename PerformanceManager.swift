@@ -6,28 +6,23 @@ class PerformanceManager {
     
     private init() {}
     
-    /// Belirli bir profil için sistem ayarlarını uygular
-    func applyProfile(_ profile: PerformanceProfile) {
-        print("--- PerformanceManager: Profil Uygulanıyor [\(profile.rawValue)] ---")
+    /// JIT Agresifliğini seviye bazlı ayarlar (0: Safe, 1: Fast, 2: Aggressive)
+    func setJITLevel(_ level: Int) {
+        print("--- PerformanceManager: JIT Seviyesi Ayarlanıyor [\(level)] ---")
         
-        switch profile {
-        case .powerSave:
-            setenv("BOX64_DYNAREC_STRONGMEM", "1", 1)
+        switch level {
+        case 0: // Safe
+            setenv("BOX64_DYNAREC_SAFEFLAGS", "1", 1)
             setenv("BOX64_DYNAREC_FASTROUND", "0", 1)
-            setenv("BOX64_DYNAREC_FASTNAN", "0", 1)
-            print("   -> Profile: Power Save (Safety Over Speed)")
-        case .balanced:
-            setenv("BOX64_DYNAREC_STRONGMEM", "0", 1)
+        case 1: // Fast (Default)
+            setenv("BOX64_DYNAREC_SAFEFLAGS", "0", 1)
             setenv("BOX64_DYNAREC_FASTROUND", "1", 1)
-            print("   -> Profile: Balanced (Optimized)")
-        case .highPerformance:
-            setenv("BOX64_DYNAREC_STRONGMEM", "0", 1)
+        case 2: // Aggressive
+            setenv("BOX64_DYNAREC_SAFEFLAGS", "0", 1)
             setenv("BOX64_DYNAREC_FASTROUND", "1", 1)
-            setenv("BOX64_DYNAREC_FASTNAN", "1", 1)
-            setenv("BOX64_DYNAREC_X87_DOUBLE", "1", 1)
-            print("   -> Profile: High Performance (Unleashed)")
+            setenv("BOX64_DYNAREC_BIGBLOCK", "2", 1)
+        default:
+            break
         }
-        
-        print("✅ PerformanceManager: Ayarlar başarıyla güncellendi.")
     }
 }

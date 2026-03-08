@@ -23,12 +23,12 @@ Technical Roadmap & Task List
 
 5. Kullanıcı Deneyimi (Frontend Layer)
 - [x] Game Discovery: .exe dosyalarını tarayıp kapak resimlerini çeken sistemi yaz. `[x]`
-- [ ] Per-Game Settings: JIT agresifliği, çözünürlük ve Wine versiyonu seçilebilen "Settings Dashboard"u oluştur.
+- [x] Per-Game Settings: JIT agresifliği, çözünürlük ve Wine versiyonu seçilebilen "Settings Dashboard"u oluştur. `[x]`
 - [x] Performance HUD: Oyun sırasında FPS, CPU ve RAM kullanımını gösteren "Diagnostics" katmanını ekle. `[x]`
 
 6. Gelişmiş Sistem Yönetimi (Advanced)
 - [x] MemoryPressureManager: iOS hafıza uyarısı verdiğinde Wine heap'ini ve JIT cache'ini temizleyen mekanizma. `[x]`
-- [ ] Background Execution: ProcessAssertion ve ses oturumu hilelerini uygula.
+- [x] Background Execution: ProcessAssertion ve ses oturumu hilelerini uygula. `[x]`
 - [/] Winetricks Automation: Yaygın kütüphaneleri (d3dx9, vcrun) tek tıkla yükleyen sistem. (Fiziksel DLL transferi aktif)
 
 ---

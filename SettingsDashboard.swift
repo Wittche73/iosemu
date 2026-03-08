@@ -5,12 +5,13 @@ struct SettingsDashboard: View {
     
     @State private var jitEnabled = JITManager.shared.isJITAvailable()
     @State private var dxvkHud = "compiler"
-    @State private var audioLatency: Double = 0.005
+    @State private var relativeMouse = false
+    @State private var jitAggressiveness = 1 // 0: Safe, 1: Fast, 2: Aggressive
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Sistem Durumu").font(.headline)) {
+                Section(header: Text("Sistem ve JIT").font(.headline)) {
                     HStack {
                         Label("JIT Durumu", systemImage: "bolt.fill")
                         Spacer()
@@ -18,29 +19,43 @@ struct SettingsDashboard: View {
                             .foregroundColor(jitEnabled ? .green : .red)
                             .fontWeight(.bold)
                     }
-                }
-                
-                Section(header: Text("Grafik Ayarları (DXVK)").font(.headline)) {
-                    Picker("DXVK HUD", selection: $dxvkHud) {
-                        Text("Kapalı").tag("0")
-                        Text("Sadece FPS").tag("fps")
-                        Text("Detaylı (Compiler)").tag("compiler")
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
                     
-                    Toggle("Vulkan Katmanını Zorla", isOn: .constant(true))
+                    Picker("JIT Agresifliği", selection: $jitAggressiveness) {
+                        Text("Güvenli").tag(0)
+                        Text("Hızlı").tag(1)
+                        Text("Agresif").tag(2)
+                    }
+                    .onChange(of: jitAggressiveness) { val in
+                        PerformanceManager.shared.setJITLevel(val)
+                    }
                 }
                 
-                Section(header: Text("Ses Ayarları").font(.headline)) {
-                    Slider(value: $audioLatency, in: 0.001...0.020, step: 0.001) {
-                        Text("Gecikme: \(Int(audioLatency * 1000))ms")
-                    }
-                    Text("Hedef Gecikme: \(Int(audioLatency * 1000))ms")
+                Section(header: Text("Girdi (Input)").font(.headline)) {
+                    Toggle("Relative Mouse (FPS Modu)", isOn: $relativeMouse)
+                        .onChange(of: relativeMouse) { val in
+                            UserDefaults.standard.set(val, forKey: "relativeMouseMode")
+                        }
+                    
+                    Text("FPS oyunlarında kamerayı kontrol etmek için bu modu açın.")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
+                
+                Section(header: Text("Grafik (DXVK/Metal)").font(.headline)) {
+                    Picker("DXVK HUD", selection: $dxvkHud) {
+                        Text("Kapalı").tag("0")
+                        Text("Sadece FPS").tag("fps")
+                        Text("Detaylı").tag("compiler")
+                        Text("Full").tag("full")
+                    }
+                    .onChange(of: dxvkHud) { val in
+                        setenv("DXVK_HUD", val, 1)
+                    }
+                    
+                    Toggle("MetalFX Upscaling", isOn: .constant(true))
+                }
             }
-            .navigationTitle("Performans Ayarları")
+            .navigationTitle("Konsol Ayarları")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Kapat") {
