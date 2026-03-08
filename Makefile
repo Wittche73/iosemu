@@ -13,6 +13,7 @@ LocalCompat_FILES = AppDelegate.swift SceneDelegate.swift \
     AudioManager.swift InputManager.swift PrefixManager.swift PerformanceManager.swift \
     WinetricksManager.swift WineDependencyManager.swift MetalFXManager.swift \
     CloudSyncManager.swift DisplayManager.swift ShaderCacheManager.swift \
+    RegistryManager.swift MemoryPressureManager.swift \
     RuntimeLauncher.swift CommunityProfileManager.swift DynamicJITManager.swift \
     LibraryView.swift GameCardView.swift SettingsDashboard.swift \
     RuntimeBridge.cpp

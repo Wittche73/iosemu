@@ -1,33 +1,38 @@
-# LocalCompat Roadmap & Tasks
+📑 Project: LocalCompat (iOS GameHub-Style)
+Technical Roadmap & Task List
 
-## 1. Kısa Vade (İlk 1 Ay) - Temel Altyapı
-- [x] Swift Domain Modelleri ve Test Ortamı `[x]`
-- [x] Filesystem Bridge: iOS Sandbox içinde Wine/Windows dizin yapısı `[x]`
-- [x] JIT Bridge: Debugging modunda JIT kontrolü `[x]`
-- [x] RuntimeBridge (C++): Box64/FEX iskelet entegrasyonu `[x]`
-- [x] Minimal "Hello World" .exe çalıştırılması `[x]`
+1. Konteyner ve Prefix Mimarisi (Storage Layer)
+- [x] Virtual Drive Mapping: Uygulama içinde C: ve D: mantığını iOS sandbox'ına tam entegre et. `[x]`
+- [x] Container Isolation: Her oyunun kendi Registry, system.reg ve user.reg dosyalarına sahip olduğu izole klasör yapısını (RegistryManager/PrefixManager) tamamla. `[x]`
+- [ ] Portable Wine Payload: Wine binary'lerini Documents klasörüne "deploy" eden sistemi optimize et.
 
-## 2. Orta Vade (1-2 Ay) - Grafik ve Girdi
-- [x] MoltenVK/DXVK Entegrasyonu (DirectX -> Metal) `[x]`
-- [x] Ses Motoru (OpenAL/SDL_Audio) `[x]`
-- [x] Virtual Gamepad (Dokunmatik Kontroller) `[x]`
-- [x] MFi (Gamepad) desteği `[x]`
+2. Grafik ve Görüntü Sunumu (Display Layer)
+- [ ] X11/Wayland to Metal Bridge: Virtual Display Driver geliştir.
+- [x] MetalFX Integration: Apple'ın AI ölçekleme teknolojisini oyun çözünürlüğüne dinamik olarak bağla. `[x]`
+- [ ] DXVK / VKD3D Configuration: DirectX 11 ve 12 çağrılarını Vulkan (MoltenVK) üzerinden Metal'e çeviren config editörünü yap.
 
-## 3. Uzun Vade (3 Ay+) - UI ve Optimizasyon
-- [x] Gelişmiş Oyun Kütüphanesi ve Kapak Resmi Yönetimi `[x]`
-- [x] Prefix Yönetimi (Oyun başına izole Wine ayarları) `[x]`
-- [x] Harici Ekran Desteği (HDMI / AirPlay) `[x]`
-- [x] Shader Cache (Takılmaları Önleme Sistemi) `[x]`
-- [x] Topluluk Profilleri ve Tek Tık Kurulum `[x]`
-- [x] Dinamik JIT Switch (AI Destekli Performans) `[x]`
-- [x] MetalFX Upscaling Entegrasyonu `[x]`
-- [x] App Store Hazırlığı (Premium Iconlar & Splash) `[x]`
-- [x] Bulut Senkronizasyonu (Save & Profil) ` [x]`
+3. Emülasyon Çekirdeği (Core Engine)
+- [ ] Box64 DynaRec Optimization: iOS'un mprotect kısıtlamalarına uygun şekilde JIT sayfa yönetimini (RWX) geliştir.
+- [ ] FEX-Emu Alternatifi: FEX-Emu çekirdeğini yedek motor olarak entegre et.
+- [x] Wait/Sync Mechanism: Box64 ve Wine arasındaki senkronizasyonu sağlayan wineserver yönetimi. `[x]`
 
-## 4. Gerçek Motor Entegrasyonu (Real Engine Implementation)
-- [x] Ubuntu üzerinde iOS Derleme Ortamı (Theos & SDK) Hazırlığı `[x]`
-- [x] Box64 (x86-on-ARM) Cross-Compilation (libbox64.dylib) Başarıyla Tamamlandı `[x]`
-- [x] **Box64 Kütüphanesinin (libbox64.dylib) Ana Uygulamaya Bağlanması ve Entegrasyonu** `[x]`
-- [x] Wine Bileşenlerinin (DLLs) Fiziksel Sandbox Transferinin Tamamlanması `[x]`
-- [ ] DXVK & MoltenVK Gerçek Framework Entegrasyonu
-- [ ] İlk Gerçek x86 "Hello World" Binary Çalıştırılması
+4. Girdi ve Kontrol Sistemleri (Input Layer)
+- [ ] Virtual Controller Overlay: Ekran üzerine özelleştirilebilir sanal gamepad ekle.
+- [ ] Mouse/Keyboard Emulation: Relative Mouse Move moduna çeviren algoritmayı geliştir.
+- [ ] MFi/GameController Support: PS5/Xbox kollarını Win32 XInput cihazı gibi tanıtacak köprüyü kur.
+
+5. Kullanıcı Deneyimi (Frontend Layer)
+- [ ] Game Discovery: .exe dosyalarını tarayıp kapak resimlerini çeken sistemi yaz.
+- [ ] Per-Game Settings: JIT agresifliği, çözünürlük ve Wine versiyonu seçilebilen "Settings Dashboard"u oluştur.
+- [ ] Performance HUD: Oyun sırasında FPS, CPU ve RAM kullanımını gösteren "Diagnostics" katmanını ekle.
+
+6. Gelişmiş Sistem Yönetimi (Advanced)
+- [x] MemoryPressureManager: iOS hafıza uyarısı verdiğinde Wine heap'ini ve JIT cache'ini temizleyen mekanizma. `[x]`
+- [ ] Background Execution: ProcessAssertion ve ses oturumu hilelerini uygula.
+- [/] Winetricks Automation: Yaygın kütüphaneleri (d3dx9, vcrun) tek tıkla yükleyen sistem. (Fiziksel DLL transferi aktif)
+
+---
+- [x] DXVK & MoltenVK Gerçek Framework Entegrasyonu `[x]`
+- [x] İlk Gerçek x86 "Hello World" Binary Çalıştırılması `[x]`
+- [x] Terminology Clear: Remove all "Simülatör" labels `[x]`
+- [x] Functional Core: Real setenv/copy/monitoring logic `[x]`

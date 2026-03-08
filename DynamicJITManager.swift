@@ -32,7 +32,9 @@ class DynamicJITManager {
     private func checkAndOptimize() {
         var hostPort = mach_host_self()
         var hostInfo = host_cpu_load_info()
-        var count = mach_msg_type_number_t(HOST_CPU_LOAD_INFO_COUNT)
+        // HOST_CPU_LOAD_INFO_COUNT is (sizeof(host_cpu_load_info_data_t) / sizeof(integer_t)) = (16 / 4) = 4
+        let HOST_CPU_LOAD_INFO_COUNT_MANUAL = mach_msg_type_number_t(4)
+        var count = HOST_CPU_LOAD_INFO_COUNT_MANUAL
         
         let result = withUnsafeMutablePointer(to: &hostInfo) {
             $0.withMemoryRebound(to: integer_t.self, capacity: Int(count)) {
