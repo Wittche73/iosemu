@@ -16,15 +16,20 @@ class PrefixManager {
         // 2. Windows Versiyonu Ayarlanması (Windows Registry configuration)
         print("   -> Windows Versiyonu: \(game.config.windowsVersion)")
         
-        // 2. DLL Overrides Uygulanması
+        // 2. DLL Overrides Uygulanması (WINEDLLOVERRIDES)
+        var overrideString = ""
         for (dll, mode) in game.config.dllOverrides {
             print("   -> DLL Override: \(dll) set to \(mode)")
-            // Applying WINEDLLOVERRIDES configuration
+            overrideString += "\(dll)=\(mode);"
+        }
+        if !overrideString.isEmpty {
+            setenv("WINEDLLOVERRIDES", overrideString, 1)
         }
         
         // 3. Özel Çevresel Değişkenler
         for (key, value) in game.config.environmentVariables {
-            print("   -> Env Var: \(key) = \(value)")
+            print("    -> Env Var: \(key) = \(value)")
+            setenv(key, value, 1)
         }
         
         // 4. Bağımlılık Kontrolü (Winetricks)
@@ -56,9 +61,9 @@ class PrefixManager {
                     if FileManager.default.fileExists(atPath: destinationPath) {
                         try FileManager.default.removeItem(atPath: destinationPath)
                     }
-                    // Burada fiziksel kopyalama yapılır
-                    // try FileManager.default.copyItem(atPath: sourcePath, toPath: destinationPath)
-                    print("✅ [SUCCESS] \(package).dll aktarıldı.")
+                    // Fiziksel kopyalama: Bundle içindeki payload'dan prefix'e aktar
+                    try FileManager.default.copyItem(atPath: sourcePath, toPath: destinationPath)
+                    print("✅ [SUCCESS] \(package).dll deployed to prefix.")
                 } catch {
                     print("❌ [ERROR] \(package).dll kopyalanamadı: \(error)")
                 }

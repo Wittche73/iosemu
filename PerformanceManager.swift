@@ -12,16 +12,20 @@ class PerformanceManager {
         
         switch profile {
         case .powerSave:
-            print("   -> JIT Efficiency: Balanced")
-            print("   -> Dynarec Optimization: Conservative")
-            print("   -> GPU Power Target: Low")
+            setenv("BOX64_DYNAREC_STRONGMEM", "1", 1)
+            setenv("BOX64_DYNAREC_FASTROUND", "0", 1)
+            setenv("BOX64_DYNAREC_FASTNAN", "0", 1)
+            print("   -> Profile: Power Save (Safety Over Speed)")
         case .balanced:
-            print("   -> JIT Efficiency: Optimal")
-            print("   -> Dynarec Optimization: Standard")
+            setenv("BOX64_DYNAREC_STRONGMEM", "0", 1)
+            setenv("BOX64_DYNAREC_FASTROUND", "1", 1)
+            print("   -> Profile: Balanced (Optimized)")
         case .highPerformance:
-            print("   -> JIT Efficiency: Maximum (Unleashed)")
-            print("   -> Dynarec Optimization: Aggressive")
-            print("   -> GPU Performance: Active")
+            setenv("BOX64_DYNAREC_STRONGMEM", "0", 1)
+            setenv("BOX64_DYNAREC_FASTROUND", "1", 1)
+            setenv("BOX64_DYNAREC_FASTNAN", "1", 1)
+            setenv("BOX64_DYNAREC_X87_DOUBLE", "1", 1)
+            print("   -> Profile: High Performance (Unleashed)")
         }
         
         print("✅ PerformanceManager: Ayarlar başarıyla güncellendi.")

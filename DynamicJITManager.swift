@@ -30,14 +30,35 @@ class DynamicJITManager {
     }
     
     private func checkAndOptimize() {
-        // Dynamic load balancing: Stutter detection
-        let load = Float.random(in: 0...100)
+        var hostPort = mach_host_self()
+        var hostInfo = host_cpu_load_info()
+        var count = mach_msg_type_number_t(HOST_CPU_LOAD_INFO_COUNT)
         
-        if load > 85 {
-            print("⚠️ DynamicJIT: Yüksek CPU yükü algılandı (\(Int(load))%). JIT agresifliği artırılıyor...")
-            // Signal JITBridge for hardware optimization
-        } else if load < 30 {
-            print("ℹ️ DynamicJIT: Düşük yük algılandı. Güç tasarrufu için JIT stabilize ediliyor.")
+        let result = withUnsafeMutablePointer(to: &hostInfo) {
+            $0.withMemoryRebound(to: integer_t.self, capacity: Int(count)) {
+                host_statistics(hostPort, HOST_CPU_LOAD_INFO, $0, &count)
+            }
+        }
+        
+        if result == KERN_SUCCESS {
+            let user = Float(hostInfo.cpu_ticks.0)
+            let system = Float(hostInfo.cpu_ticks.1)
+            let idle = Float(hostInfo.cpu_ticks.2)
+            let total = user + system + idle
+            
+            let usage = ((user + system) / total) * 100.0
+            
+            if usage > 80 {
+                print("⚠️ DynamicJIT: High CPU Load Detected (\(Int(usage))%). Escalating Dynarec Agility...")
+                setenv("BOX64_DYNAREC_WAIT", "0", 1)
+                setenv("BOX64_DYNAREC_HOTPAGE", "16", 1)
+            } else if usage < 25 {
+                print("ℹ️ DynamicJIT: Low Load (\(Int(usage))%). Stabilizing Engine.")
+                setenv("BOX64_DYNAREC_WAIT", "1", 1)
+            }
+        } else {
+            // Fallback to safe defaults if sysinfo fails
+            print("⚠️ DynamicJIT: Could not poll CPU stats. Using safe engine defaults.")
         }
     }
 }
