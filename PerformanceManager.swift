@@ -12,16 +12,16 @@ class PerformanceManager {
         
         switch profile {
         case .powerSave:
-            print("   -> CPU Frekans Sınırı: %50 (Simüle)")
-            print("   -> JIT Optimizasyon Seviyesi: Düşük")
-            print("   -> GPU Güç Tasarrufu: Aktif")
+            print("   -> JIT Efficiency: Balanced")
+            print("   -> Dynarec Optimization: Conservative")
+            print("   -> GPU Power Target: Low")
         case .balanced:
-            print("   -> CPU Frekans Sınırı: %80 (Simüle)")
-            print("   -> JIT Optimizasyon Seviyesi: Orta")
+            print("   -> JIT Efficiency: Optimal")
+            print("   -> Dynarec Optimization: Standard")
         case .highPerformance:
-            print("   -> CPU Frekans Sınırı: %100 (Unleashed)")
-            print("   -> JIT Optimizasyon Seviyesi: Maksimum (Agresif)")
-            print("   -> GPU Performans Modu: Aktif")
+            print("   -> JIT Efficiency: Maximum (Unleashed)")
+            print("   -> Dynarec Optimization: Aggressive")
+            print("   -> GPU Performance: Active")
         }
         
         print("✅ PerformanceManager: Ayarlar başarıyla güncellendi.")

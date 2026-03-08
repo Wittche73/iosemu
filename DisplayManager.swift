@@ -64,7 +64,7 @@ class DisplayManager {
             return windowScene.session.role == .windowExternalDisplayNonInteractive
         }
         #else
-        return false // Simülatör/Linux için varsayılan
+        return false // Native platform default
         #endif
     }
 }

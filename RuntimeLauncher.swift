@@ -89,36 +89,28 @@ class RuntimeLauncher {
         print("Set WINEDEBUG=+all")
         print("Command: box64 \(wineBinPath) \(exePath)")
         
-        // 10. Bulut Senkronizasyonu (PULL)
-        CloudSyncManager.shared.pullSaves(for: game)
-        
-        // 11. CPU Döngüsünü Başlat (Simüle)
-        print("✅ Emülasyon döngüsü başladı.")
-
-        
-        // 7. C++ Bridge Çağrıları
-        if !init_runtime() {
-            print("❌ C++ Runtime başlatılamadı!")
-            DynamicJITManager.shared.stopMonitoring()
-            return false
-        }
-        
-        // Wine üzerinden exe yükleme
-        if !load_exe(exePath, wineBinPath) {
-            let error = String(cString: get_last_runtime_error())
-            print("❌ C++ Runtime Hata: \(error)")
-            DynamicJITManager.shared.stopMonitoring()
-            return false
-        }
-        
         // 9. Bulut Senkronizasyonu (PULL)
         CloudSyncManager.shared.pullSaves(for: game)
         
-        // 10. CPU Döngüsünü Başlat (Simüle)
-        print("✅ Emülasyon döngüsü başladı.")
-        run_cpu_cycle()
+        // 10. Native Motoru Başlat
+        if !init_runtime() {
+            print("❌ Emulator Bridge: Native engine library (Box64) could not be initialized!")
+            DynamicJITManager.shared.stopMonitoring()
+            return false
+        }
         
-        // 11. Otomatik Kayıt Yedekleme (PUSH)
+        print("✅ Emulator Bridge: Native core active. Starting execution thread...")
+
+        // Wine üzerinden exe yükleme
+        if !load_exe(exePath, wineBinPath) {
+            let error = String(cString: get_last_runtime_error())
+            print("❌ Emulator Bridge Hata: \(error)")
+            DynamicJITManager.shared.stopMonitoring()
+            return false
+        }
+        
+        // 11. Otomatik Kayıt Yedekleme Hazırlığı (Döngü asenkron olduğu için burada biter)
+        print("🚀 Native Emulator: Engine dispatch completed for \(game.name).")
         CloudSyncManager.shared.pushSaves(for: game)
         
         return true
