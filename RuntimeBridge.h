@@ -40,6 +40,12 @@ void run_cpu_cycle(void);
 /// Emülatörden son durum mesajını alır
 const char* get_last_runtime_error(void);
 
+/// DynaRec cache'ini acil durumda temizler (Memory Pressure)
+void flush_dynarec_cache(void);
+
+/// Motor istatistiklerini JSON formatında döndürür
+const char* get_engine_stats(void);
+
 #ifdef __cplusplus
 }
 #endif

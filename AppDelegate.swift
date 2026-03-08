@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         window.makeKeyAndVisible()
         
+        // Start advanced infrastructure monitors
+        MemoryPressureManager.shared.startMonitoring()
+        
         return true
     }
 

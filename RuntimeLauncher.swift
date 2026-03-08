@@ -39,6 +39,9 @@ class RuntimeLauncher {
             return false
         }
         
+        // 2.1 Registry Yapılandırması (Windows Çekirdek Ayarları)
+        RegistryManager.shared.setWindowsVersion(prefixPath: game.prefixPath, version: game.config.windowsVersion)
+        
         // 3. JIT Kontrolü
         if !JITManager.shared.isJITAvailable() {
             print(JITManager.shared.getJITStatusMessage())
