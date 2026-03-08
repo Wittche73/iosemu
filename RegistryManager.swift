@@ -14,12 +14,13 @@ class RegistryManager {
         print("--- RegistryManager: Updating \(hive).reg [Key: \(key)] ---")
         
         do {
-            guard FileManager.default.fileExists(atPath: regFilePath) else {
-                print("⚠️ Registry: File not found at \(regFilePath). Skipping.")
-                return
+            var content = ""
+            if FileManager.default.fileExists(atPath: regFilePath) {
+                content = try String(contentsOf: fileURL, encoding: .utf8)
+            } else {
+                print("ℹ️ Registry: File not found. Initializing new hive at \(regFilePath)")
+                content = "WINE REGISTRY Version 2\n\n"
             }
-            
-            var content = try String(contentsOf: fileURL, encoding: .utf8)
             
             // Basit bir regex ile anahtarı bulup değiştirme (veya ekleme)
             // Not: Gerçek bir Wine .reg dosyası karmaşıktır, bu temel bir implementasyondur.

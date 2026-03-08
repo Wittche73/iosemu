@@ -16,7 +16,10 @@ class AudioManager {
         #if os(iOS)
         let session = AVAudioSession.sharedInstance()
         do {
-            try session.setCategory(.playback, mode: .gameChat, options: [])
+            // .gameChat often requires .playAndRecord. For an emulator, .playback + .default is safer.
+            try session.setCategory(.manualRendering, mode: .default, options: []) 
+            // Manual rendering is too complex, let's stick to standard playback:
+            try session.setCategory(.playback, mode: .default, options: [.mixWithOthers])
             try session.setPreferredIOBufferDuration(0.005)
             try session.setActive(true)
             print("✅ AudioManager: Ses oturumu aktif hale getirildi (iOS Low Latency).")
