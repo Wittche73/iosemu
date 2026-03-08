@@ -59,15 +59,32 @@ extern "C" bool init_audio() {
 }
 
 extern "C" void send_key_event(int keycode, bool is_pressed) {
-    // std::cout << "[C++] Input: Key " << keycode << (is_pressed ? " Pressed" : " Released") << std::endl;
+    if (keycode > 0) {
+        printf("[Emulator Bridge] Input: Key %d %s\n", keycode, (is_pressed ? "Pressed" : "Released"));
+    }
 }
 
 extern "C" void send_mouse_move(int x, int y) {
-    // std::cout << "[C++] Input: Mouse Move -> X: " << x << ", Y: " << y << std::endl;
+    // Mutlak koordinat gönderimi (UI etkileşimi için)
+    // printf("[Emulator Bridge] Input: Mouse Absolute -> X: %d, Y: %d\n", x, y);
 }
 
-extern "C" void send_joystick_axis(int axis, float value) {}
-extern "C" void send_joystick_button(int button, bool is_pressed) {}
+extern "C" void send_mouse_relative_move(int dx, int dy) {
+    // Göreceli hareket (FPS oyunları için)
+    if (dx != 0 || dy != 0) {
+        printf("[Emulator Bridge] Input: Mouse Delta -> dX: %d, dY: %d\n", dx, dy);
+    }
+}
+
+extern "C" void send_joystick_axis(int axis, float value) {
+    if (axis >= 0) {
+        // printf("[Emulator Bridge] Input: Joystick Axis %d -> Value: %.2f\n", axis, value);
+    }
+}
+
+extern "C" void send_joystick_button(int button, bool is_pressed) {
+    printf("[Emulator Bridge] Input: Joystick Button %d %s\n", button, (is_pressed ? "Pressed" : "Released"));
+}
 
 // Arka planda çalışacak olan ana oyun emülasyon döngüsü
 void execute_engine_thread(std::string exe_path, std::string prefix_path) {

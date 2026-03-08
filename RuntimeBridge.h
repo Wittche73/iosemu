@@ -22,8 +22,11 @@ bool init_audio(void);
 /// Klavye olayı gönderir
 void send_key_event(int keycode, bool is_pressed);
 
-/// Fare hareketi gönderir
+/// Fare hareketi gönderir (Mutlak)
 void send_mouse_move(int x, int y);
+
+/// Fare hareketi gönderir (Göreceli - Delta)
+void send_mouse_relative_move(int dx, int dy);
 
 /// Joystick eksen verisi gönderir
 void send_joystick_axis(int axis, float value);

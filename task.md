@@ -18,11 +18,11 @@ Technical Roadmap & Task List
 
 4. Girdi ve Kontrol Sistemleri (Input Layer)
 - [x] Virtual Controller Overlay: Ekran üzerine özelleştirilebilir sanal gamepad ekle. `[x]`
-- [ ] Mouse/Keyboard Emulation: Relative Mouse Move moduna çeviren algoritmayı geliştir.
-- [ ] MFi/GameController Support: PS5/Xbox kollarını Win32 XInput cihazı gibi tanıtacak köprüyü kur.
+- [x] Mouse/Keyboard Emulation: Relative Mouse Move moduna çeviren algoritmayı geliştir. `[x]`
+- [/] MFi/GameController Support: PS5/Xbox kollarını Win32 XInput cihazı gibi tanıtacak köprüyü kur.
 
 5. Kullanıcı Deneyimi (Frontend Layer)
-- [ ] Game Discovery: .exe dosyalarını tarayıp kapak resimlerini çeken sistemi yaz.
+- [x] Game Discovery: .exe dosyalarını tarayıp kapak resimlerini çeken sistemi yaz. `[x]`
 - [ ] Per-Game Settings: JIT agresifliği, çözünürlük ve Wine versiyonu seçilebilen "Settings Dashboard"u oluştur.
 - [x] Performance HUD: Oyun sırasında FPS, CPU ve RAM kullanımını gösteren "Diagnostics" katmanını ekle. `[x]`
 

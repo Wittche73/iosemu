@@ -118,10 +118,18 @@ struct LibraryView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { showingSettings = true }) {
-                        Image(systemName: "slider.horizontal.3")
-                            .foregroundColor(.white)
-                            .font(.headline)
+                    HStack {
+                        Button(action: { core.discoverGames() }) {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                        }
+                        
+                        Button(action: { showingSettings = true }) {
+                            Image(systemName: "slider.horizontal.3")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                        }
                     }
                 }
             }
@@ -169,5 +177,13 @@ class CompatCoreDelegate: ObservableObject {
             }
         }
         DynamicJITManager.shared.stopMonitoring()
+    }
+    
+    func discoverGames() {
+        let newOnes = core.discoverGames()
+        if !newOnes.isEmpty {
+            // Basitçe listenin sonuna ekle veya tam yenile
+            self.games = core.fetchGames() 
+        }
     }
 }

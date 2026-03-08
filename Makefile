@@ -17,6 +17,7 @@ LocalCompat_FILES = AppDelegate.swift SceneDelegate.swift \
     RuntimeLauncher.swift CommunityProfileManager.swift DynamicJITManager.swift \
     LibraryView.swift GameCardView.swift SettingsDashboard.swift \
     VirtualControllerView.swift PerformanceHUDView.swift \
+    GameDiscoveryManager.swift \
     RuntimeBridge.cpp
 
 # Also include the advanced architecture from Sources

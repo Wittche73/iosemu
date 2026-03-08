@@ -54,6 +54,11 @@ class CompatCore {
     private var games: [Game] = []
     
     func importGame(from path: String, suggestedName: String) -> Game {
+        // Mükerrer kontrolü
+        if let existing = games.first(where: { $0.path == path }) {
+            return existing
+        }
+
         let gameID = UUID()
         var prefixPath = ""
         do {
@@ -66,6 +71,24 @@ class CompatCore {
         games.append(newGame)
         print("Imported game: \(suggestedName) with prefix: \(prefixPath)")
         return newGame
+    }
+
+    /// Otomatik keşif başlatır ve yeni oyunları kütüphaneye ekler
+    func discoverGames() -> [Game] {
+        let urls = GameDiscoveryManager.shared.discoverExes()
+        var newGames: [Game] = []
+        
+        for url in urls {
+            let name = GameDiscoveryManager.shared.suggestName(for: url)
+            let imported = importGame(from: url.path, suggestedName: name)
+            newGames.append(imported)
+        }
+        
+        return newGames
+    }
+
+    func fetchGames() -> [Game] {
+        return games
     }
     
     func launchGame(id: UUID) {
