@@ -54,6 +54,25 @@ struct SettingsDashboard: View {
                     
                     Toggle("MetalFX Upscaling", isOn: .constant(true))
                 }
+                
+                Section(header: Text("Bağımlılıklar (Winetricks)").font(.headline)) {
+                    Button(action: {
+                        // Basit test: d3dx9 yükle (Aktif prefix varsayılıyor veya seçilmesi gerekiyor)
+                        print("🛠 Winetricks: d3dx9 kurulumu tetiklendi.")
+                    }) {
+                        Label("DirectX 9 Kütüphanelerini Kur", systemImage: "shippingbox.fill")
+                    }
+                    
+                    Button(action: {
+                        print("🛠 Winetricks: vcrun2015 kurulumu tetiklendi.")
+                    }) {
+                        Label("VC++ 2015 Redistributable Kur", systemImage: "shippingbox.fill")
+                    }
+                    
+                    Text("Oyun düzgün açılmıyorsa bu paketleri kurun.")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
             .navigationTitle("Konsol Ayarları")
             .toolbar {

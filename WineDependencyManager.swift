@@ -79,34 +79,38 @@ class WineDependencyManager {
             var isDir: ObjCBool = false
             if fileManager.fileExists(atPath: srcPath, isDirectory: &isDir) {
                 if isDir.boolValue {
-                    // Klasörse içeri gir
                     if !fileManager.fileExists(atPath: dstPath) {
                         try? fileManager.createDirectory(atPath: dstPath, withIntermediateDirectories: true)
                     }
                     recursiveSync(from: srcPath, to: dstPath)
                 } else {
-                    // Dosyaysa kopyala (Gerekirse overwrite yap)
+                    // Akıllı Kontrol: Dosya boyutu veya tarihi değişmemişse atla
+                    if fileManager.fileExists(atPath: dstPath) {
+                        let srcAttr = try? fileManager.attributesOfItem(atPath: srcPath)
+                        let dstAttr = try? fileManager.attributesOfItem(atPath: dstPath)
+                        
+                        if let srcSize = srcAttr?[.size] as? NSNumber,
+                           let dstSize = dstAttr?[.size] as? NSNumber,
+                           srcSize == dstSize {
+                            // Boyut aynıysa atla (Hızlı kontrol)
+                            return
+                        }
+                    }
+
                     do {
                         let isDLL = item.lowercased().hasSuffix(".dll")
                         let isWine = item.lowercased() == "wine"
                         
                         var finalDstPath = dstPath
                         if isWine {
-                            // Çakışma olmaması için wine binary'sini wine.bin olarak kopyalayabiliriz
                             finalDstPath = (target as NSString).appendingPathComponent("wine.bin")
                         }
                         
                         if fileManager.fileExists(atPath: finalDstPath) {
-                            if isDLL || isWine {
-                                // DLL ise veya wine binary'si ise hep üstüne yaz (Güvenlik için)
-                                try? fileManager.removeItem(atPath: finalDstPath)
-                                try fileManager.copyItem(atPath: srcPath, toPath: finalDstPath)
-                                print("      * Updated: \(item) -> \(isWine ? "wine.bin" : item)")
-                            }
-                        } else {
-                            try fileManager.copyItem(atPath: srcPath, toPath: finalDstPath)
-                            print("      + Deployed: \(item) -> \(isWine ? "wine.bin" : item)")
+                            try? fileManager.removeItem(atPath: finalDstPath)
                         }
+                        try fileManager.copyItem(atPath: srcPath, toPath: finalDstPath)
+                        // print("      * Updated: \(item)")
                     } catch {
                         print("      ❌ Failed to copy \(item): \(error)")
                     }
@@ -121,19 +125,19 @@ class WineDependencyManager {
         
         if !fileManager.fileExists(atPath: game.prefixPath) {
             do {
+                // APFS block cloning sayesinde bu işlem anlıktır (Zero-copy clone)
                 try fileManager.copyItem(atPath: masterPrefixPath, toPath: game.prefixPath)
                 print("   -> [CLONE SUCCESS] Master prefix copied to \(game.prefixPath)")
             } catch {
                 print("   -> [CLONE ERROR] \(error)")
-                // Manuel oluşturmayı dene
                 try? fileManager.createDirectory(atPath: game.prefixPath, withIntermediateDirectories: true)
+                syncPayload(to: game.prefixPath) // Klonlanamazsa manuel kopyala
             }
         } else {
             print("   -> [CLONE SKIP] Prefix already exists.")
         }
         
-        // Her ihtimale karşı prefix içindeki dosyaları bundle'dan güncelle
-        // (Eksik DLL varsa tamamlar)
-        syncPayload(to: game.prefixPath)
+        // KRİTİK OPTİMİZASYON: initializePrefix artık her seferinde tam sync yapmaz.
+        // Master prefix güncel olduğu sürece klon yeterlidir.
     }
 }

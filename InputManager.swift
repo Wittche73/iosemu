@@ -53,22 +53,41 @@ class InputManager {
                     self.handleJoystickAxis(axis: 3, value: gamepad.rightThumbstick.yAxis.value)
                 }
                 
-                // 2. Butonlar (Win32 Virtual Key Codes)
+                // 2. D-PAD (Win32 Arrow Keys)
+                if element == gamepad.dpad {
+                    self.handleKeyPress(keyCode: VirtualKeys.VK_UP, isPressed: gamepad.dpad.up.isPressed)
+                    self.handleKeyPress(keyCode: VirtualKeys.VK_DOWN, isPressed: gamepad.dpad.down.isPressed)
+                    self.handleKeyPress(keyCode: VirtualKeys.VK_LEFT, isPressed: gamepad.dpad.left.isPressed)
+                    self.handleKeyPress(keyCode: VirtualKeys.VK_RIGHT, isPressed: gamepad.dpad.right.isPressed)
+                }
+                
+                // 3. Butonlar (Win32 Virtual Key Codes)
                 if element == gamepad.buttonA {
                     self.handleKeyPress(keyCode: VirtualKeys.VK_SPACE, isPressed: gamepad.buttonA.isPressed)
                 } else if element == gamepad.buttonB {
                     self.handleKeyPress(keyCode: VirtualKeys.VK_ESCAPE, isPressed: gamepad.buttonB.isPressed)
                 } else if element == gamepad.buttonX {
-                    self.handleKeyPress(keyCode: 0x52, isPressed: gamepad.buttonX.isPressed) // 'R' Key
+                    self.handleKeyPress(keyCode: 0x52, isPressed: gamepad.buttonX.isPressed) // 'R'
                 } else if element == gamepad.buttonY {
-                    self.handleKeyPress(keyCode: 0x46, isPressed: gamepad.buttonY.isPressed) // 'F' Key
+                    self.handleKeyPress(keyCode: 0x45, isPressed: gamepad.buttonY.isPressed) // 'E' (Action/Use)
                 }
                 
-                // 3. Tetikler ve Omuz Tuşları
+                // 4. Tetikler ve Omuz Tuşları
                 if element == gamepad.leftShoulder {
                     self.handleKeyPress(keyCode: 0x11, isPressed: gamepad.leftShoulder.isPressed) // VK_CONTROL
                 } else if element == gamepad.rightShoulder {
-                    self.handleKeyPress(keyCode: 0x12, isPressed: gamepad.rightShoulder.isPressed) // VK_MENU (ALT)
+                    self.handleKeyPress(keyCode: 0x01, isPressed: gamepad.rightShoulder.isPressed) // VK_LBUTTON (Ateş)
+                } else if element == gamepad.leftTrigger {
+                    self.handleKeyPress(keyCode: 0x51, isPressed: gamepad.leftTrigger.isPressed > 0.5) // 'Q'
+                } else if element == gamepad.rightTrigger {
+                    self.handleKeyPress(keyCode: 0x01, isPressed: gamepad.rightTrigger.isPressed > 0.5) // VK_LBUTTON
+                }
+                
+                // 5. Menü ve Paylaş Butonları (Esc/Enter)
+                if element == gamepad.buttonMenu {
+                    self.handleKeyPress(keyCode: VirtualKeys.VK_ESCAPE, isPressed: gamepad.buttonMenu.isPressed)
+                } else if element == gamepad.buttonOptions {
+                    self.handleKeyPress(keyCode: VirtualKeys.VK_RETURN, isPressed: gamepad.buttonOptions?.isPressed ?? false)
                 }
             }
         }

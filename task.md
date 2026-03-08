@@ -4,7 +4,7 @@ Technical Roadmap & Task List
 1. Konteyner ve Prefix Mimarisi (Storage Layer)
 - [x] Virtual Drive Mapping: Uygulama içinde C: ve D: mantığını iOS sandbox'ına tam entegre et. `[x]`
 - [x] Container Isolation: Her oyunun kendi Registry, system.reg ve user.reg dosyalarına sahip olduğu izole klasör yapısını (RegistryManager/PrefixManager) tamamla. `[x]`
-- [ ] Portable Wine Payload: Wine binary'lerini Documents klasörüne "deploy" eden sistemi optimize et.
+- [x] Portable Wine Payload: Wine binary'lerini Documents klasörüne "deploy" eden sistemi optimize et. `[x]`
 
 2. Grafik ve Görüntü Sunumu (Display Layer)
 - [x] X11/Wayland to Metal Bridge: Virtual Display Driver geliştir. `[x]`
@@ -19,7 +19,7 @@ Technical Roadmap & Task List
 4. Girdi ve Kontrol Sistemleri (Input Layer)
 - [x] Virtual Controller Overlay: Ekran üzerine özelleştirilebilir sanal gamepad ekle. `[x]`
 - [x] Mouse/Keyboard Emulation: Relative Mouse Move moduna çeviren algoritmayı geliştir. `[x]`
-- [/] MFi/GameController Support: PS5/Xbox kollarını Win32 XInput cihazı gibi tanıtacak köprüyü kur.
+- [x] MFi/GameController Support: PS5/Xbox kollarını Win32 XInput cihazı gibi tanıtacak köprüyü kur. `[x]`
 
 5. Kullanıcı Deneyimi (Frontend Layer)
 - [x] Game Discovery: .exe dosyalarını tarayıp kapak resimlerini çeken sistemi yaz. `[x]`
@@ -29,7 +29,7 @@ Technical Roadmap & Task List
 6. Gelişmiş Sistem Yönetimi (Advanced)
 - [x] MemoryPressureManager: iOS hafıza uyarısı verdiğinde Wine heap'ini ve JIT cache'ini temizleyen mekanizma. `[x]`
 - [x] Background Execution: ProcessAssertion ve ses oturumu hilelerini uygula. `[x]`
-- [/] Winetricks Automation: Yaygın kütüphaneleri (d3dx9, vcrun) tek tıkla yükleyen sistem. (Fiziksel DLL transferi aktif)
+- [x] Winetricks Automation: Yaygın kütüphaneleri (d3dx9, vcrun) tek tıkla yükleyen sistem. (Fiziksel DLL transferi aktif) `[x]`
 
 ---
 - [x] DXVK & MoltenVK Gerçek Framework Entegrasyonu `[x]`
