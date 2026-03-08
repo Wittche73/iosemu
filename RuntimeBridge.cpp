@@ -105,6 +105,12 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
             setenv("BOX64_DYNAREC", "1", 1);
             setenv("BOX64_SHOW_JOYSTICK", "1", 1);
 
+            // iOS Sandbox kısıtlamaları nedeniyle donanım taramasını (popen lscpu vb.) atlat
+            setenv("BOX64_SYSINFO_CACHED", "1", 1);
+            setenv("BOX64_SYSINFO_NCPU", "8", 1); // Varsayılan 8 çekirdek
+            setenv("BOX64_SYSINFO_CPUNAME", "Apple ARM64 Generic", 1);
+            setenv("BOX64_SYSINFO_FREQUENCY", "2500000000", 1); // 2.5 GHz simüle
+            
             // X86_64 kütüphanelerinin aranacağı yer (Wine DLL'lerinin olduğu yer)
             std::string wine_lib_path = actual_prefix + "/drive_c/windows/system32";
             setenv("BOX64_LD_LIBRARY_PATH", wine_lib_path.c_str(), 1);
