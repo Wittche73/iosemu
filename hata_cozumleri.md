@@ -68,6 +68,12 @@ Bu dosya, geliştirme sürecinde karşılaşılan teknik engelleri ve bunların 
 - **Çözüm:** `PerformanceManager` sınıfına eksik olan `applyProfile` metodu ve profil bazlı çevre değişkeni atamaları eklendi.
 - **Hata:** `onChange` metodunun iOS 17'de "deprecated" uyarısı vermesi.
 - **Çözüm:** Modern Swift closure sözdizimine geçilerek uyarılar giderildi.
+
+### 12. Linker Hataları ve Eksik Semboller (Final)
+- **Hata:** `_enable_metalfx` sembolünün bulunamaması (Undefined symbol).
+- **Çözüm:** `RuntimeBridge.h` içinde tanımlı olan ancak `RuntimeBridge.cpp` içinde unutulan `enable_metalfx` fonksiyonu implemente edildi.
+- **Hata:** `CoreAudioTypes` framework uyarısı.
+- **Çözüm:** Bu bir "auto-link" uyarısıdır; ancak sembol hatası giderilince Linking aşaması başarıyla tamamlanabilir.
 - **Hata:** `PerformanceManager` içinde süslü parantez (`}`) eksikliği ve `applyProfile` metodunun yanlış hizada olması.
 - **Çözüm:** `setJITLevel` fonksiyonu kapatıldı ve `applyProfile` sınıf seviyesine taşındı.
 - **Hata:** `PerformanceProfile` enum uyuşmazlığı (`.powerSaving` vs `.powerSave`).

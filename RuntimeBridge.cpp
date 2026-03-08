@@ -49,6 +49,20 @@ extern "C" bool init_graphics() {
     return true;
 }
 
+extern "C" void enable_metalfx(int mode) {
+    printf("[Emulator Bridge] MetalFX Mode requested: %d\n", mode);
+    // 0: Off, 1: Spatial, 2: Temporal
+    if (mode == 1) {
+        setenv("MVK_CONFIG_USE_METALFX", "1", 1);
+        setenv("MVK_CONFIG_METALFX_TYPE", "spatial", 1);
+    } else if (mode == 2) {
+        setenv("MVK_CONFIG_USE_METALFX", "1", 1);
+        setenv("MVK_CONFIG_METALFX_TYPE", "temporal", 1);
+    } else {
+        setenv("MVK_CONFIG_USE_METALFX", "0", 1);
+    }
+}
+
 extern "C" void set_metal_layer(void* layer) {
     if (layer) {
         printf("[Emulator Bridge] Metal Layer attached: %p\n", layer);
