@@ -61,6 +61,13 @@ Bu dosya, geliştirme sürecinde karşılaşılan teknik engelleri ve bunların 
 - **Hata:** Yeni oluşturulan prefixlerde `system.reg` bulunamadığı için Registry ayarlarının atlanması.
 - **Çözüm:** `RegistryManager` geliştirilerek dosya yoksa otomatik olarak temiz bir Wine Registry başlığıyla ilklendirme yapması sağlandı.
 
+### 11. CI/CD Stabilizasyon ve Derleme Hataları (Final)
+- **Hata:** `InputManager` içinde `gamepad.leftTrigger.isPressed > 0.5` karşılaştırma hatası (Bool vs Double).
+- **Çözüm:** `isPressed` (Bool) yerine `value` (Float) kullanılarak mantıksal karşılaştırma düzeltildi.
+- **Hata:** `RuntimeLauncher` derlenirken `PerformanceManager` içinde `applyProfile` metodunun bulunamaması.
+- **Çözüm:** `PerformanceManager` sınıfına eksik olan `applyProfile` metodu ve profil bazlı çevre değişkeni atamaları eklendi.
+- **Hata:** `onChange` metodunun iOS 17'de "deprecated" uyarısı vermesi.
+- **Çözüm:** Modern Swift closure sözdizimine geçilerek uyarılar giderildi.
 - **Hata:** `PerformanceManager` içinde süslü parantez (`}`) eksikliği ve `applyProfile` metodunun yanlış hizada olması.
 - **Çözüm:** `setJITLevel` fonksiyonu kapatıldı ve `applyProfile` sınıf seviyesine taşındı.
 - **Hata:** `PerformanceProfile` enum uyuşmazlığı (`.powerSaving` vs `.powerSave`).
