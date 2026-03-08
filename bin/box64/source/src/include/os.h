@@ -119,6 +119,7 @@ extern int isnanf(float);
 #ifdef __APPLE__
 #include <math.h>
 #include <strings.h>
+#include <pthread.h>
 #include "linux_syscalls.h"
 #define sincos(x, s, c) __sincos(x, s, c)
 #define sincosf(x, s, c) __sincosf(x, s, c)
@@ -132,6 +133,9 @@ extern int isnanf(float);
 #endif
 #ifndef CLOCK_REALTIME_COARSE
 #define CLOCK_REALTIME_COARSE CLOCK_REALTIME
+#endif
+#ifndef MAP_JIT
+#define MAP_JIT 0x800
 #endif
 typedef int pthread_barrier_t;
 typedef int pthread_barrierattr_t;

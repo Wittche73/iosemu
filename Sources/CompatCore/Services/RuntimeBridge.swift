@@ -7,6 +7,7 @@ public struct RuntimeLaunchContext: Sendable {
     public let logsURL: URL
     public let rendererMode: RendererMode
     public let inputProfile: InputProfile
+    public let engine: EmulatorEngine
 
     public init(
         executableURL: URL,
@@ -14,7 +15,8 @@ public struct RuntimeLaunchContext: Sendable {
         prefixURL: URL,
         logsURL: URL,
         rendererMode: RendererMode,
-        inputProfile: InputProfile
+        inputProfile: InputProfile,
+        engine: EmulatorEngine = .box64
     ) {
         self.executableURL = executableURL
         self.installDirectoryURL = installDirectoryURL
@@ -22,6 +24,7 @@ public struct RuntimeLaunchContext: Sendable {
         self.logsURL = logsURL
         self.rendererMode = rendererMode
         self.inputProfile = inputProfile
+        self.engine = engine
     }
 }
 

@@ -12,8 +12,8 @@ Technical Roadmap & Task List
 - [x] DXVK / VKD3D Configuration: DirectX 11 ve 12 çağrılarını Vulkan (MoltenVK) üzerinden Metal'e çeviren config editörünü yap. `[x]`
 
 3. Emülasyon Çekirdeği (Core Engine)
-- [ ] Box64 DynaRec Optimization: iOS'un mprotect kısıtlamalarına uygun şekilde JIT sayfa yönetimini (RWX) geliştir.
-- [ ] FEX-Emu Alternatifi: FEX-Emu çekirdeğini yedek motor olarak entegre et.
+- [x] Box64 DynaRec Optimization: iOS'un mprotect kısıtlamalarına uygun şekilde JIT sayfa yönetimini (RWX) geliştir. `[x]`
+- [x] FEX-Emu Alternatifi: FEX-Emu çekirdeğini yedek motor olarak entegre et. `[x]`
 - [x] Wait/Sync Mechanism: Box64 ve Wine arasındaki senkronizasyonu sağlayan wineserver yönetimi. `[x]`
 
 4. Girdi ve Kontrol Sistemleri (Input Layer)

@@ -12,35 +12,41 @@ extern char** environ;
 #define GET_ENVIRON() environ
 #endif
 
+// Emulator state
 static std::string last_error = "None";
 static void* box64_handle = nullptr;
+static void* fex_handle = nullptr;
 static std::string stats_buffer = "{}";
+static int current_engine = 0; // 0: Box64, 1: FEX-Emu
 
-// Box64 internal API definitions for advanced control
-typedef void (*box64_flush_cache_func)();
-typedef void (*box64_get_stats_func)(uint64_t* hits, uint64_t* misses, uint32_t* cache_use);
+// Prototypeler
+typedef int (*emulator_main_func)(int argc, const char** argv, char** env);
 
-// Olası Box64 main loader fonksiyon prototipi
-typedef int (*box64_main_func)(int argc, const char** argv, char** env);
+extern "C" void set_engine(int engine) {
+    current_engine = engine;
+    std::cout << "[Emulator Bridge] Engine set to: " << (engine == 0 ? "Box64" : "FEX-Emu") << std::endl;
+}
 
 extern "C" bool init_runtime() {
     std::cout << "[Emulator Bridge] Initializing native engine..." << std::endl;
     
-    // Gerçek veya test ortamı dylib yüklemesi
-    box64_handle = dlopen("libbox64.dylib", RTLD_NOW | RTLD_GLOBAL);
-    if (!box64_handle) {
-        // Fallback: Uygulama paketi içindeki Frameworks dizinine bak
-        box64_handle = dlopen("@executable_path/Frameworks/libbox64.dylib", RTLD_NOW | RTLD_GLOBAL);
+    const char* lib_name = (current_engine == 0) ? "libbox64.dylib" : "libFEXCore.dylib";
+    void** handle_ptr = (current_engine == 0) ? &box64_handle : &fex_handle;
+
+    *handle_ptr = dlopen(lib_name, RTLD_NOW | RTLD_GLOBAL);
+    if (!*handle_ptr) {
+        std::string framework_path = "@executable_path/Frameworks/" + std::string(lib_name);
+        *handle_ptr = dlopen(framework_path.c_str(), RTLD_NOW | RTLD_GLOBAL);
     }
     
-    if (box64_handle) {
-        std::cout << "[Emulator Bridge] Native engine library (Box64) loaded successfully." << std::endl;
+    if (*handle_ptr) {
+        std::cout << "[Emulator Bridge] Native engine library (" << (current_engine == 0 ? "Box64" : "FEX-Emu") << ") loaded successfully." << std::endl;
         return true;
     } else {
         const char* err = dlerror();
-        last_error = err ? err : "Failed to load libbox64.dylib";
+        last_error = err ? err : "Failed to load emulator library";
         std::cerr << "[Emulator Bridge] CRITICAL ERROR: " << last_error << std::endl;
-        return false; // Simulation mode removed.
+        return false;
     }
 }
 
@@ -105,15 +111,16 @@ extern "C" void send_joystick_button(int button, bool is_pressed) {
 
 // Arka planda çalışacak olan ana oyun emülasyon döngüsü
 void execute_engine_thread(std::string exe_path, std::string prefix_path) {
-    if (!box64_handle) {
+    void* handle = (current_engine == 0) ? box64_handle : fex_handle;
+    const char* engine_name = (current_engine == 0) ? "box64" : "FEXInterpreter";
+
+    if (!handle) {
         std::cerr << "[Emulator Bridge] Aborting: Engine library not loaded." << std::endl;
         return;
     }
 
-    box64_main_func b64_main = (box64_main_func)dlsym(box64_handle, "box64_main");
-    if (!b64_main) b64_main = (box64_main_func)dlsym(box64_handle, "_box64_main");
-    if (!b64_main) b64_main = (box64_main_func)dlsym(box64_handle, "main");
-    if (!b64_main) b64_main = (box64_main_func)dlsym(box64_handle, "_main");
+    emulator_main_func emu_main = (emulator_main_func)dlsym(handle, (current_engine == 0) ? "box64_main" : "FEX_main");
+    if (!emu_main) emu_main = (emulator_main_func)dlsym(handle, "main");
 
     if (b64_main) {
         // Log dosyasına anında yazılması için tamponlamayı kapat
@@ -135,38 +142,31 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
         
         setenv("WINEPREFIX", actual_prefix.c_str(), 1);
         setenv("HOME", actual_prefix.c_str(), 1);
-        setenv("BOX64_LOG", "3", 1); // Daha detaylı log
-        setenv("BOX64_DYNAREC", "1", 1);
-        setenv("BOX64_NOBANNER", "0", 1);
+        if (current_engine == 0) {
+            setenv("BOX64_LOG", "3", 1);
+            setenv("BOX64_DYNAREC", "1", 1);
+            setenv("BOX64_NOBANNER", "0", 1);
+            setenv("BOX64_NOENVFILES", "1", 1);
+            setenv("BOX64_SYSINFO_CACHED", "1", 1);
+            setenv("BOX64_SYSINFO_NCPU", "8", 1);
+        } else {
+            setenv("FEX_LOGLEVEL", "1", 1);
+            setenv("FEX_TSO", "1", 1);
+        }
+
+        const char* argv[] = { engine_name, wine_binary.c_str(), exe_path.c_str(), nullptr };
         
-        // Critical iOS Fix: Disable shm_open based config loading
-        setenv("BOX64_NOENVFILES", "1", 1);
-
-        // iOS Sandbox Fix: Hardware bypass
-        setenv("BOX64_SYSINFO_CACHED", "1", 1);
-        setenv("BOX64_SYSINFO_NCPU", "8", 1);
-        setenv("BOX64_SYSINFO_CPUNAME", "Apple ARM64", 1);
-        setenv("BOX64_SYSINFO_FREQUENCY", "2500000000", 1);
-
-        // X86_64 kütüphanelerinin aranacağı yer (Wine DLL'lerinin olduğu yer)
-        std::string wine_lib_path = actual_prefix + "/drive_c/windows/system32";
-        setenv("BOX64_LD_LIBRARY_PATH", wine_lib_path.c_str(), 1);
-
-        const char* argv[] = { "box64", wine_binary.c_str(), exe_path.c_str(), nullptr };
-        
-        // Critical iOS Fix: Pure environment array to avoid auxval scan crashes
         char* custom_env[] = { 
-            (char*)"BOX64_LOG=1", 
-            (char*)"BOX64_NOENVFILES=1",
-            (char*)NULL, 
+            (char*)(current_engine == 0 ? "BOX64_LOG=1" : "FEX_LOGLEVEL=1"), 
+            (char*)"LC_ALL=C",
             (char*)NULL 
         };
         
-        printf("[Emulator Bridge] Calling Entry Point (argc=3)...\n");
+        printf("[Emulator Bridge] Calling %s Entry Point...\n", engine_name);
         fflush(stdout);
 
-        int result = b64_main(3, argv, custom_env);
-        printf("[Emulator Bridge] Main thread exited with code: %d\n", result);
+        int result = emu_main(3, argv, custom_env);
+        printf("[Emulator Bridge] %s exited with code: %d\n", engine_name, result);
         fflush(stdout);
 
     } else {

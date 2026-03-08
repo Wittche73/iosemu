@@ -7,6 +7,9 @@ public struct RealRuntimeBridge: RuntimeBridge {
         // Prepare C strings
         let exePath = context.executableURL.path
         
+        // Settings for engine
+        set_engine(context.engine == .box64 ? 0 : 1)
+
         // Initialize systems via C bridge
         guard init_runtime() else {
             throw NSError(domain: "RuntimeBridge", code: 1, userInfo: [NSLocalizedDescriptionKey: "Failed to initialize runtime bridge (C++)."])

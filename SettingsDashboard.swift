@@ -7,10 +7,26 @@ struct SettingsDashboard: View {
     @State private var dxvkHud = "compiler"
     @State private var relativeMouse = false
     @State private var jitAggressiveness = 1 // 0: Safe, 1: Fast, 2: Aggressive
+    @State private var selectedEngine = UserDefaults.standard.string(forKey: "selectedEmulatorEngine") ?? "box64"
     
     var body: some View {
         NavigationView {
             Form {
+                Section(header: Text("Emülatör Motoru").font(.headline)) {
+                    Picker("Ana Motor", selection: $selectedEngine) {
+                        Text("Box64 (Önerilen)").tag("box64")
+                        Text("FEX-Emu (Fallback)").tag("fex")
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: selectedEngine) {
+                        UserDefaults.standard.set(selectedEngine, forKey: "selectedEmulatorEngine")
+                    }
+                    
+                    Text("Box64 çoğu oyun için daha uyumludur. Bazı özel durumlarda FEX-Emu daha iyi performans verebilir.")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+
                 Section(header: Text("Sistem ve JIT").font(.headline)) {
                     HStack {
                         Label("JIT Durumu", systemImage: "bolt.fill")

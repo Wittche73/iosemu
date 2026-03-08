@@ -7,6 +7,9 @@
 extern "C" {
 #endif
 
+/// Seçili emülatör motorunu ayarlar (0: Box64, 1: FEX-Emu)
+void set_engine(int engine);
+
 /// Emülasyon motorunu başlatır
 bool init_runtime(void);
 

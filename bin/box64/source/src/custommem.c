@@ -1727,8 +1727,11 @@ uintptr_t AllocDynarecMap(uintptr_t x64_addr, size_t size, int is_new)
         else printf_log(LOG_INFO, "Failed to allocated a dynarec memory block with HugeTLB (%s)\n", strerror(errno));
     }
     #endif
-    if(p==MAP_FAILED)
+    if(p==MAP_FAILED) {
+        JIT_WRITE_PROTECT_DISABLE();
         p = InternalMmap(NULL, allocsize, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
+        JIT_WRITE_PROTECT_ENABLE();
+    }
     if(p==MAP_FAILED) {
         dynarec_log(LOG_INFO, "Cannot create dynamic map of %zu bytes (%s)\n", allocsize, strerror(errno));
         return 0;
@@ -2678,7 +2681,9 @@ void setProtection(uintptr_t addr, size_t size, uint32_t prot)
     uintptr_t cur = addr & ~(box64_pagesize-1);
     uintptr_t end = ALIGN(cur+size);
     rb_set(mapallmem, cur, end, MEM_ALLOCATED);
+    JIT_WRITE_PROTECT_DISABLE();
     rb_set(memprot, cur, end, prot);
+    JIT_WRITE_PROTECT_ENABLE();
     --setting_prot;
     UNLOCK_PROT();
 }

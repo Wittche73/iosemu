@@ -178,6 +178,7 @@ void* InternalMmap(void* addr, unsigned long length, int prot, int flags, int fd
 {
 #if 1 // def STATICBUILD
 #ifdef __APPLE__
+    if(prot & PROT_EXEC) flags |= MAP_JIT;
     void* ret = mmap(addr, length, prot, flags, fd, offset);
 #else
     void* ret = (void*)syscall(__NR_mmap, addr, length, prot, flags, fd, offset);

@@ -78,3 +78,13 @@ Bu dosya, geliştirme sürecinde karşılaşılan teknik engelleri ve bunların 
 - **Çözüm:** `setJITLevel` fonksiyonu kapatıldı ve `applyProfile` sınıf seviyesine taşındı.
 - **Hata:** `PerformanceProfile` enum uyuşmazlığı (`.powerSaving` vs `.powerSave`).
 - **Çözüm:** Kod tabanı `Models.swift` ile uyumlu hale getirildi.
+### 13. iOS JIT (W^X) ve Bellek İzin Hataları
+- **Hata:** JIT kod üretimi sırasında `mprotect` çağrılarının iOS üzerinde başarısız olması veya `EXC_BAD_ACCESS` çökmesi.
+- **Çözüm:** 
+    1. Bellek eşlemede `MAP_JIT` bayrağı zorunlu kılındı.
+    2. Apple'a özgü `pthread_jit_write_protect_np` API'si kullanılarak kod yazılmadan hemen önce koruma kaldırıldı (`DISABLE`), işlem bitince geri açıldı (`ENABLE`).
+    3. `dynarec_native.c` içindeki ana derleme döngüsü (FillBlock64) bu koruma mekanizmasıyla sarmalandı.
+
+### 14. Dinamik Motor Yükleme (Symbol Table) Hataları
+- **Hata:** C++ bridge üzerinden FEX ve Box64 arasında geçiş yaparken dylib sembollerinin çakışması veya bulunamaması.
+- **Çözüm:** `dlopen` ve `dlsym` mantığı generic hale getirildi. Her iki motorun `main` entry pointleri için fallback mekanizması kuruldu ve `current_engine` değişkeni üzerinden izolasyon sağlandı.

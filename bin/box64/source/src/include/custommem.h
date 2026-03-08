@@ -141,6 +141,15 @@ void relockCustommemMutex(int locks);
 void init_custommem_helper(box64context_t* ctx);
 void fini_custommem_helper(box64context_t* ctx);
 
+#ifdef __APPLE__
+#include <pthread.h>
+#define JIT_WRITE_PROTECT_ENABLE()  pthread_jit_write_protect_np(0)
+#define JIT_WRITE_PROTECT_DISABLE() pthread_jit_write_protect_np(1)
+#else
+#define JIT_WRITE_PROTECT_ENABLE()  do {} while (0)
+#define JIT_WRITE_PROTECT_DISABLE() do {} while (0)
+#endif
+
 #ifdef DYNAREC
 // ---- StrongMemoryModel
 void addLockAddress(uintptr_t addr);    // add an address to the list of "LOCK"able

@@ -508,6 +508,7 @@ dynablock_t* FillBlock64(uintptr_t addr, int alternate, int is32bits, int inst_m
         case BUILD_INIT:
             state = BUILD_PASS0;
             if (SigSetJmp(GET_JUMPBUFF(dynarec_jmpbuf), 1)) {
+                JIT_WRITE_PROTECT_ENABLE();
                 if(state==BUILD_PASS0 && helper.size>1) {
                     --helper.size;
                     printf_log(LOG_INFO, "FillBlock at %p triggered a segfault, truncating at %d\n", (void*)addr, helper.size);
@@ -518,11 +519,14 @@ dynablock_t* FillBlock64(uintptr_t addr, int alternate, int is32bits, int inst_m
                 }
             } else
                 fillblock_active = 1;
+            JIT_WRITE_PROTECT_DISABLE();
             break;
         case BUILD_ABORT_NULL:
+            JIT_WRITE_PROTECT_ENABLE();
             CancelBlock64(0);
             return NULL;
         case BUILD_ABORT_EMPTY:
+            JIT_WRITE_PROTECT_ENABLE();
             CancelBlock64(0);
             return CreateEmptyBlock(addr, is32bits, is_new);
         case BUILD_PASS0:
@@ -873,6 +877,7 @@ dynablock_t* FillBlock64(uintptr_t addr, int alternate, int is32bits, int inst_m
                 continue;
             }
             state = BUILD_DONE;
+            JIT_WRITE_PROTECT_ENABLE();
     }
     fillblock_active = 0;   // disable the use of the LongJump if Segfault/Sigbus
     // ok, free the helper now
