@@ -25,15 +25,15 @@ struct SettingsDashboard: View {
                         Text("Hızlı").tag(1)
                         Text("Agresif").tag(2)
                     }
-                    .onChange(of: jitAggressiveness) { val in
-                        PerformanceManager.shared.setJITLevel(val)
+                    .onChange(of: jitAggressiveness) {
+                        PerformanceManager.shared.setJITLevel(jitAggressiveness)
                     }
                 }
                 
                 Section(header: Text("Girdi (Input)").font(.headline)) {
                     Toggle("Relative Mouse (FPS Modu)", isOn: $relativeMouse)
-                        .onChange(of: relativeMouse) { val in
-                            UserDefaults.standard.set(val, forKey: "relativeMouseMode")
+                        .onChange(of: relativeMouse) {
+                            UserDefaults.standard.set(relativeMouse, forKey: "relativeMouseMode")
                         }
                     
                     Text("FPS oyunlarında kamerayı kontrol etmek için bu modu açın.")
@@ -48,8 +48,8 @@ struct SettingsDashboard: View {
                         Text("Detaylı").tag("compiler")
                         Text("Full").tag("full")
                     }
-                    .onChange(of: dxvkHud) { val in
-                        setenv("DXVK_HUD", val, 1)
+                    .onChange(of: dxvkHud) {
+                        setenv("DXVK_HUD", dxvkHud, 1)
                     }
                     
                     Toggle("MetalFX Upscaling", isOn: .constant(true))

@@ -78,9 +78,9 @@ class InputManager {
                 } else if element == gamepad.rightShoulder {
                     self.handleKeyPress(keyCode: 0x01, isPressed: gamepad.rightShoulder.isPressed) // VK_LBUTTON (Ateş)
                 } else if element == gamepad.leftTrigger {
-                    self.handleKeyPress(keyCode: 0x51, isPressed: gamepad.leftTrigger.isPressed > 0.5) // 'Q'
+                    self.handleKeyPress(keyCode: 0x51, isPressed: gamepad.leftTrigger.value > 0.5) // 'Q'
                 } else if element == gamepad.rightTrigger {
-                    self.handleKeyPress(keyCode: 0x01, isPressed: gamepad.rightTrigger.isPressed > 0.5) // VK_LBUTTON
+                    self.handleKeyPress(keyCode: 0x01, isPressed: gamepad.rightTrigger.value > 0.5) // VK_LBUTTON
                 }
                 
                 // 5. Menü ve Paylaş Butonları (Esc/Enter)

@@ -60,3 +60,11 @@ Bu dosya, geliştirme sürecinde karşılaşılan teknik engelleri ve bunların 
 - **Çözüm:** `.gameChat` modu yerine daha kararlı olan `.playback` ve `.default` kombinasyonuna geçildi.
 - **Hata:** Yeni oluşturulan prefixlerde `system.reg` bulunamadığı için Registry ayarlarının atlanması.
 - **Çözüm:** `RegistryManager` geliştirilerek dosya yoksa otomatik olarak temiz bir Wine Registry başlığıyla ilklendirme yapması sağlandı.
+
+### 11. CI/CD Stabilizasyon ve Derleme Hataları (Final)
+- **Hata:** `InputManager` içinde `gamepad.leftTrigger.isPressed > 0.5` karşılaştırma hatası (Bool vs Double).
+- **Çözüm:** `isPressed` (Bool) yerine `value` (Float) kullanılarak mantıksal karşılaştırma düzeltildi.
+- **Hata:** `RuntimeLauncher` derlenirken `PerformanceManager` içinde `applyProfile` metodunun bulunamaması.
+- **Çözüm:** `PerformanceManager` sınıfına eksik olan `applyProfile` metodu ve profil bazlı çevre değişkeni atamaları eklendi.
+- **Hata:** `onChange` metodunun iOS 17'de "deprecated" uyarısı vermesi.
+- **Çözüm:** Modern Swift closure sözdizimine geçilerek uyarılar giderildi.

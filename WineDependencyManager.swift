@@ -98,7 +98,6 @@ class WineDependencyManager {
                     }
 
                     do {
-                        let isDLL = item.lowercased().hasSuffix(".dll")
                         let isWine = item.lowercased() == "wine"
                         
                         var finalDstPath = dstPath
