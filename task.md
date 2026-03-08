@@ -7,9 +7,9 @@ Technical Roadmap & Task List
 - [ ] Portable Wine Payload: Wine binary'lerini Documents klasörüne "deploy" eden sistemi optimize et.
 
 2. Grafik ve Görüntü Sunumu (Display Layer)
-- [ ] X11/Wayland to Metal Bridge: Virtual Display Driver geliştir.
+- [x] X11/Wayland to Metal Bridge: Virtual Display Driver geliştir. `[x]`
 - [x] MetalFX Integration: Apple'ın AI ölçekleme teknolojisini oyun çözünürlüğüne dinamik olarak bağla. `[x]`
-- [ ] DXVK / VKD3D Configuration: DirectX 11 ve 12 çağrılarını Vulkan (MoltenVK) üzerinden Metal'e çeviren config editörünü yap.
+- [x] DXVK / VKD3D Configuration: DirectX 11 ve 12 çağrılarını Vulkan (MoltenVK) üzerinden Metal'e çeviren config editörünü yap. `[x]`
 
 3. Emülasyon Çekirdeği (Core Engine)
 - [ ] Box64 DynaRec Optimization: iOS'un mprotect kısıtlamalarına uygun şekilde JIT sayfa yönetimini (RWX) geliştir.

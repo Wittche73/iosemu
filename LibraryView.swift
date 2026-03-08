@@ -92,6 +92,11 @@ struct LibraryView: View {
                 
                 // --- OYUN SIRASINDA GÖRÜNECEK KATMANLAR ---
                 if core.games.contains(where: { $0.status == .running }) {
+                    // 0. Oyun Render Katmanı (Metal)
+                    MetalGameView()
+                        .ignoresSafeArea()
+                        .transition(.opacity)
+                    
                     // 1. Sanal Kontrolcü Overlay
                     VirtualControllerView()
                         .transition(.opacity)

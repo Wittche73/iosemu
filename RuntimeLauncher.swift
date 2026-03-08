@@ -55,7 +55,7 @@ class RuntimeLauncher {
             MetalFXManager.shared.enableUpscaling(.temporal)
         }
         
-        if !GraphicsManager.shared.initializeGraphics(for: game.id) {
+        if !GraphicsManager.shared.initializeGraphics(for: game) {
             return false
         }
         

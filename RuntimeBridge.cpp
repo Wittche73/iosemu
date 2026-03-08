@@ -49,8 +49,11 @@ extern "C" bool init_graphics() {
     return true;
 }
 
-extern "C" void enable_metalfx(int mode) {
-    std::cout << "[Emulator Bridge] MetalFX Upscaling: " << (mode == 0 ? "Off" : "Temporal") << std::endl;
+extern "C" void set_metal_layer(void* layer) {
+    if (layer) {
+        printf("[Emulator Bridge] Metal Layer attached: %p\n", layer);
+        // MoltenVK'ya veya Virtual Display Driver'a aktarılacak
+    }
 }
 
 extern "C" bool init_audio() {

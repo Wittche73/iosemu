@@ -16,6 +16,9 @@ bool init_graphics(void);
 /// MetalFX Upscaling özelliğini yönetir
 void enable_metalfx(int mode);
 
+/// Metal Layer (MTKView) referansını motora iletir
+void set_metal_layer(void* layer);
+
 /// Ses sistemini başlatır (OpenAL/SDL)
 bool init_audio(void);
 
