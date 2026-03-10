@@ -36,3 +36,5 @@ Technical Roadmap & Task List
 - [x] İlk Gerçek x86 "Hello World" Binary Çalıştırılması `[x]`
 - [x] Terminology Clear: Remove all "Simülatör" labels `[x]`
 - [x] Functional Core: Real setenv/copy/monitoring logic `[x]`
+
+

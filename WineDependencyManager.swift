@@ -45,6 +45,9 @@ class WineDependencyManager {
             }
         }
         
+        // Wine için sanal sürücü eşlemelerini (dosdevices) oluştur
+        initializeDosDevices(in: masterPrefixPath)
+        
         // Paketten wine_payload'ı kopyala
         syncPayload(to: masterPrefixPath)
         
@@ -138,5 +141,30 @@ class WineDependencyManager {
         
         // KRİTİK OPTİMİZASYON: initializePrefix artık her seferinde tam sync yapmaz.
         // Master prefix güncel olduğu sürece klon yeterlidir.
+    /// Wine için sanal sürücü eşlemelerini (dosdevices) oluşturur
+    private func initializeDosDevices(in prefixPath: String) {
+        let dosDevicesPath = "\(prefixPath)/dosdevices"
+        
+        do {
+            if !fileManager.fileExists(atPath: dosDevicesPath) {
+                try fileManager.createDirectory(atPath: dosDevicesPath, withIntermediateDirectories: true)
+            }
+            
+            // C: -> ../drive_c (Windows sistem diski)
+            let cLink = "\(dosDevicesPath)/c:"
+            if !fileManager.fileExists(atPath: cLink) {
+                try fileManager.createSymbolicLink(atPath: cLink, withDestinationPath: "../drive_c")
+            }
+            
+            // Z: -> / (iOS Sandbox kök dizini)
+            let zLink = "\(dosDevicesPath)/z:"
+            if !fileManager.fileExists(atPath: zLink) {
+                try fileManager.createSymbolicLink(atPath: zLink, withDestinationPath: "/")
+            }
+            
+            print("✅ WineDependencyManager: dosdevices symlinks established (c:, z:).")
+        } catch {
+            print("❌ WineDependencyManager: Failed to create dosdevices: \(error)")
+        }
     }
 }

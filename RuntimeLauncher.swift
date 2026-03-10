@@ -72,24 +72,27 @@ class RuntimeLauncher {
         
         // 6. Çevresel Değişkenlerin Hazırlanması (Native Engine)
         let exePath = game.path
+        guard let bundlePath = Bundle.main.resourcePath else { return false }
+        
+        let wineBinPath = "\(bundlePath)/wine_payload/wine/bin/wine64"
+        let wineLibPath = "\(bundlePath)/wine_payload/wine/lib"
         
         // C++ motoru için çevresel değişkenlerin enjekte edilmesi
         setenv("WINEPREFIX", winePrefix, 1)
         setenv("BOX64_LOG", "1", 1)
         setenv("BOX64_DYNAREC", "1", 1)
-        setenv("WINEDEBUG", "+all", 1) // Hataları görmek için debug açıyoruz
+        setenv("WINEDEBUG", "-all", 1) // Performans için logları kapatıyoruz (geliştirme bittiğinde)
         
-        let wineBinPath = "\(winePrefix)/drive_c/windows/system32/wine.bin"
-        setenv("WINEPATH", "\(winePrefix)/drive_c/windows/system32", 1)
+        // LD_LIBRARY_PATH: Box64'ün Wine kütüphanelerini bulabilmesi için kritik
+        let ldPath = "\(wineLibPath)/x86_64-linux-gnu:\(wineLibPath):\(bundlePath)/Frameworks"
+        setenv("LD_LIBRARY_PATH", ldPath, 1)
         
         // KRİTİK FİX: Box64 veya Wine, iOS Sandbox dışında `/home` klasörü
-        // oluşturmaya çalışıp kilitleniyordu (sandbox violation deny file-write-create /home).
-        // Bu yüzden HOME yetkisini uygulamanın kendi Documents sandbox'ına hapsediyoruz.
+        // oluşturmaya çalışıp kilitleniyordu.
         setenv("HOME", winePrefix, 1)
         
         print("Set WINEPREFIX=\(winePrefix)")
-        print("Set HOME=\(winePrefix)")
-        print("Set WINEDEBUG=+all")
+        print("Set LD_LIBRARY_PATH=\(ldPath)")
         print("Command: box64 \(wineBinPath) \(exePath)")
         
         // 9. Bulut Senkronizasyonu (PULL)

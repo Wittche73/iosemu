@@ -88,3 +88,9 @@ Bu dosya, geliştirme sürecinde karşılaşılan teknik engelleri ve bunların 
 ### 14. Dinamik Motor Yükleme (Symbol Table) Hataları
 - **Hata:** C++ bridge üzerinden FEX ve Box64 arasında geçiş yaparken dylib sembollerinin çakışması veya bulunamaması.
 - **Çözüm:** `dlopen` ve `dlsym` mantığı generic hale getirildi. Her iki motorun `main` entry pointleri için fallback mekanizması kuruldu ve `current_engine` değişkeni üzerinden izolasyon sağlandı.
+91: 
+92: ### 15. Yerel Derleme (Local Build) ve Araç Takımı Hataları
+93: - **Hata:** `bash: .../bin/clang: Böyle bir dosya ya da dizin yok` (Theos'un linux-iphone araç takımı eksikliği).
+94: - **Çözüm:** Sistemdeki `clang`, `ldid` ve `strip` araçları `$THEOS/toolchain/linux/iphone/bin/` dizinine sembolik bağlar ile bağlanarak derleme yolu tamir edildi.
+95: - **Hata:** `swift-build: error while loading shared libraries: libxml2.so.2` (Swift bağımlılık hatası).
+96: - **Çözüm:** Ubuntu üzerinde `libxml2-dev` ve `libxml2-utils` paketleri kuruldu; `LD_LIBRARY_PATH` değişkenine kütüphane yolu (`/usr/lib/x86_64-linux-gnu/`) eklenerek Swift araç setinin çalışması sağlandı.

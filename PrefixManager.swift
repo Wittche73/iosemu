@@ -48,22 +48,22 @@ class PrefixManager {
     private func copyDependenciesToPrefix(_ game: Game) {
         print("--- PrefixManager: Fiziksel DLL Transferi Başlatıldı ---")
         let system32Path = "\(game.prefixPath)/drive_c/windows/system32"
-        let sourceDir = "bin/wine/dlls"
+        
+        // Bundle içindeki wine_payload/wine/lib/wine/x86_64-windows klasörünü kaynak al
+        guard let bundlePath = Bundle.main.resourcePath else { return }
+        let sourceDir = "\(bundlePath)/wine_payload/wine/lib/wine/x86_64-windows"
         
         for package in game.config.installedPackages {
             let sourcePath = "\(sourceDir)/\(package).dll"
             let destinationPath = "\(system32Path)/\(package).dll"
             
             if FileManager.default.fileExists(atPath: sourcePath) {
-                print("   -> [COPY] \(sourcePath) to \(destinationPath)")
+                print("   -> [DEP] Deployed from bundle: \(package).dll")
                 do {
-                    // Eskisini sil (varsa) ve yenisini kopyala
                     if FileManager.default.fileExists(atPath: destinationPath) {
                         try FileManager.default.removeItem(atPath: destinationPath)
                     }
-                    // Fiziksel kopyalama: Bundle içindeki payload'dan prefix'e aktar
                     try FileManager.default.copyItem(atPath: sourcePath, toPath: destinationPath)
-                    print("✅ [SUCCESS] \(package).dll deployed to prefix.")
                 } catch {
                     print("❌ [ERROR] \(package).dll kopyalanamadı: \(error)")
                 }

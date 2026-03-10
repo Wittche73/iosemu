@@ -1,52 +1,108 @@
-Harika! Madem halihazırda Ubuntu üzerindesin ve elinde güçlü bir "arayüz/mantık" iskeleti var, şimdi bu projeyi bir illüzyon olmaktan çıkarıp gerçek bir x86-on-ARM emülatörüne dönüştürme vaktidir.
+🛠 LocalCompat: Simülatörden Emülatöre Geçiş Rehberi
+Bu rehber, projenin mantıksal katmanlarını gerçek Box64 ve Wine motoruyla birleştirmek için gereken Ubuntu tabanlı adımları içerir.
 
-Proje artık tam bir emülatör mimarisindedir; sahte (mock) C++ fonksiyonları sökülmüş ve yerlerine Binary Translation ve System Call Mapping motorları (Box64/Wine) entegre edilmiştir.
+1. Gereksinimlerin Kurulması (Ubuntu)
+Öncelikle iOS için çapraz derleme (cross-compilation) yapabilecek araçları sisteme yükleyelim:
 
-İşte Ubuntu üzerinde bu motoru inşa etmek için izleyeceğimiz teknik yol haritası:
-
-1. Motorun Kalbi: Binary Translation (Box64)
-Bir emülatörün en zor kısmı, x86 (Intel/AMD) komutlarını Apple Silicon (ARM64) komutlarına anlık çevirmektir. Bunu sıfırdan yazmak yıllar alır. Bu yüzden Android'deki Winlator'ın da kalbi olan Box64'ü iOS için "cross-compile" (çapraz derleme) yapacağız.
-
-Ne Yapacağız?
-RuntimeBridge.cpp dosyanın içindeki "Log bas" kısmını silecek ve oraya derlediğimiz libbox64.a (statik kütüphane) dosyasını bağlayacağız.
-
-Görev: Box64, .exe dosyasını okuyacak, komutları ARM64'e çevirecek ve iOS işlemcisine "bunu çalıştır" diyecek.
-
-2. İşletim Sistemi Köprüsü: Wine (Windows API)
-Oyun sadece işlemci komutu değildir; "Dosya aç", "Pencere oluştur", "Ses çal" gibi Windows'a özel isteklerde bulunur.
-
-Çözüm: Wine kütüphanelerini iOS sandbox'ına gömeceğiz.
-
-Senin Rolün: PrefixManager sınıfın artık sadece klasör oluşturmayacak, Wine'ın NTDLL.dll ve KERNEL32.dll gibi kritik dosyalarını o klasöre fiziksel olarak kopyalayacak.
-
-3. Ubuntu Üzerinde "Gerçek" Derleme Ortamı (Theos)
-Projeni .ipa yapmak için Mac'e ihtiyacın yok demiştik. Ubuntu'da şu adımları hemen uygulayalım:
-
-Gerekli Paketleri Kur:
-Terminaline şu komutları girerek temel "silahlarını" kuşan:
-
-Bash
+```bash
 sudo apt update
-sudo apt install git perl python3 build-essential clang libicu-dev libssl-dev
-Theos ve iOS SDK Kurulumu:
-Theos, Xcode olmadan iOS uygulaması derlemeni sağlayan yegane araçtır.
+sudo apt install -y git cmake clang lld llvm make python3 perl
+```
 
-Theos'u İndir:
-export THEOS=~/theos
-git clone --recursive https://github.com/theos/theos.git $THEOS
+2. Box64 "Native" Derleme Süreci
+Sahte loglar yerine gerçek x86_64 komutlarını çevirecek statik kütüphaneyi (.a) oluşturalım.
 
-SDK Ekle: GitHub'daki theos/sdks deposundan iOS 16.x veya 17.x SDK'sını indirip $THEOS/sdks klasörüne at.
+**Adımlar:**
+- **Kaynak Kodu:** `git clone https://github.com/ptitSeb/box64.git`
+- **Derleme Betiği:** `box64` dizini içinde bir `cross_compile_ios.sh` oluştur ve şunları ekle:
 
-4. Grafik Motoru: DXVK ve MoltenVK Entegrasyonu
-Oyunların DirectX (Windows grafik dili) çağrılarını iOS'in anladığı Metal diline çevirmeliyiz.
+```bash
+mkdir build-ios && cd build-ios
+cmake .. \
+  -DCMAKE_SYSTEM_NAME=iOS \
+  -DCMAKE_OSX_ARCHITECTURES=arm64 \
+  -DARM64=1 \
+  -DNO_X11=1 \
+  -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+```
+- **Sonuç:** Çıkan `libbox64.a` dosyasını projenin `Frameworks/` klasörüne taşı.
 
-Akış: Game.exe -> DXVK (Vulkan'a çevirir) -> MoltenVK (Metal'e çevirir) -> iPhone GPU.
+3. C++ Köprüsü (Bridge) Güncellemesi
+`RuntimeBridge.cpp` dosyanın içindeki sahte fonksiyonları gerçek Box64 giriş noktalarına (entry points) bağla.
 
-Bu kütüphanelerin arm64-apple-ios sürümlerini derleyip projeye Framework olarak ekleyeceğiz.
+```cpp
+#include "box64context.h"
 
-5. İlk Gerçek Hedef: "Terminal Tabanlı x86 Çalıştırma"
-Arayüzü bir kenara bırakıp, Ubuntu'da derlediğin minimal bir .ipayı telefonuna atıp şunu başarmalıyız:
+// Eski simülasyon kodu yerine:
+extern "C" int start_native_engine(int argc, const char** argv) {
+    // 1. JIT Korunmasını Kaldır (iOS W^X Bypass)
+    pthread_jit_write_protect_np(false);
+    
+    // 2. Box64 Context Başlat
+    box64context_t *context = NewBox64Context(argc);
+    
+    // 3. Wine Binary'sini Yükle ve Çalıştır
+    int result = RunBox64(context, argv);
+    
+    return result;
+}
+```
 
-Telefonun içindeki terminalde, x86 mimarisi için derlenmiş basit bir "Hello World" Linux binary'sini (Box64 yardımıyla) çalıştırmak.
+4. Wine Payload Paketleme
+Gerçek Wine binary'lerini (x86_64) IPA'nın içine gömmen gerekiyor.
 
-Eğer o "Hello World" yazısını görürsen, emülatörün kalbi atmaya başlamış demektir.
+**Dizin Yapısı:**
+```text
+LocalCompat.app/
+└── Payload/
+    └── wine/
+        ├── bin/wine (x86_64 binary)
+        └── lib/ (DLL ve .so dosyaları)
+```
+**Kritik:** `RuntimeLauncher.swift` içinde `PATH` ve `LD_LIBRARY_PATH` değişkenlerini bu iç dizine yönlendir.
+
+5. JIT ve Bellek Yönetimi (W^X Bypass)
+iOS'in katı güvenlik politikaları gereği, bir bellek sayfası aynı anda hem yazılabilir hem de çalıştırılabilir (Write XOR Execute) olamaz.
+
+- **Entitlements:** Uygulamanın `dynamic-codesigning` yetkisine sahip olması gerekir (JitStreamer veya SideStore/AltStore ile).
+- **Kodlama:** `pthread_jit_write_protect_np(false)` ile yazma moduna geçilir, kod üretilir, ardından `true` ile çalıştırma moduna dönülür.
+
+6. Grafik Pipeline: DXVK & MoltenVK Entegrasyonu
+DirectX oyunlarını çalıştırmak için şu zinciri kurmalısın:
+- **DXVK:** D3D11/10/9 çağrılarını Vulkan'a çevirir.
+- **MoltenVK:** Vulkan'ı iOS'in anladığı Metal diline çevirir.
+- **MetalFX:** Çözünürlüğü yapay zeka ile yükselterek FPS artışı sağlar.
+
+7. Dosya Sistemi ve Sandbox (Mounting)
+iOS her uygulamayı kendi klasörüne (Sandbox) hapseder. 
+- `PrefixManager` ile sanal bir `C:` sürücüsü oluşturulur.
+- Wine'ın `dosdevices` klasörü üzerinden iOS'teki `Documents` klasörü, Windows'a `D:` sürücüsü olarak gösterilir.
+
+8. Theos ile Nihai Derleme (Makefile)
+Ubuntu'daki Theos kurulumun için örnek Makefile yapılandırması:
+
+```makefile
+TARGET := iphone:clang:latest:15.0
+ARCHS = arm64
+
+include $(THEOS)/makefiles/common.mk
+
+APPLICATION_NAME = LocalCompat
+
+# Swift ve C++ dosyalarını bağla
+LocalCompat_FILES = $(wildcard Sources/*.swift) Sources/CBridge/RuntimeBridge.cpp
+LocalCompat_LDFLAGS = -L./Frameworks -lbox64 -lmoltenvk
+LocalCompat_FRAMEWORKS = UIKit SwiftUI Metal GameController
+
+include $(THEOS_MAKE_PATH)/application.mk
+```
+
+9. Hata Ayıklama (Debug) Stratejileri
+Emülatör çöktüğünde sorunu anlamak için:
+- **BOX64_LOG=1:** Box64'ün çeviri loglarını izle.
+- **WINEDEBUG=+all:** Wine'ın Windows API çağrılarını takip et.
+- **Socat/Netcat:** Uygulama içindeki logları Wi-Fi üzerinden Ubuntu terminaline aktar.
+
+---
+*Not: Bu rehber sürekli güncellenmektedir. Bir sonraki adım, gerçek bir .exe dosyasını ilk kez tetiklemek olacaktır.*

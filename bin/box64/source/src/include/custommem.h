@@ -143,8 +143,14 @@ void fini_custommem_helper(box64context_t* ctx);
 
 #ifdef __APPLE__
 #include <pthread.h>
-#define JIT_WRITE_PROTECT_ENABLE()  pthread_jit_write_protect_np(0)
-#define JIT_WRITE_PROTECT_DISABLE() pthread_jit_write_protect_np(1)
+#include <dlfcn.h>
+static inline void box64_pthread_jit_write_protect_np(int enabled) {
+    static void (*fn)(int) = (void*)-1;
+    if (fn == (void*)-1) fn = dlsym(RTLD_DEFAULT, "pthread_jit_write_protect_np");
+    if (fn) fn(enabled);
+}
+#define JIT_WRITE_PROTECT_ENABLE()  box64_pthread_jit_write_protect_np(0)
+#define JIT_WRITE_PROTECT_DISABLE() box64_pthread_jit_write_protect_np(1)
 #else
 #define JIT_WRITE_PROTECT_ENABLE()  do {} while (0)
 #define JIT_WRITE_PROTECT_DISABLE() do {} while (0)

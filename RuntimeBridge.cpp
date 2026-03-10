@@ -6,7 +6,12 @@
 
 #ifdef __APPLE__
 #include <crt_externs.h>
+#include <pthread.h>
+#include <sys/mman.h>
 #define GET_ENVIRON() (*_NSGetEnviron())
+
+// Function pointer for JIT toggle
+typedef void (*jit_protect_func)(int);
 #else
 extern char** environ;
 #define GET_ENVIRON() environ
@@ -21,6 +26,8 @@ static int current_engine = 0; // 0: Box64, 1: FEX-Emu
 
 // Prototypeler
 typedef int (*emulator_main_func)(int argc, const char** argv, char** env);
+typedef void (*box64_flush_cache_func)();
+typedef void (*box64_get_stats_func)(uint64_t* hits, uint64_t* misses, uint32_t* cache_use);
 
 extern "C" void set_engine(int engine) {
     current_engine = engine;
@@ -122,7 +129,7 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
     emulator_main_func emu_main = (emulator_main_func)dlsym(handle, (current_engine == 0) ? "box64_main" : "FEX_main");
     if (!emu_main) emu_main = (emulator_main_func)dlsym(handle, "main");
 
-    if (b64_main) {
+    if (emu_main) {
         // Log dosyasına anında yazılması için tamponlamayı kapat
         setvbuf(stdout, NULL, _IONBF, 0);
         setvbuf(stderr, NULL, _IONBF, 0);
@@ -165,7 +172,19 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
         printf("[Emulator Bridge] Calling %s Entry Point...\n", engine_name);
         fflush(stdout);
 
-        int result = emu_main(3, argv, custom_env);
+        // 1. JIT Korunmasını Kaldır (iOS W^X Bypass)
+#ifdef __APPLE__
+        jit_protect_func jit_toggle = (jit_protect_func)dlsym(RTLD_DEFAULT, "pthread_jit_write_protect_np");
+        if (jit_toggle) jit_toggle(0);
+#endif
+
+        int result = emu_main(3, (const char**)argv, custom_env);
+
+        // 2. JIT Korunmasını Geri Getir
+#ifdef __APPLE__
+        if (jit_toggle) jit_toggle(1);
+#endif
+
         printf("[Emulator Bridge] %s exited with code: %d\n", engine_name, result);
         fflush(stdout);
 
