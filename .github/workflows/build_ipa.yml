@@ -9,17 +9,19 @@ on:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-latest
     steps:
-      - name: Set Xcode version
-        run: sudo xcode-select -s /Applications/Xcode_14.3.1.app/Contents/Developer
-      
       - uses: actions/checkout@v4
         with:
           submodules: recursive
 
       - name: Setup Theos
         uses: Randomblock1/theos-action@v1
+
+      - name: Use System Xcode SDK
+        run: |
+          echo "Removing conflicting Theos SDKs to force usage of native Xcode SDK matching the Swift compiler..."
+          rm -rf $THEOS/sdks/*
 
       - name: Build Box64 Engine
         run: |
