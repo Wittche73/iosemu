@@ -91,13 +91,13 @@ struct SettingsDashboard: View {
                 }
             }
             .navigationTitle("Konsol Ayarları")
-            .toolbar {
+            .toolbar(content: {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Kapat") {
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
-            }
+            })
         }
     }
 }

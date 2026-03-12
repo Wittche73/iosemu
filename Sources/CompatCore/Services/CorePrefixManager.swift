@@ -16,14 +16,14 @@ public actor CorePrefixManager: PrefixManaging {
 
     public func createPrefix(for gameID: UUID) async throws -> URL {
         try fileSystem.createDirectory(at: configuration.prefixesRoot)
-        let prefixURL = configuration.prefixesRoot.appending(path: gameID.uuidString, directoryHint: .isDirectory)
+        let prefixURL = configuration.prefixesRoot.appendingPathComponent(gameID.uuidString)
         try fileSystem.createDirectory(at: prefixURL)
-        try fileSystem.createDirectory(at: prefixURL.appending(path: "drive_c", directoryHint: .isDirectory))
-        try fileSystem.createDirectory(at: prefixURL.appending(path: "dosdevices", directoryHint: .isDirectory))
+        try fileSystem.createDirectory(at: prefixURL.appendingPathComponent("drive_c"))
+        try fileSystem.createDirectory(at: prefixURL.appendingPathComponent("dosdevices"))
         return prefixURL
     }
 
     nonisolated public func prefixURL(for game: GameRecord) -> URL {
-        configuration.prefixesRoot.appending(path: game.prefixRelativePath, directoryHint: .isDirectory)
+        configuration.prefixesRoot.appendingPathComponent(game.prefixRelativePath)
     }
 }

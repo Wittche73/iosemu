@@ -20,14 +20,18 @@ class DisplayManager {
     #if os(iOS)
     private func setupNotifications() {
         NotificationCenter.default.addObserver(forName: UIScene.willConnectNotification, object: nil, queue: .main) { notification in
-            if let scene = notification.object as? UIWindowScene, scene.session.role == .windowExternalDisplayNonInteractive {
-                self.setupExternalScreen(scene)
+            if #available(iOS 16.0, *) {
+                if let scene = notification.object as? UIWindowScene, scene.session.role == .windowExternalDisplayNonInteractive {
+                    self.setupExternalScreen(scene)
+                }
             }
         }
         
         NotificationCenter.default.addObserver(forName: UIScene.didDisconnectNotification, object: nil, queue: .main) { notification in
-            if let scene = notification.object as? UIWindowScene, scene.session.role == .windowExternalDisplayNonInteractive {
-                self.tearDownExternalScreen()
+            if #available(iOS 16.0, *) {
+                if let scene = notification.object as? UIWindowScene, scene.session.role == .windowExternalDisplayNonInteractive {
+                    self.tearDownExternalScreen()
+                }
             }
         }
     }
@@ -59,12 +63,15 @@ class DisplayManager {
     /// Şu an bir dış ekran bağlı mı?
     func isExternalDisplayConnected() -> Bool {
         #if os(iOS)
-        return UIApplication.shared.connectedScenes.contains { scene in
-            guard let windowScene = scene as? UIWindowScene else { return false }
-            return windowScene.session.role == .windowExternalDisplayNonInteractive
+        if #available(iOS 16.0, *) {
+            return UIApplication.shared.connectedScenes.contains { scene in
+                guard let windowScene = scene as? UIWindowScene else { return false }
+                return windowScene.session.role == .windowExternalDisplayNonInteractive
+            }
         }
+        return false
         #else
-        return false // Native platform default
+        return false
         #endif
     }
 }

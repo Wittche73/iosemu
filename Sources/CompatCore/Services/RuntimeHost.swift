@@ -72,10 +72,10 @@ public actor RuntimeHost: RuntimeHosting {
         try fileSystem.createDirectory(at: configuration.logsRoot)
         let installRoot = URL(fileURLWithPath: game.installDirectoryBookmark, isDirectory: true)
         let context = RuntimeLaunchContext(
-            executableURL: installRoot.appending(path: game.executableRelativePath),
+            executableURL: installRoot.appendingPathComponent(game.executableRelativePath),
             installDirectoryURL: installRoot,
             prefixURL: prefixManager.prefixURL(for: game),
-            logsURL: configuration.logsRoot.appending(path: "\(game.id.uuidString).log"),
+            logsURL: configuration.logsRoot.appendingPathComponent("\(game.id.uuidString).log"),
             rendererMode: game.rendererMode,
             inputProfile: game.inputProfile
         )
@@ -94,7 +94,7 @@ public actor RuntimeHost: RuntimeHosting {
     }
 
     public func fetchLogs(for gameID: UUID) async throws -> String {
-        let logURL = configuration.logsRoot.appending(path: "\(gameID.uuidString).log")
+        let logURL = configuration.logsRoot.appendingPathComponent("\(gameID.uuidString).log")
         guard fileSystem.fileExists(at: logURL) else { return "" }
         return String(decoding: try fileSystem.readData(at: logURL), as: UTF8.self)
     }

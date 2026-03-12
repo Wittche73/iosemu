@@ -33,14 +33,14 @@ public actor GameImportService: GameImporting {
     public func importGame(from sourceURL: URL, suggestedName: String?) async throws -> GameRecord {
         try fileSystem.createDirectory(at: configuration.gamesRoot)
         let gameID = UUID()
-        let gameFolder = configuration.gamesRoot.appending(path: gameID.uuidString, directoryHint: .isDirectory)
+        let gameFolder = configuration.gamesRoot.appendingPathComponent(gameID.uuidString)
         try fileSystem.createDirectory(at: gameFolder)
 
         if fileSystem.isDirectory(at: sourceURL) {
             try fileSystem.removeItem(at: gameFolder)
             try fileSystem.copyItem(at: sourceURL, to: gameFolder)
         } else {
-            try fileSystem.copyItem(at: sourceURL, to: gameFolder.appending(path: sourceURL.lastPathComponent))
+            try fileSystem.copyItem(at: sourceURL, to: gameFolder.appendingPathComponent(sourceURL.lastPathComponent))
         }
 
         let files = try fileSystem.enumeratedFiles(at: gameFolder)

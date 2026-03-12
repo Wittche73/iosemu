@@ -8,11 +8,11 @@ public enum RuntimeContainerFactory {
         jitChecker: JITAvailabilityChecking = EnvironmentJITChecker()
     ) -> RuntimeHost {
         let configuration = RuntimeConfiguration(
-            gamesRoot: rootURL.appending(path: "Games", directoryHint: .isDirectory),
-            prefixesRoot: rootURL.appending(path: "Prefixes", directoryHint: .isDirectory),
-            logsRoot: rootURL.appending(path: "Logs", directoryHint: .isDirectory)
+            gamesRoot: rootURL.appendingPathComponent("Games"),
+            prefixesRoot: rootURL.appendingPathComponent("Prefixes"),
+            logsRoot: rootURL.appendingPathComponent("Logs")
         )
-        let store = GameManifestStore(manifestURL: rootURL.appending(path: "games.json"), fileSystem: fileSystem)
+        let store = GameManifestStore(manifestURL: rootURL.appendingPathComponent("games.json"), fileSystem: fileSystem)
         let prefixManager = CorePrefixManager(configuration: configuration, fileSystem: fileSystem)
         let importer = GameImportService(
             configuration: configuration,

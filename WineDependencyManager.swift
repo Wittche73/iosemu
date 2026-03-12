@@ -141,6 +141,8 @@ class WineDependencyManager {
         
         // KRİTİK OPTİMİZASYON: initializePrefix artık her seferinde tam sync yapmaz.
         // Master prefix güncel olduğu sürece klon yeterlidir.
+    }
+    
     /// Wine için sanal sürücü eşlemelerini (dosdevices) oluşturur
     private func initializeDosDevices(in prefixPath: String) {
         let dosDevicesPath = "\(prefixPath)/dosdevices"

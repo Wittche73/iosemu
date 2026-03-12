@@ -49,8 +49,7 @@ struct LibraryView: View {
                                             core.applyOptimizedProfile(for: game.id)
                                         }) {
                                             Label("En İyi Ayarlar", systemImage: "sparkles")
-                                                .font(.caption2)
-                                                .fontWeight(.bold)
+                                                .font(.caption2.bold())
                                                 .padding(6)
                                                 .background(Color.blue.opacity(0.2))
                                                 .foregroundColor(.blue)

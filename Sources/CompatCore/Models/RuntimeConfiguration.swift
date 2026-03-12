@@ -1,6 +1,6 @@
 import Foundation
 
-public enum EmulatorEngine: String, Codable, CaseInsensitiveCompare, Sendable {
+public enum EmulatorEngine: String, Codable, Sendable {
     case box64
     case fex
 }

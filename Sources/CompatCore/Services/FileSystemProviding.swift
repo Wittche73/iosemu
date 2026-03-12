@@ -45,7 +45,7 @@ public struct LocalFileSystem: FileSystemProviding {
 
     public func enumeratedFiles(at url: URL) throws -> [URL] {
         guard FileManager.default.fileExists(atPath: url.path) else { return [] }
-        return FileManager.default.subpaths(atPath: url.path)?.map { url.appending(path: $0) } ?? []
+        return FileManager.default.subpaths(atPath: url.path)?.map { url.appendingPathComponent($0) } ?? []
     }
 
     public func isDirectory(at url: URL) -> Bool {
