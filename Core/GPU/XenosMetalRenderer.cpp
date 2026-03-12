@@ -15,6 +15,7 @@ bool XenosMetalRenderer::Initialize(void* metalLayer) {
     
     if (metalLayer != nullptr) {
         printf("[Xenos GPU] Attached to UI Metal Layer: %p\n", metalLayer);
+        m_metalDevice = metalLayer; // Store the layer reference for pipeline setup
     }
     
     return SetupMetalPipeline();
@@ -22,6 +23,7 @@ bool XenosMetalRenderer::Initialize(void* metalLayer) {
 
 bool XenosMetalRenderer::SetupMetalPipeline() {
     // In a full implementation, we'd compile the Metal shaders for Xbox 360 pixel/vertex emulation here
+    m_commandQueue = m_metalDevice; // Will be replaced with real MTLCommandQueue in ObjC bridge
     printf("[Xenos GPU] Metal Pipeline configured for Xenos microcode translation.\n");
     return true;
 }
