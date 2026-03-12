@@ -31,25 +31,11 @@ LocalCompat_FILES = AppDelegate.swift SceneDelegate.swift \
 LocalCompat_FILES += $(shell find Sources -name "*.swift")
 
 LocalCompat_SWIFTFLAGS = -import-objc-header LocalCompat-Bridging-Header.h
-# XeniOS paths
-XENIOS_ROOT = $(CURDIR)/../XeniOS-xenios
-XENIOS_LIB = $(XENIOS_ROOT)/build/bin/iOS-ARM64/Release
+# XeniOS static libraries (compiled for iOS ARM64)
+XENIOS_LIB = $(CURDIR)/lib/xenia
 
 LocalCompat_CFLAGS = -Ibin/box64/source/include -DREAL_ENGINE
-LocalCompat_CCFLAGS = -std=c++20 \
-    -I$(XENIOS_ROOT)/src \
-    -I$(XENIOS_ROOT)/third_party/fmt/include \
-    -I$(XENIOS_ROOT)/third_party/pugixml/src \
-    -I$(XENIOS_ROOT)/third_party/FFmpeg \
-    -I$(XENIOS_ROOT)/third_party/imgui \
-    -I$(XENIOS_ROOT)/third_party/glslang \
-    -I$(XENIOS_ROOT)/third_party/snappy \
-    -I$(XENIOS_ROOT)/third_party/xxhash/include \
-    -I$(XENIOS_ROOT)/third_party/mspack \
-    -I$(XENIOS_ROOT)/third_party/cxxopts/include \
-    -I$(XENIOS_ROOT)/third_party/tomlplusplus/include \
-    -I$(XENIOS_ROOT)/third_party/zarchive/include \
-    -DREAL_ENGINE
+LocalCompat_CXXFLAGS = -std=c++20 -DREAL_ENGINE
 LocalCompat_FRAMEWORKS = UIKit Foundation GameController AVFoundation Metal MetalFX SwiftUI
 LocalCompat_LDFLAGS = -L$(XENIOS_LIB) \
     -lxenia-kernel -lxenia-cpu -lxenia-cpu-backend-a64 \

@@ -1,46 +1,68 @@
 #include "XboxMemory.h"
 #include <stdio.h>
-
-#include "xenia/memory.h"
-#include "xenia/base/byte_swap.h"
+#include <stdlib.h>
+#include <sys/mman.h>
 
 namespace XeniOS {
 namespace Memory {
 
-XboxMemory::XboxMemory() : m_xeMemory(std::make_unique<xe::Memory>()) {}
+XboxMemory::XboxMemory()
+    : m_physicalRamBase(nullptr), m_ramSize(512 * 1024 * 1024) {
+  // Xbox 360 has 512MB of unified GDDR3 RAM
+}
 
-XboxMemory::~XboxMemory() = default;
+XboxMemory::~XboxMemory() {
+  if (m_physicalRamBase) {
+    munmap(m_physicalRamBase, m_ramSize);
+  }
+}
 
 bool XboxMemory::Initialize() {
-  printf("[XeniOS Memory] Initializing real xe::Memory subsystem...\n");
+  printf("[XeniOS Memory] Allocating 512MB Unified Memory Architecture...\n");
 
-  if (!m_xeMemory->Initialize()) {
-    printf("[XeniOS Memory] FATAL: xe::Memory::Initialize() failed.\n");
+  // Allocate 512MB contiguous memory block
+  m_physicalRamBase = (uint8_t *)mmap(NULL, m_ramSize, PROT_READ | PROT_WRITE,
+                                      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+
+  if (m_physicalRamBase == MAP_FAILED) {
+    printf("[XeniOS Memory] FATAL: Failed to allocate 512MB RAM.\n");
+    m_physicalRamBase = nullptr;
     return false;
   }
 
-  printf("[XeniOS Memory] xe::Memory initialized. Virtual base: %p, Physical "
-         "base: %p\n",
-         m_xeMemory->virtual_membase(), m_xeMemory->physical_membase());
+  printf("[XeniOS Memory] RAM Allocated at: %p (%zu MB)\n",
+         m_physicalRamBase, m_ramSize / (1024 * 1024));
   return true;
 }
 
 uint32_t XboxMemory::Read32(uint32_t address) {
-  auto ptr = m_xeMemory->TranslateVirtual<uint32_t *>(address);
-  if (!ptr)
+  if (!m_physicalRamBase || address > m_ramSize - 4)
     return 0;
-  return xe::byte_swap(*ptr); // Big-Endian -> Little-Endian
+
+  // PowerPC is Big-Endian, byte-swap for ARM64 (Little-Endian)
+  uint32_t value = *(uint32_t *)(m_physicalRamBase + address);
+  return __builtin_bswap32(value);
 }
 
 void XboxMemory::Write32(uint32_t address, uint32_t value) {
-  auto ptr = m_xeMemory->TranslateVirtual<uint32_t *>(address);
-  if (!ptr)
+  if (!m_physicalRamBase || address > m_ramSize - 4)
     return;
-  *ptr = xe::byte_swap(value); // Little-Endian -> Big-Endian
+
+  *(uint32_t *)(m_physicalRamBase + address) = __builtin_bswap32(value);
 }
 
 void *XboxMemory::TranslateAddress(uint32_t guestAddress) {
-  return m_xeMemory->TranslateVirtual(guestAddress);
+  if (!m_physicalRamBase || guestAddress > m_ramSize)
+    return nullptr;
+  return (void *)(m_physicalRamBase + guestAddress);
+}
+
+uint8_t *XboxMemory::GetMemBase() const {
+  return m_physicalRamBase;
+}
+
+size_t XboxMemory::GetRamSize() const {
+  return m_ramSize;
 }
 
 } // namespace Memory

@@ -63,15 +63,15 @@ extern "C" bool init_runtime() {
         g_xboxAudio = new XeniOS::APU::AudioSystem();
         g_xboxInput = new XeniOS::HID::XInputManager();
 
-        // Initialize the real xe::Memory subsystem first
+        // Initialize the memory subsystem
         if (!g_xboxMemory->Initialize()) {
-            last_error = "Failed to initialize xe::Memory subsystem";
+            last_error = "Failed to initialize Xbox 360 Memory subsystem";
             std::cerr << "[Emulator Bridge] " << last_error << std::endl;
             return false;
         }
 
-        // Initialize kernel with the real memory
-        if (!g_xboxKernel->InitializeOS(g_xboxMemory)) {
+        // Initialize kernel
+        if (!g_xboxKernel->InitializeOS()) {
             last_error = "Failed to initialize XeniOS Kernel subsystem";
             std::cerr << "[Emulator Bridge] " << last_error << std::endl;
             return false;
@@ -167,7 +167,7 @@ void execute_engine_thread(std::string exe_path, std::string prefix_path) {
         printf("[Emulator Bridge] Booting XeniOS Core for: %s\n", exe_path.c_str());
         
         XeniOS::CPU::XenonJitBackend cpuBackend;
-        if (!cpuBackend.Initialize(g_xboxMemory)) {
+        if (!cpuBackend.Initialize()) {
             std::cerr << "[Emulator Bridge] CRITICAL: Failed to initialize Xenon CPU JIT." << std::endl;
             return;
         }

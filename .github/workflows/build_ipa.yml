@@ -14,6 +14,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+          lfs: true
 
       - name: Setup Theos
         uses: Randomblock1/theos-action@v1
@@ -38,7 +39,7 @@ jobs:
 
       - name: Build Package
         run: |
-          make package FINALPACKAGE=1 DEBUG=0 FOR_RELEASE=1 PACKAGE_FORMAT=ipa
+          make package FINALPACKAGE=1 DEBUG=0 FOR_RELEASE=1 PACKAGE_FORMAT=ipa 2>&1 || make package FINALPACKAGE=1 DEBUG=0 FOR_RELEASE=1 PACKAGE_FORMAT=ipa V=1
 
       - name: Locate and Move IPA
         run: |
