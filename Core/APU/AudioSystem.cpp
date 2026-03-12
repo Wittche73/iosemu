@@ -18,7 +18,9 @@ bool AudioSystem::Initialize() {
 
 void AudioSystem::SubmitAudioBuffer(void* data, size_t size) {
     if (data && size > 0) {
-        // printf("[XeniOS APU] Processed %zu bytes of audio.\n", size);
+        // Apply master volume scaling (placeholder for real audio pipeline)
+        (void)m_masterVolume;
+        // printf("[XeniOS APU] Processed %zu bytes of audio at volume %.2f.\n", size, m_masterVolume);
     }
 }
 

@@ -1,10 +1,11 @@
 name: Build LocalCompat IPA
 
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  # Auto-build disabled — trigger manually from GitHub Actions tab
+  # push:
+  #   branches: [ main, master ]
+  # pull_request:
+  #   branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
