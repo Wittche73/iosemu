@@ -22,13 +22,13 @@ iOS cihazlarda **Windows (x86/x64)** ve **Xbox 360 (PowerPC)** oyunlarını yere
 - **APU:** XMA/PCM ses çözümleme
 - **HID:** Xbox 360 controller emülasyonu
 
-### Platform Özellikleri
-- **MetalFX:** Apple AI tabanlı upscaling (Temporal & Spatial)
-- **JIT:** iOS W^X uyumlu MAP_JIT + dinamik JIT yönetimi
-- **Bulut:** iCloud save senkronizasyonu
-- **Shader Cache:** Shader ısıtma ile stutter önleme
-- **Konsol Modu:** HDMI/AirPlay harici ekran desteği
-- **Performans HUD:** FPS, JIT istatistikleri, önbellek sağlığı
+### İleri Seviye Optimizasyonlar (Low-Level)
+- **JIT AOT Cache:** Derlenmiş blokları diskte mmap ile sıfır gecikmeyle tutan (Zero Startup Latency) FNV-1a hash sistemi.
+- **Register Pinning & Bundling:** PPC r-yazmaçlarını ARM64 x-yazmaçlarına sıkı donanım bağı ile PIN'leme ve *rlwinm* gibi kompleks komutları *ubfx/bfc* ile tek komutta eritme.
+- **Graphic Pipeline:** Asenkron *Shader Warming* (Magenta Fallback), Argument Buffers Tier 2 ve MetalFX *Temporal Jitter Offset* entegrasyonu.
+- **Memory & I/O:** ARM64 donanımsal `REV` emriyle tek döngülük (single-cycle) Endian-Swap, MADV_SEQUENTIAL eşlemeli APFS fast I/O ve motorlar arası sert (4GB boundary) VAS İzolasyonu.
+- **Kernel & QoS:** Xbox 360 çekirdeklerini iPhone Asimetrik (big.LITTLE) mimarisine P-core / E-core Apple QoS ile dağıtan `ThreadScheduler` ve sistem açılışını hızlandıran Native Unix Syscall Hooking.
+- **W^X JIT Guard:** iOS işletim sistemi sınırlarını ihlal etmemek adına `pthread_jit_write_protect_np` tabanlı *ScopedJITWrite* RAII batch koruması.
 
 ---
 
@@ -46,15 +46,15 @@ iOS cihazlarda **Windows (x86/x64)** ve **Xbox 360 (PowerPC)** oyunlarını yere
 │  AppCoordinator · GameLibraryVC · LogVC           │
 ├─────────────────────────────────────────────────┤
 │             RuntimeBridge.cpp (C++)               │
-│      Box64/FEX ↔ Wine ↔ XeniOS Orchestration     │
+│        (SyscallBridge, ThreadScheduler)           │
 ├───────────────────┬─────────────────────────────┤
 │  Box64 / FEX-Emu  │     Core/ (XeniOS C++)      │
-│  libbox64.dylib   │  CPU · GPU · Memory · Kernel │
-│  x86→ARM64 JIT    │  VFS · APU · HID             │
+│  libbox64.dylib   │  JITCacheManager, MemoryOpt │
+│  x86→ARM64 JIT    │  ShaderWarmingService       │
 ├───────────────────┴─────────────────────────────┤
-│     29 Xenia Static Libraries (iOS ARM64)        │
+│     29 Xenia Static Libraries (iOS ARM64)       │
 │  xenia-base · xenia-cpu · xenia-gpu · xenia-    │
-│  kernel · xenia-apu · xenia-vfs · ...            │
+│  kernel · xenia-apu · xenia-vfs · ...           │
 └─────────────────────────────────────────────────┘
 ```
 

@@ -152,6 +152,21 @@ Xenia Xbox 360 emülatörü iOS ARM64 için derlendi:
 #### 28. CI/CD Güncelleme
 - GitHub Actions otomatik build devre dışı bırakıldı (sadece manuel `workflow_dispatch`).
 
+### Faz 6: İleri Seviye Optimizasyonlar (Tier 1 & Tier 2) (13.03.2026)
+Çeviri overhead'ini (yükünü) sıfıra indirmek maksatlı geliştirilmiş özel altyapı motorları entegre edildi:
+
+#### 29. CPU ve Memory (Donanım Seviyesi)
+- **`JITCacheManager`**: Disk tabanlı mmap destekli Ahead-of-Time JIT cache. ARM64 `x19-x28` register-pinning özelliği sayesinde "stack spilling" engellendi. `rlwinm` gibi kompleks komutların `UBFX`/`BFC` (instruction bundling) birleştirmesi eklendi.
+- **`MemoryOptimizer`**: Big-Endian (Xbox) verilerini Little-Endian (Apple) verisine dönüştürmek için software-loop yerine doğrudan ARM64 inline assembly (`__asm__("rev")`) komutu entegre edildi. MAP_32BIT bayrağı kullanılarak Box64 / Xenia belleği 4GB sınırları içinde izole edildi.
+
+#### 30. GPU (Görsel Pürüzsüzlük)
+- **`ShaderWarmingService`**: Ana oyun döngüsünü (main thread) kitlemeyen asenkron background-thread shader derleyicisi ve derlenmemiş objeler için "Magenta" placeholder renk sistemi kuruldu.
+- **`XenosMetalRenderer` update**: Sub-pixel Jitter datası donanımdan okunarak Apple MetalFX (Temporal Upscaling) API'sine beslenmeye başlandı. `MTLArgumentEncoder` simülasyonu ile draw-call'da Tier 2 Buffer optimizasyonu eklendi.
+
+#### 31. Kernel & Threading (İşletim Sistemi Köprüsü)
+- **`ThreadScheduler`**: Oyun mantığı (User Interactive, P-Core), JIT Derleyici (User Initiated, P-Core) ve Ses/IO (Utility, E-Core) yüklerinin iPhone Asimetrik Big.Little çekirdek yapısına spesifik iOS QoS (Quality of Service) etiketleriyle oturtulması sağlandı.
+- **`SyscallBridge`**: Olası I/O maliyetlerinden kurtulmak için Cocoa (`NSFileManager`) katmanı tamamen bypass edildi, işlemler doğrudan Unix Syscall'larına (`open()`, `readv()`) devredildi. iOS'in yazılım güvenliği W^X (`pthread_jit_write_protect_np`) mekanizması için sistem maliyetini düşüren **`ScopedJITWrite` (RAII)** block-batching altyapısı kuruldu.
+
 ---
 
 ## 📊 Proje İstatistikleri
