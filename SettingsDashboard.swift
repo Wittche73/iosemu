@@ -91,12 +91,8 @@ struct SettingsDashboard: View {
                 }
             }
             .navigationTitle("Konsol Ayarları")
-            .toolbar(content: {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Kapat") {
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }
+            .navigationBarItems(trailing: Button("Kapat") {
+                presentationMode.wrappedValue.dismiss()
             })
         }
     }
