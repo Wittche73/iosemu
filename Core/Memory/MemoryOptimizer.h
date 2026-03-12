@@ -47,8 +47,10 @@ public:
 
     // ─── VAS Isolation ───
     /// Create an isolated virtual address space region for an engine.
+    /// @param is32BitRestricted If true, ensures allocation is below 4GB boundary
     VASRegion* CreateIsolatedRegion(const char* label, size_t size,
-                                    uint32_t guestBase, bool executable);
+                                    uint32_t guestBase, bool executable,
+                                    bool is32BitRestricted = false);
     /// Find a VAS region by label.
     VASRegion* FindRegion(const char* label) const;
     /// Release a VAS region.

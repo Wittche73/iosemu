@@ -83,7 +83,8 @@ uint64_t MemoryOptimizer::ReadSwap64(const void* address) {
 // ═══════════════════════════════════════════════════════════════
 
 VASRegion* MemoryOptimizer::CreateIsolatedRegion(const char* label, size_t size,
-                                                   uint32_t guestBase, bool executable) {
+                                                   uint32_t guestBase, bool executable,
+                                                   bool is32BitRestricted) {
     if (m_regionCount >= MAX_REGIONS) {
         printf("[MemOptimizer] ERROR: Max VAS regions (%d) reached.\n", MAX_REGIONS);
         return nullptr;
@@ -106,10 +107,22 @@ VASRegion* MemoryOptimizer::CreateIsolatedRegion(const char* label, size_t size,
     }
 #endif
 
+#if defined(MAP_32BIT)
+    if (is32BitRestricted) {
+        flags |= MAP_32BIT;
+    }
+#endif
+
     void* base = mmap(NULL, size, prot, flags, -1, 0);
     if (base == MAP_FAILED) {
         printf("[MemOptimizer] ERROR: mmap failed for region '%s' (%zu bytes).\n", label, size);
         return nullptr;
+    }
+
+    // On macOS/iOS ARM64, MAP_32BIT might not be strictly supported by mmap hardware.
+    // If it allocated above 4GB while restricted, warn heavily.
+    if (is32BitRestricted && (uintptr_t)base > 0xFFFFFFFFull) {
+        printf("[MemOptimizer] WARNING: 'is32BitRestricted' failed, address %p is above 4GB bound!\n", base);
     }
 
     VASRegion& region = m_regions[m_regionCount];

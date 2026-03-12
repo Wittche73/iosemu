@@ -249,19 +249,19 @@ void JITCacheManager::InitializeRegisterMap() {
 
     const int SPILL = -1; // Register spilled to stack frame
 
-    // PPC r0 → ARM64 x19 (callee-saved, PPC r0 is rarely a real operand)
-    // PPC r1 (SP) → ARM64 x20 (dedicated stack emulation)
+    // PPC r0 → ARM64 x19 (callee-saved, specialized)
+    // PPC r1 (SP) → ARM64 x20 (stack pointer)
     // PPC r2 (TOC) → ARM64 x21
-    // PPC r3-r10 (args/ret) → ARM64 x0-x7 (native ABI match!)
+    // PPC r3-r10 (args/ret) → ARM64 x0-x7 (native ABI match)
     // PPC r11-r12 → ARM64 x8-x9
-    // PPC r13 (TLS) → ARM64 x22
-    // PPC r14-r31 → ARM64 x10-x18, x23-x28 (callee-saved)
+    // PPC r13 (TLS) → ARM64 x22 (dedicated thread-local)
+    // PPC r14-r31 → ARM64 x10-x18, x23-x28 (hard-pinned callee-saved)
 
     int arm64Map[32] = {
-        19,  // r0  → x19 (callee-saved for PPC's special r0)
-        20,  // r1  → x20 (stack pointer emulation)
-        21,  // r2  → x21 (TOC/RTOC)
-         0,  // r3  → x0  (1st arg / return value — ABI match)
+        19,  // r0  → x19 (callee-saved)
+        20,  // r1  → x20 (stack)
+        21,  // r2  → x21 (TOC)
+         0,  // r3  → x0  (1st arg)
          1,  // r4  → x1
          2,  // r5  → x2
          3,  // r6  → x3
@@ -269,9 +269,9 @@ void JITCacheManager::InitializeRegisterMap() {
          5,  // r8  → x5
          6,  // r9  → x6
          7,  // r10 → x7
-         8,  // r11 → x8 (indirect result)
+         8,  // r11 → x8
          9,  // r12 → x9
-        22,  // r13 → x22 (TLS)
+        22,  // r13 → x22 (TLS - pinned hard)
         10,  // r14 → x10
         11,  // r15 → x11
         12,  // r16 → x12
@@ -280,16 +280,16 @@ void JITCacheManager::InitializeRegisterMap() {
         15,  // r19 → x15
         16,  // r20 → x16
         17,  // r21 → x17
-        18,  // r22 → x18 (platform register on iOS — careful!)
-        23,  // r23 → x23
-        24,  // r24 → x24
-        25,  // r25 → x25
-        26,  // r26 → x26
-        27,  // r27 → x27
-        28,  // r28 → x28
-        SPILL, // r29 → stack (ARM64 x29 is FP, can't use)
-        SPILL, // r30 → stack (ARM64 x30 is LR, can't use)
-        SPILL  // r31 → stack (overflow)
+        23,  // r22 → x23 (skipped x18 Apple reserved system register)
+        24,  // r23 → x24
+        25,  // r24 → x25
+        26,  // r25 → x26
+        27,  // r26 → x27
+        28,  // r27 → x28 (last callee-saved)
+        SPILL, // r28 → stack
+        SPILL, // r29 → stack
+        SPILL, // r30 → stack
+        SPILL  // r31 → stack
     };
 
     for (int i = 0; i < 32; i++) {
@@ -318,8 +318,9 @@ void JITCacheManager::InitializeBundleTable() {
     // ADDI + STWU (stack push) → STP pre-indexed
     m_bundleTable.push_back({0x38000000, 0x94000000, 0xA9BF0000, "addi+stwu → stp pre"});
 
-    // RLWINM (rotate-left-word-immediate-and-mask) → UBFM (bitfield move)
-    m_bundleTable.push_back({0x54000000, 0x00000000, 0x53000000, "rlwinm → ubfm"});
+    // RLWINM (rotate-left-word-immediate-and-mask) → UBFX/BFC (bitfield extract/clear)
+    // Transforms complex PowerPC bitwise mask and rotate to a single ARM64 hardware bitfield op.
+    m_bundleTable.push_back({0x54000000, 0x00000000, 0x53000000, "rlwinm → ubfx/bfc"});
 
     // MULLI + ADD → MADD (multiply-add in single cycle)
     m_bundleTable.push_back({0x1C000000, 0x7C000214, 0x1B000000, "mulli+add → madd"});

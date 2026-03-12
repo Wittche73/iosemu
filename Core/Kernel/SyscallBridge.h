@@ -30,6 +30,19 @@ extern "C" void pthread_jit_write_protect_np(int protect);
 #define JIT_IS_APPLE       0
 #endif
 
+/// RAII helper for batching JIT write protection toggles
+/// Instantiate this on the stack before emitting a block of JIT code.
+/// It unprotects memory on creation and re-protects on destruction.
+class ScopedJITWrite {
+public:
+    ScopedJITWrite() { JIT_BEGIN_WRITE(); }
+    ~ScopedJITWrite() { JIT_END_WRITE(); }
+    
+    // Non-copyable
+    ScopedJITWrite(const ScopedJITWrite&) = delete;
+    ScopedJITWrite& operator=(const ScopedJITWrite&) = delete;
+};
+
 /// Syscall result
 struct SyscallResult {
     int64_t returnValue;

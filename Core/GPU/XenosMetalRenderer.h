@@ -31,13 +31,21 @@ public:
     // Swaps the front and back render buffers to present the frame
     void PresentFrame();
 
+    // Set subpixel jitter offset for MetalFX Temporal upscaling
+    void SetJitterOffset(float dx, float dy);
+
     // Get the shader warming service
     ShaderWarmingService* GetShaderService() const { return m_shaderService; }
 
 private:
     void* m_metalDevice;
     void* m_commandQueue;
+    void* m_argumentEncoder; // Tier 2 Argument Buffers
     ShaderWarmingService* m_shaderService;
+    
+    // Temporal Jitter State
+    float m_jitterDx;
+    float m_jitterDy;
 
     // Platform specific setup to bridge C++ with Objective-C Metal APIs
     bool SetupMetalPipeline();
