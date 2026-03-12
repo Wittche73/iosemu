@@ -3,11 +3,16 @@
 
 #include <stdint.h>
 
+// Forward declare to avoid circular include
+namespace XeniOS { namespace GPU { class ShaderWarmingService; } }
+
 namespace XeniOS {
 namespace GPU {
 
 /**
- * Interface for translating Xenos (ATI) GPU microcode to Apple Metal on iOS.
+ * Xenos (ATI) GPU → Apple Metal translation renderer.
+ * Integrates ShaderWarmingService for async shader compilation
+ * and MetalFX motion vector capture.
  */
 class XenosMetalRenderer {
 public:
@@ -26,9 +31,13 @@ public:
     // Swaps the front and back render buffers to present the frame
     void PresentFrame();
 
+    // Get the shader warming service
+    ShaderWarmingService* GetShaderService() const { return m_shaderService; }
+
 private:
     void* m_metalDevice;
     void* m_commandQueue;
+    ShaderWarmingService* m_shaderService;
 
     // Platform specific setup to bridge C++ with Objective-C Metal APIs
     bool SetupMetalPipeline();

@@ -6,9 +6,14 @@
 
 // XeniOS Core Subsystems
 #include "Core/CPU/XenonJitBackend.h"
+#include "Core/CPU/JITCacheManager.h"
 #include "Core/GPU/XenosMetalRenderer.h"
+#include "Core/GPU/ShaderWarmingService.h"
 #include "Core/Memory/XboxMemory.h"
+#include "Core/Memory/MemoryOptimizer.h"
 #include "Core/Kernel/XboxKernel.h"
+#include "Core/Kernel/ThreadScheduler.h"
+#include "Core/Kernel/SyscallBridge.h"
 #include "Core/VFS/XboxFileSystem.h"
 #include "Core/APU/AudioSystem.h"
 #include "Core/HID/XInputManager.h"
@@ -39,6 +44,12 @@ static XeniOS::VFS::XboxFileSystem* g_xboxVfs = nullptr;
 static XeniOS::GPU::XenosMetalRenderer* g_xenosGpu = nullptr;
 static XeniOS::APU::AudioSystem* g_xboxAudio = nullptr;
 static XeniOS::HID::XInputManager* g_xboxInput = nullptr;
+
+// New optimized subsystems
+static XeniOS::CPU::JITCacheManager* g_jitCache = nullptr;
+static XeniOS::Memory::MemoryOptimizer* g_memOptimizer = nullptr;
+static XeniOS::Kernel::ThreadScheduler* g_threadScheduler = nullptr;
+static XeniOS::Kernel::SyscallBridge* g_syscallBridge = nullptr;
 
 // Prototypeler
 typedef int (*emulator_main_func)(int argc, const char** argv, char** env);
@@ -77,7 +88,20 @@ extern "C" bool init_runtime() {
             return false;
         }
 
-        std::cout << "[Emulator Bridge] XeniOS Subsystems Initialized with real xe::Memory." << std::endl;
+        // Initialize new optimization subsystems
+        g_jitCache = new XeniOS::CPU::JITCacheManager();
+        g_jitCache->Initialize("/var/mobile/Documents/JITCache");
+
+        g_memOptimizer = new XeniOS::Memory::MemoryOptimizer();
+        g_memOptimizer->Initialize(1024 * 1024 * 1024); // 1GB budget
+
+        g_threadScheduler = new XeniOS::Kernel::ThreadScheduler();
+        g_threadScheduler->Initialize();
+
+        g_syscallBridge = new XeniOS::Kernel::SyscallBridge();
+        g_syscallBridge->Initialize("/var/mobile/Documents/wineprefix");
+
+        std::cout << "[Emulator Bridge] XeniOS Subsystems + Optimizers Initialized." << std::endl;
         return true;
     }
 

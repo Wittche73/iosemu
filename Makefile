@@ -20,9 +20,14 @@ LocalCompat_FILES = AppDelegate.swift SceneDelegate.swift \
     GameDiscoveryManager.swift MetalGameView.swift \
     RuntimeBridge.cpp \
     Core/CPU/XenonJitBackend.cpp \
+    Core/CPU/JITCacheManager.cpp \
     Core/GPU/XenosMetalRenderer.cpp \
+    Core/GPU/ShaderWarmingService.cpp \
     Core/Memory/XboxMemory.cpp \
+    Core/Memory/MemoryOptimizer.cpp \
     Core/Kernel/XboxKernel.cpp \
+    Core/Kernel/ThreadScheduler.cpp \
+    Core/Kernel/SyscallBridge.cpp \
     Core/VFS/XboxFileSystem.cpp \
     Core/APU/AudioSystem.cpp \
     Core/HID/XInputManager.cpp
