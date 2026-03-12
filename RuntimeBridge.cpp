@@ -4,6 +4,14 @@
 #include <dlfcn.h>
 #include <thread>
 
+// XeniOS Core Subsystems
+#include "Core/CPU/XenonJitBackend.h"
+#include "Core/GPU/XenosMetalRenderer.h"
+#include "Core/Memory/XboxMemory.h"
+#include "Core/Kernel/XboxKernel.h"
+#include "Core/VFS/XboxFileSystem.h"
+#include "Core/APU/AudioSystem.h"
+#include "Core/HID/XInputManager.h"
 #ifdef __APPLE__
 #include <crt_externs.h>
 #include <pthread.h>
@@ -22,7 +30,15 @@ static std::string last_error = "None";
 static void* box64_handle = nullptr;
 static void* fex_handle = nullptr;
 static std::string stats_buffer = "{}";
-static int current_engine = 0; // 0: Box64, 1: FEX-Emu
+static int current_engine = 0; // 0: Box64, 1: FEX-Emu, 2: XeniOS
+
+// Global XeniOS Subsystems
+static XeniOS::Memory::XboxMemory* g_xboxMemory = nullptr;
+static XeniOS::Kernel::XboxKernel* g_xboxKernel = nullptr;
+static XeniOS::VFS::XboxFileSystem* g_xboxVfs = nullptr;
+static XeniOS::GPU::XenosMetalRenderer* g_xenosGpu = nullptr;
+static XeniOS::APU::AudioSystem* g_xboxAudio = nullptr;
+static XeniOS::HID::XInputManager* g_xboxInput = nullptr;
 
 // Prototypeler
 typedef int (*emulator_main_func)(int argc, const char** argv, char** env);
@@ -31,12 +47,40 @@ typedef void (*box64_get_stats_func)(uint64_t* hits, uint64_t* misses, uint32_t*
 
 extern "C" void set_engine(int engine) {
     current_engine = engine;
-    std::cout << "[Emulator Bridge] Engine set to: " << (engine == 0 ? "Box64" : "FEX-Emu") << std::endl;
+    std::cout << "[Emulator Bridge] Engine set to: " << (engine == 0 ? "Box64" : (engine == 1 ? "FEX-Emu" : "XeniOS/Xbox360")) << std::endl;
 }
 
 extern "C" bool init_runtime() {
     std::cout << "[Emulator Bridge] Initializing native engine..." << std::endl;
     
+    if (current_engine == 2) {
+        std::cout << "[Emulator Bridge] Booting XeniOS Xbox 360 Core..." << std::endl;
+        
+        g_xboxMemory = new XeniOS::Memory::XboxMemory();
+        g_xboxKernel = new XeniOS::Kernel::XboxKernel();
+        g_xboxVfs = new XeniOS::VFS::XboxFileSystem();
+        g_xenosGpu = new XeniOS::GPU::XenosMetalRenderer();
+        g_xboxAudio = new XeniOS::APU::AudioSystem();
+        g_xboxInput = new XeniOS::HID::XInputManager();
+
+        // Initialize the real xe::Memory subsystem first
+        if (!g_xboxMemory->Initialize()) {
+            last_error = "Failed to initialize xe::Memory subsystem";
+            std::cerr << "[Emulator Bridge] " << last_error << std::endl;
+            return false;
+        }
+
+        // Initialize kernel with the real memory
+        if (!g_xboxKernel->InitializeOS(g_xboxMemory)) {
+            last_error = "Failed to initialize XeniOS Kernel subsystem";
+            std::cerr << "[Emulator Bridge] " << last_error << std::endl;
+            return false;
+        }
+
+        std::cout << "[Emulator Bridge] XeniOS Subsystems Initialized with real xe::Memory." << std::endl;
+        return true;
+    }
+
     const char* lib_name = (current_engine == 0) ? "libbox64.dylib" : "libFEXCore.dylib";
     void** handle_ptr = (current_engine == 0) ? &box64_handle : &fex_handle;
 
@@ -118,6 +162,27 @@ extern "C" void send_joystick_button(int button, bool is_pressed) {
 
 // Arka planda çalışacak olan ana oyun emülasyon döngüsü
 void execute_engine_thread(std::string exe_path, std::string prefix_path) {
+    if (current_engine == 2) {
+        // XeniOS (Xbox 360) Execution Path
+        printf("[Emulator Bridge] Booting XeniOS Core for: %s\n", exe_path.c_str());
+        
+        XeniOS::CPU::XenonJitBackend cpuBackend;
+        if (!cpuBackend.Initialize(g_xboxMemory)) {
+            std::cerr << "[Emulator Bridge] CRITICAL: Failed to initialize Xenon CPU JIT." << std::endl;
+            return;
+        }
+
+        // Mount the game directory
+        if (g_xboxVfs) {
+            g_xboxVfs->MountSymbolicLink("game:", exe_path);
+        }
+
+        // Execute from Xbox 360 default entry point
+        cpuBackend.Execute(0x82000000);
+        return;
+    }
+
+    // Box64 / FEX Execution Path
     void* handle = (current_engine == 0) ? box64_handle : fex_handle;
     const char* engine_name = (current_engine == 0) ? "box64" : "FEXInterpreter";
 

@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-/// Seçili emülatör motorunu ayarlar (0: Box64, 1: FEX-Emu)
+/// Seçili emülatör motorunu ayarlar (0: Box64, 1: FEX-Emu, 2: XeniOS/Xbox360)
 void set_engine(int engine);
 
 /// Emülasyon motorunu başlatır

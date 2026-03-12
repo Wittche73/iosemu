@@ -98,9 +98,12 @@ class RuntimeLauncher {
         // 9. Bulut Senkronizasyonu (PULL)
         CloudSyncManager.shared.pullSaves(for: game)
         
-        // 10. Native Motoru Başlat
+        // 10. Native C++ Motoru Kurulumu (Box64 = 0, FEX = 1, XeniOS = 2)
+        let engineId: Int32 = (game.platform == .xbox360) ? 2 : 0
+        set_engine(engineId)
+        
         if !init_runtime() {
-            print("❌ Emulator Bridge: Native engine library (Box64) could not be initialized!")
+            print("❌ Emulator Bridge: Native core could not be initialized for platform: \(game.platform.rawValue)!")
             DynamicJITManager.shared.stopMonitoring()
             return false
         }

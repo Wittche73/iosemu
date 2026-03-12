@@ -7,6 +7,12 @@ enum GameStatus: String, Codable {
     case error
 }
 
+/// Oyunun platformunu temsil eden enum
+enum Platform: String, Codable {
+    case windows
+    case xbox360
+}
+
 /// Performans profillerini temsil eden enum
 enum PerformanceProfile: String, Codable {
     case powerSave
@@ -30,6 +36,7 @@ struct Game: Identifiable, Codable {
     var path: String
     var prefixPath: String
     var status: GameStatus
+    var platform: Platform = .windows
     var lastLaunch: Date?
     var config: PrefixConfig = PrefixConfig()
 }
@@ -67,9 +74,12 @@ class CompatCore {
             print("Error creating prefix: \(error)")
         }
         
-        let newGame = Game(id: gameID, name: suggestedName, path: path, prefixPath: prefixPath, status: .idle)
+        let ext = URL(fileURLWithPath: path).pathExtension.lowercased()
+        let detectedPlatform: Platform = (ext == "iso" || ext == "xex") ? .xbox360 : .windows
+        
+        let newGame = Game(id: gameID, name: suggestedName, path: path, prefixPath: prefixPath, status: .idle, platform: detectedPlatform)
         games.append(newGame)
-        print("Imported game: \(suggestedName) with prefix: \(prefixPath)")
+        print("Imported game: \(suggestedName) [\(detectedPlatform.rawValue)] with prefix: \(prefixPath)")
         return newGame
     }
 

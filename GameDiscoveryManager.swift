@@ -24,8 +24,9 @@ class GameDiscoveryManager {
         }
         
         while let fileURL = enumerator?.nextObject() as? URL {
-            // Sadece .exe dosyalarını al ve Wine/Prefix klasörlerini atla
-            if fileURL.pathExtension.lowercased() == "exe" {
+            // Sadece desteklenen sistem uzantılarını al
+            let ext = fileURL.pathExtension.lowercased()
+            if ext == "exe" || ext == "iso" || ext == "xex" {
                 let path = fileURL.path
                 if !path.contains("/prefixes/") && !path.contains("/windows/") {
                     discoveredExes.append(fileURL)
