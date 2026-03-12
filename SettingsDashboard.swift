@@ -18,8 +18,8 @@ struct SettingsDashboard: View {
                         Text("FEX-Emu (Fallback)").tag("fex")
                     }
                     .pickerStyle(.segmented)
-                    .onChange(of: selectedEngine) {
-                        UserDefaults.standard.set(selectedEngine, forKey: "selectedEmulatorEngine")
+                    .onChange(of: selectedEngine) { newValue in
+                        UserDefaults.standard.set(newValue, forKey: "selectedEmulatorEngine")
                     }
                     
                     Text("Box64 çoğu oyun için daha uyumludur. Bazı özel durumlarda FEX-Emu daha iyi performans verebilir.")
@@ -41,15 +41,15 @@ struct SettingsDashboard: View {
                         Text("Hızlı").tag(1)
                         Text("Agresif").tag(2)
                     }
-                    .onChange(of: jitAggressiveness) {
-                        PerformanceManager.shared.setJITLevel(jitAggressiveness)
+                    .onChange(of: jitAggressiveness) { newValue in
+                        PerformanceManager.shared.setJITLevel(newValue)
                     }
                 }
                 
                 Section(header: Text("Girdi (Input)").font(.headline)) {
                     Toggle("Relative Mouse (FPS Modu)", isOn: $relativeMouse)
-                        .onChange(of: relativeMouse) {
-                            UserDefaults.standard.set(relativeMouse, forKey: "relativeMouseMode")
+                        .onChange(of: relativeMouse) { newValue in
+                            UserDefaults.standard.set(newValue, forKey: "relativeMouseMode")
                         }
                     
                     Text("FPS oyunlarında kamerayı kontrol etmek için bu modu açın.")
@@ -64,8 +64,8 @@ struct SettingsDashboard: View {
                         Text("Detaylı").tag("compiler")
                         Text("Full").tag("full")
                     }
-                    .onChange(of: dxvkHud) {
-                        setenv("DXVK_HUD", dxvkHud, 1)
+                    .onChange(of: dxvkHud) { newValue in
+                        setenv("DXVK_HUD", newValue, 1)
                     }
                     
                     Toggle("MetalFX Upscaling", isOn: .constant(true))
