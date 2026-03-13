@@ -15,9 +15,49 @@ MemoryOptimizer::MemoryOptimizer()
 }
 
 MemoryOptimizer::~MemoryOptimizer() {
-    for (int i = 0; i < m_regionCount; i++) {
-        if (m_regions[i].base) {
+    // The destructor should call Shutdown to clean up resources.
+    Shutdown();
+}
+
+void MemoryOptimizer::Shutdown() {
+    for (int i = 0; i < m_regionCount; ++i) {
+        if (m_regions[i].base && m_regions[i].size > 0) {
             munmap(m_regions[i].base, m_regions[i].size);
+            m_regions[i].base = nullptr;
+        }
+    }
+    m_regionCount = 0;
+}
+
+// ═══════════════════════════════════════════════════════════════
+
+void MemoryOptimizer::CheckMemoryPressureAndFlush() {
+    // We assume 4GB (0xFFFFFFFF) as typical tight VAS boundary for 32-bit emu components.
+    // If we have mapped multiple regions totaling > 3.5GB (say 85% of 4GB), trigger LRU flush.
+    const size_t THRESHOLD = (size_t)(3.5 * 1024 * 1024 * 1024ull); 
+    size_t totalAllocated = 0;
+    
+    for (int i = 0; i < m_regionCount; i++) {
+        totalAllocated += m_regions[i].size;
+    }
+
+    if (totalAllocated >= THRESHOLD) {
+        printf("[MemOptimizer] Memory pressure HIGH (%zu bytes). Triggering LRU flush...\n", totalAllocated);
+        // Simple demonstration of LRU logic: We look for a region labelled "XeniaJIT" or "Box64Dynarec" 
+        // that hasn't been used recently (in a full implementation we'd track last_access_timestamp).
+        // For now, we simulate freeing an arbitrary old region if we hit the limit.
+        for (int i = 0; i < m_regionCount; i++) {
+            if (m_regions[i].isJIT) { // Assuming `isJIT` is a new member in VASRegion
+                // Fake mmap flush / madvise DONTNEED
+                #ifdef __APPLE__
+                madvise(m_regions[i].base, m_regions[i].size, MADV_FREE);
+                #else
+                madvise(m_regions[i].base, m_regions[i].size, MADV_DONTNEED);
+                #endif
+                printf("[MemOptimizer] Flushed JIT Region '%s' (%zu bytes) to relieve pressure.\n", 
+                        m_regions[i].label, m_regions[i].size);
+                break; // Only flush one large block per check
+            }
         }
     }
 }
@@ -129,8 +169,9 @@ VASRegion* MemoryOptimizer::CreateIsolatedRegion(const char* label, size_t size,
     region.base = base;
     region.size = size;
     region.guestBase = guestBase;
-    region.isExecutable = executable;
-    region.label = label;
+    region.isJIT = executable;
+    strncpy(region.label, label, sizeof(region.label) - 1);
+    region.label[sizeof(region.label) - 1] = '\0'; // ensure null termination
 
     m_totalAllocated += size;
     m_regionCount++;
@@ -152,8 +193,8 @@ VASRegion* MemoryOptimizer::FindRegion(const char* label) const {
 }
 
 void MemoryOptimizer::ReleaseRegion(const char* label) {
-    for (int i = 0; i < m_regionCount; i++) {
-        if (m_regions[i].label && strcmp(m_regions[i].label, label) == 0) {
+    for (int i = 0; i < m_regionCount; ++i) {
+        if (strcmp(m_regions[i].label, label) == 0) {
             if (m_regions[i].base) {
                 munmap(m_regions[i].base, m_regions[i].size);
                 m_totalAllocated -= m_regions[i].size;

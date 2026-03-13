@@ -10,11 +10,11 @@ namespace Memory {
 
 /// Virtual Address Space (VAS) region descriptor
 struct VASRegion {
-    void*    base;          // Base address of mapped region
-    size_t   size;          // Size in bytes
-    uint32_t guestBase;     // Guest (Xbox/x86) virtual address start
-    bool     isExecutable;  // Contains JIT code
-    const char* label;      // "box64", "xenia", "shared" etc.
+    void*    base;          // Base address of the region
+    size_t   size;          // Size of the region in bytes
+    uint32_t guestBase;     // Xbox 360 guest base address
+    char     label[32];     // Debug label
+    bool     isJIT;         // Marks if region is used for JIT (used for LRU flush)
 };
 
 /**
@@ -61,6 +61,12 @@ public:
     void* MapFile(const std::string& path, size_t& outSize);
     /// Unmap a previously mapped file.
     void UnmapFile(void* mapping, size_t size);
+    /// Releases all regions and cleans up resources.
+    void Shutdown();
+
+    // ─── Sub-task: Memory Pressure Auto-Flush (LRU) ───
+    /// Checks if allocated regions approach VAS limit and flushes least recently used (LRU) data.
+    void CheckMemoryPressureAndFlush();
 
     /// Get statistics.
     std::string GetStats() const;

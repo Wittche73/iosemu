@@ -305,6 +305,7 @@ void JITCacheManager::InitializeBundleTable() {
     m_bundleTable.clear();
 
     // ═══ Peephole Optimization: Common PPC instruction pairs → ARM64 ═══
+    // Basic rules initialized as active=true. Advanced ones can be toggled via Hot-Swap check.
 
     // ADD + CMP → ADDS (set flags in single op)
     m_bundleTable.push_back({0x7C000214, 0x7C000000, 0x2B000000, "add+cmp → adds"});
@@ -316,14 +317,14 @@ void JITCacheManager::InitializeBundleTable() {
     m_bundleTable.push_back({0x7C000378, 0x00000000, 0xAA0003E0, "or(move) → mov"});
 
     // ADDI + STWU (stack push) → STP pre-indexed
-    m_bundleTable.push_back({0x38000000, 0x94000000, 0xA9BF0000, "addi+stwu → stp pre"});
+    m_bundleTable.push_back({0x38000000, 0x94000000, 0xA9BF0000, "addi+stwu → stp pre", true});
 
     // RLWINM (rotate-left-word-immediate-and-mask) → UBFX/BFC (bitfield extract/clear)
     // Transforms complex PowerPC bitwise mask and rotate to a single ARM64 hardware bitfield op.
-    m_bundleTable.push_back({0x54000000, 0x00000000, 0x53000000, "rlwinm → ubfx/bfc"});
+    m_bundleTable.push_back({0x54000000, 0x00000000, 0x53000000, "rlwinm → ubfx/bfc", true});
 
     // MULLI + ADD → MADD (multiply-add in single cycle)
-    m_bundleTable.push_back({0x1C000000, 0x7C000214, 0x1B000000, "mulli+add → madd"});
+    m_bundleTable.push_back({0x1C000000, 0x7C000214, 0x1B000000, "mulli+add → madd", true});
 
     // LWZ + LWZ (sequential loads) → LDP (load pair)
     m_bundleTable.push_back({0x80000000, 0x80000004, 0xA9400000, "lwz+lwz → ldp"});

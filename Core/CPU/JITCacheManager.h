@@ -21,11 +21,12 @@ struct RegisterMapping {
 
 // ─── Instruction Bundling Table Entry ───
 // Maps simple x86/PPC instruction pairs to optimized ARM64 equivalents.
-struct BundlePattern {
-    uint32_t opcode1;     // First instruction opcode
-    uint32_t opcode2;     // Second instruction opcode (0 = single)
-    uint32_t arm64Opcode; // Fused ARM64 equivalent
-    const char* name;     // Description for debugging
+struct BundleRule {
+    uint32_t pattern1;    // First instruction pattern/opcode
+    uint32_t pattern2;    // Second instruction pattern/opcode (0 = single instruction)
+    uint32_t emitARM64;   // Fused ARM64 equivalent opcode
+    std::string description; // Description for debugging
+    bool isActive;        // Sub-task: Dynamic Hot-Swap constraint
 };
 
 // ─── AOT Cache Block ───
@@ -80,7 +81,8 @@ private:
     std::string m_cacheDir;
     std::unordered_map<uint32_t, CachedBlock> m_blockCache;
     std::vector<RegisterMapping> m_registerMap;
-    std::vector<BundlePattern> m_bundleTable;
+    // Peephole bundle table
+    std::vector<BundleRule> m_bundleTable;
 
     // Internal helpers
     uint64_t ComputeHash(const uint8_t* data, size_t size) const;

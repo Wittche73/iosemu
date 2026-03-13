@@ -66,8 +66,13 @@ void XenosMetalRenderer::WriteRegister(uint32_t regKey, uint32_t value) {
 }
 
 void XenosMetalRenderer::SetJitterOffset(float dx, float dy) {
-    m_jitterDx = dx;
-    m_jitterDy = dy;
+    // EMA (Exponential Moving Average) Low-Pass Filter for jitter smoothing.
+    // Smoothing factor alpha: 0.0 means completely ignore new values, 1.0 means no smoothing
+    const float alpha = 0.25f; 
+    
+    // Apply low-pass filter to clean up noisy sub-pixel register values
+    m_jitterDx = m_jitterDx + alpha * (dx - m_jitterDx);
+    m_jitterDy = m_jitterDy + alpha * (dy - m_jitterDy);
 }
 
 void XenosMetalRenderer::ExecuteCommandBuffer(uint32_t physicalAddress, uint32_t size) {
