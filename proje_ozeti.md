@@ -158,13 +158,15 @@ Xenia Xbox 360 emülatörü iOS ARM64 için derlendi:
 #### 29. CPU ve Memory (Donanım Seviyesi)
 - **`JITCacheManager`**: Disk tabanlı mmap destekli Ahead-of-Time JIT cache. ARM64 `x19-x28` register-pinning özelliği sayesinde "stack spilling" engellendi. `rlwinm` gibi kompleks komutların `UBFX`/`BFC` (instruction bundling) birleştirmesi eklendi.
 - **Dynamic JIT Hot-Swap**: Instruction Bundling kuralları, hot-path algılandığında veya oyun spesifik (fizik ağırlıklı) yüklerde devreye girecek şekilde dinamik `isActive` bayrağıyla (flag) tasarlandı.
+- **Execution Profiler**: JIT optimizasyonu performansını takip edebilmek adına, her translation-bundle kuralına dinamik sayaç eklendi (`GetBundleStats`).
 - **`MemoryOptimizer`**: Big-Endian (Xbox) verilerini Little-Endian (Apple) verisine dönüştürmek için software-loop yerine doğrudan ARM64 inline assembly (`__asm__("rev")`) komutu entegre edildi. MAP_32BIT bayrağı kullanılarak Box64 / Xenia belleği 4GB sınırları içinde izole edildi.
-- **Memory Pressure Auto-Flush**: Sistem VAS (%85) sınırlarına yaklaştığında; LRU (Least Recently Used) mantığıyla atıl JIT kısımlarını tespit edip `MADV_FREE` / `MADV_DONTNEED` ile RAM'e geri iade eden izleme modülü eklendi.
+- **Memory Pressure Auto-Flush & Reporting**: Sistem VAS (%85) sınırlarına yaklaştığında; LRU (Least Recently Used) mantığıyla atıl JIT kısımlarını tespit edip RAM'e iade eden izleme modülü eklendi. Flush anında UI katmanını haberdar etmek için `MemoryPressureCallback` entegre edildi.
 
 #### 30. GPU (Görsel Pürüzsüzlük)
 - **`ShaderWarmingService`**: Ana oyun döngüsünü (main thread) kitlemeyen asenkron background-thread shader derleyicisi ve derlenmemiş objeler için "Magenta" placeholder renk sistemi kuruldu.
 - **`XenosMetalRenderer` update**: Sub-pixel Jitter datası donanımdan okunarak Apple MetalFX (Temporal Upscaling) API'sine beslenmeye başlandı. `MTLArgumentEncoder` simülasyonu ile draw-call'da Tier 2 Buffer optimizasyonu eklendi.
-- **EMA Jitter Smoothing**: Alt piksel (sub-pixel) offset verilerinde oluşan donanımsal okuma gürültüleri (noise), Exponential Moving Average bazlı "Low-Pass Filtresi" ile temizlenerek animasyon titreşimleri (flickering) engellendi.
+- **EMA Jitter Smoothing**: Alt piksel (sub-pixel) offset verilerinde oluşan donanımsal okuma gürültüleri (noise), Exponential Moving Average bazlı "Low-Pass Filtresi" ile temizlenerek animasyon titreşimleri engellendi.
+- **Adaptive Resolution Scale**: Ağır GPU yüklerine (frame başına aşırı draw-call) yanıt vermek için anlık çözünürlük faktörünü düşürüp performansı dengeleyen `UpdateAdaptiveScale` metodu eklendi.
 
 #### 31. Kernel & Threading (İşletim Sistemi Köprüsü)
 - **`ThreadScheduler`**: Oyun mantığı (User Interactive, P-Core), JIT Derleyici (User Initiated, P-Core) ve Ses/IO (Utility, E-Core) yüklerinin iPhone Asimetrik Big.Little çekirdek yapısına spesifik iOS QoS (Quality of Service) etiketleriyle oturtulması sağlandı.

@@ -34,6 +34,9 @@ public:
     // Set subpixel jitter offset for MetalFX Temporal upscaling
     void SetJitterOffset(float dx, float dy);
 
+    // Update MetalFX dynamic resolution scale based on GPU load
+    void UpdateAdaptiveScale();
+
     // Get the shader warming service
     ShaderWarmingService* GetShaderService() const { return m_shaderService; }
 
@@ -46,6 +49,10 @@ private:
     // Temporal Jitter State
     float m_jitterDx;
     float m_jitterDy;
+
+    // Adaptive Resolution State
+    float m_currentScaleFactor;
+    uint32_t m_drawCallsThisFrame;
 
     // Platform specific setup to bridge C++ with Objective-C Metal APIs
     bool SetupMetalPipeline();

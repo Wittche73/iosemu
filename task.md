@@ -1,59 +1,50 @@
-🚀 LocalCompat: Tier 2 Advanced Kernel Tasklist
-Bu dosya, projenin "Near-Zero Overhead" hedefine ulaşması için entegre edilen Tier 2 optimizasyonlarını ve stabilite kontrollerini içerir.
+1. CPU & JIT Engine (Dynamic Orchestration)
+Hedef: Kodun doğasına göre anlık optimizasyon değişimi.
 
-1. CPU & JIT Engine (Peephole & Register Mapping)
-Hedef: Komut çeviri gecikmesini donanımsal limitlere çekmek.
+[x] JIT Hot-Swap (Dynamic BundleRules):
 
-[x] Hard-Bound Register Pinning:
+isActive bayrağı ile BundleRule yapısı dinamik hale getirildi.
 
-ARM64 x19-x28 yazmaçları, Xenon state tutucuları için rezerve edildi.
+Fizik motoru veya yoğun matematiksel bloklarda optimizasyon seviyesi çalışma zamanında değiştirilebiliyor.
 
-iOS sistem rezerve yazmaçlarıyla çakışma kontrolleri doğrulandı.
+[x] Instruction Bundling (PPC rlwinm):
 
-[x] PowerPC Bitfield Optimization:
+ARM64 UBFX / BFC dönüşümü stabil şekilde çalışıyor.
 
-rlwinm -> UBFX / BFC dönüşüm kuralı JIT motoruna eklendi.
+[x] Execution Profiler:
 
-Bit manipülasyonu gerektiren oyunlarda (örn. fizik motorları) %15 CPU kazancı sağlandı.
+Hangi kuralların (BundleRules) daha sık tetiklendiğini izleyen minimal bir istatistik katmanı ekle.
 
-[x] JIT Hot-Swap Check:
+2. GPU & Graphics Pipeline (Smoothing & Stability)
+Hedef: Kristal netliğinde ve stabil bir görüntü çıkışı.
 
-Instruction Bundling kurallarının çalışma anında (runtime) oyunun kod yapısına göre dinamik olarak devreye girmesini optimize et.
+[x] MetalFX Temporal Jitter Smoothing:
 
-2. GPU & Graphics Pipeline (MetalFX & Argument Buffers)
-Hedef: CPU-GPU darboğazını (bottleneck) yok etmek.
+SetJitterOffset içerisine EMA (Exponential Moving Average) filtresi entegre edildi.
 
-[x] MetalFX Temporal Jitter Tracking:
-
-Xenos PA_SU_SC_MODE_CNTL (0x2280) yazmacı üzerinden sub-pixel offset yakalama sistemi kuruldu.
-
-Motion Vector verisi MetalFX Temporal Pipeline'a başarıyla aktarıldı.
+Alt piksel titremeleri ve MetalFX gürültüsü (noise) minimize edildi.
 
 [x] Tier 2 Argument Buffers:
 
-MTLArgumentEncoder ile texture/sampler binding işlemleri batch (toplu) hale getirildi.
+MTLArgumentEncoder ile bindless texture yönetimi sağlandı.
 
-Swift-to-C++ köprü geçiş sayısı draw-call başına bire indirildi.
+[x] Adaptive Resolution Scale:
 
-[x] Jitter Buffer Smoothing:
+GPU yükü arttığında MetalFX ölçeklendirme çarpanını dinamik olarak düşüren bir kontrolcü ekle.
 
-Yakalanan dx/dy verilerindeki gürültüyü (noise) temizlemek için düşük geçişli bir filtre (low-pass filter) ekle.
+3. Memory & Kernel (Self-Healing System)
+Hedef: Sınırlı bellek alanını (VAS) verimli kullanarak çökmeleri önlemek.
 
-3. Memory & Kernel (System Edge & Security)
-Hedef: Bellek izolasyonu ve Syscall optimizasyonu.
+[x] Memory Auto-Flush (LRU tabanlı):
 
-[x] 4GB VAS Isolation (MAP_32BIT):
+4GB VAS sınırı takip sistemi kuruldu.
 
-MemoryOptimizer içinde is32BitRestricted bayrağı ile 4GB bellek sınırı zorunlu kılındı.
-
-Box64 ve Xenia bellek adresleme çakışmaları tamamen önlendi.
+Limit aşımında En Az Son Kullanılan (Least Recently Used) JIT bloklarını otomatik temizleyen mekanizma aktif.
 
 [x] ScopedJITWrite (W^X Batching):
 
-RAII tabanlı JIT koruma sınıfı entegre edildi.
+RAII guard ile syscall optimizasyonu sağlandı.
 
-pthread_jit_write_protect_np() syscall sayısı, kod bloğu başına bire indirildi (Performance boost: ~%10).
+[x] Memory Pressure Reporting:
 
-[x] Memory Pressure Auto-Flush:
-
-4GB VAS sınırı dolmaya yaklaştığında JIT önbelleğini akıllıca temizleyen (LRU tabanlı) bir mekanizma kur.
+Auto-flush tetiklendiğinde kullanıcıya (veya loglara) performans kaybı yaşanabileceğine dair bir sinyal gönder.

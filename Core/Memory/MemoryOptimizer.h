@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <string>
+#include <mutex>
 
 namespace XeniOS {
 namespace Memory {
@@ -68,15 +69,21 @@ public:
     /// Checks if allocated regions approach VAS limit and flushes least recently used (LRU) data.
     void CheckMemoryPressureAndFlush();
 
+    // ─── Sub-task: Memory Pressure Reporting ───
+    typedef void(*MemoryPressureCallback)(size_t freedBytes);
+    void SetPressureCallback(MemoryPressureCallback callback);
+
     /// Get statistics.
     std::string GetStats() const;
 
 private:
-    static const int MAX_REGIONS = 8;
+    std::mutex m_mutex;
+    static const int MAX_REGIONS = 128; // Changed from 8 to 128
     VASRegion m_regions[MAX_REGIONS];
     int m_regionCount;
     size_t m_totalBudget;
     size_t m_totalAllocated;
+    MemoryPressureCallback m_pressureCallback;
 };
 
 } // namespace Memory

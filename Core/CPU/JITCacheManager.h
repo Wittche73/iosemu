@@ -27,6 +27,7 @@ struct BundleRule {
     uint32_t emitARM64;   // Fused ARM64 equivalent opcode
     std::string description; // Description for debugging
     bool isActive;        // Sub-task: Dynamic Hot-Swap constraint
+    uint32_t useCount;    // Sub-task: Execution Profiler usage counter
 };
 
 // ─── AOT Cache Block ───
@@ -74,8 +75,11 @@ public:
     /// Try to bundle two instructions into one. Returns fused opcode or 0.
     uint32_t TryBundle(uint32_t opcode1, uint32_t opcode2) const;
 
-    /// Get cache statistics (JSON formatted).
+    /// Get current cache capacity stats
     std::string GetStats() const;
+    
+    /// Get execution profiler stats for Bundle rules
+    std::string GetBundleStats() const;
 
 private:
     std::string m_cacheDir;

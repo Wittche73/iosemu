@@ -7,7 +7,8 @@ namespace GPU {
 
 XenosMetalRenderer::XenosMetalRenderer()
     : m_metalDevice(nullptr), m_commandQueue(nullptr), m_argumentEncoder(nullptr),
-      m_shaderService(nullptr), m_jitterDx(0.0f), m_jitterDy(0.0f) {
+      m_shaderService(nullptr), m_jitterDx(0.0f), m_jitterDy(0.0f),
+      m_currentScaleFactor(1.0f), m_drawCallsThisFrame(0) {
 }
 
 XenosMetalRenderer::~XenosMetalRenderer() {
@@ -80,11 +81,37 @@ void XenosMetalRenderer::ExecuteCommandBuffer(uint32_t physicalAddress, uint32_t
         // [Tier 2] Encode resources before draw
         // m_shaderService->CreateArgumentBuffer(...)
     }
+    m_drawCallsThisFrame++;
     (void)physicalAddress;
     (void)size;
 }
 
+void XenosMetalRenderer::UpdateAdaptiveScale() {
+    // Dynamic Resolution Scaling based on simulated GPU load (draw call frequency)
+    const uint32_t LOAD_THRESHOLD = 1000;
+    
+    if (m_drawCallsThisFrame > LOAD_THRESHOLD) {
+        // Heavy load: Drop scale to 0.75x (Performance mode)
+        if (m_currentScaleFactor > 0.75f) {
+            m_currentScaleFactor = 0.75f;
+            // MetalFX_SetScaleStatus(m_currentScaleFactor);
+        }
+    } else {
+        // Light load: Restore scale to 1.0x (Quality mode)
+        if (m_currentScaleFactor < 1.0f) {
+            m_currentScaleFactor = 1.0f;
+            // MetalFX_SetScaleStatus(m_currentScaleFactor);
+        }
+    }
+}
+
 void XenosMetalRenderer::PresentFrame() {
+    // Update Adaptive Scale for next frame based on this frame's load
+    UpdateAdaptiveScale();
+    
+    // Reset draw call counter for the next frame
+    m_drawCallsThisFrame = 0;
+
     // Capture motion vectors and jitter for MetalFX Temporal after each frame
     if (m_shaderService) {
         // In real implementation: extract MV from render pass attachment

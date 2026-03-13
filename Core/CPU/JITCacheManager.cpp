@@ -148,9 +148,9 @@ int JITCacheManager::MapRegister(int ppcRegister) const {
 }
 
 uint32_t JITCacheManager::TryBundle(uint32_t opcode1, uint32_t opcode2) const {
-    for (const auto& pattern : m_bundleTable) {
-        if (pattern.opcode1 == opcode1 && pattern.opcode2 == opcode2) {
-            return pattern.arm64Opcode;
+    for (const auto& rule : m_bundleTable) {
+        if ((opcode1 & 0xFC000000) == rule.pattern1 && (opcode2 & 0xFC000000) == rule.pattern2) {
+            return rule.emitARM64;
         }
     }
     return 0; // No bundle found
@@ -165,6 +165,14 @@ std::string JITCacheManager::GetStats() const {
            ",\"total_hits\":" + std::to_string(totalHits) +
            ",\"register_mappings\":" + std::to_string(m_registerMap.size()) +
            ",\"bundle_patterns\":" + std::to_string(m_bundleTable.size()) + "}";
+}
+
+std::string JITCacheManager::GetBundleStats() const {
+    std::string stats = "=== Execution Profiler: Bundle Rule Usage ===\n";
+    for (const auto& rule : m_bundleTable) {
+        stats += rule.description + " -> " + std::to_string(rule.useCount) + " hits (Active: " + (rule.isActive ? "Yes" : "No") + ")\n";
+    }
+    return stats;
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -305,32 +313,32 @@ void JITCacheManager::InitializeBundleTable() {
     m_bundleTable.clear();
 
     // ═══ Peephole Optimization: Common PPC instruction pairs → ARM64 ═══
-    // Basic rules initialized as active=true. Advanced ones can be toggled via Hot-Swap check.
+    // Basic rules initialized as active=true, useCount=0. Advanced ones can be toggled via Hot-Swap check.
 
     // ADD + CMP → ADDS (set flags in single op)
-    m_bundleTable.push_back({0x7C000214, 0x7C000000, 0x2B000000, "add+cmp → adds"});
+    m_bundleTable.push_back({0x7C000214, 0x7C000000, 0x2B000000, "add+cmp → adds", true, 0});
 
     // LOAD + BSWAP32 → LDR + REV (ARM64 has native REV)
-    m_bundleTable.push_back({0x80000000, 0x7C00062C, 0xDAC00C00, "lwz+bswap → ldr+rev"});
+    m_bundleTable.push_back({0x80000000, 0x7C00062C, 0xDAC00C00, "lwz+bswap → ldr+rev", true, 0});
 
     // OR rD,rS,rS (PPC move) → MOV (ARM64 native)
-    m_bundleTable.push_back({0x7C000378, 0x00000000, 0xAA0003E0, "or(move) → mov"});
+    m_bundleTable.push_back({0x7C000378, 0x00000000, 0xAA0003E0, "or(move) → mov", true, 0});
 
     // ADDI + STWU (stack push) → STP pre-indexed
-    m_bundleTable.push_back({0x38000000, 0x94000000, 0xA9BF0000, "addi+stwu → stp pre", true});
+    m_bundleTable.push_back({0x38000000, 0x94000000, 0xA9BF0000, "addi+stwu → stp pre", true, 0});
 
     // RLWINM (rotate-left-word-immediate-and-mask) → UBFX/BFC (bitfield extract/clear)
     // Transforms complex PowerPC bitwise mask and rotate to a single ARM64 hardware bitfield op.
-    m_bundleTable.push_back({0x54000000, 0x00000000, 0x53000000, "rlwinm → ubfx/bfc", true});
+    m_bundleTable.push_back({0x54000000, 0x00000000, 0x53000000, "rlwinm → ubfx/bfc", true, 0});
 
     // MULLI + ADD → MADD (multiply-add in single cycle)
-    m_bundleTable.push_back({0x1C000000, 0x7C000214, 0x1B000000, "mulli+add → madd", true});
+    m_bundleTable.push_back({0x1C000000, 0x7C000214, 0x1B000000, "mulli+add → madd", true, 0});
 
     // LWZ + LWZ (sequential loads) → LDP (load pair)
-    m_bundleTable.push_back({0x80000000, 0x80000004, 0xA9400000, "lwz+lwz → ldp"});
+    m_bundleTable.push_back({0x80000000, 0x80000004, 0xA9400000, "lwz+lwz → ldp", true, 0});
 
     // STW + STW (sequential stores) → STP (store pair)
-    m_bundleTable.push_back({0x90000000, 0x90000004, 0xA9000000, "stw+stw → stp"});
+    m_bundleTable.push_back({0x90000000, 0x90000004, 0xA9000000, "stw+stw → stp", true, 0});
 
     printf("[JITCache] Bundle table: %zu peephole patterns registered.\n", m_bundleTable.size());
 }

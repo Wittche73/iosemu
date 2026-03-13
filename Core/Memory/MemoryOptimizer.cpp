@@ -5,18 +5,24 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <mutex> // Added for std::mutex and std::lock_guard
 
 namespace XeniOS {
 namespace Memory {
 
 MemoryOptimizer::MemoryOptimizer()
-    : m_regionCount(0), m_totalBudget(0), m_totalAllocated(0) {
+    : m_regionCount(0), m_totalBudget(0), m_totalAllocated(0), m_pressureCallback(nullptr) {
     memset(m_regions, 0, sizeof(m_regions));
 }
 
 MemoryOptimizer::~MemoryOptimizer() {
     // The destructor should call Shutdown to clean up resources.
     Shutdown();
+}
+
+void MemoryOptimizer::SetPressureCallback(MemoryPressureCallback callback) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    m_pressureCallback = callback;
 }
 
 void MemoryOptimizer::Shutdown() {
@@ -56,6 +62,12 @@ void MemoryOptimizer::CheckMemoryPressureAndFlush() {
                 #endif
                 printf("[MemOptimizer] Flushed JIT Region '%s' (%zu bytes) to relieve pressure.\n", 
                         m_regions[i].label, m_regions[i].size);
+                
+                // Invoke callback to alert higher layers (Swift UI)
+                if (m_pressureCallback) {
+                    m_pressureCallback(m_regions[i].size);
+                }
+
                 break; // Only flush one large block per check
             }
         }
@@ -185,7 +197,7 @@ VASRegion* MemoryOptimizer::CreateIsolatedRegion(const char* label, size_t size,
 
 VASRegion* MemoryOptimizer::FindRegion(const char* label) const {
     for (int i = 0; i < m_regionCount; i++) {
-        if (m_regions[i].label && strcmp(m_regions[i].label, label) == 0) {
+        if (strcmp(m_regions[i].label, label) == 0) {
             return const_cast<VASRegion*>(&m_regions[i]);
         }
     }
