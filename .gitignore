@@ -1,0 +1,10 @@
+.build/
+DerivedData/
+.swiftpm/
+xcuserdata/
+*.xcworkspace
+.theos/
+packages/
+*.ipa
+*.deb
+bin/box64/build_ios/

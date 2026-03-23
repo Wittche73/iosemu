@@ -1,0 +1,7 @@
+version: 1
+orgID: com.example
+product: LocalCompat
+infoPath: Info.plist
+resources:
+  - Resources/*
+  - layout/Applications/LocalCompat.app/Frameworks/*
